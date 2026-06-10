@@ -110,6 +110,10 @@ def main():
                         "omit for non-reproducible sampling")
     p.add_argument("--uids", default=None,
                    help="Comma-separated uid list to (re-)run, ignoring resume state")
+    p.add_argument("--wandb-project", default=None,
+                   help="Report per-question results online to this W&B project. "
+                        "Set WANDB_RUN_ID in the env to make sequential per-video "
+                        "processes append to one run (resume='allow').")
     p.add_argument("--parallel", type=int, default=1,
                    help="Answer up to N questions of a video concurrently, their "
                         "per-step LLM calls batched through vLLM together "
@@ -158,6 +162,28 @@ def main():
 
     questions_by_video = load_questions(args.csv)
     answered_uids = load_answered_uids(args.out)
+
+    wb = None
+    wb_total = wb_correct = 0
+    if args.wandb_project:
+        import wandb
+        # Seed cumulative counters from previous (resumed) processes so the
+        # running-accuracy curve is continuous across per-video invocations.
+        if os.path.exists(args.out):
+            with open(args.out) as f:
+                for line in f:
+                    if line.strip():
+                        wb_total += 1
+                        wb_correct += bool(json.loads(line).get("correct"))
+        wb = wandb.init(
+            project=args.wandb_project,
+            id=os.environ.get("WANDB_RUN_ID") or None,
+            resume="allow",
+            mode="online",
+            config={"model": args.model, "max_iterations": args.max_iterations,
+                    "votes": args.votes, "parallel": args.parallel,
+                    "csv": args.csv, "out": args.out},
+        )
     all_results: List[dict] = []
     total_done = 0
 
@@ -256,6 +282,7 @@ def main():
                 return record
 
             def emit(record, votes_suffix=""):
+                nonlocal wb_total, wb_correct
                 out_f.write(json.dumps(record) + "\n")
                 out_f.flush()
                 all_results.append(record)
@@ -264,6 +291,20 @@ def main():
                 print(f"  {status} uid={record['uid']} pred={record['predicted']} "
                       f"gt={record['ground_truth']} "
                       f"tools={record['tool_calls']}{votes_suffix}")
+                if wb is not None:
+                    wb_total += 1
+                    wb_correct += bool(record["correct"])
+                    wb.log({
+                        "question/correct": int(record["correct"]),
+                        "question/tool_calls": record["tool_calls"],
+                        "question/uid": int(record["uid"]),
+                        "cumulative/answered": wb_total,
+                        "cumulative/accuracy": wb_correct / wb_total,
+                        "video": record["video"],
+                        "predicted": record["predicted"],
+                        "ground_truth": record["ground_truth"],
+                        "question_types": ",".join(record["question_types"]),
+                    }, step=wb_total)
 
             if args.parallel > 1:
                 from concurrent.futures import ThreadPoolExecutor
@@ -353,6 +394,10 @@ def main():
                 break
 
     print_accuracy(all_results)
+    if wb is not None:
+        wb.summary["overall/answered"] = wb_total
+        wb.summary["overall/accuracy"] = (wb_correct / wb_total) if wb_total else 0.0
+        wb.finish()
 
 
 if __name__ == "__main__":

@@ -134,6 +134,13 @@ class DVDCompatTools:
         # window misses repeated events (4 knocks in 40s ≈ 0.25 fps saw 1).
         # Dense mode therefore walks the window in consecutive chunks, counts
         # per chunk, and fuses the per-chunk reports.
+        # Only genuine counting questions take the multi-pass path: the model
+        # also picks "dense" for why/what questions, and a count-oriented fuse
+        # over speculative segment reports is poison there.
+        counting = bool(_COUNT_RE.search(question)
+                        or (self.current_mcq and _COUNT_RE.search(self.current_mcq)))
+        if density == "dense" and not counting:
+            density = "event"
         if density == "dense" and len(time_ranges) == 1:
             t0, t1 = to_seconds(time_ranges[0][0]), to_seconds(time_ranges[0][1])
             if t1 <= t0:
@@ -180,7 +187,11 @@ class DVDCompatTools:
                   "\n\nFirst describe what the frames actually show, then state "
                   "which option the VISUAL EVIDENCE best supports and why. Judge "
                   "only from the frames and the provided dialogue/text — note "
-                  "explicitly if the frames match no option well.")
+                  "explicitly if the frames match no option well.\n"
+                  "IMPORTANT: if the question asks WHY something happens (motivation, "
+                  "reason, cause), frames alone usually cannot decide it. In that "
+                  "case do NOT pick an option — say 'the frames cannot decide this; "
+                  "rely on the dialogue' and only report what is visually observable.")
         answer = self.llm.complete_with_images(
             question=q, image_urls=[u for _, u in frames], context=context)
 

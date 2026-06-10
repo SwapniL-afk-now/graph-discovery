@@ -233,6 +233,14 @@ class GVDAgent:
             sections.append(grab(
                 f"read_moment({fmt(t0)}, {fmt(t1)}) — the referenced window ±30s",
                 self.toolkit.read_moment, fmt(t0), fmt(t1)))
+            # read_moment's cap is often consumed by scene/clip structure; the
+            # dialogue is the answer for most why/who questions, so guarantee
+            # it survives with its own section (wider window: speech that
+            # explains a moment often comes a little before or after it).
+            sections.append(grab(
+                f"query_nodes(SpeechNode, {fmt(max(0, t0 - 60))}, {fmt(t1 + 60)}) — all dialogue around the window",
+                self.toolkit.query_nodes, "SpeechNode",
+                fmt(max(0, t0 - 60)), fmt(t1 + 60)))
 
         plain_q = self._TIME_REF_RE.sub("", question).split("\n\n")[0].strip()
         sections.append(grab(
