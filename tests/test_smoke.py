@@ -56,29 +56,29 @@ def main():
     g = build_demo_graph()
     tk = VKGToolkit(g)
 
-    print("=" * 70, "\nvkg_overview\n", "=" * 70)
-    print(tk.vkg_overview())
+    print("=" * 70, "\nget_overview\n", "=" * 70)
+    print(tk.get_overview())
 
-    print("=" * 70, "\nvkg_search('man leaves house')\n", "=" * 70)
-    print(tk.vkg_search("man leaves house"))
+    print("=" * 70, "\nsearch_events('man leaves house')\n", "=" * 70)
+    print(tk.search_events("man leaves house"))
 
-    print("=" * 70, "\nvkg_query(SpeechNode)\n", "=" * 70)
-    print(tk.vkg_query("SpeechNode"))
+    print("=" * 70, "\nquery_nodes(SpeechNode)\n", "=" * 70)
+    print(tk.query_nodes("SpeechNode"))
 
-    print("=" * 70, "\nvkg_traverse(ev_2, CAUSAL)\n", "=" * 70)
-    print(tk.vkg_traverse("ev_2", "CAUSAL", hops=2))
+    print("=" * 70, "\nfollow_connections(ev_2, causal)\n", "=" * 70)
+    print(tk.follow_connections("ev_2", "causal", hops=2))
 
-    print("=" * 70, "\nvkg_causal(ev_3, why)\n", "=" * 70)
-    print(tk.vkg_causal("ev_3", direction="why"))
+    print("=" * 70, "\ntrace_causes(ev_3, why)\n", "=" * 70)
+    print(tk.trace_causes("ev_3", direction="why"))
 
-    print("=" * 70, "\nvkg_entity('the man')\n", "=" * 70)
-    print(tk.vkg_entity("the man"))
+    print("=" * 70, "\nfind_entity('the man')\n", "=" * 70)
+    print(tk.find_entity("the man"))
 
-    print("=" * 70, "\nvkg_window(0:00:25, 0:01:00)\n", "=" * 70)
-    print(tk.vkg_window("00:00:25", "00:01:00"))
+    print("=" * 70, "\nread_moment(0:00:25, 0:01:00)\n", "=" * 70)
+    print(tk.read_moment("00:00:25", "00:01:00"))
 
-    print("=" * 70, "\nvkg_infer_causal without LLM (graceful)\n", "=" * 70)
-    print(tk.vkg_infer_causal("0", "300"))
+    print("=" * 70, "\nexplain_why without LLM (graceful)\n", "=" * 70)
+    print(tk.explain_why("0", "300"))
 
     # Schema generation over every tool (what the agent sends to the API).
     from gvd.func_schema import as_json_schema
@@ -97,8 +97,7 @@ def main():
     json.dumps(schemas)  # must be serializable
 
     # clip_search + frame_inspect graceful no-video path
-    print(dvd_tools.clip_search_tool("argument in kitchen")[:300])
-    print(dvd_tools.frame_inspect_tool([["00:00:30", "00:00:45"]], "test?")[:200])
+    print(dvd_tools.inspect_frames([["00:00:30", "00:00:45"]], "test?")[:200])
 
     # Round-trip save/load
     tmp = "/tmp/gvd_demo_graph.json"

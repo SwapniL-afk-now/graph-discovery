@@ -54,10 +54,10 @@ class FakeEngine:
     """Returns scripted constrained-JSON actions like the real engine would."""
 
     script = [
-        {"thought": "I should orient first.", "tool": "vkg_overview", "arguments": {}},
-        {"thought": "Find the leaving event.", "tool": "vkg_search",
+        {"thought": "I should orient first.", "tool": "get_overview", "arguments": {}},
+        {"thought": "Find the leaving event.", "tool": "search_events",
          "arguments": {"query": "man leaves house suitcase"}},
-        {"thought": "Trace why ev_3 happened.", "tool": "vkg_causal",
+        {"thought": "Trace why ev_3 happened.", "tool": "trace_causes",
          "arguments": {"node_id": "ev_3", "direction": "why"}},
         {"thought": "Evidence is sufficient.", "tool": "finish",
          "arguments": {"answer": "He left because the argument over unpaid bills escalated."}},
@@ -98,15 +98,15 @@ def main():
         {"role": "user", "content": "Q"},
         {"role": "assistant", "content": "thinking",
          "tool_calls": [{"id": "c1", "type": "function",
-                         "function": {"name": "vkg_search", "arguments": '{"query": "x"}'}}]},
-        {"role": "tool", "name": "vkg_search", "content": "RESULT"},
+                         "function": {"name": "search_events", "arguments": '{"query": "x"}'}}]},
+        {"role": "tool", "name": "search_events", "content": "RESULT"},
         {"role": "user", "content": "follow-up"},
     ]
     conv = _convert_messages(msgs, catalog="CATALOG")
     assert conv[0]["role"] == "system" and "CATALOG" in conv[0]["content"]
-    assert conv[2]["role"] == "assistant" and "vkg_search" in conv[2]["content"]
+    assert conv[2]["role"] == "assistant" and "search_events" in conv[2]["content"]
     # tool observation + following user turn merged into one user message
-    assert conv[3]["role"] == "user" and "Observation from vkg_search" in conv[3]["content"]
+    assert conv[3]["role"] == "user" and "Observation from search_events" in conv[3]["content"]
     assert "follow-up" in conv[3]["content"]
     assert len(conv) == 4
     print("message conversion OK")
@@ -119,19 +119,20 @@ def main():
 
     assert "unpaid bills" in answer, answer
     tool_names = [m["name"] for m in transcript if m.get("role") == "tool"]
-    assert tool_names == ["vkg_overview", "vkg_search", "vkg_causal"], tool_names
+    assert tool_names == ["get_overview", "search_events", "trace_causes"], tool_names
 
     # The constrained schema sent to the engine covers all 12 tools.
     so = engine.seen_sampling[0].kw["structured_outputs"]
     tool_consts = [b["properties"]["tool"]["const"] for b in so.json["anyOf"]]
-    assert "finish" in tool_consts and "vkg_causal" in tool_consts \
-        and "frame_inspect_tool" in tool_consts, tool_consts
+    assert "finish" in tool_consts and "trace_causes" in tool_consts \
+        and "inspect_frames" in tool_consts, tool_consts
     print(f"agent loop OK — answer: {answer!r}")
     print(f"constrained schema covers {len(tool_consts)} tools: {', '.join(tool_consts)}")
 
     # Observations were folded into user turns for the next engine call.
-    last_msgs = engine.seen_messages[-1]
-    assert any(m["role"] == "user" and "Observation from vkg_causal" in m["content"]
+    # Use the penultimate batch (last may be _ensure_letter coercion).
+    last_msgs = engine.seen_messages[-2] if len(engine.seen_messages) > 1 else engine.seen_messages[-1]
+    assert any(m["role"] == "user" and "Observation from trace_causes" in m["content"]
                for m in last_msgs)
     print("observation feedback OK")
 

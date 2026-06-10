@@ -7,14 +7,14 @@ footer suggesting concrete follow-up calls.
 
 Tool map (mirrors `draft_plan.txt` / `current_vs_desired_framework.md`):
 
-  vkg_overview      — hierarchy + characters: the structured global_browse
-  vkg_search        — dual-index semantic search (FAISS) with lexical fallback
-  vkg_query         — structured access by type / time / label
-  vkg_traverse      — follow one edge family from a node
-  vkg_causal        — causal chain traversal (why / what happened next)
-  vkg_entity        — character & object timelines (identity tracking)
-  vkg_window        — everything in a time window, grouped by modality
-  vkg_infer_causal  — on-the-fly causal edge inference, cached into the graph
+  get_overview      — hierarchy + characters: the structured global_browse
+  search_events        — dual-index semantic search (FAISS) with lexical fallback
+  query_nodes         — structured access by type / time / label
+  follow_connections      — follow one edge family from a node
+  trace_causes        — causal chain traversal (why / what happened next)
+  find_entity        — character & object timelines (identity tracking)
+  read_moment        — everything in a time window, grouped by modality
+  explain_why  — on-the-fly causal edge inference, cached into the graph
 
 NOTE: no `from __future__ import annotations` here — DVD's schema generator
 needs real (non-string) Annotated annotations on tool signatures.
@@ -35,10 +35,10 @@ from .timeutil import fmt, fmt_span, to_seconds
 _EVENT_TYPES = {"ActionNode", "InteractionNode", "StateChangeNode",
                 "SpeechNode", "OCRNode", "AudioEventNode"}
 
-_RELATION_HELP = ("one of: CAUSAL (why/effect), ENTITY (same person/object), "
-                  "SPEAKER (who said it), TEMPORAL (before/after/during), "
-                  "EMOTION (emotional shifts), SIMILAR (semantically related), "
-                  "CONTAINS (hierarchy: episode→scene→clip)")
+_RELATION_HELP = ("one of: causal (why/effect), entity (same person/object), "
+                  "speaker (who said it), temporal (before/after/during), "
+                  "emotion (emotional shifts), similar (semantically related), "
+                  "contains (hierarchy: episode→scene→clip)")
 
 
 class VKGToolkit:
@@ -58,7 +58,43 @@ class VKGToolkit:
         self.llm_complete = llm_complete
         self.inferred_edges_path = inferred_edges_path
         self._search_history: list[tuple[str, str]] = []
+        self._obs_counter = 0
         self._load_cached_inferred_edges()
+
+    # ------------------------------------------------------------------ #
+    # Graph enrichment: write on-demand inspection results back as nodes
+    # ------------------------------------------------------------------ #
+
+    def write_observation(self, t0: float, t1: float, caption: str,
+                          source: str, confidence: float = 0.5,
+                          extra: Optional[dict] = None) -> str:
+        """Persist an on-demand inspection/detection as an ObservationNode.
+
+        The graph is built offline and sparse; every close look the agent takes
+        is higher-fidelity than the build-time caption. Writing it back makes
+        that detail retrievable by later queries (read_moment finds it by time,
+        search_events's lexical branch by text) instead of re-paying the vision
+        model. Tagged low-confidence with provenance so retrieval can flag it as
+        inspected-not-verified."""
+        from qvkg.schema import VKGNode
+        caption = " ".join((caption or "").split())[:300]
+        if not caption:
+            return ""
+        self._obs_counter += 1
+        nid = f"obs_{self._obs_counter:04d}"
+        meta = {"source": source, "provenance": "on_demand_inspection"}
+        if extra:
+            meta.update(extra)
+        self.graph.add_node(VKGNode(
+            id=nid, node_type="ObservationNode", label=caption, level=0,
+            t_start=float(t0), t_end=float(t1), confidence=confidence,
+            metadata=meta))
+        return nid
+
+    def prior_observations(self, t0: float, t1: float):
+        """ObservationNodes already written for an overlapping window."""
+        return [n for n in self.graph.get_nodes_in_window(t0, t1, buffer_sec=1.0)
+                if n.node_type == "ObservationNode"]
 
     # ------------------------------------------------------------------ #
     # Internal helpers
@@ -147,7 +183,7 @@ class VKGToolkit:
     # Tools (model-visible)
     # ------------------------------------------------------------------ #
 
-    def vkg_overview(self) -> str:
+    def get_overview(self) -> str:
         """
         Get the structured overview of the video: episode → scene hierarchy with
         time spans and summaries, plus the registry of tracked characters/entities.
@@ -191,12 +227,12 @@ class VKGToolkit:
                      f"node types: {', '.join(sorted(g.type_idx.keys()))}")
         lines.append("")
         lines.append("— What you can do next —")
-        lines.append('• locate question-relevant events: vkg_search(query="...")')
-        lines.append('• read one scene/episode closely: vkg_window(time_start, time_end)')
-        lines.append('• follow a character through the video: vkg_entity(name="...")')
+        lines.append('• locate question-relevant events: search_events(query="...")')
+        lines.append('• read one scene/episode closely: read_moment(time_start, time_end)')
+        lines.append('• follow a character through the video: find_entity(name="...")')
         return "\n".join(lines)
 
-    def vkg_search(
+    def search_events(
         self,
         query: A[str, D("Natural-language description of the event, object, speech, or detail to find.")],
         top_k: A[int, D("Max results to return. Default 10.")] = 10,
@@ -206,7 +242,7 @@ class VKGToolkit:
         Semantic search over ALL nodes of the video knowledge graph (events, speech,
         on-screen text, objects, scenes). Returns matching nodes with their ids,
         timestamps, and the edges available from each — use those ids with
-        vkg_traverse / vkg_causal / vkg_entity to follow the structure.
+        follow_connections / trace_causes / find_entity to follow the structure.
         """
         g = self.graph
         present_types = set(g.type_idx.keys())
@@ -226,11 +262,11 @@ class VKGToolkit:
                 "Re-running search with the same or a shorter query will not return "
                 "anything new. CHANGE STRATEGY:\n"
                 "• If you know the time (e.g. a [Time reference]) → "
-                'vkg_window(time_start="...", time_end="...") to read everything there.\n'
+                'read_moment(time_start="...", time_end="...") to read everything there.\n'
                 "• To enumerate a category exhaustively → "
-                'vkg_query(node_type="SpeechNode"/"OCRNode"/"ActionNode", time_start, time_end).\n'
+                'query_nodes(node_type="SpeechNode"/"OCRNode"/"ActionNode", time_start, time_end).\n'
                 "• For a fine visual detail (count, color, pose, on-screen text) → "
-                "frame_inspect_tool on the time range. The graph localises; the frames "
+                "inspect_frames on the time range. The graph localises; the frames "
                 "give the visual answer.")
 
         # --- 2. Validate / clean the node_types filter. --------------------
@@ -273,7 +309,7 @@ class VKGToolkit:
             title=f'Search results for "{query}" [{mode}]',
         ) + note
 
-    def vkg_query(
+    def query_nodes(
         self,
         node_type: A[str, D("Node type to fetch: SceneNode, EpisodeNode, ClipNode, ActionNode, InteractionNode, StateChangeNode, SpeechNode, OCRNode, AudioEventNode, CharacterNode, ObjectNode — or 'any'.")],
         time_start: A[str, D("Optional window start as HH:MM:SS or seconds. Empty = video start.")] = "",
@@ -315,23 +351,24 @@ class VKGToolkit:
             max_nodes=40,
         )
 
-    def vkg_traverse(
+    def follow_connections(
         self,
         node_id: A[str, D("The id of the node to start from (as returned by other vkg tools, e.g. 'ev_12').")],
         relation: A[str, D(_RELATION_HELP)],
         hops: A[int, D("How many hops to expand (1-3). Default 1.")] = 1,
     ) -> str:
         """
-        Follow one family of typed edges outward from a node (both directions) and
-        return the reached neighbourhood. This is how you do multi-hop reasoning:
-        find a seed node with vkg_search, then traverse CAUSAL / ENTITY / TEMPORAL /
-        SPEAKER / CONTAINS edges to collect connected evidence.
+        Follow typed edges from a node to discover connected evidence. USE THIS for:
+        "what happens before/after X" → relation="temporal"
+        "who said what to whom" → relation="speaker"
+        "what caused this" → relation="causal"
+        "what else involves this character" → relation="entity"
         """
         node = self._resolve_node(node_id)
         if node is None:
             return (f"Node {node_id!r} not found. Use the exact parenthesized id from a "
-                    "previous observation, e.g. vkg_traverse(node_id=\"ev_12\", ...).")
-        rel = relation.upper().strip()
+                    "previous observation, e.g. follow_connections(node_id=\"ev_12\", ...).")
+        rel = relation.lower().strip()
         if rel not in graph_ops.RELATION_EDGE_TYPES:
             return f"Unknown relation {relation!r}. Valid: {', '.join(graph_ops.VALID_RELATIONS)}."
 
@@ -351,24 +388,26 @@ class VKGToolkit:
         header = (f"Traversal from ({node.id}) \"{node.label[:60]}\" via {rel} "
                   f"({len(all_edges)} edges):")
         body = serialize_nodes(self.graph, nodes, title=header)
-        if rel == "CAUSAL" and all_edges:
+        if rel == "causal" and all_edges:
             body = serialize_chain(self.graph, all_edges, "Causal links traversed:") + "\n\n" + body
-        if not all_edges and rel == "CAUSAL":
+        if not all_edges and rel == "causal":
             body += ("\nNo pre-computed causal edges here — try "
-                     f'vkg_infer_causal(time_start="{fmt(node.t_start - 60)}", '
+                     f'explain_why(time_start="{fmt(node.t_start - 60)}", '
                      f'time_end="{fmt(node.t_end + 60)}") to infer them on the fly.')
         return body
 
-    def vkg_causal(
+    def trace_causes(
         self,
         node_id: A[str, D("Id of the event node to explain (e.g. 'ev_12').")],
         direction: A[str, D("'why' = trace causes backward, 'effect' = trace consequences forward, 'both' = both.")] = "both",
         depth: A[int, D("Max chain length to follow (1-5). Default 3.")] = 3,
     ) -> str:
         """
-        Trace the causal chain through CAUSES / ENABLES / PREVENTS / MOTIVATES edges.
-        Use 'why' for "Why did X happen?" questions (walks backward to root causes)
-        and 'effect' for "What happened because of X?" (walks forward to outcomes).
+        Answer WHY questions by tracing the causal chain. Walks backward from an
+        event to find root causes (why it happened) and forward to find consequences
+        (what it led to). USE THIS for: "why did X happen", "what caused X",
+        "what is the reason". First find the event with search_events or
+        read_moment, then call this on its node id.
         """
         node = self._resolve_node(node_id)
         if node is None:
@@ -421,15 +460,16 @@ class VKGToolkit:
             out += "\n" + affordance_footer(self.graph, endpoints)
         return out
 
-    def vkg_entity(
+    def find_entity(
         self,
-        name: A[str, D("Character/object name, an entity id (e.g. 'entity_3'), or a node id of a CharacterNode/ObjectNode.")],
+        name: A[str, D("A person or character name (e.g. 'the protagonist', 'the man'), an entity id (e.g. 'entity_3'), or a node id of a CharacterNode/ObjectNode.")],
     ) -> str:
         """
-        Track one character or object across the whole video: every appearance in
-        chronological order, plus what they do (PERFORMS), who they interact with
-        (INTERACTS_WITH), and what they say (SPOKEN_BY). Answers "what did X do
-        after/before ...", "how many times does X appear", "who is X".
+        Track one person or character across the whole video: every appearance in
+        chronological order, plus what they do, who they interact with, and what
+        they say. USE THIS when the question asks about a specific person:
+        "what did the protagonist do", "what does the man say", "who is X",
+        "how many times does X appear".
         """
         g = self.graph
         key = name.strip()
@@ -453,7 +493,7 @@ class VKGToolkit:
         if entity_id is None:
             known = sorted(g.entity_idx.keys())[:30]
             return (f"No entity matching {name!r}. Known entity ids: {', '.join(known) or '(none)'}. "
-                    "Try vkg_overview to see the character registry, or vkg_search for the description.")
+                    "Try get_overview to see the character registry, or search_events for the description.")
 
         appearances = graph_ops.trace_entity(g, entity_id)
         lines = [f"ENTITY TIMELINE for {entity_id} — {len(appearances)} appearances:"]
@@ -473,7 +513,7 @@ class VKGToolkit:
         body += "\n" + affordance_footer(g, appearances)
         return body
 
-    def vkg_window(
+    def read_moment(
         self,
         time_start: A[str, D("Window start as HH:MM:SS or seconds.")],
         time_end: A[str, D("Window end as HH:MM:SS or seconds.")],
@@ -495,6 +535,8 @@ class VKGToolkit:
             "On-screen text (OCR)": [n for n in nodes if n.node_type == "OCRNode"],
             "Audio events": [n for n in nodes if n.node_type == "AudioEventNode"],
             "Entities present": [n for n in nodes if n.node_type in ("CharacterNode", "ObjectNode")],
+            "Prior inspections (on-demand, lower confidence)":
+                [n for n in nodes if n.node_type == "ObservationNode"],
         }
         out = [f"WINDOW {fmt_span(t0, t1)} — {len(nodes)} nodes"]
         for gname, gnodes in groups.items():
@@ -509,20 +551,20 @@ class VKGToolkit:
         out.append(affordance_footer(self.graph, evented or nodes))
         return "\n".join(out)
 
-    def vkg_infer_causal(
+    def explain_why(
         self,
         time_start: A[str, D("Window start as HH:MM:SS or seconds.")],
         time_end: A[str, D("Window end as HH:MM:SS or seconds.")],
     ) -> str:
         """
-        Infer causal edges ON THE FLY between events in a time window where the
-        pre-computed graph has none, then cache them into the graph for the rest
-        of the session. Use when vkg_causal/vkg_traverse(CAUSAL) reports no causal
-        edges but the question is a why/how question.
+        Answer WHY questions when the graph has no pre-computed causal edges. Infers
+        causal links between events in the time window using the LLM, then caches
+        them for future use. USE THIS for: "why did X happen", "what caused this",
+        "what is the reason" — when trace_causes returns no causal edges.
         """
         if self.llm_complete is None:
             return ("Edge inference LLM is not configured for this session. "
-                    "Fall back to vkg_window on the same span and reason over "
+                    "Fall back to read_moment on the same span and reason over "
                     "temporal order yourself.")
         import json
 
@@ -573,14 +615,14 @@ class VKGToolkit:
                               f"Inferred {len(new_edges)} causal edge(s) in {fmt_span(t0, t1)} "
                               "(now cached in the graph):")
         out += ("\n\nThese edges are now traversable — "
-                "vkg_causal on any of the linked node ids will include them. "
-                "Inferred edges carry model confidence; CONFIRM important ones with frame_inspect_tool.")
+                "trace_causes on any of the linked node ids will include them. "
+                "Inferred edges carry model confidence; CONFIRM important ones with inspect_frames.")
         return out
 
     # All tools, in registration order.
     def tools(self):
         return [
-            self.vkg_overview, self.vkg_search, self.vkg_query,
-            self.vkg_traverse, self.vkg_causal, self.vkg_entity,
-            self.vkg_window, self.vkg_infer_causal,
+            self.get_overview, self.search_events, self.query_nodes,
+            self.follow_connections, self.trace_causes, self.find_entity,
+            self.read_moment, self.explain_why,
         ]

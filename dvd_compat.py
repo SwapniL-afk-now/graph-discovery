@@ -10,138 +10,348 @@ real Annotated annotations for DVD's schema generator.
 """
 
 import json
+import re
 from typing import Annotated as A
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from .llm import LLMClient
 from .timeutil import fmt, to_seconds
 from .vkg_tools import D, VKGToolkit
 
-MAX_INSPECT_FRAMES = 24
+# The vision engine accepts at most ~10 images per prompt, so density comes
+# from running MULTIPLE passes of this many frames each, not one giant prompt.
+FRAMES_PER_PASS = 8
+MAX_PASSES = 5                 # cap total VLM vision calls per inspection
+_COUNT_RE = re.compile(r"\b(how many|how often|number of|count|times|how much)\b", re.I)
 
 
 class DVDCompatTools:
     def __init__(self, toolkit: VKGToolkit, llm: LLMClient,
-                 video_path: Optional[str] = None):
+                 video_path: Optional[str] = None, detector=None,
+                 enable_detector: bool = True):
         self.toolkit = toolkit
         self.llm = llm
         self.video_path = video_path
+        self._detector = detector          # lazily built on first object_count call
+        self._enable_detector = enable_detector
+        # The full MCQ being answered (set by the agent per run). The VLM maps
+        # visual evidence onto the options far better than the small
+        # orchestrator maps a free-text description onto them afterwards.
+        self.current_mcq: Optional[str] = None
+
+
 
     # ------------------------------------------------------------------ #
+    # Adaptive frame extraction
+    # ------------------------------------------------------------------ #
 
-    def clip_search_tool(
+    def _grab_frames(self, t0: float, t1: float, density: str) -> List[Tuple[float, str]]:
+        """Return [(timestamp, b64_url)] for one window at the chosen density.
+
+        density 'dense'  → many frames, motion-blind (see every instant: counts,
+                           rapid actions like knocks/strikes).
+        density 'event'  → motion-ranked keyframes (the moments where things
+                           change — best for "what happens" over a longer span).
+        density 'detail' → a handful of evenly-spaced frames (one moment, a pose,
+                           on-screen text, a color).
+        """
+        from qvkg.query.frame_extractor import (extract_frames_for_window,
+                                                frames_to_b64_urls)
+        span = max(0.0, t1 - t0)
+        if density == "dense":
+            cap = min(FRAMES_PER_PASS * MAX_PASSES, max(8, int(span * 3)))
+            frames = extract_frames_for_window(self.video_path, t0, t1, max_frames=cap)
+        elif density == "event":
+            cap = FRAMES_PER_PASS * min(MAX_PASSES, 3)
+            frames = extract_frames_for_window(self.video_path, t0, t1,
+                                               max_frames=cap, motion_rank=span > 20)
+        else:  # detail
+            frames = extract_frames_for_window(self.video_path, t0, t1, max_frames=FRAMES_PER_PASS)
+        frames = [f for f in frames if f.image is not None]
+        urls = frames_to_b64_urls(frames)
+        return list(zip((f.timestamp for f in frames), urls))
+
+    def _window_multimodal_context(self, time_ranges) -> str:
+        """Dialogue (speech), on-screen text (OCR) and action notes the graph
+        holds for these windows — folded into every inspection so visual,
+        spoken and textual evidence are fused, not siloed."""
+        g = self.toolkit.graph
+        speech, ocr, action = [], [], []
+        for rng in time_ranges:
+            t0, t1 = to_seconds(rng[0]), to_seconds(rng[1])
+            for n in sorted(g.get_nodes_in_window(t0, t1, buffer_sec=2.0),
+                            key=lambda n: n.t_start):
+                line = f"[{fmt(n.t_start)}] {n.label}"
+                if n.node_type == "SpeechNode":
+                    speech.append(line)
+                elif n.node_type == "OCRNode":
+                    ocr.append(line)
+                elif n.node_type in ("ActionNode", "InteractionNode", "StateChangeNode"):
+                    action.append(line)
+        parts = []
+        if speech:
+            parts.append("DIALOGUE spoken in this window (transcript):\n" + "\n".join(speech[:15]))
+        if ocr:
+            parts.append("ON-SCREEN TEXT (OCR) in this window:\n" + "\n".join(ocr[:10]))
+        if action:
+            parts.append("Action notes from the graph:\n" + "\n".join(action[:10]))
+        return "\n\n".join(parts)
+
+    def inspect_frames(
         self,
-        event_description: A[str, D("A textual description of the event to search for.")],
-        top_k: A[int, D("The maximum number of top results to retrieve. Just use the default value.")] = 16,
-    ) -> str:
-        """
-        Searches the video for clips matching an event description and returns the
-        top-k most relevant clip/scene captions in chronological order (classic DVD
-        flat retrieval). For typed access with traversable node ids, prefer vkg_search.
-        """
-        tk = self.toolkit
-        if tk.faiss_index is not None and tk.text_encoder is not None:
-            hits = tk._semantic_search(event_description, top_k * 3)
-        else:
-            hits = tk._lexical_search(event_description, top_k * 3)
-        clips = [n for n in hits
-                 if n.node_type in ("ClipNode", "SceneNode")][:top_k]
-        if not clips:
-            clips = hits[:top_k]
-        clips.sort(key=lambda n: n.t_start)
-        lines = [f"[{fmt(n.t_start)} - {fmt(n.t_end)}] {n.label} (node {n.id})"
-                 for n in clips]
-        return ("Here is the searched video clip scripts:\n\n" + "\n".join(lines)
-                + "\n\n(Tip: pass any node id above to vkg_traverse / vkg_causal "
-                  "to follow its edges, or frame_inspect_tool on its time range.)")
-
-    def global_browse_tool(
-        self,
-        query: A[str, D("A textual description or question used to browse the whole video for relevant content.")],
-    ) -> str:
-        """
-        Analyzes the whole video to answer a broad question: retrieves the most
-        relevant clip captions plus the graph's character registry, then synthesizes
-        a global answer. For raw structure without synthesis, use vkg_overview.
-        """
-        tk = self.toolkit
-        if tk.faiss_index is not None and tk.text_encoder is not None:
-            hits = tk._semantic_search(query, 60)
-        else:
-            hits = tk._lexical_search(query, 60)
-        hits.sort(key=lambda n: n.t_start)
-        captions = "\n".join(
-            f"[{fmt(n.t_start)}] {n.label}" for n in hits)
-
-        registry = {}
-        for c in tk.graph.get_all_character_mentions():
-            key = c.entity_id or c.id
-            registry.setdefault(key, c.canonical_description or c.label)
-
-        answer = self.llm.complete([
-            {"role": "system",
-             "content": "You are a knowledgeable assistant specializing in analyzing video content and providing detailed, insightful answers."},
-            {"role": "user",
-             "content": ("Below are descriptions of video clips with timestamps. "
-                         "Carefully review the sequence of events, object details and movements, "
-                         "and people's actions and poses, then answer the question, "
-                         "referencing key events and timestamps.\n"
-                         f"Question: {query}\n\n{captions}")},
-        ])
-        return json.dumps({"subject_registry": registry,
-                           "query_related_event": answer})
-
-    def frame_inspect_tool(
-        self,
-        time_ranges: A[List[List[str]], D("List of [start, end] time ranges to inspect, each as 'HH:MM:SS' strings, e.g. [[\"00:14:10\", \"00:14:25\"]]. Keep ranges short (<60s each).")],
+        time_ranges: A[List[List[str]], D("List of [start, end] time ranges to inspect, each as 'HH:MM:SS' strings, e.g. [[\"00:14:10\", \"00:14:25\"]].")],
         question: A[str, D("The specific visual question to answer from the frames, e.g. 'What color is the car?'")],
+        sampling: A[str, D("Frame selection: 'auto' (recommended), 'dense' (COUNTING repeated events: knocks, hits, strikes — sees every instant), 'event' (what unfolds over a longer span — motion keyframes), or 'detail' (one moment: pose, color, sign).")] = "auto",
     ) -> str:
         """
-        Extracts real frames from the raw video in the given time ranges and asks a
-        vision model the question — the ground-truth visual check. Use it to verify
-        details the graph cannot capture (colors, counts, poses, on-screen text) and
-        to CONFIRM answers before finishing. Localize with graph tools first.
+        Inspect the raw video: selects up to 10 real frames at an adaptive density,
+        tags each with its timestamp, and asks the vision model the question in ONE
+        pass — with the window's dialogue (speech) and on-screen text (OCR) from the
+        graph folded into the same prompt.
+        USE THIS FOR:
+          • "how many times did X knock/hit/strike" → sampling="dense"
+          • "what does X see through the window" → sampling="auto"
+          • "what color is X", "what is X wearing" → sampling="detail"
+          • "what happens during X" → sampling="event"
+        For COUNTING how many people/objects are PRESENT (not events over time),
+        use count_objects instead — a real detector counts better than the eye.
         """
         if not self.video_path:
             return ("No raw video file is configured for this session, so frames "
-                    "cannot be inspected. Rely on graph evidence: vkg_window over "
+                    "cannot be inspected. Rely on graph evidence: read_moment over "
                     "the same time ranges gives the densest available detail.")
-        from qvkg.query.frame_extractor import (extract_frames_for_window,
-                                                frames_to_b64_urls)
 
-        budget = max(2, MAX_INSPECT_FRAMES // max(1, len(time_ranges)))
-        urls: List[str] = []
+        # Adaptive density, but always a SINGLE 10-frame pass — splitting an
+        # event across batches and re-fusing the summaries loses coherence and
+        # measurably hurt accuracy, so the model sees the moment whole.
+        total_span = sum(max(0.0, to_seconds(r[1]) - to_seconds(r[0])) for r in time_ranges)
+        if sampling == "auto":
+            density = "event" if total_span > 45 else "detail"
+        else:
+            density = sampling if sampling in ("dense", "event", "detail") else "detail"
+
+        # COUNTING needs to see every instant: one 10-frame pass over a long
+        # window misses repeated events (4 knocks in 40s ≈ 0.25 fps saw 1).
+        # Dense mode therefore walks the window in consecutive chunks, counts
+        # per chunk, and fuses the per-chunk reports.
+        if density == "dense" and len(time_ranges) == 1:
+            t0, t1 = to_seconds(time_ranges[0][0]), to_seconds(time_ranges[0][1])
+            if t1 <= t0:
+                t1 = t0 + 10.0
+            if t1 - t0 > 4.0:   # tiny windows: the single pass is already dense
+                return self._dense_count_inspect(t0, t1, question)
+
+        frames: List[Tuple[float, str]] = []
         spans: List[str] = []
+        per_range = max(2, 10 // max(1, len(time_ranges)))
         for rng in time_ranges:
             t0, t1 = to_seconds(rng[0]), to_seconds(rng[1])
             if t1 <= t0:
                 t1 = t0 + 10.0
-            frames = extract_frames_for_window(
-                self.video_path, t0, t1, max_frames=budget)
-            urls.extend(frames_to_b64_urls(frames))
+            grabbed = self._grab_frames(t0, t1, density)
+            # cap per-range so the combined set stays within one prompt
+            if len(grabbed) > per_range:
+                step = len(grabbed) / per_range
+                grabbed = [grabbed[int(i * step)] for i in range(per_range)]
+            frames.extend(grabbed)
             spans.append(f"{fmt(t0)}–{fmt(t1)}")
-        if not urls:
-            return "Could not decode any frames in those ranges — check the timestamps against the video length."
+        frames.sort(key=lambda p: p[0])
+        if not frames:
+            return ("Could not decode any frames in those ranges — check the timestamps "
+                    "against the video length, or read the graph with read_moment instead.")
 
-        # Give the VLM the graph's notes for the same windows as context.
-        ctx_parts = []
-        for rng in time_ranges[:3]:
-            t0, t1 = to_seconds(rng[0]), to_seconds(rng[1])
-            nodes = self.toolkit.graph.get_nodes_in_window(t0, t1, buffer_sec=0.0)
-            labels = [f"[{fmt(n.t_start)}] {n.label}" for n in
-                      sorted(nodes, key=lambda n: n.t_start)[:10]]
-            if labels:
-                ctx_parts.append("\n".join(labels))
-        context = ("Context notes from the video's knowledge graph for these "
-                   "windows (may be incomplete):\n" + "\n".join(ctx_parts)) if ctx_parts else ""
+        tss = ", ".join(fmt(ts) for ts, _ in frames)
+        context = self._window_multimodal_context(time_ranges)
 
+        # Build on prior close looks at this window instead of repeating them.
+        t_lo = min(to_seconds(r[0]) for r in time_ranges)
+        t_hi = max(to_seconds(r[1]) for r in time_ranges)
+        priors = self.toolkit.prior_observations(t_lo, t_hi)
+        if priors:
+            pblock = "\n".join(f"[{fmt(n.t_start)}] {n.label}" for n in priors[:8])
+            context = (context + "\n\n" if context else "") + \
+                "Earlier inspections of this window (lower confidence):\n" + pblock
+
+        q = (f"The {len(frames)} frames are at timestamps (in order): {tss}.\n"
+             f"Question: {question}")
+        if self.current_mcq:
+            q += ("\n\nThis inspection serves the following multiple-choice "
+                  "question:\n" + self.current_mcq +
+                  "\n\nFirst describe what the frames actually show, then state "
+                  "which option the VISUAL EVIDENCE best supports and why. Judge "
+                  "only from the frames and the provided dialogue/text — note "
+                  "explicitly if the frames match no option well.")
         answer = self.llm.complete_with_images(
-            question=f"Frames are from time range(s): {', '.join(spans)}.\nQuestion: {question}",
-            image_urls=urls[:MAX_INSPECT_FRAMES],
-            context=context,
-        )
-        return f"Frame inspection over {', '.join(spans)} ({min(len(urls), MAX_INSPECT_FRAMES)} frames):\n{answer}"
+            question=q, image_urls=[u for _, u in frames], context=context)
+
+        # Write the look back into the graph as a neutral, reusable caption.
+        self._enrich_graph(t_lo, t_hi, question, answer, source="frame_inspection")
+
+        return (f"Frame inspection [{density}] over {', '.join(spans)} "
+                f"({len(frames)} frames"
+                f"{', fused with dialogue/OCR' if context else ''}"
+                f"{', informed by prior looks' if priors else ''}):\n{answer}")
+
+    def _dense_count_inspect(self, t0: float, t1: float, question: str) -> str:
+        """Walk [t0,t1] in consecutive chunks at true counting density.
+
+        Each chunk gets its own ≤FRAMES_PER_PASS-frame VLM pass (~3fps when the
+        budget allows), so no instant is skipped; the per-chunk reports are then
+        fused by a text pass that totals events across chunk boundaries."""
+        span = t1 - t0
+        n_chunks = min(MAX_PASSES, max(2, int(span * 3 / FRAMES_PER_PASS) + 1))
+        bounds = [t0 + span * i / n_chunks for i in range(n_chunks + 1)]
+        context = self._window_multimodal_context([[fmt(t0), fmt(t1)]])
+
+        reports = []
+        for c0, c1 in zip(bounds, bounds[1:]):
+            frames = self._grab_frames(c0, c1, "dense")
+            if len(frames) > FRAMES_PER_PASS:
+                step = len(frames) / FRAMES_PER_PASS
+                frames = [frames[int(i * step)] for i in range(FRAMES_PER_PASS)]
+            if not frames:
+                continue
+            tss = ", ".join(fmt(ts) for ts, _ in frames)
+            q = (f"These {len(frames)} consecutive frames cover {fmt(c0)}–{fmt(c1)} "
+                 f"(timestamps in order: {tss}).\n"
+                 f"Question (answer ONLY for this segment): {question}\n"
+                 "Report each occurrence of the relevant event with its timestamp; "
+                 "say 'none in this segment' if nothing happens.")
+            try:
+                ans = self.llm.complete_with_images(
+                    question=q, image_urls=[u for _, u in frames], context=context)
+            except Exception as exc:
+                ans = f"(inspection failed: {exc})"
+            reports.append(f"[segment {fmt(c0)}–{fmt(c1)}]\n{ans}")
+
+        if not reports:
+            return ("Could not decode any frames in that range — check the "
+                    "timestamps against the video length, or read the graph with "
+                    "read_moment instead.")
+
+        joined = "\n\n".join(reports)
+        mcq = (f"\n\nThe overall multiple-choice question:\n{self.current_mcq}"
+               if self.current_mcq else "")
+        fused = self.llm.complete([
+            {"role": "system", "content":
+             "You combine sequential video-segment reports into one answer. Sum "
+             "event counts across segments, but an event spanning a segment "
+             "boundary counts once."},
+            {"role": "user", "content":
+             f"Question: {question}{mcq}\n\nSegment reports (consecutive, "
+             f"non-overlapping, covering {fmt(t0)}–{fmt(t1)}):\n\n{joined}\n\n"
+             "Final answer to the question, with the total count:"}],
+            max_tokens=300)
+
+        self._enrich_graph(t0, t1, question, fused, source="frame_inspection")
+        return (f"Frame inspection [dense, {len(reports)} passes] over "
+                f"{fmt(t0)}–{fmt(t1)}"
+                f"{', fused with dialogue/OCR' if context else ''}:\n{fused}")
+
+    def _enrich_graph(self, t0: float, t1: float, question: str,
+                      answer: str, source: str) -> None:
+        """Distil an inspection answer into a neutral caption and store it as an
+        ObservationNode so later queries can retrieve it. Best-effort: a bad
+        distillation must never break the inspection that already succeeded."""
+        try:
+            caption = self.llm.complete([
+                {"role": "system", "content":
+                 "Rewrite the answer as ONE neutral, self-contained sentence "
+                 "describing what is in the video at this moment — no question, no "
+                 "'the answer is', just the observed fact. If the answer is "
+                 "uncertain or says nothing was found, reply with the single word "
+                 "NONE."},
+                {"role": "user", "content":
+                 f"Question: {question}\nAnswer: {answer}\n\nNeutral one-sentence "
+                 "description of what the video shows here:"}],
+                max_tokens=80).strip()
+            if caption and caption.upper() != "NONE" and len(caption) > 8:
+                self.toolkit.write_observation(t0, t1, caption, source=source,
+                                               confidence=0.5)
+        except Exception:
+            pass
+
+    # ------------------------------------------------------------------ #
+    # Grounded counting via a dedicated open-vocabulary detector
+    # ------------------------------------------------------------------ #
+
+    def _get_detector(self):
+        if self._detector is None:
+            from .detector import GroundingDinoDetector
+            self._detector = GroundingDinoDetector()
+        return self._detector
+
+    def count_objects(
+        self,
+        time_range: A[List[str], D("A single [start, end] time range as 'HH:MM:SS' strings, e.g. [\"00:24:06\", \"00:24:40\"]. Keep it tight around the moment to count.")],
+        object_phrase: A[str, D("What to count, as a short noun phrase the detector can ground, e.g. 'person', 'person carrying a sedan chair', 'lit candle', 'sword'. Be specific.")],
+        box_threshold: A[float, D("Detection confidence cutoff 0-1 (default 0.30). Lower it (e.g. 0.2) if you expect small/occluded instances; raise it if it over-counts.")] = 0.30,
+    ) -> str:
+        """
+        COUNT how many people or objects are PRESENT in a moment. Uses a real
+        object detector (bounding boxes) — far more reliable than eyeballing frames.
+        USE THIS FOR: "how many people carry the chair", "how many candles",
+        "how many soldiers are sitting". Reports per-frame counts + max visible.
+        For counting REPEATED EVENTS over time (how many times did she knock),
+        use inspect_frames with sampling="dense" instead.
+        """
+        if not self.video_path:
+            return "No raw video file configured — cannot run the detector."
+        if not self._enable_detector:
+            return ("Object detector is disabled this session. Count with "
+                    "inspect_frames(sampling=\"dense\") instead.")
+        t0, t1 = to_seconds(time_range[0]), to_seconds(time_range[1])
+        if t1 <= t0:
+            t1 = t0 + 6.0
+        from qvkg.query.frame_extractor import extract_frames_for_window
+        frames = [f for f in extract_frames_for_window(
+            self.video_path, t0, t1, max_frames=12) if f.image is not None]
+        if not frames:
+            return ("Could not decode frames in that range — check the timestamps "
+                    "or use inspect_frames.")
+        try:
+            det = self._get_detector()
+        except Exception as exc:
+            return (f"Object detector unavailable ({exc!s}). Fall back to "
+                    "inspect_frames(sampling=\"dense\") for counting.")
+
+        per_frame = []
+        best = (-1, None, [])  # (count, timestamp, dets)
+        for f in frames:
+            try:
+                dets = [d for d in det.detect(f.image, [object_phrase],
+                                              box_threshold=box_threshold)]
+            except Exception as exc:
+                return (f"Detection failed ({exc!s}). Fall back to "
+                        "inspect_frames(sampling=\"dense\").")
+            c = len(dets)
+            per_frame.append((f.timestamp, c))
+            if c > best[0]:
+                best = (c, f.timestamp, dets)
+
+        lines = [f"OBJECT-DETECTION COUNT of \"{object_phrase}\" over "
+                 f"{fmt(t0)}–{fmt(t1)} ({len(frames)} frames, threshold={box_threshold}):"]
+        lines.append("Per-frame instance counts: "
+                     + ", ".join(f"{fmt(ts)}={c}" for ts, c in per_frame))
+        lines.append(f"\nMost instances simultaneously visible: {best[0]} "
+                     f"(at {fmt(best[1])}).")
+        if best[2]:
+            confs = ", ".join(f"{d['score']:.2f}" for d in best[2])
+            lines.append(f"Detection confidences at that frame: {confs}")
+        lines.append("\nFor 'how many X are present', the answer is the maximum "
+                     "simultaneous count above. If counts vary a lot across frames, "
+                     "verify the busiest frame with inspect_frames.")
+
+        # Persist the count back into the graph for reuse.
+        if best[0] >= 0:
+            self.toolkit.write_observation(
+                t0, t1, f"{best[0]} × {object_phrase} visible (object detector)",
+                source="object_detector", confidence=0.5,
+                extra={"count": best[0], "phrase": object_phrase})
+        return "\n".join(lines)
 
     def tools(self):
-        return [self.global_browse_tool, self.clip_search_tool,
-                self.frame_inspect_tool]
+        belt = [self.inspect_frames]
+        if self._enable_detector:
+            belt.append(self.count_objects)
+        return belt

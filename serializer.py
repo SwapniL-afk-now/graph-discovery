@@ -11,8 +11,8 @@ Design principles (the "present so the model knows what to do next" layer):
    readability without losing precision.
 4. **Affordance footer**: every observation ends with a short "What you can do
    next" block of *concrete, copy-pasteable* tool calls derived from the
-   evidence actually returned (causal edges present → vkg_causal; entities
-   present → vkg_entity; uncertain/visual detail → frame_inspect_tool).
+   evidence actually returned (causal edges present → trace_causes; entities
+   present → find_entity; uncertain/visual detail → inspect_frames).
 """
 
 from __future__ import annotations
@@ -88,7 +88,7 @@ def affordance_footer(graph, nodes: List, question_hint: str = "") -> str:
         n = causal_nodes[0]
         tips.append(
             f'{n.id} has {_causal_degree(graph, n)} causal edge(s) → '
-            f'vkg_causal(node_id="{n.id}") to trace why it happened / what it led to'
+            f'trace_causes(node_id="{n.id}") to trace why it happened / what it led to'
         )
 
     # 2. Entity follow-ups: most frequent entity among the hits.
@@ -98,7 +98,7 @@ def affordance_footer(graph, nodes: List, question_hint: str = "") -> str:
         total = len(graph.entity_idx.get(eid, []))
         tips.append(
             f'entity {eid} appears in {cnt} hit(s) ({total} appearances overall) → '
-            f'vkg_entity(name="{eid}") for its full timeline'
+            f'find_entity(name="{eid}") for its full timeline'
         )
 
     # 3. Dense window: where evidence clusters in time.
@@ -107,7 +107,7 @@ def affordance_footer(graph, nodes: List, question_hint: str = "") -> str:
         mid = times[len(times) // 2]
         tips.append(
             f'evidence clusters around {fmt(mid)} → '
-            f'vkg_window(time_start="{fmt(max(0, mid - 60))}", time_end="{fmt(mid + 60)}") '
+            f'read_moment(time_start="{fmt(max(0, mid - 60))}", time_end="{fmt(mid + 60)}") '
             f'for everything (speech, OCR, actions) in that window'
         )
 
@@ -118,7 +118,7 @@ def affordance_footer(graph, nodes: List, question_hint: str = "") -> str:
               else "the answer before calling finish")
     tips.append(
         f'to visually verify {reason} → '
-        f'frame_inspect_tool(time_ranges=[["{fmt(target.t_start)}", "{fmt(target.t_end)}"]], '
+        f'inspect_frames(time_ranges=[["{fmt(target.t_start)}", "{fmt(target.t_end)}"]], '
         f'question="...")'
     )
 
@@ -141,12 +141,12 @@ def serialize_nodes(
     if not nodes:
         return (f"{title}\n(no matching nodes found)\n"
                 "— What you can do next (do NOT just re-run search with a shorter query) —\n"
-                "• if you know the time → vkg_window(time_start, time_end) reads "
+                "• if you know the time → read_moment(time_start, time_end) reads "
                 "everything (speech, OCR, actions, entities) in that span\n"
-                "• to enumerate a category → vkg_query(node_type=\"SpeechNode\"/"
+                "• to enumerate a category → query_nodes(node_type=\"SpeechNode\"/"
                 "\"OCRNode\"/\"ActionNode\", time_start, time_end)\n"
                 "• for a fine visual detail the graph may not capture → "
-                "frame_inspect_tool on the suspected time range to look at raw frames")
+                "inspect_frames on the suspected time range to look at raw frames")
     capped = nodes[:max_nodes]
     capped.sort(key=lambda n: n.t_start)
     lines = [node_line(graph, n) for n in capped]
@@ -164,8 +164,8 @@ def serialize_chain(graph, chain_edges: List, title: str) -> str:
     if not chain_edges:
         return (f"{title}\n(no causal edges found here)\n"
                 "— What you can do next —\n"
-                "• vkg_infer_causal on this time window to infer causal links on the fly\n"
-                "• vkg_window on the same span to read raw events in temporal order")
+                "• explain_why on this time window to infer causal links on the fly\n"
+                "• read_moment on the same span to read raw events in temporal order")
     lines = [title]
     for e in chain_edges:
         src, tgt = graph.nodes.get(e.source_id), graph.nodes.get(e.target_id)

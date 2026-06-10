@@ -1,5 +1,6 @@
 # Python
 __pycache__/
+*.bak
 *.py[cod]
 *.so
 *.egg-info/

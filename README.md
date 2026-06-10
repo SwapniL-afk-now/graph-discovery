@@ -31,10 +31,10 @@ tools** to traverse it.
 | DVD gap (see `../dvd_gaps.md`) | GVD answer |
 |---|---|
 | Flat vector DB, no edges | qvkg typed graph: 10 node types, 30 edge types |
-| No causal reasoning | `vkg_causal` chain traversal + `vkg_infer_causal` on-the-fly inference (cached) |
-| No character tracking | `vkg_entity` timelines over `entity_id` links |
-| No temporal hierarchy | Episode→Scene→Clip backbone, `vkg_overview` / `vkg_window` |
-| Ad-hoc retrieval | Typed `vkg_query` is exhaustive; semantic `vkg_search` is dual-mode (FAISS or lexical fallback) |
+| No causal reasoning | `trace_causes` chain traversal + `explain_why` on-the-fly inference (cached) |
+| No character tracking | `find_entity` timelines over `entity_id` links |
+| No temporal hierarchy | Episode→Scene→Clip backbone, `get_overview` / `read_moment` |
+| Ad-hoc retrieval | Typed `query_nodes` is exhaustive; semantic `search_events` is dual-mode (FAISS or lexical fallback) |
 | GPT-4o-only | Any OpenAI-compatible endpoint (vLLM + Qwen3-VL works) |
 | Agent doesn't know what to do next | Every observation ends with an **affordance footer** of concrete follow-up calls |
 
@@ -47,14 +47,14 @@ tools** to traverse it.
 
 | Tool | Question shape it serves |
 |---|---|
-| `vkg_overview` | "what is this video about" — hierarchy + character registry |
-| `vkg_search` | locate events/speech/text semantically; returns traversable node ids |
-| `vkg_query` | exhaustive typed access ("ALL speech between 10:00–12:00") |
-| `vkg_traverse` | multi-hop expansion along one edge family (CAUSAL/ENTITY/TEMPORAL/SPEAKER/SIMILAR/CONTAINS/EMOTION) |
-| `vkg_causal` | "why did X happen" (backward) / "what did X lead to" (forward) |
-| `vkg_entity` | character/object timeline: appearances, actions, dialog |
-| `vkg_window` | close-read one moment across all modalities |
-| `vkg_infer_causal` | infer + cache causal edges where the offline graph has none |
+| `get_overview` | "what is this video about" — hierarchy + character registry |
+| `search_events` | locate events/speech/text semantically; returns traversable node ids |
+| `query_nodes` | exhaustive typed access ("ALL speech between 10:00–12:00") |
+| `follow_connections` | multi-hop expansion along one edge family (CAUSAL/ENTITY/TEMPORAL/SPEAKER/SIMILAR/CONTAINS/EMOTION) |
+| `trace_causes` | "why did X happen" (backward) / "what did X lead to" (forward) |
+| `find_entity` | character/object timeline: appearances, actions, dialog |
+| `read_moment` | close-read one moment across all modalities |
+| `explain_why` | infer + cache causal edges where the offline graph has none |
 
 Plus `finish(answer)`.
 
@@ -69,8 +69,8 @@ Every tool output is serialized by `serializer.py` with:
 3. **Relevance-then-chronology** — hits capped by relevance, printed in temporal
    order (cap-before-sort).
 4. **An affordance footer** — copy-pasteable suggested calls derived from the
-   actual evidence (causal edges present → suggest `vkg_causal` on the densest
-   node; entities present → `vkg_entity`; always a `frame_inspect_tool` CONFIRM
+   actual evidence (causal edges present → suggest `trace_causes` on the densest
+   node; entities present → `find_entity`; always a `frame_inspect_tool` CONFIRM
    suggestion, preserving DVD's grounding discipline).
 5. **Instructive failures** — empty results and tool errors return recovery
    strategies, not stack traces.
@@ -100,7 +100,7 @@ answer, transcript = agent.run("Why did the man leave the house?")
 ```
 
 `--faiss-index` + a SigLIP `text_encoder` enable semantic search; without them
-`vkg_search` degrades to lexical token-overlap search and everything still runs.
+`search_events` degrades to lexical token-overlap search and everything still runs.
 
 ## Layout
 
@@ -111,7 +111,7 @@ gvd/
   dvd_compat.py   DVD's 3 original tools, graph/video-backed
   serializer.py   evidence → text with edge affordances + next-step footers
   prompts.py      DVD's THINK→ACT→OBSERVE prompt + graph mental model + routing table
-  edge inference  vkg_infer_causal caches to <graph>.inferred_edges.json
+  edge inference  explain_why caches to <graph>.inferred_edges.json
   llm.py          OpenAI-compatible client (OpenAI / Azure / local vLLM)
   timeutil.py     HH:MM:SS ↔ seconds
   run_gvd.py      CLI

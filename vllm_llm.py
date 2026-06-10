@@ -26,6 +26,7 @@ the VKG build phase.
 import json
 from typing import Dict, List, Optional
 
+
 _TOOL_PROMPT_SUFFIX = """
 
 AVAILABLE TOOLS (you MUST respond by choosing exactly one per turn):
@@ -121,6 +122,8 @@ class VLLMToolClient:
         enable_thinking: bool = False,     # reasoning lives in the "thought" field
         max_action_tokens: int = 2048,
         lazy: bool = True,
+        action_temperature: float = 0.0,   # >0 for self-consistency voting runs
+        sampling_seed: Optional[int] = None,
     ):
         if engine is None:
             from qvkg.vllm_client import build_llm
@@ -136,6 +139,8 @@ class VLLMToolClient:
         self.max_images_per_prompt = max_images_per_prompt
         self.enable_thinking = enable_thinking
         self.max_action_tokens = max_action_tokens
+        self.action_temperature = action_temperature
+        self.sampling_seed = sampling_seed
         self._tc_counter = 0
         # Per-toolset cache: (catalog string, SamplingParams with schema)
         self._schema_cache: Dict[int, tuple] = {}
@@ -157,15 +162,25 @@ class VLLMToolClient:
             from vllm import SamplingParams
             from vllm.sampling_params import StructuredOutputsParams
             catalog = _render_catalog(function_schemas)
-            # GREEDY: tool selection must be deterministic and schema-valid.
+            # Greedy by default; voting runs pass action_temperature > 0 so the
+            # k trajectories decorrelate. Schema validity is enforced either way.
             sampling = SamplingParams(
-                temperature=0.0,
-                top_p=1.0,
+                temperature=self.action_temperature,
+                top_p=1.0 if self.action_temperature == 0.0 else 0.95,
+                seed=self.sampling_seed,
                 max_tokens=self.max_action_tokens,
                 structured_outputs=StructuredOutputsParams(
                     json=_tool_action_schema(function_schemas)),
             )
-            self._schema_cache[key] = (catalog, sampling)
+            retry = SamplingParams(
+                temperature=self.action_temperature,
+                top_p=1.0 if self.action_temperature == 0.0 else 0.95,
+                seed=self.sampling_seed,
+                max_tokens=self.max_action_tokens * 2,
+                structured_outputs=StructuredOutputsParams(
+                    json=_tool_action_schema(function_schemas)),
+            )
+            self._schema_cache[key] = (catalog, sampling, retry)
         return self._schema_cache[key]
 
     # ------------------------------------------------------------------ #
@@ -178,14 +193,24 @@ class VLLMToolClient:
         Returns the same assistant-message shape as the OpenAI client, so
         GVDAgent's loop and transcript format stay identical.
         """
-        catalog, sampling = self._action_setup(tools)
-        text = self._chat(_convert_messages(messages, catalog), sampling)
+        catalog, sampling, retry_sampling = self._action_setup(tools)
+        converted = _convert_messages(messages, catalog)
+        text = self._chat(converted, sampling)
 
         try:
             action = json.loads(text)
         except json.JSONDecodeError:
-            # Constrained decode should prevent this; degrade to plain answer.
-            return {"role": "assistant", "content": text}
+            # Constrained decode only yields invalid JSON when the output hit
+            # max_tokens mid-object (an over-long "thought"). A plain-text
+            # fallback here is what produced zero-tool-call answers, so retry
+            # once with a doubled budget before giving up.
+            print(f"[gvd] action JSON truncated ({len(text)} chars) — retrying "
+                  "with a larger token budget")
+            text = self._chat(converted, retry_sampling)
+            try:
+                action = json.loads(text)
+            except json.JSONDecodeError:
+                return {"role": "assistant", "content": text}
 
         self._tc_counter += 1
         return {
