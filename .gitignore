@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# Environment (contains secrets/tokens)
+.env
+
+# Model weights
+models/
+
+# VKG build outputs
+vkgs/
+
+# Video files
+videos/
+*.mp4
+*.mov
+*.avi
+
+# Logs
+*.log
+
+# Evaluation results
+results_*.jsonl
+
+# vLLM cache
+.vllm_cache/
+torch_compile_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Wandb
+wandb/
