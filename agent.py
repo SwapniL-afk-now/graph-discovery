@@ -364,9 +364,9 @@ class GVDAgent:
         graph_grounded = False
         nudged_sources = set()         # which missing-evidence nudges we've sent
         has_video = bool(getattr(getattr(self, "dvd_tools", None), "video_path", None))
-        _GRAPH_TOOLS = {"get_overview", "search_events", "query_nodes", "before_and_after",
-                        "why_did_this_happen", "find_entity", "read_moment",
+        _GRAPH_TOOLS = {"find", "read_moment", "before_and_after", "why_did_this_happen",
                         # legacy names kept for compatibility
+                        "get_overview", "search_events", "query_nodes", "find_entity",
                         "follow_connections", "trace_causes", "explain_why"}
         last_thought = ""
         for i in range(self.max_iterations):
@@ -429,8 +429,9 @@ class GVDAgent:
                                        "you have not consulted the graph yourself. Call ONE "
                                        "graph tool aimed at the question before finishing: "
                                        "why_did_this_happen for why/reason, before_and_after "
-                                       "for before/after/next/order, find_entity for a person "
-                                       "or recurrence, read_moment for the referenced window — "
+                                       "for before/after/next/order, find for a person or "
+                                       "anything elsewhere in the video, read_moment for the "
+                                       "referenced window (focus=\"dialogue\" for what is said) — "
                                        "then check your answer against what it returns.")
                         if missing:
                             nudged_sources.add(missing[0])

@@ -12,7 +12,7 @@ Design principles (the "present so the model knows what to do next" layer):
 4. **Affordance footer**: every observation ends with a short "What you can do
    next" block of *concrete, copy-pasteable* tool calls derived from the
    evidence actually returned (causal edges present → why_did_this_happen; entities
-   present → find_entity; uncertain/visual detail → inspect_frames).
+   present → find; uncertain/visual detail → inspect_frames).
 """
 
 from __future__ import annotations
@@ -99,7 +99,7 @@ def affordance_footer(graph, nodes: List, question_hint: str = "") -> str:
         total = len(graph.entity_idx.get(eid, []))
         tips.append(
             f'entity {eid} appears in {cnt} hit(s) ({total} appearances overall) → '
-            f'find_entity(name="{eid}") for its full timeline'
+            f'find(what="{eid}") for its full timeline'
         )
 
     # 3. Dense window: where evidence clusters in time.
@@ -144,8 +144,8 @@ def serialize_nodes(
                 "— What you can do next (do NOT just re-run search with a shorter query) —\n"
                 "• if you know the time → read_moment(time_start, time_end) reads "
                 "everything (speech, OCR, actions, entities) in that span\n"
-                "• to enumerate a category → query_nodes(node_type=\"SpeechNode\"/"
-                "\"OCRNode\"/\"ActionNode\", time_start, time_end)\n"
+                "• for only the dialogue / on-screen text → read_moment(time_start, "
+                "time_end, focus=\"dialogue\" or \"text\")\n"
                 "• for a fine visual detail the graph may not capture → "
                 "inspect_frames on the suspected time range to look at raw frames")
     capped = nodes[:max_nodes]

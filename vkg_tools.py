@@ -7,18 +7,18 @@ footer suggesting concrete follow-up calls.
 
 Tool map (mirrors `draft_plan.txt` / `current_vs_desired_framework.md`):
 
-  get_overview      — hierarchy + characters: the structured global_browse
-  search_events        — dual-index semantic search (FAISS) with lexical fallback
-  query_nodes         — structured access by type / time / label
+  find               — one search door: events/dialogue/text via FAISS+lexical,
+                       or a person/object's full timeline if the query names one
+  read_moment        — everything in a time window grouped by modality (focus=
+                       'dialogue'/'text'/'actions' filters), with before/after
+                       context and in-window causal links
   before_and_after   — chronological timeline around a moment (temporal walk, time-addressed)
   why_did_this_happen — causal chains + dialogue for a window (causal walk, time-addressed)
-  find_entity        — character & object timelines (identity tracking)
-  read_moment        — everything in a time window, grouped by modality,
-                       with before/after context and in-window causal links
 
-Internal (not registered as tools — node-id signatures the small policy never
-picked): follow_connections, trace_causes, explain_why. The registered
-replacements above wrap the same traversals behind timestamp arguments.
+Internal (not registered as tools): get_overview (prefetched every question),
+search_events, query_nodes, find_entity (merged into find/read_moment), and the
+node-id tools the small policy never picked: follow_connections, trace_causes,
+explain_why.
 
 NOTE: no `from __future__ import annotations` here — DVD's schema generator
 needs real (non-string) Annotated annotations on tool signatures.
@@ -649,21 +649,66 @@ class VKGToolkit:
         body += "\n" + affordance_footer(g, appearances)
         return body
 
+    def find(
+        self,
+        what: A[str, D("What to find: an event ('the car crash'), a spoken phrase, an on-screen text, an object, or a PERSON'S NAME/description ('the protagonist', 'the man in the hat') — a person returns their full timeline across the video.")],
+    ) -> str:
+        """
+        Find anything anywhere in the video: where something happens, where
+        something is said or shown, or everything a person/object does across
+        the WHOLE video. USE THIS for: "where/when does X happen", "who is X",
+        "what does X do", "does X appear earlier or again", "have they been
+        here before". One search door for events, dialogue, text, and people.
+        """
+        g = self.graph
+        key = (what or "").strip()
+        if not key:
+            return "Give me something to find — an event description, a phrase, or a person."
+        # A tracked entity? Return its full timeline (the old find_entity).
+        entity_hit = key in g.entity_idx
+        if not entity_hit:
+            node = g.get_node(key)
+            entity_hit = node is not None and node.entity_id
+        if not entity_hit:
+            kl = key.lower()
+            for c in g.get_all_character_mentions() + g.get_nodes_by_type("ObjectNode"):
+                hay = f"{c.label} {c.canonical_description or ''}".lower()
+                if c.entity_id and (kl in hay or hay in kl):
+                    entity_hit = True
+                    break
+        if entity_hit:
+            return self.find_entity(key)
+        return self.search_events(key)
+
     def read_moment(
         self,
         time_start: A[str, D("Window start as HH:MM:SS or seconds.")],
         time_end: A[str, D("Window end as HH:MM:SS or seconds.")],
+        focus: A[str, D("What to read: 'all' (default), 'dialogue' (only spoken lines — use for what is SAID/heard), 'text' (only on-screen text), 'actions' (only events), 'entities' (only people/objects present).")] = "all",
     ) -> str:
         """
-        Dump EVERYTHING the graph knows inside a time window, grouped by modality:
+        Read EVERYTHING the graph knows inside a time window, grouped by modality:
         scenes, actions/events, speech (with speakers), on-screen text (OCR),
-        audio events, and entities present. This is the close-reading tool — use
-        it once search/traversal has localized the relevant moment.
+        audio events, and entities present — plus what happens just before and
+        after the window. focus="dialogue" reads only the spoken lines (the
+        audio): use it for "what does X say / hear / talk about".
         """
         t0, t1 = to_seconds(time_start), to_seconds(time_end)
         if t1 <= t0:
             return f"time_end ({fmt(t1)}) must be after time_start ({fmt(t0)})."
         nodes = self.graph.get_nodes_in_window(t0, t1, buffer_sec=0.0)
+        focus = (focus or "all").lower().strip()
+        _FOCUS = {
+            "dialogue": {"Speech", "Audio events"},
+            "speech":   {"Speech", "Audio events"},
+            "audio":    {"Speech", "Audio events"},
+            "text":     {"On-screen text (OCR)"},
+            "ocr":      {"On-screen text (OCR)"},
+            "actions":  {"Actions & events"},
+            "events":   {"Actions & events"},
+            "entities": {"Entities present"},
+        }
+        keep = _FOCUS.get(focus)  # None → all groups
         groups = {
             "Scenes/structure": [n for n in nodes if n.node_type in ("SceneNode", "EpisodeNode", "ClipNode")],
             "Actions & events": [n for n in nodes if n.node_type in ("ActionNode", "InteractionNode", "StateChangeNode")],
@@ -674,15 +719,19 @@ class VKGToolkit:
             "Prior inspections (on-demand, lower confidence)":
                 [n for n in nodes if n.node_type == "ObservationNode"],
         }
-        out = [f"WINDOW {fmt_span(t0, t1)} — {len(nodes)} nodes"]
+        out = [f"WINDOW {fmt_span(t0, t1)}"
+               + (f" — focus: {focus}" if keep else f" — {len(nodes)} nodes")]
+        # A focused read shows MORE of the chosen modality (the cap exists to
+        # keep the all-modality dump bounded, not to hide dialogue lines).
+        cap = 80 if keep else 30
         for gname, gnodes in groups.items():
-            if not gnodes:
+            if not gnodes or (keep and gname not in keep):
                 continue
             gnodes.sort(key=lambda n: n.t_start)
             out.append(f"\n{gname} ({len(gnodes)}):")
-            out += ["  " + node_line(self.graph, n) for n in gnodes[:30]]
-            if len(gnodes) > 30:
-                out.append(f"  … {len(gnodes) - 30} more")
+            out += ["  " + node_line(self.graph, n) for n in gnodes[:cap]]
+            if len(gnodes) > cap:
+                out.append(f"  … {len(gnodes) - cap} more")
 
         # Deterministic temporal context: "what happens before/after" answers
         # usually sit just OUTSIDE the asked window, and the small policy
@@ -785,14 +834,17 @@ class VKGToolkit:
                 "Inferred edges carry model confidence; CONFIRM important ones with inspect_frames.")
         return out
 
-    # All tools, in registration order. follow_connections / trace_causes /
-    # explain_why remain callable methods (used internally and by the prefetch)
-    # but are NOT registered: their node-id/graph-jargon signatures were never
-    # picked by the 4B policy (6 calls in 1500 questions). before_and_after and
-    # why_did_this_happen are their time-addressed replacements.
+    # All tools, in registration order — one tool per QUESTION SHAPE, merged
+    # within shapes so the 4B policy has exactly one obvious choice per need:
+    #   find             — where / who / does-it-recur   (search_events + find_entity)
+    #   read_moment      — what's in this window          (absorbs query_nodes via focus=)
+    #   before_and_after — what surrounds this moment
+    #   why_did_this_happen — why / what did it lead to
+    # Unregistered but kept as methods (used internally / by the prefetch):
+    # get_overview (prefetched every question), search_events, query_nodes,
+    # find_entity, follow_connections, trace_causes, explain_why.
     def tools(self):
         return [
-            self.get_overview, self.search_events, self.query_nodes,
-            self.before_and_after, self.why_did_this_happen, self.find_entity,
-            self.read_moment,
+            self.find, self.read_moment,
+            self.before_and_after, self.why_did_this_happen,
         ]
