@@ -363,7 +363,33 @@ class GVDAgent:
         # passive reading of the seeded context.
         graph_grounded = False
         nudged_sources = set()         # which missing-evidence nudges we've sent
+        called_tools = set()           # every tool name the model has invoked
         has_video = bool(getattr(getattr(self, "dvd_tools", None), "video_path", None))
+
+        # Question-SHAPED mandatory tool: a why question is not done until the
+        # model itself has run the causal reader; a before/after/order question
+        # until it has walked the timeline. Only enforced when the question
+        # carries a time reference, so the required call has valid arguments.
+        required_tool = None
+        _tm = self._TIME_REF_RE.search(question)
+        if _tm is not None:
+            from .timeutil import fmt as _fmt, to_seconds as _to_s
+            _t0, _t1 = _to_s(_tm.group(1)), _to_s(_tm.group(2))
+            if re.search(r"\bwhy\b|\breason\b|\bpurpose\b|\bcause[sd]?\b",
+                         question, re.I):
+                required_tool = (
+                    "why_did_this_happen",
+                    f'this is a WHY question — call why_did_this_happen('
+                    f'time_start="{_fmt(max(0, _t0 - 30))}", '
+                    f'time_end="{_fmt(_t1 + 30)}") and weigh its causes and '
+                    f'dialogue before finishing.')
+            elif re.search(r"\bbefore\b|\bafter\b|\bnext\b|\border\b|"
+                           r"\bfollowing\b|\bprior\b|\bfirst\b", question, re.I):
+                required_tool = (
+                    "before_and_after",
+                    f'this question is about order / what surrounds the moment '
+                    f'— call before_and_after(time="{_fmt((_t0 + _t1) / 2)}") '
+                    f'and check the timeline before finishing.')
         _GRAPH_TOOLS = {"find", "read_moment", "before_and_after", "why_did_this_happen",
                         # legacy names kept for compatibility
                         "get_overview", "search_events", "query_nodes", "find_entity",
@@ -433,11 +459,16 @@ class GVDAgent:
                                        "anything elsewhere in the video, read_moment for the "
                                        "referenced window (focus=\"dialogue\" for what is said) — "
                                        "then check your answer against what it returns.")
+                        elif (required_tool is not None
+                                and required_tool[0] not in called_tools
+                                and "shaped" not in nudged_sources):
+                            missing = ("shaped", required_tool[1])
                         if missing:
                             nudged_sources.add(missing[0])
                             self._append_tool_msg(
                                 tc["id"], name, "Do not finish yet — " + missing[1], msgs)
                             continue
+                    called_tools.add(name)
                     if name in ("inspect_frames", "count_objects"):
                         inspected = True
                     elif name in _GRAPH_TOOLS:

@@ -172,10 +172,14 @@ class VLLMToolClient:
                 structured_outputs=StructuredOutputsParams(
                     json=_tool_action_schema(function_schemas)),
             )
+            # The retry must actually DIFFER from the first attempt: greedy +
+            # fixed seed would regenerate the identical broken output. Bump
+            # temperature and seed so the model takes a different path, and
+            # double the budget in case it really was truncation.
             retry = SamplingParams(
-                temperature=self.action_temperature,
-                top_p=1.0 if self.action_temperature == 0.0 else 0.95,
-                seed=self.sampling_seed,
+                temperature=max(0.3, self.action_temperature),
+                top_p=0.95,
+                seed=(self.sampling_seed or 0) + 1,
                 max_tokens=self.max_action_tokens * 2,
                 structured_outputs=StructuredOutputsParams(
                     json=_tool_action_schema(function_schemas)),
@@ -187,6 +191,25 @@ class VLLMToolClient:
     # LLMClient interface
     # ------------------------------------------------------------------ #
 
+    @staticmethod
+    def _parse_action(text: str):
+        """Parse the action JSON, salvaging what strict json.loads rejects:
+        raw control characters inside strings (the grammar permits them) and
+        stray bytes around the object. Returns a dict or None."""
+        cands = [text]
+        i, j = text.find("{"), text.rfind("}")
+        if i >= 0 and j > i:
+            cands.append(text[i:j + 1])
+        for cand in cands:
+            for kw in ({}, {"strict": False}):
+                try:
+                    obj = json.loads(cand, **kw)
+                except Exception:
+                    continue
+                if isinstance(obj, dict):
+                    return obj
+        return None
+
     def chat_with_tools(self, messages: List[Dict], tools: List[Dict]) -> Dict:
         """One orchestrator step under constrained decoding.
 
@@ -197,19 +220,19 @@ class VLLMToolClient:
         converted = _convert_messages(messages, catalog)
         text = self._chat(converted, sampling)
 
-        try:
-            action = json.loads(text)
-        except json.JSONDecodeError:
-            # Constrained decode only yields invalid JSON when the output hit
-            # max_tokens mid-object (an over-long "thought"). A plain-text
-            # fallback here is what produced zero-tool-call answers, so retry
-            # once with a doubled budget before giving up.
-            print(f"[gvd] action JSON truncated ({len(text)} chars) — retrying "
-                  "with a larger token budget")
+        action = self._parse_action(text)
+        if action is None:
+            # Not truncation when len << budget: usually a control character
+            # the grammar allowed but strict json.loads rejects (salvage
+            # handles that), or a genuinely cut-off object. Log WHAT failed,
+            # then retry once with different sampling (see _action_setup).
+            print(f"[gvd] action JSON unparseable ({len(text)} chars): "
+                  f"{text[:160]!r} — retrying with varied sampling")
             text = self._chat(converted, retry_sampling)
-            try:
-                action = json.loads(text)
-            except json.JSONDecodeError:
+            action = self._parse_action(text)
+            if action is None:
+                print(f"[gvd] retry also unparseable ({len(text)} chars) — "
+                      "falling back to plain text")
                 return {"role": "assistant", "content": text}
 
         self._tc_counter += 1
