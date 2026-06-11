@@ -10,11 +10,15 @@ Tool map (mirrors `draft_plan.txt` / `current_vs_desired_framework.md`):
   get_overview      — hierarchy + characters: the structured global_browse
   search_events        — dual-index semantic search (FAISS) with lexical fallback
   query_nodes         — structured access by type / time / label
-  follow_connections      — follow one edge family from a node
-  trace_causes        — causal chain traversal (why / what happened next)
+  before_and_after   — chronological timeline around a moment (temporal walk, time-addressed)
+  why_did_this_happen — causal chains + dialogue for a window (causal walk, time-addressed)
   find_entity        — character & object timelines (identity tracking)
-  read_moment        — everything in a time window, grouped by modality
-  explain_why  — on-the-fly causal edge inference, cached into the graph
+  read_moment        — everything in a time window, grouped by modality,
+                       with before/after context and in-window causal links
+
+Internal (not registered as tools — node-id signatures the small policy never
+picked): follow_connections, trace_causes, explain_why. The registered
+replacements above wrap the same traversals behind timestamp arguments.
 
 NOTE: no `from __future__ import annotations` here — DVD's schema generator
 needs real (non-string) Annotated annotations on tool signatures.
@@ -242,7 +246,7 @@ class VKGToolkit:
         Semantic search over ALL nodes of the video knowledge graph (events, speech,
         on-screen text, objects, scenes). Returns matching nodes with their ids,
         timestamps, and the edges available from each — use those ids with
-        follow_connections / trace_causes / find_entity to follow the structure.
+        before_and_after / why_did_this_happen / find_entity to follow the structure.
         """
         g = self.graph
         present_types = set(g.type_idx.keys())
@@ -460,6 +464,136 @@ class VKGToolkit:
             out += "\n" + affordance_footer(self.graph, endpoints)
         return out
 
+    def before_and_after(
+        self,
+        time: A[str, D("The moment of interest as HH:MM:SS or seconds — e.g. the time the question refers to.")],
+        window: A[int, D("Seconds of context to show on each side (15-300). Default 90.")] = 90,
+    ) -> str:
+        """
+        See what happens just BEFORE and just AFTER a moment, in strict
+        chronological order. USE THIS for: "what happens before/after X",
+        "what does X do next", "what led up to this", "which came first /
+        in what order", and whenever the answer may lie OUTSIDE the
+        question's time window. No node ids needed — give it a timestamp
+        and it walks the video's timeline for you.
+        """
+        t = to_seconds(time)
+        w = float(max(15, min(int(window), 300)))
+        ev_types = _EVENT_TYPES | {"SceneNode"}
+        nodes = [n for n in self.graph.get_nodes_in_window(max(0.0, t - w), t + w, buffer_sec=0.0)
+                 if n.node_type in ev_types]
+        if not nodes:
+            return (f"No events within {int(w)}s of {fmt(t)}. Widen the window "
+                    f'(before_and_after(time="{fmt(t)}", window={int(min(w * 2, 300))})) '
+                    "or localize the moment first with search_events.")
+        before = sorted((n for n in nodes if n.t_end < t), key=lambda n: n.t_start)
+        during = sorted((n for n in nodes if n.t_start <= t <= n.t_end), key=lambda n: n.t_start)
+        after = sorted((n for n in nodes if n.t_start > t), key=lambda n: n.t_start)
+
+        # Explicit temporal edges can reach events beyond the fixed window.
+        linked = []
+        if during:
+            here = {n.id for n in nodes}
+            ids, _ = graph_ops.expand(self.graph, {n.id for n in during}, "temporal", k=6)
+            linked = [self.graph.nodes[i] for i in ids
+                      if i in self.graph.nodes and i not in here]
+
+        out = [f"TIMELINE around {fmt(t)} (±{int(w)}s), in chronological order:"]
+        for title, group, keep in ((f"BEFORE {fmt(t)}", before, before[-20:]),
+                                   (f"AT {fmt(t)}", during, during[:20]),
+                                   (f"AFTER {fmt(t)}", after, after[:20])):
+            if not group:
+                continue
+            extra = f", showing the {len(keep)} nearest" if len(group) > len(keep) else ""
+            out.append(f"\n{title} ({len(group)} events{extra}):")
+            out += ["  " + node_line(self.graph, n) for n in keep]
+        if linked:
+            linked.sort(key=lambda n: n.t_start)
+            out.append("\nLINKED by explicit temporal edges (beyond this window):")
+            out += ["  " + node_line(self.graph, n) for n in linked[:8]]
+        out.append(affordance_footer(self.graph, before[-6:] + during[:4] + after[:6]))
+        return "\n".join(out)
+
+    def why_did_this_happen(
+        self,
+        time_start: A[str, D("Start of the moment to explain, as HH:MM:SS or seconds.")],
+        time_end: A[str, D("End of the moment to explain, as HH:MM:SS or seconds.")],
+    ) -> str:
+        """
+        Explain WHY the events in a time window happened and what they led to.
+        USE THIS for: "why did X happen", "what is the reason / cause /
+        purpose / motivation", "what did this lead to". Traces the graph's
+        cause-and-effect links backward (causes) and forward (consequences)
+        from every event in the window, and quotes the dialogue around the
+        moment — the reason is usually SPOKEN out loud. If no causal links
+        exist yet, it infers them from the surrounding evidence.
+        """
+        t0, t1 = to_seconds(time_start), to_seconds(time_end)
+        if t1 <= t0:
+            return f"time_end ({fmt(t1)}) must be after time_start ({fmt(t0)})."
+        events = [n for n in self.graph.get_nodes_in_window(t0, t1, buffer_sec=0.0)
+                  if n.node_type in _EVENT_TYPES]
+        if not events:
+            return (f"No events recorded in {fmt_span(t0, t1)} — localize the moment "
+                    "first with search_events or before_and_after.")
+
+        causes, effects = [], []
+        seen = {n.id for n in events}
+        frontier = list(seen)
+        for _ in range(3):
+            nxt = []
+            for nid in frontier:
+                for e in self.graph.get_incoming_edges(nid):
+                    if e.relation_type in CAUSAL_EDGE_TYPES and e.source_id not in seen:
+                        causes.append(e)
+                        seen.add(e.source_id)
+                        nxt.append(e.source_id)
+            frontier = nxt
+            if not frontier:
+                break
+        seen = {n.id for n in events}
+        frontier = list(seen)
+        for _ in range(3):
+            nxt = []
+            for nid in frontier:
+                for e in self.graph.get_edges(nid):
+                    if e.relation_type in CAUSAL_EDGE_TYPES and e.target_id not in seen:
+                        effects.append(e)
+                        seen.add(e.target_id)
+                        nxt.append(e.target_id)
+            frontier = nxt
+            if not frontier:
+                break
+
+        sections = []
+        if causes:
+            sections.append(serialize_chain(
+                self.graph, causes,
+                f"CAUSES — why the events in {fmt_span(t0, t1)} happened:"))
+        if effects:
+            sections.append(serialize_chain(
+                self.graph, effects, "EFFECTS — what they led to:"))
+
+        speech = sorted((n for n in self.graph.get_nodes_in_window(
+                             max(0.0, t0 - 45), t1 + 45, buffer_sec=0.0)
+                         if n.node_type == "SpeechNode"), key=lambda n: n.t_start)
+        if speech:
+            lines = [f'  @{fmt(n.t_start)}: "{n.label[:120]}"' for n in speech[:25]]
+            sections.append("DIALOGUE around this moment (the reason is often said out loud):\n"
+                            + "\n".join(lines))
+
+        if not causes and not effects:
+            sections.append("No pre-computed causal links here — inferring from the evidence:\n"
+                            + self.explain_why(time_start, time_end))
+
+        endpoint_ids = (({e.source_id for e in causes} | {e.target_id for e in effects})
+                        or {n.id for n in events})
+        endpoints = [self.graph.nodes[i] for i in endpoint_ids if i in self.graph.nodes]
+        out = (f"WHY-ANALYSIS of {fmt_span(t0, t1)} ({len(events)} events):\n\n"
+               + "\n\n".join(sections))
+        out += "\n" + affordance_footer(self.graph, endpoints)
+        return out
+
     def find_entity(
         self,
         name: A[str, D("A person or character name (e.g. 'the protagonist', 'the man'), an entity id (e.g. 'entity_3'), or a node id of a CharacterNode/ObjectNode.")],
@@ -469,7 +603,9 @@ class VKGToolkit:
         chronological order, plus what they do, who they interact with, and what
         they say. USE THIS when the question asks about a specific person:
         "what did the protagonist do", "what does the man say", "who is X",
-        "how many times does X appear".
+        "how many times does X appear", "does X show up earlier/again",
+        "have they seen / been to / done this BEFORE" (recurrence checks —
+        verify against the whole timeline, not just one window).
         """
         g = self.graph
         key = name.strip()
@@ -547,6 +683,36 @@ class VKGToolkit:
             out += ["  " + node_line(self.graph, n) for n in gnodes[:30]]
             if len(gnodes) > 30:
                 out.append(f"  … {len(gnodes) - 30} more")
+
+        # Deterministic temporal context: "what happens before/after" answers
+        # usually sit just OUTSIDE the asked window, and the small policy
+        # rarely issues a second call to go look — so always show the nearest
+        # neighbouring events on both sides.
+        ev_types = _EVENT_TYPES | {"SceneNode"}
+        prev = sorted((n for n in self.graph.get_nodes_in_window(
+                           max(0.0, t0 - 120), t0, buffer_sec=0.0)
+                       if n.node_type in ev_types and n.t_end <= t0),
+                      key=lambda n: n.t_start)
+        nxt = sorted((n for n in self.graph.get_nodes_in_window(
+                          t1, t1 + 120, buffer_sec=0.0)
+                      if n.node_type in ev_types and n.t_start >= t1),
+                     key=lambda n: n.t_start)
+        if prev:
+            out.append(f"\nJust BEFORE this window (nearest {len(prev[-6:])} of {len(prev)}):")
+            out += ["  " + node_line(self.graph, n) for n in prev[-6:]]
+        if nxt:
+            out.append(f"\nJust AFTER this window (nearest {len(nxt[:6])} of {len(nxt)}):")
+            out += ["  " + node_line(self.graph, n) for n in nxt[:6]]
+
+        # And any cause→effect links the graph already knows inside the window.
+        win_ids = {n.id for n in nodes}
+        clinks = [e for nid in win_ids for e in self.graph.get_edges(nid)
+                  if e.relation_type in CAUSAL_EDGE_TYPES and e.target_id in win_ids]
+        if clinks:
+            out.append("")
+            out.append(serialize_chain(self.graph, clinks,
+                                       "Cause→effect links inside this window:"))
+
         evented = groups["Actions & events"] + groups["Speech"]
         out.append(affordance_footer(self.graph, evented or nodes))
         return "\n".join(out)
@@ -615,14 +781,18 @@ class VKGToolkit:
                               f"Inferred {len(new_edges)} causal edge(s) in {fmt_span(t0, t1)} "
                               "(now cached in the graph):")
         out += ("\n\nThese edges are now traversable — "
-                "trace_causes on any of the linked node ids will include them. "
+                "why_did_this_happen over this span will include them. "
                 "Inferred edges carry model confidence; CONFIRM important ones with inspect_frames.")
         return out
 
-    # All tools, in registration order.
+    # All tools, in registration order. follow_connections / trace_causes /
+    # explain_why remain callable methods (used internally and by the prefetch)
+    # but are NOT registered: their node-id/graph-jargon signatures were never
+    # picked by the 4B policy (6 calls in 1500 questions). before_and_after and
+    # why_did_this_happen are their time-addressed replacements.
     def tools(self):
         return [
             self.get_overview, self.search_events, self.query_nodes,
-            self.follow_connections, self.trace_causes, self.find_entity,
-            self.read_moment, self.explain_why,
+            self.before_and_after, self.why_did_this_happen, self.find_entity,
+            self.read_moment,
         ]

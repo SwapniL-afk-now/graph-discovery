@@ -30,9 +30,10 @@ TOOL ROUTING — READ THIS FIRST. Match the question to the FIRST matching rule,
 
   RULE 3 — WHY / BECAUSE / REASON / MOTIVATION ("why did X happen", "why does she tie iron to her limbs", "what is the reason"):
     → The answer is almost always SPOKEN or written, not visible in a still.
-    → First: query_nodes(node_type="SpeechNode", time_start, time_end) to read dialogue.
-    → Then: trace_causes(node_id="ev_XX") if you found the event node.
-    → If no causal edges: explain_why(time_start, time_end) to infer them.
+    → why_did_this_happen(time_start, time_end) — traces cause→effect links
+      backward and forward AND quotes the dialogue around the moment.
+    → The cause often lies BEFORE the question's window: also check
+      before_and_after(time="window start") for what led up to it.
 
   RULE 4 — WHO / CHARACTER IDENTITY questions ("who is X", "who embraces the king", "which character"):
     → find_entity(name="the character name or description")
@@ -47,6 +48,12 @@ TOOL ROUTING — READ THIS FIRST. Match the question to the FIRST matching rule,
     → Then inspect_frames for visual details the graph does not capture.
     → This covers: "what does X do after Y", "what does X see", "what happens", "before/after" questions WITHIN the window.
 
+  RULE 6b — BEFORE / AFTER / NEXT / ORDER ("what happens after X", "what did X do next",
+  "what led up to this", "which came first"):
+    → before_and_after(time="the moment") — the surrounding timeline in chronological order.
+    → For the order of FAST actions within seconds (who turned first, sequence of strokes):
+      inspect_frames with sampling="dense" instead — the graph's time resolution is ~10s.
+
   RULE 7 — FINE VISUAL DETAIL (colors, poses, text on screen, exact appearance):
     → inspect_frames on the time range.
 
@@ -57,7 +64,7 @@ TOOL ROUTING — READ THIS FIRST. Match the question to the FIRST matching rule,
     → query_nodes(node_type="SpeechNode"/"OCRNode", time_start, time_end)
 
 IMPORTANT:
-  • When the question has a [Time reference], the answer is almost always INSIDE that window. Start with read_moment. Only use find_entity or follow_connections if the question explicitly asks about something OUTSIDE the window.
+  • When the question has a [Time reference], the answer is almost always INSIDE that window. Start with read_moment. Use before_and_after or find_entity when the question asks about something OUTSIDE the window (what happened earlier/next, whether something recurs).
   • NEVER re-run search_events with a shorter query — that always returns the same nothing. CHANGE TOOL instead.
   • After locating an answer, CONFIRM it with inspect_frames before calling finish.
   • Continue the loop until the question is fully resolved, then call finish with exactly one letter: A, B, C, or D."""

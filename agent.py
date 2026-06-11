@@ -259,8 +259,17 @@ class GVDAgent:
             if re.search(r"\bwhy\b|\breason\b|\bpurpose\b|\bmight\b|\bcause[sd]?\b",
                          question, re.I):
                 sections.append(grab(
-                    f"explain_why({fmt(t0)}, {fmt(t1)}) — causal reading of the window",
-                    self.toolkit.explain_why, fmt(t0), fmt(t1)))
+                    f"why_did_this_happen({fmt(t0)}, {fmt(t1)}) — causal reading of the window",
+                    self.toolkit.why_did_this_happen, fmt(t0), fmt(t1)))
+            # BEFORE/AFTER/NEXT/ORDER questions: the answer often sits just
+            # outside the window — pre-walk the timeline on both sides.
+            if re.search(r"\bbefore\b|\bafter\b|\bnext\b|\border\b|"
+                         r"\bfirst\b|\bfollowing\b|\bprior\b", question, re.I):
+                mid = (t0 + t1) / 2.0
+                sections.append(grab(
+                    f"before_and_after({fmt(mid)}) — the surrounding timeline",
+                    self.toolkit.before_and_after, fmt(mid),
+                    int(min(300, max(90, t1 - t0)))))
 
         plain_q = self._TIME_REF_RE.sub("", question).split("\n\n")[0].strip()
         sections.append(grab(
@@ -351,8 +360,10 @@ class GVDAgent:
         graph_grounded = prefetched    # the prefetch IS a graph consult
         nudged_sources = set()         # which missing-evidence nudges we've sent
         has_video = bool(getattr(getattr(self, "dvd_tools", None), "video_path", None))
-        _GRAPH_TOOLS = {"get_overview", "search_events", "query_nodes", "follow_connections",
-                        "trace_causes", "find_entity", "read_moment", "explain_why"}
+        _GRAPH_TOOLS = {"get_overview", "search_events", "query_nodes", "before_and_after",
+                        "why_did_this_happen", "find_entity", "read_moment",
+                        # legacy names kept for compatibility
+                        "follow_connections", "trace_causes", "explain_why"}
         last_thought = ""
         for i in range(self.max_iterations):
             if i == self.max_iterations - 1:

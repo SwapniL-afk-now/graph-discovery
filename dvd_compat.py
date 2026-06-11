@@ -29,7 +29,8 @@ _FAST_ACTION_RE = re.compile(
     r"\b(shot|stroke|smash|serve|rally|hit[s]?\b|kick|throw|catch|swing|punch|"
     r"goal|score[ds]?\b|(point|game|match) (was |is )?(won|lost)|"
     r"w[io]ns? the (point|game|match)|ball|jump|fall[s]?\b|trip|"
-    r"slam|spike|dunk|volley|backhand|forehand|lob|replay)\b", re.I)
+    r"slam|spike|dunk|volley|backhand|forehand|lob|replay|"
+    r"turn(s|ed)? (around|back|first)|in what order|which .{0,30}first)\b", re.I)
 
 
 class DVDCompatTools:
@@ -108,7 +109,7 @@ class DVDCompatTools:
         self,
         time_ranges: A[List[List[str]], D("List of [start, end] time ranges to inspect, each as 'HH:MM:SS' strings, e.g. [[\"00:14:10\", \"00:14:25\"]].")],
         question: A[str, D("The specific visual question to answer from the frames, e.g. 'What color is the car?'")],
-        sampling: A[str, D("Frame selection: 'auto' (recommended), 'dense' (COUNTING repeated events: knocks, hits, strikes — sees every instant), 'event' (what unfolds over a longer span — motion keyframes), or 'detail' (one moment: pose, color, sign).")] = "auto",
+        sampling: A[str, D("Frame selection: 'auto' (recommended), 'dense' (slow-motion chunked sweep — COUNTING repeated events AND the exact ORDER of fast actions: who moved first, sequence of strokes; window must be under ~60s), 'event' (what unfolds over a longer span — motion keyframes), or 'detail' (one moment: pose, color, sign).")] = "auto",
     ) -> str:
         """
         Inspect the raw video: selects up to 10 real frames at an adaptive density,
@@ -117,6 +118,7 @@ class DVDCompatTools:
         graph folded into the same prompt.
         USE THIS FOR:
           • "how many times did X knock/hit/strike" → sampling="dense"
+          • "who moved/turned FIRST", "in what ORDER did the fast actions happen" → sampling="dense"
           • "what does X see through the window" → sampling="auto"
           • "what color is X", "what is X wearing" → sampling="detail"
           • "what happens during X" → sampling="event"
@@ -149,13 +151,13 @@ class DVDCompatTools:
         # Fast actions (a stroke, a shot, where the ball lands) resolve in
         # well under a second — a single 10-frame pass over a >5s window
         # samples below 2fps and the VLM narrates a guess. Walk such windows
-        # chunk-by-chunk at ~3fps instead, like counting, but fuse as a
-        # sequence rather than a total.
+        # chunk-by-chunk instead: per-chunk counts fused into a total for
+        # counting questions, a sequence-preserving narration otherwise.
+        # The model choosing sampling="dense" is honored directly — the regex
+        # only rescues fast-action questions where it picked "auto".
         fast_action = bool(_FAST_ACTION_RE.search(question)
                            or (self.current_mcq
                                and _FAST_ACTION_RE.search(self.current_mcq)))
-        if density == "dense" and not (counting or fast_action):
-            density = "event"
         if len(time_ranges) == 1 and (density == "dense"
                                       or (fast_action and density != "event")):
             t0, t1 = to_seconds(time_ranges[0][0]), to_seconds(time_ranges[0][1])
@@ -165,6 +167,10 @@ class DVDCompatTools:
             if 4.0 < span and (counting or span <= 60.0):
                 mode = "count" if counting else "action"
                 return self._dense_count_inspect(t0, t1, question, mode=mode)
+        # Dense over multiple ranges or a >60s non-counting span can't take the
+        # chunked path — motion keyframes beat blind uniform sampling there.
+        if density == "dense" and not counting and total_span > 45:
+            density = "event"
 
         frames: List[Tuple[float, str]] = []
         spans: List[str] = []

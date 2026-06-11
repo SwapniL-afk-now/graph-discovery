@@ -11,7 +11,7 @@ Design principles (the "present so the model knows what to do next" layer):
    readability without losing precision.
 4. **Affordance footer**: every observation ends with a short "What you can do
    next" block of *concrete, copy-pasteable* tool calls derived from the
-   evidence actually returned (causal edges present → trace_causes; entities
+   evidence actually returned (causal edges present → why_did_this_happen; entities
    present → find_entity; uncertain/visual detail → inspect_frames).
 """
 
@@ -88,7 +88,8 @@ def affordance_footer(graph, nodes: List, question_hint: str = "") -> str:
         n = causal_nodes[0]
         tips.append(
             f'{n.id} has {_causal_degree(graph, n)} causal edge(s) → '
-            f'trace_causes(node_id="{n.id}") to trace why it happened / what it led to'
+            f'why_did_this_happen(time_start="{fmt(max(0.0, n.t_start - 30))}", '
+            f'time_end="{fmt(n.t_end + 30)}") to trace why it happened / what it led to'
         )
 
     # 2. Entity follow-ups: most frequent entity among the hits.
