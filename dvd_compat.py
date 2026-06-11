@@ -66,7 +66,7 @@ class DVDCompatTools:
                                                 frames_to_b64_urls)
         span = max(0.0, t1 - t0)
         if density == "dense":
-            cap = min(FRAMES_PER_PASS * MAX_PASSES, max(8, int(span * 3)))
+            cap = min(FRAMES_PER_PASS * MAX_PASSES, max(8, int(span * 10)))
             frames = extract_frames_for_window(self.video_path, t0, t1, max_frames=cap)
         elif density == "event":
             cap = FRAMES_PER_PASS * min(MAX_PASSES, 3)
@@ -229,16 +229,23 @@ class DVDCompatTools:
         budget allows), so no instant is skipped; the per-chunk reports are then
         fused by a text pass that totals events across chunk boundaries."""
         span = t1 - t0
-        n_chunks = min(MAX_PASSES, max(2, int(span * 3 / FRAMES_PER_PASS) + 1))
+        # action mode: ~10fps in 10-frame passes (engine image limit) so
+        # sub-second motion (a stroke, the ball's bounce) is actually seen;
+        # counting keeps the cheaper ~3fps walk.
+        if mode == "action":
+            per_pass, fps, max_passes = 10, 10.0, 10
+        else:
+            per_pass, fps, max_passes = FRAMES_PER_PASS, 3.0, MAX_PASSES
+        n_chunks = min(max_passes, max(2, int(span * fps / per_pass) + 1))
         bounds = [t0 + span * i / n_chunks for i in range(n_chunks + 1)]
         context = self._window_multimodal_context([[fmt(t0), fmt(t1)]])
 
         reports = []
         for c0, c1 in zip(bounds, bounds[1:]):
             frames = self._grab_frames(c0, c1, "dense")
-            if len(frames) > FRAMES_PER_PASS:
-                step = len(frames) / FRAMES_PER_PASS
-                frames = [frames[int(i * step)] for i in range(FRAMES_PER_PASS)]
+            if len(frames) > per_pass:
+                step = len(frames) / per_pass
+                frames = [frames[int(i * step)] for i in range(per_pass)]
             if not frames:
                 continue
             tss = ", ".join(fmt(ts) for ts, _ in frames)

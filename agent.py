@@ -111,9 +111,18 @@ class GVDAgent:
     # Tool execution (DVD-style)
     # ------------------------------------------------------------------ #
 
+    # A single runaway tool result (e.g. read_moment over the whole video)
+    # can blow the 65k context by itself; cap what enters the transcript.
+    MAX_TOOL_RESULT_CHARS = 12_000
+
     def _append_tool_msg(self, tool_call_id, name, content, msgs):
+        content = str(content)
+        if len(content) > self.MAX_TOOL_RESULT_CHARS:
+            content = (content[:self.MAX_TOOL_RESULT_CHARS]
+                       + f"\n… [truncated {len(content) - self.MAX_TOOL_RESULT_CHARS}"
+                       " chars — call the tool again on a narrower window for the rest]")
         msgs.append({"tool_call_id": tool_call_id, "role": "tool",
-                     "name": name, "content": str(content)})
+                     "name": name, "content": content})
 
     def _exec_tool(self, tool_call, msgs):
         name = tool_call["function"]["name"]
@@ -244,6 +253,14 @@ class GVDAgent:
                 f"query_nodes(SpeechNode, {fmt(max(0, t0 - 60))}, {fmt(t1 + 60)}) — all dialogue around the window",
                 self.toolkit.query_nodes, "SpeechNode",
                 fmt(max(0, t0 - 60)), fmt(t1 + 60)))
+            # WHY/intent questions: the reason is nearly always spoken or
+            # causal, not visible — pre-run the causal reader so the agent
+            # doesn't answer from generic priors after a frames-only look.
+            if re.search(r"\bwhy\b|\breason\b|\bpurpose\b|\bmight\b|\bcause[sd]?\b",
+                         question, re.I):
+                sections.append(grab(
+                    f"explain_why({fmt(t0)}, {fmt(t1)}) — causal reading of the window",
+                    self.toolkit.explain_why, fmt(t0), fmt(t1)))
 
         plain_q = self._TIME_REF_RE.sub("", question).split("\n\n")[0].strip()
         sections.append(grab(
@@ -261,6 +278,42 @@ class GVDAgent:
                          "what it does not answer (e.g. inspect_frames to verify "
                          "visually), then finish with the letter."})
         return True
+
+    _OPT_RE = re.compile(r"^\(([A-D])\)\s*(.+?)\s*$", re.M)
+
+    def _option_diff_briefing(self, question: str) -> Optional[str]:
+        """For long near-duplicate MCQ options (summaries, event orderings),
+        compute what actually differs between them and instruct the agent to
+        verify each discriminator separately. One pooled VLM description
+        cannot adjudicate three independent clauses — the dominant failure
+        mode of summarization questions."""
+        opts = {m.group(1): m.group(2) for m in self._OPT_RE.finditer(question)}
+        if len(opts) < 3:
+            return None
+        words = [o.split() for o in opts.values()]
+        if min(len(w) for w in words) < 12:
+            return None          # short options: normal path handles them
+        # common prefix / suffix across ALL options
+        first = words[0]
+        pre = 0
+        while pre < min(len(w) for w in words) and all(w[pre] == first[pre] for w in words):
+            pre += 1
+        suf = 0
+        while (suf < min(len(w) for w in words) - pre
+               and all(w[len(w) - 1 - suf] == first[len(first) - 1 - suf] for w in words)):
+            suf += 1
+        diffs = []
+        for letter, w in zip(opts.keys(), words):
+            mid = " ".join(w[pre:len(w) - suf]) or "(nothing extra)"
+            diffs.append(f"({letter}) …{mid}…")
+        if pre + suf < 4:        # options differ wholesale; briefing adds nothing
+            return None
+        return ("The options are near-identical and differ ONLY in these parts:\n"
+                + "\n".join(diffs)
+                + "\nDo NOT pick the option that merely 'sounds closest'. Verify "
+                  "EACH differing detail separately (targeted inspect_frames on the "
+                  "sub-moment, or the dialogue for who-said/what-order), then pick "
+                  "the option whose every clause checked out.")
 
     # ------------------------------------------------------------------ #
     # Main loop
@@ -286,6 +339,12 @@ class GVDAgent:
         # spends its turns on frame verification, not retrieval.
         prefetched = self._prefetch_graph_context(question, msgs)
 
+        # Near-duplicate multi-clause options: tell the agent exactly what
+        # differs and demand per-clause verification.
+        briefing = self._option_diff_briefing(question)
+        if briefing:
+            msgs.append({"role": "user", "content": briefing})
+
         answer = None
         plain_text_nudges = 0
         inspected = precounted         # has the agent LOOKED at frames yet?
@@ -301,7 +360,22 @@ class GVDAgent:
                              "content": "Please call the `finish` function now with your "
                              "final answer (exactly one letter: A, B, C, or D)."})
 
-            response = self.llm.chat_with_tools(msgs, self.function_schemas)
+            try:
+                response = self.llm.chat_with_tools(msgs, self.function_schemas)
+            except Exception as exc:
+                if "context length" not in str(exc) and "input_tokens" not in str(exc):
+                    raise
+                # Context overflow: shrink the biggest tool observations and
+                # retry once; a degraded answer beats an ERROR row.
+                tool_msgs = sorted((m for m in msgs if m.get("role") == "tool"),
+                                   key=lambda m: -len(m.get("content") or ""))
+                for m in tool_msgs[:4]:
+                    m["content"] = (m["content"][:2000]
+                                    + "\n… [evicted to fit the context window]")
+                try:
+                    response = self.llm.chat_with_tools(msgs, self.function_schemas)
+                except Exception:
+                    break  # fall through to last_thought + _ensure_letter
             msgs.append(response)
             if response.get("content"):
                 last_thought = response["content"]  # the model's running reasoning
