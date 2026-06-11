@@ -154,10 +154,18 @@ class VLLMToolClient:
             chat_template_kwargs={"enable_thinking": self.enable_thinking},
             use_tqdm=False,
         )[0]
-        return out.outputs[0].text.strip()
+        comp = out.outputs[0]
+        # Kept for failure diagnostics: WHY did the engine stop generating?
+        self._last_stop = (getattr(comp, "finish_reason", None),
+                           getattr(comp, "stop_reason", None),
+                           len(getattr(comp, "token_ids", []) or []))
+        return comp.text.strip()
 
     def _action_setup(self, function_schemas: List[Dict]):
-        key = id(function_schemas)
+        # Key by tool names, NOT id(list): CPython reuses ids of freed lists,
+        # so id-keying can silently serve a stale grammar built for a
+        # different toolset (per-question agents rebuild the schema list).
+        key = tuple(fs["function"]["name"] for fs in function_schemas)
         if key not in self._schema_cache:
             from vllm import SamplingParams
             from vllm.sampling_params import StructuredOutputsParams
@@ -184,7 +192,19 @@ class VLLMToolClient:
                 structured_outputs=StructuredOutputsParams(
                     json=_tool_action_schema(function_schemas)),
             )
-            self._schema_cache[key] = (catalog, sampling, retry)
+            # Last resort: force a SHORT thought. Some failures stall inside a
+            # long thought string; a tight maxLength makes the grammar close
+            # the string early so the tool call itself still comes out intact.
+            brief_schema = _tool_action_schema(function_schemas)
+            for br in brief_schema["anyOf"]:
+                br["properties"]["thought"] = {"type": "string", "maxLength": 240}
+            brief = SamplingParams(
+                temperature=0.0,
+                top_p=1.0,
+                max_tokens=self.max_action_tokens,
+                structured_outputs=StructuredOutputsParams(json=brief_schema),
+            )
+            self._schema_cache[key] = (catalog, sampling, retry, brief)
         return self._schema_cache[key]
 
     # ------------------------------------------------------------------ #
@@ -216,23 +236,27 @@ class VLLMToolClient:
         Returns the same assistant-message shape as the OpenAI client, so
         GVDAgent's loop and transcript format stay identical.
         """
-        catalog, sampling, retry_sampling = self._action_setup(tools)
+        catalog, sampling, retry_sampling, brief_sampling = self._action_setup(tools)
         converted = _convert_messages(messages, catalog)
         text = self._chat(converted, sampling)
 
         action = self._parse_action(text)
         if action is None:
-            # Not truncation when len << budget: usually a control character
-            # the grammar allowed but strict json.loads rejects (salvage
-            # handles that), or a genuinely cut-off object. Log WHAT failed,
-            # then retry once with different sampling (see _action_setup).
-            print(f"[gvd] action JSON unparseable ({len(text)} chars): "
-                  f"{text[:160]!r} — retrying with varied sampling")
+            print(f"[gvd] action JSON unparseable ({len(text)} chars, "
+                  f"stop={getattr(self, '_last_stop', None)}): {text[:300]!r} "
+                  "— retrying with varied sampling")
             text = self._chat(converted, retry_sampling)
             action = self._parse_action(text)
+        if action is None:
+            print(f"[gvd] retry unparseable ({len(text)} chars, "
+                  f"stop={getattr(self, '_last_stop', None)}) — forcing a "
+                  "short-thought generation")
+            text = self._chat(converted, brief_sampling)
+            action = self._parse_action(text)
             if action is None:
-                print(f"[gvd] retry also unparseable ({len(text)} chars) — "
-                      "falling back to plain text")
+                print(f"[gvd] short-thought attempt also unparseable "
+                      f"({len(text)} chars, stop={getattr(self, '_last_stop', None)}): "
+                      f"{text[:300]!r} — falling back to plain text")
                 return {"role": "assistant", "content": text}
 
         self._tc_counter += 1
