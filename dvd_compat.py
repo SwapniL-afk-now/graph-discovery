@@ -23,6 +23,13 @@ from .vkg_tools import D, VKGToolkit
 FRAMES_PER_PASS = 8
 MAX_PASSES = 5                 # cap total VLM vision calls per inspection
 _COUNT_RE = re.compile(r"\b(how many|how often|number of|count|times|how much)\b", re.I)
+# Sub-second actions (a stroke, a shot, a fall) vanish between ~1fps samples;
+# these route to the chunked high-fps walk with a sequence-preserving fuse.
+_FAST_ACTION_RE = re.compile(
+    r"\b(shot|stroke|smash|serve|rally|hit[s]?\b|kick|throw|catch|swing|punch|"
+    r"goal|score[ds]?\b|(point|game|match) (was |is )?(won|lost)|"
+    r"w[io]ns? the (point|game|match)|ball|jump|fall[s]?\b|trip|"
+    r"slam|spike|dunk|volley|backhand|forehand|lob|replay)\b", re.I)
 
 
 class DVDCompatTools:
@@ -139,14 +146,25 @@ class DVDCompatTools:
         # over speculative segment reports is poison there.
         counting = bool(_COUNT_RE.search(question)
                         or (self.current_mcq and _COUNT_RE.search(self.current_mcq)))
-        if density == "dense" and not counting:
+        # Fast actions (a stroke, a shot, where the ball lands) resolve in
+        # well under a second — a single 10-frame pass over a >5s window
+        # samples below 2fps and the VLM narrates a guess. Walk such windows
+        # chunk-by-chunk at ~3fps instead, like counting, but fuse as a
+        # sequence rather than a total.
+        fast_action = bool(_FAST_ACTION_RE.search(question)
+                           or (self.current_mcq
+                               and _FAST_ACTION_RE.search(self.current_mcq)))
+        if density == "dense" and not (counting or fast_action):
             density = "event"
-        if density == "dense" and len(time_ranges) == 1:
+        if len(time_ranges) == 1 and (density == "dense"
+                                      or (fast_action and density != "event")):
             t0, t1 = to_seconds(time_ranges[0][0]), to_seconds(time_ranges[0][1])
             if t1 <= t0:
                 t1 = t0 + 10.0
-            if t1 - t0 > 4.0:   # tiny windows: the single pass is already dense
-                return self._dense_count_inspect(t0, t1, question)
+            span = t1 - t0
+            if 4.0 < span and (counting or span <= 60.0):
+                mode = "count" if counting else "action"
+                return self._dense_count_inspect(t0, t1, question, mode=mode)
 
         frames: List[Tuple[float, str]] = []
         spans: List[str] = []
@@ -203,7 +221,8 @@ class DVDCompatTools:
                 f"{', fused with dialogue/OCR' if context else ''}"
                 f"{', informed by prior looks' if priors else ''}):\n{answer}")
 
-    def _dense_count_inspect(self, t0: float, t1: float, question: str) -> str:
+    def _dense_count_inspect(self, t0: float, t1: float, question: str,
+                             mode: str = "count") -> str:
         """Walk [t0,t1] in consecutive chunks at true counting density.
 
         Each chunk gets its own ≤FRAMES_PER_PASS-frame VLM pass (~3fps when the
@@ -223,11 +242,17 @@ class DVDCompatTools:
             if not frames:
                 continue
             tss = ", ".join(fmt(ts) for ts, _ in frames)
+            if mode == "count":
+                seg_task = ("Report each occurrence of the relevant event with its "
+                            "timestamp; say 'none in this segment' if nothing happens.")
+            else:
+                seg_task = ("Describe the action frame-by-frame: body posture, "
+                            "limb/racket/ball positions and where the ball/object "
+                            "ends up. Report only what is visibly happening; say "
+                            "'nothing relevant in this segment' if so.")
             q = (f"These {len(frames)} consecutive frames cover {fmt(c0)}–{fmt(c1)} "
                  f"(timestamps in order: {tss}).\n"
-                 f"Question (answer ONLY for this segment): {question}\n"
-                 "Report each occurrence of the relevant event with its timestamp; "
-                 "say 'none in this segment' if nothing happens.")
+                 f"Question (answer ONLY for this segment): {question}\n" + seg_task)
             try:
                 ans = self.llm.complete_with_images(
                     question=q, image_urls=[u for _, u in frames], context=context)
@@ -243,19 +268,28 @@ class DVDCompatTools:
         joined = "\n\n".join(reports)
         mcq = (f"\n\nThe overall multiple-choice question:\n{self.current_mcq}"
                if self.current_mcq else "")
+        if mode == "count":
+            system = ("You combine sequential video-segment reports into one answer. "
+                      "Sum event counts across segments, but an event spanning a "
+                      "segment boundary counts once.")
+            final_ask = "Final answer to the question, with the total count:"
+        else:
+            system = ("You combine sequential video-segment reports into one answer. "
+                      "Preserve temporal order; reconstruct the action as it unfolds "
+                      "across segments. Trust concrete frame observations over "
+                      "narrative guesses — if segments disagree, say so.")
+            final_ask = ("Final answer to the question, citing the segment "
+                         "observations that support it:")
         fused = self.llm.complete([
-            {"role": "system", "content":
-             "You combine sequential video-segment reports into one answer. Sum "
-             "event counts across segments, but an event spanning a segment "
-             "boundary counts once."},
+            {"role": "system", "content": system},
             {"role": "user", "content":
              f"Question: {question}{mcq}\n\nSegment reports (consecutive, "
              f"non-overlapping, covering {fmt(t0)}–{fmt(t1)}):\n\n{joined}\n\n"
-             "Final answer to the question, with the total count:"}],
+             + final_ask}],
             max_tokens=300)
 
         self._enrich_graph(t0, t1, question, fused, source="frame_inspection")
-        return (f"Frame inspection [dense, {len(reports)} passes] over "
+        return (f"Frame inspection [dense {mode}, {len(reports)} passes] over "
                 f"{fmt(t0)}–{fmt(t1)}"
                 f"{', fused with dialogue/OCR' if context else ''}:\n{fused}")
 

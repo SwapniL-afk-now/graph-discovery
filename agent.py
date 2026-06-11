@@ -95,7 +95,10 @@ class GVDAgent:
             for t in self.tools
         ]
 
-        video_length = int(max((n.t_end for n in graph.nodes.values()), default=0))
+        # Whole-video sentinel nodes (e.g. the Narrator CharacterNode spans
+        # 0–1e9) must not define the duration the agent plans windows with.
+        video_length = int(max((n.t_end for n in graph.nodes.values()
+                                if n.t_end < 1e6), default=0))
         present_types = ", ".join(sorted(graph.type_idx.keys())) or "(none)"
         self.messages = [
             {"role": "system",

@@ -304,7 +304,7 @@ def main():
                         "predicted": record["predicted"],
                         "ground_truth": record["ground_truth"],
                         "question_types": ",".join(record["question_types"]),
-                    }, step=wb_total)
+                    })
 
             if args.parallel > 1:
                 from concurrent.futures import ThreadPoolExecutor
