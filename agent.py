@@ -357,7 +357,11 @@ class GVDAgent:
         answer = None
         plain_text_nudges = 0
         inspected = precounted         # has the agent LOOKED at frames yet?
-        graph_grounded = prefetched    # the prefetch IS a graph consult
+        # The prefetch does NOT count as the graph consult: the agent must call
+        # a graph tool ITSELF at least once before it may finish, so every
+        # answer involves a deliberate, question-shaped graph query rather than
+        # passive reading of the seeded context.
+        graph_grounded = False
         nudged_sources = set()         # which missing-evidence nudges we've sent
         has_video = bool(getattr(getattr(self, "dvd_tools", None), "video_path", None))
         _GRAPH_TOOLS = {"get_overview", "search_events", "query_nodes", "before_and_after",
@@ -422,10 +426,12 @@ class GVDAgent:
                                        "count_objects for counting) before finishing.")
                         elif not graph_grounded and "graph" not in nudged_sources:
                             missing = ("graph",
-                                       "you have not cross-checked against the graph. "
-                                       "Read the moment's dialogue/events with read_moment "
-                                       "(or query_nodes on SpeechNode/OCRNode) before finishing — "
-                                       "confirm the visual answer agrees with what is said/shown.")
+                                       "you have not consulted the graph yourself. Call ONE "
+                                       "graph tool aimed at the question before finishing: "
+                                       "why_did_this_happen for why/reason, before_and_after "
+                                       "for before/after/next/order, find_entity for a person "
+                                       "or recurrence, read_moment for the referenced window — "
+                                       "then check your answer against what it returns.")
                         if missing:
                             nudged_sources.add(missing[0])
                             self._append_tool_msg(
