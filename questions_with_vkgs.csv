@@ -1,0 +1,2946 @@
+uid,video_path,question,answer,question_type,time_reference
+55,Cm73ma6Ibcs.mp4,"What year appears in the opening caption of the video?
+(A) 1636
+(B) 1366
+(C) 1363
+(D) 1633",D,['key information retrieval'],00:15-00:19
+56,Cm73ma6Ibcs.mp4,"How is the weather like in the opening?
+(A) Cloudy
+(B) Snowy
+(C) Sunny
+(D) Rainy",B,['event understanding'],00:00-01:16
+61,Cm73ma6Ibcs.mp4,"After the man with the gun threatens the cook, what does the protagonist do?
+(A) The protagonist pushes the table aside and stands up, confronting the man. After a series of quarrels, she kills the man and leaves the restaurant. The chef follows her
+(B) The protagonist pushes the table aside and stands up, confronting the man. After a series of quarrels, she injuries  the man and leaves the restaurant. The chef follows her
+(C) The protagonist pushes the table aside and stands up, taking out her gun and pointing at the man. After a series of quarrels, she kills the man and leaves the restaurant. The chef follows her
+(D) The protagonist pushes the table aside and stands up, taking out her gun and pointing at the man. After a series of quarrels, she kills the man and leaves the restaurant",A,['summarization'],04:19-08:41
+62,Cm73ma6Ibcs.mp4,"What does the protagonist do when the man with the gun keeps approaching her?
+(A) The protagonist cuts off the hand of the man with the gun with her sword
+(B) The protagonist cuts off two fingers of the man with the gun with her sword
+(C) The protagonist impales the man with the gun with her word
+(D) The protagonist breaks the windows with her sword and flees",B,['event understanding'],06:04-06:17
+63,Cm73ma6Ibcs.mp4,"How many sticks does the protagonist put in the incense burner?
+(A) 3
+(B) 2
+(C) 5
+(D) 1",D,['entity recognition'],10:43-10:50
+65,Cm73ma6Ibcs.mp4,"Why are the mother and child, who line in front of the protagonist, unable to enter the city?
+(A) They do not bribe the guard
+(B) They are foreigners
+(C) They bring illegal weapons
+(D) They do not have a pass",A,['reasoning'],19:35-20:20
+67,Cm73ma6Ibcs.mp4,"How many people are carrying the sedan chair for the woman?
+(A) 4
+(B) 8
+(C) 6
+(D) 2",C,['entity recognition'],24:06-24:40
+68,Cm73ma6Ibcs.mp4,"What happens when the woman wearing a red kimono kneels?
+(A) A child rides on her back
+(B) A man kneels beside her
+(C) A man takes out his sword
+(D) A child hits her head with noodles",D,['event understanding'],26:10-26:16
+71,Cm73ma6Ibcs.mp4,"How many times does the protagonist knock on the green door?
+(A) 1
+(B) 5
+(C) 2
+(D) 4",D,['event understanding'],31:05-31:45
+72,Cm73ma6Ibcs.mp4,"What does the protagonist see through the window after she is taken to the utility room?
+(A) A group of monks sitting cross-legged in the snow
+(B) A group of citizens chatting together
+(C) A group of warriors practicing swords
+(D) A group of samurais eating",C,['event understanding'],33:57-34:04
+73,Cm73ma6Ibcs.mp4,"Why does the protagonist tie iron to her limbs?
+(A) Because she wants to strength her body
+(B) Because irons are decorations
+(C) Because she has superpower and iron surpress it
+(D) Because tying iron is a culture tradition",A,['reasoning'],40:55-41:01
+75,Cm73ma6Ibcs.mp4,"What does the protagonist wipe her face with when she is knocked to the ground during a solo fight?
+(A) With snow on the ground
+(B) With her sleeves
+(C) With her hands
+(D) With a handkerchief in her pocket",A,['entity recognition'],50:00-50:10
+78,Cm73ma6Ibcs.mp4,"Why does the protagonist aim her sword at the cook?
+(A) Because he is a spy
+(B) Because he wants to steal the sword
+(C) Because he wants to challenge the protagonist
+(D) Because he finds out that the protagonist is a woman",D,['reasoning'],57:43-57:50
+79,Cm73ma6Ibcs.mp4,"What is the protagonist primary objection at the spring?
+(A) Sleep
+(B) Drink some water
+(C) Wash clothes
+(D) Take a bath",D,['event understanding'],54:57-55:02
+80,Cm73ma6Ibcs.mp4,"What else does the protagonist do in the shower besides taking a shower?
+(A) Eat some food
+(B) Stitches her wound
+(C) Drink spring water
+(D) Relax",B,['event understanding'],56:07-56:14
+82,Cm73ma6Ibcs.mp4,"When the protagonist moves the table at the restaurant, what happens to the things on the table?
+(A) One of the chopsticks on the bowl falls to the table
+(B) One of the chopsticks on the bowl falls to the floor
+(C) The seasoning bottle falls
+(D) The bowl falls to the floor",A,['event understanding'],04:35-04:42
+83,Cm73ma6Ibcs.mp4,"What part of the cook is different from other people?
+(A) Leg
+(B) Foot
+(C) Eye
+(D) Hand",D,"['entity recognition', 'reasoning']",03:00-03:03
+84,Cm73ma6Ibcs.mp4,"What does the protagonist cut off from the man who she fights in the snow in the end?
+(A) Leg
+(B) Cloth
+(C) Eye
+(D) Hair",D,"['event understanding', 'entity recognition']",52:08-53:55
+113,q01CUy_gwdU.mp4,"What color is the scene at the begining?
+(A) White
+(B) Blue
+(C) Brown
+(D) Grey",D,['event understanding'],01:01-01:01
+115,q01CUy_gwdU.mp4,"What happens from 01:58-02:46?
+(A) A woman runs, stumbles against a man, and knocks over all his stuff
+(B) A woman runs, stumbles against a man, and he cries
+(C) A man runs, stumbles against a woman, and she cries
+(D) A man runs, stumbles against a woman, and knocks over all her stuff",D,"['summarization', 'temporal grounding']",01:58-02:46
+117,q01CUy_gwdU.mp4,"What does the woman in red do after she collides with the man?
+(A) She picks up things on the ground on her own and throws them away
+(B) She picks up things on the ground with the man
+(C) She picks up things on the ground on her own
+(D) She picks up things on the ground with a passerby",C,['event understanding'],02:52-03:08
+120,q01CUy_gwdU.mp4,"What does the man do after the second collision?
+(A) He looks for his book
+(B) He looks for his phone
+(C) He looks for the woman
+(D) He looks for the post",A,['event understanding'],04:42-05:00
+121,q01CUy_gwdU.mp4,"Why does the man follow the woman in red after they meet for the third time?
+(A) He falls in love with the woman
+(B) He is a spy
+(C) The woman has his phone
+(D) The woman has his book",D,['event understanding'],05:15-05:31
+123,q01CUy_gwdU.mp4,"What best summarizes the first half of the events when the woman and the man meet for the third time?
+(A) They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. She goes to a beach
+(B) They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man reads a book. He then leaves
+(C) They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. She then sits near a rive
+(D) They walk for a while and then sit down at the patio of a coffee shop. She eats, drinks, and smokes while the man stares at her. He then leaves",C,"['event understanding', 'summarization']",06:26-07:04
+125,q01CUy_gwdU.mp4,"What color is the first plane?
+(A) Yellow
+(B) Red
+(C) White
+(D) Blue",A,['entity recognition'],09:26-09:53
+126,q01CUy_gwdU.mp4,"What appears on the screen after the fictional character from the man's book appears in the air for the first time, traveling between buildings?
+(A) The book
+(B) A butterfly
+(C) A rainbow
+(D) A plane",C,['entity recognition'],12:31-12:36
+127,q01CUy_gwdU.mp4,"What does the man do after he sees the woman for the third time?
+(A) He runs a marathon
+(B) He sleeps in his bed
+(C) He draws the woman in the book
+(D) He looks for the woman",C,['event understanding'],14:52-15:10
+128,q01CUy_gwdU.mp4,"What does the woman do before throwing the Coca-Cola can into the air?
+(A) She dances with people
+(B) She throws her shoe away
+(C) She walks barefoot
+(D) She fights with a police",A,"['entity recognition', 'key information retrieval']",15:24-15:45
+130,q01CUy_gwdU.mp4,"What does the woman do after she sees a rolling stone on the ground
+(A) She runs away
+(B) She goes to meet the man
+(C) She throws her shoe away
+(D) She dances with people",C,['event understanding'],23:36-24:09
+132,q01CUy_gwdU.mp4,"Where do the man and the woman sit at where the woman is eating a pear?
+(A) A river
+(B) A fountain
+(C) A street corner
+(D) A park bench",B,"['event understanding', 'entity recognition']",28:11-28:56
+133,q01CUy_gwdU.mp4,"What happens from 35:52-36:41?
+(A) The woman goes to meet the man barefoot, but she is stopped by other people
+(B) The woman goes to meet the man, but she is stopped by other people
+(C) The woman goes to meet the man barefoot, but she is stopped by a car
+(D) The woman goes to meet the man, but she is stopped by some dancers",B,"['summarization', 'temporal grounding']",35:52-36:41
+134,q01CUy_gwdU.mp4,"How is the weather before the season transitions to winter?
+(A) Rainy
+(B) Windy
+(C) Snowy
+(D) Sunny",A,['event understanding'],37:08-37:19
+135,q01CUy_gwdU.mp4,"What happens from 37:30-38:05?
+(A) The man visits the places that he and the woman have been to before
+(B) The man visits the new places
+(C) The man visits the places that he and the woman have been to before, would like to go to, and new places
+(D) The man visits the places that he and the woman would like to go to",A,"['temporal grounding', 'reasoning', 'event understanding']",37:30-38:05
+136,q01CUy_gwdU.mp4,"When does the man meet the woman for the last time?
+(A) Autumn
+(B) Winter
+(C) Spring
+(D) Summer",C,['event understanding'],49:49-49:49
+137,q01CUy_gwdU.mp4,"What happens to the woman in the man's imagery when she is not around?
+(A) She becomes an angel
+(B) She turns into an elvis
+(C) She turns into a flower fairy
+(D) She grows six more hands",C,"['event understanding', 'reasoning']",46:57-47:30
+200,28CIeC8cZks.mp4,"What color hair do the two kids have in the video?
+(A) Black
+(B) Blue
+(C) Green
+(D) Red",C,['entity recognition'],00:55-01:20
+201,28CIeC8cZks.mp4,"Where is the camera angle locate at 03:19 in the video?
+(A) Behind the girl
+(B) Above the girl
+(C) In front of the girl
+(D) Next to the girl",A,"['reasoning', 'entity recognition']",03:10-03:20
+202,28CIeC8cZks.mp4,"What color is the necklace around the neck of the elderly person in the video?
+(A) Blue
+(B) Black
+(C) Green
+(D) Red",A,['entity recognition'],06:29-06:31
+203,28CIeC8cZks.mp4,"Why does the girl wear a mask in the video?
+(A) Because she's participating in a costume party
+(B) Because it's a fashion statement
+(C) She wants to know where someone is
+(D) Because she's trying to hide her identity",C,['reasoning'],08:10-08:37
+208,28CIeC8cZks.mp4,"What is on the head of the older brother of the two childreno?
+(A) Headscarf
+(B) Crown
+(C) Helmet
+(D) Hat",A,"['entity recognition', 'reasoning']",22:42-22:42
+210,28CIeC8cZks.mp4,"What color are the balls held by the two people in the video?
+(A) Black
+(B) Blue
+(C) Green
+(D) Red",B,['entity recognition'],27:13-27:13
+213,28CIeC8cZks.mp4,"What color light is emanating from the woman's arm at 36:05 in the video?
+(A) Green
+(B) Red
+(C) Yellow
+(D) Blue",D,"['temporal grounding', 'entity recognition']",36:05-36:15
+214,28CIeC8cZks.mp4,"What does the girl use to find the person she is looking for in the video?
+(A) Mask
+(B) Tail
+(C) Phone
+(D) Car",A,"['event understanding', 'entity recognition']",00:00-63:48
+218,28CIeC8cZks.mp4,"What color is the crystal on the object held by the girl?
+(A) White
+(B) Yellow
+(C) Red
+(D) Blue",D,['entity recognition'],59:04-59:04
+219,28CIeC8cZks.mp4,"What color are the runes on the bottom of the girl's feet at 38:18 in the video?
+(A) Golden
+(B) White
+(C) Red
+(D) Black",A,"['temporal grounding', 'entity recognition']",38:19-38:19
+221,28CIeC8cZks.mp4,"How many people are leaving by boat in the video?
+(A) 2
+(B) 4
+(C) 0
+(D) 1",D,['event understanding'],33:52-33:46
+223,28CIeC8cZks.mp4,"The girl rescue a total of how many spirits?
+(A) 5
+(B) 2
+(C) 4
+(D) 3",C,['event understanding'],00:00-63:48
+250,TJR1oYDDTwg.mp4,"What is the first word in the video?
+(A) ENT
+(B) NET
+(C) TNE
+(D) ETN",B,['key information retrieval'],00:00-00:06
+251,TJR1oYDDTwg.mp4,"How many birds are there flying at the beginning of the video?
+(A) 6
+(B) 4
+(C) 5
+(D) 8",C,['entity recognition'],00:15-00:28
+252,TJR1oYDDTwg.mp4,"How many doors have colored lights at 00:29?
+(A) 2
+(B) 1
+(C) 3
+(D) 0",C,"['entity recognition', 'reasoning']",00:29-00:35
+253,TJR1oYDDTwg.mp4,"What is the character doing between 01:05-01:09?
+(A) Tie the gift box
+(B) Destroy the gift box
+(C) Colour the gift box
+(D) Stuff a gift box with something",A,['event understanding'],01:05-01:09
+254,TJR1oYDDTwg.mp4,"What color are the clothes on the two men playing the trumpet?
+(A) Blue
+(B) Yellow
+(C) Lilac
+(D) Rose",C,['entity recognition'],01:53-01:56
+255,TJR1oYDDTwg.mp4,"Does the Queen go first or does the king go first?
+(A) Their children
+(B) King
+(C) Queen
+(D) They walk side by side",C,"['reasoning', 'entity recognition']",02:00-02:07
+257,TJR1oYDDTwg.mp4,"After the king talk to the green Dragon, who embraces the king?
+(A) Prince
+(B) Green dragon
+(C) Queen
+(D) Princess",A,['entity recognition'],05:18-05:22
+258,TJR1oYDDTwg.mp4,"What are the patterns on the shawls of Kings and queens?
+(A) Heart pattern
+(B) Circle pattern
+(C) Star pattern
+(D) Fruit pattern",A,['entity recognition'],05:22-05:27
+259,TJR1oYDDTwg.mp4,"What color are the teeth in the middle of the green dragon?
+(A) Yellow
+(B) Aqua
+(C) Brown
+(D) Faint yellow",D,['entity recognition'],06:17-06:21
+264,TJR1oYDDTwg.mp4,"What happens when the villain's mirror breaks?
+(A) The mirror fragments automatically fuse on the ground into a whole mirror again
+(B) The mirror fragments cut the villain's hand
+(C) The mirror fragments are thrown away by the villains
+(D) The mirror fragments fly into the sky",D,['event understanding'],09:49-09:56
+266,TJR1oYDDTwg.mp4,"Who save the green dragon from the net?
+(A) Villain
+(B) Prince
+(C) Pink dragon
+(D) Princess",B,['entity recognition'],12:40-13:10
+267,TJR1oYDDTwg.mp4,"Who grasps the villain in the net?
+(A) Green dragon and light blue dragon
+(B) Yellow dragon and light blue dragon
+(C) The prince and the pink dragon
+(D) Yellow dragon and pink dragon",B,['entity recognition'],13:28-13:32
+268,TJR1oYDDTwg.mp4,"How does the villain follow the prince, princess and dragon?
+(A) Run after
+(B) Pilot a plane
+(C) Drive a car
+(D) Ride a bike",C,['event understanding'],14:57-16:25
+273,TJR1oYDDTwg.mp4,"What instruments do the prince and princess play respectively during the performance?
+(A) Both the prince and the princess are playing the guitar
+(B) The prince is playing the guitar and the princess is playing the drum set
+(C) The prince is playing the guitar and the princess is playing the piano
+(D) The prince plays the drum set and the princess plays the guitar",D,['entity recognition'],20:04-20:13
+274,TJR1oYDDTwg.mp4,"When the prince and princess play, the green dragon is singing in the sky while dropping what?
+(A) Tree leaf
+(B) Star
+(C) Snowflake
+(D) Flower",D,['entity recognition'],20:14-20:18
+277,TJR1oYDDTwg.mp4,"Why is the king so happy after using the telescope?
+(A) Because the king is curious about binoculars
+(B) Because he sees his children greeting him
+(C) Because he sees the first prize
+(D) The villain makes a fool of himself because his sleigh caught fire",D,['event understanding'],38:04-38:13
+278,TJR1oYDDTwg.mp4,"What festival are they celebrating?
+(A) Mid-Autumn Festival
+(B) Christmas Day
+(C) All Saints' Day
+(D) Valentine's day",B,['reasoning'],21:21-23:15
+279,TJR1oYDDTwg.mp4,"What is on the green dragon at 27:08?
+(A) Black scarf
+(B) Red scarf
+(C) Green scarf
+(D) Yellow scarf",D,"['entity recognition', 'temporal grounding']",27:08-27:12
+398,HfEVEGf1A8Q.mp4,"Who gets the lollipop last?
+(A) Frankenstein
+(B) Zombie
+(C) Vampire
+(D) Dokkaebi",B,['entity recognition'],08:45-10:00
+399,HfEVEGf1A8Q.mp4,"Why doesn't the vampire want the lollipop?
+(A) Because he thinks it is child who eat lollipop
+(B) Because he can't eat lollipop
+(C) Because he doesn't like lollipop
+(D) Because he thinks the lollipop is dirty",D,"['reasoning', 'event understanding']",10:05-10:43
+401,HfEVEGf1A8Q.mp4,"When is the school let out in the afternoon?
+(A) 2:00 pm
+(B) 3:30 pm
+(C) 2:30 pm
+(D) 3:00 pm",A,['key information retrieval'],13:40-13:50
+402,HfEVEGf1A8Q.mp4,"What does the vampire do when the girl first finds him?
+(A) Hide in the cabinet
+(B) Return the phone
+(C) Drink tomato juice
+(D) Clean the desk",D,['event understanding'],14:00-14:15
+403,HfEVEGf1A8Q.mp4,"What happens in the vampire's dream after he faints in front of the girl?
+(A) The girl ties him to a tree and washes him
+(B) The girl ties him to a cross and burns him
+(C) The girl ties him to a cross and washes him
+(D) The girl ties him to a tree and burns him",D,['event understanding'],14:30-15:00
+407,HfEVEGf1A8Q.mp4,"Why the girl faints after the Frankenstein enters the room in the night she hides in the cabinet?
+(A) She is scared by a ghost hunter
+(B) She is scared by a zombie's head
+(C) She is scared by a vampire
+(D) She is scared by the Frankenstein",B,['reasoning'],24:00-24:25
+410,HfEVEGf1A8Q.mp4,"Why does vampire bang his head on a table?
+(A) He have no money to compensate
+(B) The girl is noisy and doesn't study hard
+(C) He is hungry
+(D) He is nervous",B,['reasoning'],35:30-35:40
+412,HfEVEGf1A8Q.mp4,"Where does the girl take the vampire after the exam?
+(A) A playground
+(B) Her home
+(C) The principal room
+(D) A park",D,['event understanding'],46:00-47:20
+414,HfEVEGf1A8Q.mp4,"What happens to the girl and the vampire?
+(A) The vampire breaks the girl's game console but has no money to compensate, so he can only help the girl study. In the end, they become good friends
+(B) The vampire breaks the girl's game console but has no money to compensate, so he can only work in labor to earn money with the girl. In the end, they become good friends
+(C) The vampire breaks the girl's cell phone but has no money to compensate, so he can only work in labor to earn money with the girl. In the end, they become good friends
+(D) The vampire breaks the girl's cell phone but has no money to compensate, so he can only help the girl study. In the end, they become good friends",D,['summarization'],13:14-53:28
+416,HfEVEGf1A8Q.mp4,"What does dokkaebi do after dancing alone?
+(A) Vomit
+(B) Play music
+(C) Sing
+(D) Eat lollipop",A,['entity recognition'],57:20-57:41
+417,HfEVEGf1A8Q.mp4,"How many monsters does the ghost hunter capture first?
+(A) 3
+(B) 6
+(C) 5
+(D) 4",D,"['entity recognition', 'event understanding']",58:17-58:35
+419,HfEVEGf1A8Q.mp4,"Who stop the ghost hunter at last?
+(A) Skeleton
+(B) The human girl
+(C) Principal
+(D) Vampire",D,"['entity recognition', 'event understanding']",73:01-74:21
+421,HfEVEGf1A8Q.mp4,"Who is the director of this video?
+(A) Bong Ho Kim
+(B) Bong Joon Ho
+(C) Mike Yangtzi
+(D) Jin Kum",A,['key information retrieval'],77:53-78:00
+503,2sriHX3PbXw.mp4,"How many round glasses are there in the round frame above the house?
+(A) 7
+(B) 5
+(C) 6
+(D) 8",A,['entity recognition'],00:00-00:53
+506,2sriHX3PbXw.mp4,"What are running around the street?
+(A) Rabbit
+(B) Spider
+(C) Cat
+(D) Mouse",D,['entity recognition'],02:33-02:35
+508,2sriHX3PbXw.mp4,"Why do the two women break down and cover their ears?
+(A) Because they can not finish the chores
+(B) Because the neighbor is renovating the house
+(C) Because there are dogs everywhere
+(D) Because there are rats everywhere",D,['event understanding'],03:12-03:20
+509,2sriHX3PbXw.mp4,"How many mice run across the roof above the street?
+(A) 5
+(B) 2
+(C) 3
+(D) 1",B,"['entity recognition', 'event understanding']",03:46-03:47
+510,2sriHX3PbXw.mp4,"There is a group of people wearing the same outfit, lining up in a line across the street. How many people are there
+(A) 8
+(B) 6
+(C) 5
+(D) 4",B,['entity recognition'],04:16-04:20
+511,2sriHX3PbXw.mp4,"After two groups of people collide, which direction do the six people wearing the same outfit go to?
+(A) All but one go in the opposite direction
+(B) To the opposite direction of the other group
+(C) To the same direction as the other group
+(D) Some go to the opposite direction of the other group, some go to the same direction as the other group",C,['event understanding'],04:41-04:42
+513,2sriHX3PbXw.mp4,"How do people in the government communicate with everyone?
+(A) They use a telephone hotline
+(B) They sit face to face and talk
+(C) They communicate through the government window
+(D) They utilize the email listed on the website",C,['event understanding'],05:24-05:32
+514,2sriHX3PbXw.mp4,"How many people are there in the government?
+(A) 7
+(B) 8
+(C) 6
+(D) 5",A,['entity recognition'],06:25-06:32
+516,2sriHX3PbXw.mp4,"When the people in the government are thinking, what kind of person comes into the meeting room?
+(A) A person without a nose
+(B) A person with a particularly long nose
+(C) A person with colorful hat
+(D) A person in a tall hat",B,"['entity recognition', 'event understanding']",08:40-08:45
+517,2sriHX3PbXw.mp4,"What kind of flying creatures can the person summon with a flute?
+(A) Bat
+(B) Butterfly
+(C) Eagle
+(D) Sparrow",A,['entity recognition'],10:48-10:50
+522,2sriHX3PbXw.mp4,"How much does the man with a long nose get paid?
+(A) A gold coin
+(B) He gets nothing
+(C) Three gold coins
+(D) A bag of gold coins",A,['entity recognition'],19:41-19:50
+527,2sriHX3PbXw.mp4,"One of the events for the celebration is a number of people riding on top of each other and performing acrobatics. How many people are there?
+(A) 5
+(B) 3
+(C) 2
+(D) 4",B,['entity recognition'],17:45-17:48
+528,2sriHX3PbXw.mp4,"After the performance of three people riding on top of each other, what's the next performance?
+(A) Dance performance
+(B) Nunchaku performance
+(C) Somersault performance
+(D) Kite flying performance",B,['event understanding'],17:48-17:58
+529,2sriHX3PbXw.mp4,"What is the image of the government?
+(A) Irresponsible and stingy
+(B) Accountable but poor
+(C) Friendly but unorganized
+(D) Wealthy and responsible",A,['reasoning'],00:00-30:22
+531,2sriHX3PbXw.mp4,"Who is the narrator?
+(A) John Hambley
+(B) Robert Hardy
+(C) Chris Walker
+(D) David Rohl",B,['key information retrieval'],29:24-29:24
+532,2sriHX3PbXw.mp4,"Where does the man with long nose spend his night?
+(A) In an inn
+(B) In a moutain
+(C) Near a river
+(D) On the roof of the government building",C,"['entity recognition', 'event understanding']",16:04-17:20
+651,_zrgbA3FMVE.mp4,"What instruments are already on the stage before the actors come on?
+(A) Harp
+(B) Bass
+(C) Drum kit
+(D) Piano",C,['entity recognition'],00:27-00:33
+653,_zrgbA3FMVE.mp4,"How does the red-haired girl who plays bass look from 01:42-01:47?
+(A) Angry
+(B) Boring
+(C) Amazed
+(D) Excited",C,"['event understanding', 'reasoning', 'temporal grounding']",01:42-01:47
+654,_zrgbA3FMVE.mp4,"What color vest is the man lifting weights wearing?
+(A) Green
+(B) Blue
+(C) Orange
+(D) Yellow",A,['entity recognition'],03:09-03:12
+657,_zrgbA3FMVE.mp4,"Why does the three girls run?
+(A) They are chasing the escaped pig
+(B) They are afraid of being hit by a giant green cylinder
+(C) They are comparing the running speed
+(D) They are being chased by a man with a gun",B,['event understanding'],06:15-06:55
+658,_zrgbA3FMVE.mp4,"What does the three girls do between 07:48-07:50?
+(A) They are bowing
+(B) They are hugging
+(C) They are dancing
+(D) They are shaking hands",D,"['event understanding', 'temporal grounding']",07:48-07:50
+659,_zrgbA3FMVE.mp4,"What is the license plate number of the purple car driven by a woman with long black hair?
+(A) Mandy
+(B) Erica
+(C) Lucy
+(D) Angela",A,"['key information retrieval', 'entity recognition']",08:10-08:15
+660,_zrgbA3FMVE.mp4,"After the girl with long black hair presses the wrench on the machine, what picture appears?
+(A) Three apple icons appear
+(B) Three milk carton icons appear
+(C) Three cherry icons appear
+(D) Three ice cream icons appear",D,['entity recognition'],11:34-11:39
+661,_zrgbA3FMVE.mp4,"What are two men in suits doing in front of a screen?
+(A) They are playing video games
+(B) They are watching movies on the screen
+(C) They are watching variety shows
+(D) They are spying on three girls",D,['event understanding'],14:05-14:22
+663,_zrgbA3FMVE.mp4,"After returning to school through the slide, where does the girl with orange hair appear?
+(A) In the vending machine
+(B) In a car
+(C) School toilet
+(D) In the trash can",D,['event understanding'],17:45-18:00
+664,_zrgbA3FMVE.mp4,"What happens when the boy at the vending machine is about to press the button?
+(A) The girl with long purple hair appears in the vending machine
+(B) The girl with long red hair appears in the vending machine
+(C) The girl with long black hair appears in the vending machine
+(D) The girl with short blond hair appears in the vending machine",D,['event understanding'],17:49-17:55
+665,_zrgbA3FMVE.mp4,"What letter appears on the computer after the girl with orange hair comes down from the bed and turns on the computer?
+(A) M
+(B) N
+(C) V
+(D) W",D,"['key information retrieval', 'event understanding']",21:07-21:15
+666,_zrgbA3FMVE.mp4,"Where is the girl with short blond hair taken by two men in suits wearing sunglasses?
+(A) Hospital
+(B) School
+(C) Hotel
+(D) Prison",D,['event understanding'],22:10-22:30
+667,_zrgbA3FMVE.mp4,"Where are the three girls transported?
+(A) On the spaceship
+(B) On the car
+(C) On the plane
+(D) On the ship",C,['event understanding'],23:25-24:08
+668,_zrgbA3FMVE.mp4,"Why does the boat where the man with gray hair in a suit sink into the river?
+(A) Because the girl with long black hair throws an explosive charge on his boat
+(B) Because the girl with short black hair throws an explosive charge on his boat
+(C) Because the girl with short red hair throws an explosive charge on his boat
+(D) Because the girl with short blond hair throws an explosive charge on his boat",D,['entity recognition'],24:45-24:53
+670,_zrgbA3FMVE.mp4,"What happens after three girls got on motorcycles?
+(A) Robots are chasing them and shooting them with black light
+(B) Robots are chasing them and shooting them with yellow light
+(C) Robots are chasing them and shooting them with green light
+(D) Robots are chasing them and shooting them with yellow light",C,"['event understanding', 'entity recognition']",26:19-26:35
+671,_zrgbA3FMVE.mp4,"What are the green numbers that appear between 36:05-36:06?
+(A) 59.9
+(B) 9.59
+(C) 5.95
+(D) 99.5",B,"['temporal grounding', 'key information retrieval']",36:05-36:06
+673,_zrgbA3FMVE.mp4,"What changes do the people in the hall share?
+(A) Their hair is partly green
+(B) Their hair is partly light yellow
+(C) Their hair is partly light blue
+(D) Their hair is partly red",B,"['entity recognition', 'reasoning']",36:50-37:16
+674,_zrgbA3FMVE.mp4,"How many knives are hanging on the wall of the kitchen where the chef is?
+(A) 8
+(B) 6
+(C) 11
+(D) 9",A,['entity recognition'],46:35-46:38
+842,TiQBTesZUJQ.mp4,"There is a scene of of cutting trees to get the sap in the video. Immediately after it there is a scene of man's arm. What's tattooed on the man's arm?
+(A) A skull and bones
+(B) A cat
+(C) A word
+(D) A Dog",A,"['entity recognition', 'event understanding']",06:23-06:23
+843,TiQBTesZUJQ.mp4,"When do animals move out?
+(A) Noon
+(B) Night
+(C) Early morning
+(D) Morning",B,['reasoning'],08:45-09:00
+847,TiQBTesZUJQ.mp4,"What is the most likely animal the men try to hunt at 13:13?
+(A) Fish
+(B) Lamb
+(C) Deer
+(D) Wild boar",D,"['event understanding', 'temporal grounding', 'reasoning']",13:30-13:39
+848,TiQBTesZUJQ.mp4,"The video contains lots of ___ clips.
+(A) Marine
+(B) Plateau
+(C) Rain forest
+(D) Forest",C,"['event understanding', 'entity recognition']",07:00-17:00
+850,TiQBTesZUJQ.mp4,"What tool do people use to pick up a sticky, white to transparent food substance?
+(A) Chopsticks
+(B) Spoon
+(C) Spatulas
+(D) Syringes",A,['entity recognition'],19:02-19:03
+851,TiQBTesZUJQ.mp4,"What are the people going to do from 16:30-16:35?
+(A) Swimming
+(B) Rowing
+(C) Fishing
+(D) Diving",C,"['event understanding', 'temporal grounding']",16:30-17:15
+854,TiQBTesZUJQ.mp4,"What kind of transportation do the people carry on the boat?
+(A) Car
+(B) Bike
+(C) Motocycle
+(D) Skateboard",C,['entity recognition'],31:02-32:00
+855,TiQBTesZUJQ.mp4,"What happens between 22:17-42:05?
+(A) Reporter spends three months with the Penan people, understanding their psychological characteristics and documenting the lifestyle of some Penan people living in the city
+(B) Reporter spends three months with the Penan people, learning about their history, lifestyle, how to hunt, how to use darts, and also documented the lifestyle of some Penan people living in the city
+(C) Reporter spends three months with the Penan people, learning about their history, lifestyle, how to hunt, how to use darts, and also recorded the lifestyle of some Penan people living in the village
+(D) Reporter spends three months with the Penan people, understanding their psychological characteristics and recording the lifestyle of some of the Penan people living in the countryside",C,"['summarization', 'temporal grounding']",22:17-42:05
+856,TiQBTesZUJQ.mp4,"One of the woman give the reporter a kind of beverage in a glass cup, that is ___.
+(A) Voldka
+(B) Sparkling water
+(C) Spirte
+(D) Rice wine",D,"['entity recognition', 'key information retrieval']",32:40-33:00
+857,TiQBTesZUJQ.mp4,"What is Saya's daughter doing at 34:22?
+(A) Playing with toys
+(B) Writing homework
+(C) Scratching her leg
+(D) Playing with monkey",D,"['entity recognition', 'temporal grounding', 'event understanding']",34:22-34:22
+858,TiQBTesZUJQ.mp4,"There is a close-up scene of a woman doing something on a leaf. She is ___.
+(A) Making a fire
+(B) Peeling a tree
+(C) Sharpening a knife
+(D) Making a food",A,['event understanding'],38:00-39:00
+859,TiQBTesZUJQ.mp4,"___ is an insect appears in the video.
+(A) Mantis
+(B) Scorpion
+(C) Spider
+(D) Cockroach",B,['entity recognition'],39:49-39:49
+860,TiQBTesZUJQ.mp4,"What kind of transportation does the reporter use to leave the tribe?
+(A) Boat
+(B) Bike
+(C) Motorcycle
+(D) Car",D,"['entity recognition', 'event understanding']",39:00-41:00
+869,TiQBTesZUJQ.mp4,"What might the reporter do?
+(A) Plan to visit the Penan tribe in the near future
+(B) Plan to live in the Penan tribe in the distant future
+(C) Plan to live in the Penan tribe in the near future
+(D) Plan to visit the Penan tribe in the more distant future",D,['reasoning'],51:00-52:00
+898,5dZ_lvDgevk.mp4,"Who is the man wearing glasses, a black suit, and a blue patterned tie?
+(A) Ma Huateng
+(B) Jack Ma
+(C) Li Kaifu
+(D) Robin Li",C,['entity recognition'],13:17-13:17
+899,5dZ_lvDgevk.mp4,"What type of video is this?
+(A) A technology documentary
+(B) A news report
+(C) A travel documentary
+(D) A travel vlog",A,['event understanding'],00:00-114:16
+900,5dZ_lvDgevk.mp4,"What is the label on the toggle switch button after the first driver sitting in a truck without driving in chapter 2 'The promise' of the video?
+(A) Engaged
+(B) Technology
+(C) Embark
+(D) Speed",A,['key information retrieval'],22:35-22:35
+901,5dZ_lvDgevk.mp4,"Is the autonomous vehicle driving scene after a man in black said something real or simulated?
+(A) The scene is filmed in reality
+(B) The scene is a simulated representation of reality
+(C) This scene has neither simulation nor reality
+(D) This scene has both simulation and real-life scenarios",A,['reasoning'],21:44-25:52
+903,5dZ_lvDgevk.mp4,"What is the relationship between the first two people appear in the video after the appearance of blue words 'TRUCK WASH' on a blue factory?
+(A) Colleagues
+(B) Husband and wife
+(C) Interviewer and interviewee
+(D) Brother and sister",C,['reasoning'],37:00-42:00
+908,5dZ_lvDgevk.mp4,"Around what year do the blue and red lines intersect?
+(A) Around 2006
+(B) Around 1996
+(C) Around 2001
+(D) Around 1991",B,['event understanding'],63:10-63:30
+911,5dZ_lvDgevk.mp4,"How do the main characters interact with each other after the appearance of book 'Zurked' with a thumb down on the book?
+(A) People listening to a speaker on stage
+(B) A mentor guiding a student
+(C) Individuals collaborating on a project
+(D) Characters engaging in a group discussion",A,['entity recognition'],76:11-76:43
+912,5dZ_lvDgevk.mp4,"Based on the visual cues, what is on the scene before the scene focus on a water glass with white top and gray bottom with words 'Promotional Video' in the upper left corner of the video
+(A) Showcasing innovative working automation
+(B) Demonstration of futuristic schools
+(C) Exhibition of advanced labotoray technology
+(D) Smart home scenes display",D,['event understanding'],80:05-80:56
+913,5dZ_lvDgevk.mp4,"Which account's Facebook page is displayed with 28402 likes?
+(A) Pope Benedict XVI
+(B) Hillary Clinton
+(C) Tell Me Now
+(D) Your News Wire",D,['key information retrieval'],86:31-86:31
+914,5dZ_lvDgevk.mp4,"How many people are interviewed in the M.I.T. AI Lab for using AI to learn about cancer detection with mammogram data?
+(A) 0
+(B) 2
+(C) 1
+(D) 3",B,"['event understanding', 'entity recognition']",32:08-32:19
+916,5dZ_lvDgevk.mp4,"What goals or objectives are the man holding a woman's arm trying to achieve at 101:21?
+(A) Ensuring safety
+(B) Accompanying and showing courtesy
+(C) Arresting
+(D) Displaying friendliness",C,"['reasoning', 'temporal grounding']",101:21-101:21
+917,5dZ_lvDgevk.mp4,"What is the most possible relationships among the people at 103:57?
+(A) Family
+(B) Classmates
+(C) Colleagues
+(D) Strangers",C,"['entity recognition', 'temporal grounding']",103:57-103:58
+918,5dZ_lvDgevk.mp4,"Based on the visual elements, can you identify the theme of this video?
+(A) AI technology
+(B) Future cities
+(C) Industrial innovation
+(D) Automation and robotics",A,['event understanding'],21:37-54:16
+977,GcRKREorGSc.mp4,"What is the animal in the first scene that appears after the opening cloud scene?
+(A) The little lion
+(B) The bat-eared fox
+(C) The ostrich
+(D) The deer",D,['entity recognition'],00:52-00:52
+978,GcRKREorGSc.mp4,"What is the animal that appears in the picture after the first appearance of a lion?
+(A) The deer
+(B) The little lion
+(C) The bat-eared fox
+(D) The ostriches",D,['entity recognition'],02:07-02:07
+979,GcRKREorGSc.mp4,"What are the two deer seen in the first half of the video doing?
+(A) They are sleeping
+(B) They are fighting
+(C) They are mating
+(D) They are hunting",A,['reasoning'],05:50-06:18
+983,GcRKREorGSc.mp4,"What is a bat-eared fox licking in the grass in the middle of the picture?
+(A) Grass
+(B) Another fox
+(C) Hand
+(D) Tail",D,['entity recognition'],15:46-15:46
+984,GcRKREorGSc.mp4,"What are the three animals that appear after two deer eat grass and play with their horns?
+(A) Three lions play with each other
+(B) Three leopard foxes play with each other
+(C) Three bat-eared foxes play with each other
+(D) Three deers play with each other",C,"['entity recognition', 'event understanding']",17:52-18:22
+985,GcRKREorGSc.mp4,"What color is the cloud layer captured for the second time in the video?
+(A) Black
+(B) Pink
+(C) Golden
+(D) Blue",C,['entity recognition'],19:18-19:18
+989,GcRKREorGSc.mp4,"What happens from 28:37-29:10?
+(A) African fish eagles fly in the sky
+(B) African goshawks fly in the sky
+(C) White-bellied sea eagles fly in the sky
+(D) Namaqua doves fly in the sky",B,"['temporal grounding', 'event understanding']",28:37-29:10
+991,GcRKREorGSc.mp4,"What animal is one of the five animals that appears in the picture walking on the grass?
+(A) African goshawks
+(B) Namaqua doves
+(C) Bateleur
+(D) Helmeted guineafowl",C,"['event understanding', 'entity recognition']",31:38-31:38
+992,GcRKREorGSc.mp4,"What color is the grass around the lioness lying alone in the grass?
+(A) Yellow
+(B) Grey
+(C) Black
+(D) Green",A,"['event understanding', 'entity recognition']",31:54-31:54
+993,GcRKREorGSc.mp4,"What happens after two lions lying on the grass enjoying sunshine, and then a bird standing on top of a rock?
+(A) Ostrich drink water
+(B) Deers eat the grass
+(C) Giraffes eat the grass
+(D) Zebra eat the grass",D,"['event understanding', 'entity recognition']",32:19-32:35
+995,GcRKREorGSc.mp4,"What appears on the screen before five deers eating the grass and then two giraffes walking on the grass?
+(A) Bat-eared fox
+(B) Bateleur
+(C) Greater kudu
+(D) Deer",C,['event understanding'],37:43-37:43
+996,GcRKREorGSc.mp4,"What is the second other animal that appears after the great kudu?
+(A) Helmeted guineafowl
+(B) Namaqua doves
+(C) African fish eagle
+(D) Bateleur",C,"['event understanding', 'entity recognition']",38:14-38:14
+998,GcRKREorGSc.mp4,"What appears in the water before the scene of a hippo eating grass?
+(A) Hippo
+(B) African elephant
+(C) Crocodile
+(D) African fish eagle",A,"['event understanding', 'entity recognition']",39:26-39:26
+999,GcRKREorGSc.mp4,"What appears on the screen before the scene where a Nile monitor walks towards the right, making a hissing sound with its tongue, respective to the camera's view?
+(A) Black-winged stilt
+(B) Crimson-breasted shrike
+(C) Lilac-breasted roller
+(D) Bat-eared fox",C,"['event understanding', 'entity recognition']",40:51-40:51
+1000,GcRKREorGSc.mp4,"What appears after a lilac-breasted roller shows up for the first time?
+(A) Namaqua doves
+(B) Helmeted guineafowl
+(C) African fish eagle
+(D) Nile monitor",D,"['event understanding', 'entity recognition']",41:02-41:02
+1001,GcRKREorGSc.mp4,"What animal licks its fur and then looks straight to the camera?
+(A) Tiger
+(B) Bat-eared fox
+(C) African ground squirrel
+(D) African openbill",C,['entity recognition'],43:00-43:27
+1002,GcRKREorGSc.mp4,"What happens after the series of close-up shots of lions?
+(A) Leopards and deers run
+(B) Lions and zebra run
+(C) Lions and deers run
+(D) Zebra and deers run",D,['event understanding'],53:26-53:52
+1055,xi6r3hZe5Tg.mp4,"What type of video is this?
+(A) Natural scenery
+(B) History
+(C) National geographic
+(D) Humanities",C,['event understanding'],00:00-44:24
+1069,xi6r3hZe5Tg.mp4,"What color watch do respondents wearing blue short sleeves and glasses wear?
+(A) Golden
+(B) Black
+(C) Red
+(D) Blue",B,['entity recognition'],30:00-30:10
+1070,xi6r3hZe5Tg.mp4,"What color hats do children wearing yellow short sleeves wear?
+(A) Black
+(B) Orange
+(C) Blue
+(D) Red",B,['entity recognition'],34:00-34:10
+1071,xi6r3hZe5Tg.mp4,"What is the relationship between the lady in blue clothes and the kid in yellow clothes?
+(A) Friendship
+(B) Stranger relationship
+(C) Mother-child relationship
+(D) Teacher-student relationship",D,['reasoning'],34:00-35:00
+1076,xi6r3hZe5Tg.mp4,"What is hanging around the neck of the girl observing birds in the forest in the video?
+(A) Telescope
+(B) Necklace
+(C) Watercup
+(D) Camera",A,['entity recognition'],41:07-41:07
+1077,xi6r3hZe5Tg.mp4,"What animal is this at 42:00?
+(A) Horse
+(B) Cow
+(C) Bird
+(D) Chicken",D,"['entity recognition', 'temporal grounding']",42:00-42:00
+1079,xi6r3hZe5Tg.mp4,"What animal appears after the interview with Karen Sim and Jeffrey Chong?
+(A) Bird
+(B) Dragonfly
+(C) Butterfly
+(D) Lizard",B,['entity recognition'],42:08-42:08
+1080,xi6r3hZe5Tg.mp4,"What animal is shown in the scene that follows the scene Karen Sim submits a sighting photo and earns a badge on the phone?
+(A) Whale
+(B) Crocodile
+(C) Lizard
+(D) Hippo",C,"['entity recognition', 'event understanding']",42:50-42:50
+1082,xi6r3hZe5Tg.mp4,"What color is the device that Mark Wong wears to monitor his health?
+(A) Black
+(B) Dark blue
+(C) Red
+(D) Yellow",B,['entity recognition'],17:12-17:30
+1083,xi6r3hZe5Tg.mp4,"When the video discusses water reservoir, which animal lives in water appear?
+(A) Carp
+(B) Jellyfish
+(C) Frog
+(D) Squid",A,"['entity recognition', 'event understanding', 'key information retrieval']",20:33-20:33
+1112,Z4HGQL_McDQ.mp4,"What is the yellow semi-circular tool used by black clad engineers in cars?
+(A) Wheel
+(B) Bearing
+(C) Engine
+(D) Brake caliper",D,['entity recognition'],00:43-00:43
+1113,Z4HGQL_McDQ.mp4,"What kind of Mercedes-Benz car is this black one?
+(A) Maybach
+(B) AMG GT
+(C) C class
+(D) E class",A,['key information retrieval'],01:20-01:20
+1114,Z4HGQL_McDQ.mp4,"What happens from 04:45-05:25?
+(A) They replace the exhaust pipe of the car
+(B) They replace the tail lights of the car
+(C) They change tires on cars
+(D) They replace the brake pads on the car",A,"['event understanding', 'temporal grounding']",04:45-05:25
+1115,Z4HGQL_McDQ.mp4,"What is Samir Boulahya doing when his name first appears?
+(A) He is replacing the exhaust pipe on his car
+(B) He is changing the tires on the car
+(C) He is replacing the brake pads on the car
+(D) He is replacing the wheels on the car",C,['event understanding'],10:20-11:00
+1117,Z4HGQL_McDQ.mp4,"What color are the gloves when cleaning parts?
+(A) Black
+(B) Red
+(C) Blue
+(D) Green",D,['entity recognition'],15:39-15:39
+1118,Z4HGQL_McDQ.mp4,"What is the item placed on the shelf after cleaning?
+(A) Adhesive tape
+(B) Molds
+(C) Boxs
+(D) Tires",B,"['event understanding', 'reasoning']",16:00-16:00
+1120,Z4HGQL_McDQ.mp4,"What does a man wearing a black suit, black glasses, and a beard do?
+(A) He is checking the vehicle chassis
+(B) He is checking the vehicle interior
+(C) He is checking the vehicle windows
+(D) He is checking the vehicle headlights",A,['entity recognition'],33:00-33:30
+1122,Z4HGQL_McDQ.mp4,"What job is the man in red responsible for?
+(A) Cleaning the seats
+(B) Restoring the seats
+(C) Adjusting the seat
+(D) Stripping the seats",D,"['entity recognition', 'event understanding']",35:00-36:00
+1123,Z4HGQL_McDQ.mp4,"What tools does a woman wearing black glasses and silver earrings first use to work?
+(A) Scissors
+(B) Knife
+(C) Pen
+(D) Ruler",A,"['entity recognition', 'event understanding']",36:55-36:55
+1125,Z4HGQL_McDQ.mp4,"What is this man doing from 40:00-40:50?
+(A) Assemble tires
+(B) Assemble the dashboard
+(C) Assemble skylight
+(D) Assemble the seat",B,"['event understanding', 'temporal grounding']",40:00-40:50
+1126,Z4HGQL_McDQ.mp4,"What is the main color of the car interior?
+(A) Purple
+(B) Black
+(C) Red
+(D) Blue",D,"['event understanding', 'entity recognition']",45:16-45:16
+1128,Z4HGQL_McDQ.mp4,"How does Klaus Pachall drive after being interviewed?
+(A) He drives in circles
+(B) He drives uphill
+(C) He drives back to the factory
+(D) He drives down the street",C,['entity recognition'],47:30-48:00
+1129,Z4HGQL_McDQ.mp4,"What does the man do after introducing a ton of remover liquid stored in white plastic buckets on a shelf?
+(A) He changes the interior
+(B) He changes the brake pads
+(C) He brushes the car
+(D) He changes the tire",C,['event understanding'],48:00-48:50
+1130,Z4HGQL_McDQ.mp4,"What is the second last event that happens in the video?
+(A) The mechanics drives back to the factory
+(B) The mechanics changes the tire
+(C) The mechanics brushes the car
+(D) The mechanics fixes the wheel with a rope",D,['event understanding'],49:00-49:05
+1132,Z4HGQL_McDQ.mp4,"What is the serial number of the car that Samir Boulahya works on?
+(A) 24
+(B) 240
+(C) 12
+(D) 120",B,['key information retrieval'],04:32-04:32
+1133,Z4HGQL_McDQ.mp4,"What color gloves does the mechanic, who removes the standard exhaust of a car, wear?
+(A) Blue
+(B) Black
+(C) Red
+(D) Purple",A,"['entity recognition', 'temporal grounding']",04:47-04:47
+1134,Z4HGQL_McDQ.mp4,"What color is the car that mechanics are changing from the standard exhaust to the valve-controlled exhaust?
+(A) Silver gray
+(B) Black
+(C) White
+(D) Red",A,['entity recognition'],05:23-05:23
+1135,Z4HGQL_McDQ.mp4,"What's this man's expression like at 06:01?
+(A) Numb
+(B) Cry
+(C) Angry
+(D) Laugh",D,"['entity recognition', 'temporal grounding']",06:01-06:01
+1136,Z4HGQL_McDQ.mp4,"What does this documentary mainly introduce?
+(A) Introducing BRABUS's modification of BMW cars. This video records the process of BRABUS's modification of Mercedes Benz E Class
+(B) Introducing BRABUS's modification of Audi cars. This video records the process of BRABUS's modification of Mercedes Benz G Class
+(C) Introducing BRABUS's modification of Mercedes-Benz cars. This video records the process of BRABUS's modification of Mercedes Benz E Class
+(D) Introducing BRABUS's modification of Mercedes-Benz cars. This video records the process of BRABUS's modification of Mercedes Benz G Class",D,['summarization'],00:00-49:19
+1137,Z4HGQL_McDQ.mp4,"What color is the steering wheel?
+(A) White
+(B) Red
+(C) Black
+(D) Blue",A,['entity recognition'],06:09-06:09
+1225,aJI8XTa_DII.mp4,"Who first comes out of the golden door?
+(A) Joe Biden
+(B) Vladimir Putin
+(C) Two soldiers
+(D) Donald John Trump",B,['entity recognition'],00:40-00:45
+1227,aJI8XTa_DII.mp4,"How many flags of the Russian Federation are there on the stage when Putin delivers the first speech?
+(A) 5
+(B) 1
+(C) 9
+(D) 4",A,['entity recognition'],00:53-01:26
+1229,aJI8XTa_DII.mp4,"What color is Putin's tie between the interview with Antony Blinkoen and interview with Marie Yovanovitch?
+(A) Blue
+(B) Black
+(C) Wine red
+(D) White",C,['entity recognition'],01:47-01:53
+1231,aJI8XTa_DII.mp4,"What did the audience do first after the soldiers wearing red hats shouted?
+(A) They didn't do anything
+(B) They applauded
+(C) They squatted down
+(D) They stood up",D,['event understanding'],07:57-08:01
+1232,aJI8XTa_DII.mp4,"Who is the lady in green who is being interviewed?
+(A) Marie Yovanovitch
+(B) John Bolton
+(C) Fiona Hill
+(D) Heather Conley",D,['entity recognition'],09:17-09:22
+1233,aJI8XTa_DII.mp4,"What did the man use to cover the sculpture's face?
+(A) Flag of the Russian Federation
+(B) Flag of the United States of America
+(C) A piece of white cloth
+(D) A piece of black cloth",B,['entity recognition'],12:27-12:33
+1234,aJI8XTa_DII.mp4,"When Putin spoke for the first time in the video, how many microphones were on the stage?
+(A) 4
+(B) 3
+(C) 2
+(D) 1",C,['entity recognition'],00:55-01:08
+1235,aJI8XTa_DII.mp4,"During Putin's first speech on stage in the video, how many women appeared when the camera panned offstage?
+(A) 2
+(B) 4
+(C) 1
+(D) 0",C,['entity recognition'],01:00-01:05
+1237,aJI8XTa_DII.mp4,"Who are the two people who appear in the next frame after Evan Osnos finishes speaking?
+(A) Trump and Biden
+(B) Obama and Putin
+(C) Obama and Trump
+(D) Obama and Biden",D,['entity recognition'],23:00-23:15
+1240,aJI8XTa_DII.mp4,"How many microphones are on stage during Donald Trump's speech?
+(A) 3
+(B) 2
+(C) 0
+(D) 1",D,['entity recognition'],35:00-35:07
+1241,aJI8XTa_DII.mp4,"What color of coat does Melania Trump wear for the meeting that is hosted at Helsinki, Finland?
+(A) Green
+(B) Dark blue
+(C) Bright red
+(D) Yellow",D,"['entity recognition', 'key information retrieval']",35:35-35:50
+1243,aJI8XTa_DII.mp4,"What was Putin's expression when he heard the speech Trump made?
+(A) Angry and expressionless
+(B) Without any expression
+(C) Laugh with excitement
+(D) Sneaking and smiling",D,['event understanding'],38:30-38:37
+1246,aJI8XTa_DII.mp4,"How many trucks are there in the garage with soldiers in white direct the way in the next scene after the Russian plane takes off?
+(A) 12
+(B) 9
+(C) 8
+(D) 10",D,"['event understanding', 'entity recognition']",43:38-43:41
+1247,aJI8XTa_DII.mp4,"What is the number on the tank can be seen, with two tanks appear in front of it, in the snow?
+(A) 321
+(B) 123
+(C) 132
+(D) 312",C,['key information retrieval'],43:44-43:46
+1248,aJI8XTa_DII.mp4,"After Yevgenia Albats spoke, how did Putin and Biden communicate in the next scene?
+(A) Communicate by letter
+(B) Face-to-face communication
+(C) Online video communication
+(D) Communicate by telephone",C,['event understanding'],46:09-46:19
+1249,aJI8XTa_DII.mp4,"Which country's flag is on the flagpole on the top of the building with gold clock?
+(A) Russian Federation
+(B) The Republic of Belarus
+(C) Ukraine
+(D) France",A,['entity recognition'],49:25-49:28
+1558,IsdbCjlZ5cQ.mp4,"Who are the main individuals featured in this video?
+(A) Jane Mayer
+(B) James Clapper
+(C) Matt Apuzzo
+(D) Donald John Trump",D,['entity recognition'],06:46-06:46
+1562,IsdbCjlZ5cQ.mp4,"What object is in front of the J. Edgar Hoover FBI Building sign?
+(A) A mirror
+(B) An industrial robot
+(C) A camera
+(D) A car",D,['entity recognition'],24:20-24:20
+1564,IsdbCjlZ5cQ.mp4,"What does it mean when Trump raises his hand in front of a green helicopter with United States of America written on it?
+(A) He's preparing to shake hands
+(B) It's a gesture of politeness, indicating that people can start moving around
+(C) He's pointing the way for the audience
+(D) He's waving to greet someone",B,"['reasoning', 'key information retrieval']",31:37-31:39
+1567,IsdbCjlZ5cQ.mp4,"What is the headline of the second news report?
+(A) Trump team needs to treat Russia as a serious issue
+(B) Meetings could fuel new calls for special counse
+(C) Sessions Controversy Heightens Trump's Feeling of Being UnderSiege
+(D) Why Trump's attorney general has come under fire for earlier contaects",A,['key information retrieval'],41:04-41:04
+1569,IsdbCjlZ5cQ.mp4,"Which direction does Don Mcgahn look at in the black and white picture that has a portrait behind his back?
+(A) He is looking at his left
+(B) He is looking at his right
+(C) He is looking at the ceiling
+(D) He is looking at the floor",B,['entity recognition'],49:34-49:40
+1570,IsdbCjlZ5cQ.mp4,"Why two sentences have red underlines on two different documents?
+(A) To highlight the central theme of the documentary, serving as a thematic anchor
+(B) To support a specific point
+(C) As evidence presented in a court trial
+(D) To visually emphasize the theme of the two documents",B,['reasoning'],52:33-52:43
+1572,IsdbCjlZ5cQ.mp4,"What is the best summary for 60:10-60:36?
+(A) Donald Trump is seen engaging in a series of interviews with various hosts
+(B) Trump holds a press conference, addressing recent developments and answering questions from journalists
+(C) Trump issues a national statement, addressing the nation on a significant issue or event
+(D) Trump is seen attending a court hearing, likely related to a legal matter concerning his administration or personal affairs",A,"['summarization', 'temporal grounding']",60:10-60:36
+1575,IsdbCjlZ5cQ.mp4,"What is the place that the footage shows a red car passes when the light is green, and a person wearing a white shirt with a red circle on her left sleeve, a black pant, standing in front of the light?
+(A) The location seems to be a shopping mall entrance
+(B) The video is likely taken in a public transportation station
+(C) The setting appears to be an airport terminal
+(D) The video is shot at a parking lot exit gate",D,['event understanding'],83:44-83:51
+1576,IsdbCjlZ5cQ.mp4,"What is in the center of the table?
+(A) A circle of white dotted patterns
+(B) A circle of white chevron patterns
+(C) A circle of white name tags
+(D) A circle of white government documents",C,['entity recognition'],90:09-90:09
+1663,t-RtDI2RWQs.mp4,"Which movie does the host parody in his first appearance?
+(A) Barbie
+(B) American Fiction
+(C) Killers of the Flower Moon
+(D) Oppenheim",A,['entity recognition'],01:05-01:30
+1664,t-RtDI2RWQs.mp4,"Which movie wins the most awards at the ceremony?
+(A) Barbie
+(B) Anatomy of a Fall
+(C) Oppenheim
+(D) Poor Things",C,['event understanding'],01:35-85:56
+1665,t-RtDI2RWQs.mp4,"What is the reaction of the Best Supporting Actress when she finds out she wins?
+(A) She shows indifference
+(B) She appears excited
+(C) She gives a faint smile
+(D) She sheds tears of joy",D,"['key information retrieval', 'reasoning']",19:30-22:04
+1666,t-RtDI2RWQs.mp4,"What is the nationality of the filmmaker who directs the Best International Feature Film? 
+(A) Italy
+(B) Japan
+(C) Spain
+(D) United Kingdom",D,['key information retrieval'],35:33-36:44
+1668,t-RtDI2RWQs.mp4,"When the Best Supporting Actor winner goes offstage, what is the color of the outfit of the person sitting next to him?
+(A) Blue
+(B) White
+(C) Black
+(D) Red",C,"['entity recognition', 'key information retrieval']",41:07-46:27
+1669,t-RtDI2RWQs.mp4,"Which category winner is absent for the award presentation?
+(A) Best International Feature
+(B) Best Director
+(C) Best Original Score
+(D) Best Animated Feature",D,"['event understanding', 'key information retrieval']",23:14-66:58
+1670,t-RtDI2RWQs.mp4,"How many times does Christopher Nolan came onstage?
+(A) 0
+(B) 2
+(C) 3
+(D) 1",B,"['entity recognition', 'event understanding']",66:20-86:29
+1671,t-RtDI2RWQs.mp4,"What happens when the Best Actress comes on stage?
+(A) Her dress gets torn
+(B) Her bracelet gets robbed
+(C) She falls on the stage
+(D) Her necklace breaks",A,"['key information retrieval', 'event understanding']",69:20-74:13
+1673,t-RtDI2RWQs.mp4,"Which animal, wearing a black bowtie, is a special guest at the event?
+(A) A bird
+(B) A sheep
+(C) A cat
+(D) A dog",D,"['event understanding', 'entity recognition']",06:25-06:25
+1676,t-RtDI2RWQs.mp4,"What does the best supporting actress winner wear?
+(A) Red dress
+(B) Pink suit
+(C) Light blue dress
+(D) Black dress",C,['entity recognition'],14:36-21:56
+1678,t-RtDI2RWQs.mp4,"Kemp Powers is the main director of which film?
+(A) The film that wins the Animated Feature Film
+(B) The film that is nominated for but does not win the International Feature Film
+(C) The film that is nominated for but does not win the Animated Feature Film
+(D) The film that wins the International Feature Film",C,"['key information retrieval', 'event understanding']",24:38-24:38
+1679,t-RtDI2RWQs.mp4,"Which film wins the Best Animated Feature Film?
+(A) Toy Story 4
+(B) Zootopia
+(C) Spider-Man: Into the Spider-Verse
+(D) The Boy and the Heron",D,"['event understanding', 'key information retrieval']",23:30-25:03
+1680,t-RtDI2RWQs.mp4,"What happens after the presentation of the award for Best Supporting Actress?
+(A) There is a short clip. Then two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron. The award winner comes onstage to give a speech
+(B) There is a short clip. Then two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron
+(C) Two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron
+(D) Two presenters come onstage and present the award for Best Animated Feature Film. The winning film is The Boy and the Heron. The award winner comes onstage to give a speech",B,['summarization'],23:30-25:03
+1681,t-RtDI2RWQs.mp4,"Which film wins the Best Original Screenplay award?
+(A) Anatomy of a Fall
+(B) Green Book
+(C) Manchester by the Sea
+(D) Promising Young Woman",A,['entity recognition'],25:50-30:15
+1682,t-RtDI2RWQs.mp4,"What happens from 25:50-30:15?
+(A) Two presenters chat, and after a short clip, they announce the winner of the Best Adapted Screenplay
+(B) Two presenters chat and announce the winner of the Best Adapted Screenplay
+(C) Two presenters chat and announce the winner of the Best Original Screenplay
+(D) Two presenters chat, and after a short clip, they announce the winner of the Best Original Screenplay",D,"['temporal grounding', 'event understanding']",25:50-30:15
+1685,t-RtDI2RWQs.mp4,"Which award is announced right after the Best Adapted Screenplay award?
+(A) The Best Original Screenplay
+(B) The Best Animated Feature Film
+(C) The Best International Feature Film
+(D) The Best Adapted Screenplay",C,['event understanding'],35:15-38:20
+1687,t-RtDI2RWQs.mp4,"There is a performance of respectful tribal musicians playing a huge drum together. All of the drummers ___.
+(A) Play synchronously most of the time
+(B) Play synchronously most of the time
+(C) Play asynchronously all the time
+(D) Play synchronously all the time",A,"['reasoning', 'event understanding']",35:15-38:20
+1689,t-RtDI2RWQs.mp4,"What happens from 41:09-52:20?
+(A) The announcement of the Best Supporting Actress and the performance from Billie Eilish
+(B) The announcement of the Best Leading Actress and the performance from Ken
+(C) The announcement of the Best Supporting Actor and the performance from Ken
+(D) The announcement of the Best Leading Actor and the performance from Billie Eilish",C,"['temporal grounding', 'event understanding']",41:09-48:46
+1690,t-RtDI2RWQs.mp4,"Who is the Best Supporting Actor?
+(A) Robert Downey Jr
+(B) Brad Pitt
+(C) Mahershala Ali
+(D) Daniel Kaluuya",A,['entity recognition'],41:09-48:46
+1691,t-RtDI2RWQs.mp4,"Gosling's performance mirrors a scene from a movie that stars ___.
+(A) Demi Moore
+(B) Marlon Brando
+(C) Keanu Reeves
+(D) Marilyn Monroe",D,"['reasoning', 'event understanding']",49:12-52:32
+1692,t-RtDI2RWQs.mp4,"Why does Gosling wear pink suit when performing?
+(A) Pink is theme color
+(B) Pink brings good luck
+(C) Pink grabs attention
+(D) Pink is his favorite color",A,"['entity recognition', 'reasoning']",49:12-52:32
+1696,t-RtDI2RWQs.mp4,"Who is the best Best Director?
+(A) Bong Joon-ho
+(B) Christopher Nolan
+(C) Guillermo del Toro
+(D) Damien Chazelle",B,['event understanding'],65:22-68:12
+1697,t-RtDI2RWQs.mp4,"Who is the Best Lead Actress?
+(A) Renée Zellweger
+(B) Olivia Colman
+(C) Frances McDormand
+(D) Emma Stone",D,['event understanding'],68:42-76:21
+1698,t-RtDI2RWQs.mp4,"Which film wins the Best Picture?
+(A) The Shape of Water
+(B) Nomadland
+(C) Moonlight
+(D) Oppenheimer",D,"['event understanding', 'key information retrieval']",78:52-83:59
+1699,t-RtDI2RWQs.mp4,"What is the second to last award presented?
+(A) Best Lead Actor
+(B) Best Lead Actress
+(C) Best Director
+(D) Best Picture",B,['event understanding'],00:00-84:33
+1703,t-RtDI2RWQs.mp4,"Why is there letter on the screen when the Rock appears on the stage with another presenter?
+(A) It is the translation of an audio that is not English
+(B) It is the auto-generated English subtitles
+(C) It is the description of the next award name
+(D) It is the description of the presenters",A,['reasoning'],35:23-35:23
+1938,8QdE--Y-x7U.mp4,"Where is the podium located, respective to the people on the stage?
+(A) There is no rostrum
+(B) On the right side of the stage
+(C) In the middle of the stage
+(D) Left side of the stage",D,['entity recognition'],01:53-02:00
+1944,8QdE--Y-x7U.mp4,"Where are the Nobel laureates in physiology or medicine come from?
+(A) Americans
+(B) British people
+(C) Japanese
+(D) Norwegian",C,['event understanding'],49:40-50:02
+1945,8QdE--Y-x7U.mp4,"What kind of clothes do winners of the Nobel Prize in Physiology or Medicine wear?
+(A) Black suit
+(B) Dress
+(C) Kimono
+(D) Men's tuxedo",D,['entity recognition'],49:00-50:00
+1947,8QdE--Y-x7U.mp4,"How many hosts have changed?
+(A) 5
+(B) 3
+(C) 6
+(D) 1",C,['event understanding'],15:00-76:00
+1948,8QdE--Y-x7U.mp4,"What color are the stools on which the four members of the royal family sit?
+(A) Blue and gold
+(B) Only white
+(C) White and gold
+(D) Red and gold",A,['entity recognition'],06:58-07:13
+1955,8QdE--Y-x7U.mp4,"What color is the ribbon on the man who accompanied the first winner of the Nobel Prize in Physics?
+(A) White and green
+(B) Blue and yellow
+(C) Yellow and white
+(D) Blue and white",B,['entity recognition'],31:05-31:30
+1957,8QdE--Y-x7U.mp4,"What color is the bow tie worn by the man who presided over the Nobel Prize in Chemistry?
+(A) Red bow tie
+(B) Black bow tie
+(C) White bow tie
+(D) Blue bow tie",C,['entity recognition'],33:08-33:20
+1958,8QdE--Y-x7U.mp4,"How many female winners are there in this Nobel Prize?
+(A) Only one woman won the prize this year
+(B) Half of the winners this year are women
+(C) Two women won the prize this year
+(D) No women have won prizes this year",D,['event understanding'],12:00-80:00
+1959,8QdE--Y-x7U.mp4,"What kind of awards have two winners?
+(A) Nobel Prize in Literature
+(B) Nobel Prize in Chemistry
+(C) Nobel Peace Prize
+(D) Nobel Memorial Prize in Economic Sciences",D,['event understanding'],11:44-17:54
+1961,8QdE--Y-x7U.mp4,"Where is the woman in a blue dress sitting on the right side of the podium?
+(A) Last row
+(B) Nobody wears it
+(C) First row
+(D) Second row",A,['entity recognition'],60:35-60:40
+1962,8QdE--Y-x7U.mp4,"What happened between 65:02-65:29?
+(A) The singer sang a high note and the audience applauded excitedly
+(B) The singer was so nervous that the audience sighed after singing
+(C) The singer was so nervous that the audience applauded after singing
+(D) The singing was interrupted by a command error",C,"['temporal grounding', 'event understanding']",65:02-65:09
+1963,8QdE--Y-x7U.mp4,"How many people won this year?
+(A) 12
+(B) 14
+(C) 11
+(D) 13",C,['event understanding'],05:30-80:00
+1964,8QdE--Y-x7U.mp4,"How many hosts didn't wear any badges on their chests?
+(A) 4
+(B) 3
+(C) 1
+(D) 8",A,"['reasoning', 'entity recognition']",05:00-77:30
+1965,8QdE--Y-x7U.mp4,"Who left first after the award ceremony?
+(A) Members of the royal family
+(B) Ensemble member
+(C) Winners on the stage
+(D) Audience under the stage",A,['event understanding'],80:00-80:08
+1966,8QdE--Y-x7U.mp4,"What happened on the stage after the royal family left?
+(A) Group photo of winners
+(B) Winners leave
+(C) The host left
+(D) Shake hands with the winners",D,['event understanding'],80:52-84:00
+1967,8QdE--Y-x7U.mp4,"Where is the harp player, respective to the people on the stage?
+(A) Right side of stage
+(B) Second floor on the left
+(C) On the left side of the stage
+(D) Second floor on the right",D,['entity recognition'],07:13-07:22
+2274,idZkam9zqAs.mp4,"What type of video is this?
+(A) Documentary
+(B) Concert
+(C) TV show
+(D) News report",B,['event understanding'],00:00-89:39
+2277,idZkam9zqAs.mp4,"What color does P!nk's clothes change after the first hanging wire performance?
+(A) Red
+(B) Black
+(C) Orange
+(D) Pink",D,['entity recognition'],07:35-07:35
+2282,idZkam9zqAs.mp4,"When P!nk performs hanging wire for the first time, what shape of lighting prop does she fall from?
+(A) Shape of mouth
+(B) Shape of hand
+(C) Shape of moon
+(D) Shape of heart",A,['entity recognition'],04:00-04:10
+2283,idZkam9zqAs.mp4,"When the piano performance occurs, what colors are the piano and the player's clothes?
+(A) The piano is black and the player's clothes are yellow
+(B) The piano is white and the player's clothes are black
+(C) The piano is black and the player's clothes are white
+(D) The piano is white and the player's clothes are purple",B,['entity recognition'],15:20-15:25
+2284,idZkam9zqAs.mp4,"How many flamingo props appear on the stage?
+(A) 4
+(B) 2
+(C) 3
+(D) 1",B,['entity recognition'],15:28-15:28
+2285,idZkam9zqAs.mp4,"When the flamingo prop appears on the stage, which animal does not appear on the big screen behind the stage?
+(A) Penguin
+(B) Unicorn
+(C) Dolphin
+(D) Flamingo",A,"['entity recognition', 'event understanding']",15:28-15:28
+2286,idZkam9zqAs.mp4,"Does P!nk kiss the bassist while performing in a light pink leather short jacket?
+(A) Yes, she kisses the male bassist
+(B) No, she does not kiss anyone
+(C) No, she kisses the drummer
+(D) Yes, she kisses the female bassist",A,['event understanding'],18:20-18:30
+2287,idZkam9zqAs.mp4,"When P!nk performs wearing a light pink leather jacket, what is the main color of the lighting on the stage?
+(A) Red
+(B) Yellow
+(C) Green
+(D) Blue",A,['entity recognition'],18:40-18:50
+2288,idZkam9zqAs.mp4,"Was the male bassist by P!nk's side the entire time when she performed in a furry pink top and blue skirt?
+(A) No, he wasn't with P!nk at first and showed up later
+(B) No, he was not on stage during this time
+(C) No, he was with P!nk at first and then left
+(D) Yes, he has always been by P!nk's side",D,['event understanding'],18:55-19:00
+2290,idZkam9zqAs.mp4,"What does P!nk wear underneath when taking off her furry pink coat?
+(A) White t-shirt
+(B) White vest
+(C) Black vest
+(D) Black tights",B,['entity recognition'],24:05-24:05
+2291,idZkam9zqAs.mp4,"How many people use the trampolines on stage during the performance?
+(A) 5
+(B) 4
+(C) 2
+(D) 3",B,['entity recognition'],24:09-24:09
+2292,idZkam9zqAs.mp4,"Before the pink shopping cart prop appearing on stage, what shape of headgears do the people off the stage wear?
+(A) Shape of TV
+(B) Shape of mouth
+(C) Shape of apple
+(D) Shape of eye",B,['entity recognition'],24:15-24:15
+2293,idZkam9zqAs.mp4,"When the three accompanying singers in black appear on the stage for the first time, how many keyboard players are behind them?
+(A) 1
+(B) 3
+(C) 0
+(D) 2",D,['key information retrieval'],45:07-45:07
+2294,idZkam9zqAs.mp4,"In what posture does P!nk sing at 49:00?
+(A) Kneeling position
+(B) Lying down
+(C) Standing posture
+(D) Sitting position",D,"['entity recognition', 'temporal grounding']",49:00-49:00
+2296,idZkam9zqAs.mp4,"From the subtitles at the beginning of the concert, where can we tell the place P!nk's tour could be?
+(A) Paris and Vienna
+(B) Paris and London
+(C) Milan and Rome
+(D) Rome and Vienna",A,['key information retrieval'],00:00-89:39
+2297,idZkam9zqAs.mp4,"At 84:18 what color is the stage theme?
+(A) Pink
+(B) Blue
+(C) Black
+(D) Red",D,"['key information retrieval', 'temporal grounding']",84:18-84:18
+2301,idZkam9zqAs.mp4,"How does P!nk interact with the audience in the final part of the show?
+(A) She runs to the audiences
+(B) She shakes hands with the audience
+(C) She hugs the audiences
+(D) She flies above the audiences",A,['entity recognition'],86:00-86:20
+2303,idZkam9zqAs.mp4,"What color is the stage lighting when a solo dancer appears on the stage?
+(A) Blue
+(B) Red
+(C) Pink
+(D) Green",D,['entity recognition'],88:55-89:00
+2362,xECIRjlxM3U.mp4,"When does the little mermaid appear for the first time?
+(A) 03:55
+(B) 03:40
+(C) 04:40
+(D) 02:40",B,"['event understanding', 'temporal grounding']",03:35-03:45
+2367,xECIRjlxM3U.mp4,"What happens from 17:16-17:40?
+(A) They quarrel
+(B) They kiss
+(C) They talk nicely
+(D) They hug",A,"['temporal grounding', 'reasoning']",17:16-17:40
+2370,xECIRjlxM3U.mp4,"What color is the prince's belt?
+(A) Pink
+(B) Red
+(C) Black
+(D) White",B,['entity recognition'],41:51-41:51
+2371,xECIRjlxM3U.mp4,"When does the mermaid have legs?
+(A) 65:35
+(B) 65:55
+(C) 66:55
+(D) 66:35",B,"['event understanding', 'temporal grounding']",65:50-65:56
+2372,xECIRjlxM3U.mp4,"What does the mermaid do when a group of seagulls are performing?
+(A) She cries
+(B) She stands up
+(C) She wants to find another mermaid?
+(D) She kneels down",B,"['event understanding', 'entity recognition']",68:25-68:59
+2373,xECIRjlxM3U.mp4,"When does the prince and the mermaid meet face to face for the first time?
+(A) 68:43
+(B) 69:43
+(C) 67:43
+(D) 70:43",D,"['temporal grounding', 'event understanding', 'entity recognition']",70:40-70:45
+2375,xECIRjlxM3U.mp4,"What is the first event that involves a group of maids wearing yellow hats?
+(A) The mermaid has legs
+(B) The mermaid disappears
+(C) The mermaid takes a bath
+(D) The mermaid changes the clothes",C,"['event understanding', 'entity recognition']",74:14-74:47
+2376,xECIRjlxM3U.mp4,"What does the scene switch to after the mermaid gets dress at dawn?
+(A) The ship
+(B) The store
+(C) The kitchen
+(D) The sea",C,"['event understanding', 'entity recognition']",79:36-79:36
+2378,xECIRjlxM3U.mp4,"What happens from 87:02-88:22?
+(A) The prince and the mermaid dance together
+(B) The prince and the mermaid kiss
+(C) The prince and the mermaid eat together
+(D) The prince and the mermaid hold the wedding",A,"['temporal grounding', 'event understanding']",87:02-88:22
+2379,xECIRjlxM3U.mp4,"Who appears on the scene with two servants and a seashell in the background?
+(A) The prince
+(B) The fish
+(C) The evil witch
+(D) The merman",C,"['event understanding', 'entity recognition']",92:49-92:49
+2380,xECIRjlxM3U.mp4,"Where are the prince and the mermaid before they go back to the palace?
+(A) On the boat
+(B) On a ship
+(C) In the kitchen
+(D) Beneath the sea",A,['event understanding'],97:39-97:39
+2381,xECIRjlxM3U.mp4,"What words are written in the background for an event that involves a group of princesses or royal girls?
+(A) The contest
+(B) The decision
+(C) The conceal
+(D) The competition",A,"['key information retrieval', 'entity recognition']",106:10-106:10
+2383,xECIRjlxM3U.mp4,"What happens from 110:35-110:44?
+(A) The witch takes the mermaid away
+(B) The witch makes a deal with the mermaid
+(C) The prince takes the mermaid away
+(D) The male marmaid takes the mermaid away",A,"['temporal grounding', 'event understanding']",110:35-110:44
+2385,xECIRjlxM3U.mp4,"What does the mermaid do after the first time she and the merman hugs after she is taken away by the witch?
+(A) The mermaid dances with the prince
+(B) The mermaid saves the prince
+(C) The mermaid has legs again
+(D) The mermaid kneels down",D,['event understanding'],115:05-115:14
+2386,xECIRjlxM3U.mp4,"Who helps the mermaid to grow legs again?
+(A) The seagull
+(B) The prince
+(C) The witch
+(D) A group of mermaids",D,['entity recognition'],116:15-116:27
+2387,xECIRjlxM3U.mp4,"What is the last major event?
+(A) The merman kills the witch
+(B) The prince and another girl fall in love
+(C) The prince and the mermaid hold a wedding
+(D) The mermaid dies and transforms into bubbles",C,['event understanding'],119:37-120:25
+2390,xECIRjlxM3U.mp4,"What is the final climax event?
+(A) The prince dances with the mermaid
+(B) The prince lifts the mermaid up
+(C) The prince and the mermaid kiss
+(D) The mermaid dies in front of the prince",C,['event understanding'],121:09-121:12
+2391,xECIRjlxM3U.mp4,"What category does the video beloge to?
+(A) Opera
+(B) TV drama
+(C) Musicals
+(D) Acrobatics",C,['event understanding'],00:01-10:00
+2392,o-gLbgpzCc8.mp4,"What type of video is this?
+(A) Speech video
+(B) News report
+(C) Drama
+(D) Documentary",C,['event understanding'],00:00-45:36
+2393,o-gLbgpzCc8.mp4,"What is the first animal to appear on the stage?
+(A) Horse
+(B) Camel
+(C) Sheep
+(D) Dog",B,['entity recognition'],00:40-01:00
+2394,o-gLbgpzCc8.mp4,"What crutch is the man in the cloak holding?
+(A) Tiger head walking stick
+(B) Dragon head crutch
+(C) Sheep head walking stick
+(D) Cobra crutch",D,['entity recognition'],02:37-02:37
+2395,o-gLbgpzCc8.mp4,"What is the first kind of bird to appear on the stage?
+(A) Bat
+(B) Parrot
+(C) Lark
+(D) Sparrow",B,['entity recognition'],02:50-02:50
+2396,o-gLbgpzCc8.mp4,"What color is the belt which worn by the character appear on stage first?
+(A) Red
+(B) White
+(C) Black
+(D) Blue",A,['entity recognition'],06:30-06:30
+2398,o-gLbgpzCc8.mp4,"What color pants are the first woman dancing on stage wearing?
+(A) Blue
+(B) Purple
+(C) Green
+(D) Black",C,['entity recognition'],07:15-07:15
+2400,o-gLbgpzCc8.mp4,"What color is the background of the stage when Aladdin is arrested by three men with knives?
+(A) Blue and white
+(B) Red and blue
+(C) White and red
+(D) Orange and red",C,['entity recognition'],07:30-07:40
+2401,o-gLbgpzCc8.mp4,"When the black screen appears on the stage for the first time, from the perspective of the audience, from which direction does Aladdin appear?
+(A) Upper left corner
+(B) Lower left corner
+(C) Upper right corner
+(D) Lower right corner",C,['event understanding'],08:00-08:15
+2407,o-gLbgpzCc8.mp4,"What kind of clothes does the genie wear when he appears for the second time?
+(A) Black suit
+(B) Golden suit
+(C) Blue suit
+(D) White suit",D,['entity recognition'],19:30-20:00
+2408,o-gLbgpzCc8.mp4,"What are the actors not doing among the audience?
+(A) Hug the audience
+(B) Toss and catch
+(C) Riding an elephant
+(D) Riding horses",A,['event understanding'],24:00-24:00
+2411,o-gLbgpzCc8.mp4,"When the Buddha statue appears, how many people are next to it?
+(A) 2
+(B) 3
+(C) 1
+(D) 4",B,['entity recognition'],32:30-32:50
+2413,o-gLbgpzCc8.mp4,"When the actors take their final call, how many people in white and purple clothes are the first to appear on the stage?
+(A) 14
+(B) 12
+(C) 11
+(D) 13",C,['event understanding'],35:00-36:00
+2414,o-gLbgpzCc8.mp4,"When the genie of the magic lamp comes on stage for the curtain call, what is he holding in his hand?
+(A) A plastic bag
+(B) A suitcase
+(C) A basket
+(D) A leather bag",B,['entity recognition'],38:40-39:00
+2417,o-gLbgpzCc8.mp4,"Where does the red fruit that Aladdin give to the princess come from?
+(A) He picked it from the tree
+(B) He bought it from the fruit merchant
+(C) He stole it from the fruit cart
+(D) He stole it from the basket behind someone else's back",D,['event understanding'],43:20-43:30
+2453,QWXlvx1GoTY.mp4,"Which moderator is the last to speak?
+(A) The hostess of the green skirt
+(B) The male host in a black suit
+(C) The male host in the blue jacket
+(D) The hostess in a green suit",A,['entity recognition'],00:06-00:14
+2454,QWXlvx1GoTY.mp4,"What is written on the top dark blue board at 01:31?
+(A) Conference City
+(B) Summit Forum
+(C) Meeting Village
+(D) Meet the Engineer",C,"['temporal grounding', 'key information retrieval']",01:31-01:31
+2455,QWXlvx1GoTY.mp4,"What color are the cups on the table of the two presenters?
+(A) Red
+(B) Write
+(C) Blue
+(D) Black",D,['entity recognition'],03:04-03:21
+2456,QWXlvx1GoTY.mp4,"What color is the hostess of the first set of live hosts they connected wearing?
+(A) Grey suit
+(B) Black suit
+(C) Red suit
+(D) Dark blue suit",C,['entity recognition'],05:18-05:25
+2457,QWXlvx1GoTY.mp4,"Who interviews Rodney Clark?
+(A) The male host in the green suit
+(B) The hostess in a black suit
+(C) The male host in the blue suit
+(D) The hostess in the red suit",D,['entity recognition'],13:50-14:05
+2459,QWXlvx1GoTY.mp4,"Who is interviewed before Nieves Navarro?
+(A) Britney Bartlett
+(B) Steve Multer
+(C) Rodney Clark
+(D) Carrie Palin",D,['event understanding'],20:04-20:25
+2463,QWXlvx1GoTY.mp4,"Who is the second person to speak on stage?
+(A) Carrie Palin
+(B) Jonathan Davidson
+(C) Rodney Clark
+(D) Britney Bartlett",B,['event understanding'],42:12-42:35
+2465,QWXlvx1GoTY.mp4,"Jonathan Davidson shows a video about what brand during his talk?
+(A) Saint Laurent
+(B) Gucci
+(C) Dior
+(D) L'Oreal",D,['event understanding'],51:15-53:23
+2466,QWXlvx1GoTY.mp4,"What is written in the orange circle in the picture that appears at 69:20?
+(A) WEB
+(B) APP
+(C) AWS
+(D) PCI",C,"['temporal grounding', 'key information retrieval']",69:18-69:30
+2468,QWXlvx1GoTY.mp4,"How many women are there to speak on the stage?
+(A) 3
+(B) 0
+(C) 1
+(D) 2",D,['entity recognition'],35:00-139:55
+2469,QWXlvx1GoTY.mp4,"Which guest does Ronak Desai invite on stage in the middle of his speech?
+(A) Steve Multer
+(B) Britney Bartlett
+(C) Carrie Palin
+(D) Petek Ergul",D,['entity recognition'],100:23-100:55
+2473,QWXlvx1GoTY.mp4,"What does Fletcher Previn do when he gets on stage?
+(A) He hugs the man on the stage
+(B) He high-fives the man on the stage
+(C) He bows to the man on the stage
+(D) He shakes hands with the man on the stage",B,['entity recognition'],132:45-132:55
+2474,QWXlvx1GoTY.mp4,"What is the video doing at the beginning?
+(A) The staff is helping the host make up at that time
+(B) The staff is explaining the process to the host at that time
+(C) The staff is repairing the microphone for the host at that time
+(D) The staff is helping the host with his hairstyle",D,['event understanding'],00:04-00:06
+2475,QWXlvx1GoTY.mp4,"What's the name of the host in the green skirt?
+(A) Steve Multer
+(B) Petek Ergul
+(C) Nish Parkar
+(D) Carrie Palin",C,['key information retrieval'],00:53-00:55
+2476,QWXlvx1GoTY.mp4,"How many chairs are there in the picture at 01:42?
+(A) 3
+(B) 0
+(C) 1
+(D) 2",A,"['entity recognition', 'temporal grounding']",01:42-01:44
+2477,QWXlvx1GoTY.mp4,"How many times does Jeetu Patel speak on stage?
+(A) 2
+(B) 1
+(C) 3
+(D) 4",A,['event understanding'],35:00-139:55
+2561,-hgaSElC3wU.mp4,"What is the planet hanging on the stage background?
+(A) Sun
+(B) Earth
+(C) Moon
+(D) Mars",C,['entity recognition'],14:00-14:02
+2565,-hgaSElC3wU.mp4,"What kind of hat does the little boy wear?
+(A) Cowboy hat
+(B) Beret
+(C) Baseball cap
+(D) Top hat",B,['entity recognition'],30:33-30:33
+2567,-hgaSElC3wU.mp4,"From how other cats treat the cat with the white cane, we can infer about its status?
+(A) There is no such thing as status for cats
+(B) Its status is very high
+(C) Its status is very low
+(D) Its status is similar to theirs",B,"['reasoning', 'entity recognition']",35:00-35:54
+2568,-hgaSElC3wU.mp4,"What is the game the two children play with the two calico cats?
+(A) Over under relay
+(B) Tag
+(C) Duck, duck, goose
+(D) Leapfrog",D,"['event understanding', 'reasoning', 'entity recognition']",40:23-41:00
+2573,-hgaSElC3wU.mp4,"What color skirts do cats holding white fans wear?
+(A) Blue
+(B) White
+(C) Black
+(D) Red",B,['entity recognition'],73:02-73:50
+2574,-hgaSElC3wU.mp4,"How do cats communicate their thoughts?
+(A) By reciting
+(B) By sleeping
+(C) By singing
+(D) By talking",C,"['event understanding', 'entity recognition']",83:00-83:10
+2576,-hgaSElC3wU.mp4,"Which movement does the cat, wearing a sparkling black suit, black bow tie, and tight pants, perform?
+(A) Split
+(B) Moonwalk
+(C) Twerk
+(D) Krump",A,['entity recognition'],89:58-89:58
+2580,-hgaSElC3wU.mp4,"What letter is on the black board placed on the second floor of the background? 
+(A) Matches
+(B) Poker
+(C) Fire
+(D) Stop",A,"['key information retrieval', 'event understanding']",80:22-80:22
+2641,hROKtPqktO8.mp4,"What is she doing on the stairs at 08:00?
+(A) She is finding something interestiong on the stairs
+(B) She is so drunk to wander downstairs
+(C) She is jumping downstairs
+(D) She is dancing clown dance",D,"['event understanding', 'temporal grounding']",07:55-08:10
+2642,hROKtPqktO8.mp4,"After the vlogger sees a dog with an advertisement from the company named Smitten, camera changes to the scene with ___.
+(A) Sea, rocks and mountain
+(B) Sea, beach and mountain
+(C) Sea, beach and trees
+(D) Sea, rocks and trees",A,"['event understanding', 'entity recognition']",08:40-08:40
+2646,hROKtPqktO8.mp4,"What posture does the vlogger use to take the photo in 12:53?
+(A) Hands on hips
+(B) Lean on the bridge
+(C) Scissorhands
+(D) Open arms",D,"['entity recognition', 'temporal grounding']",12:20-13:00
+2647,hROKtPqktO8.mp4,"What are the words on the warning sign the vlogger first notices?
+(A) Attention Hotspring
+(B) Attention Volcano
+(C) Danger Volcano
+(D) Danger Hotspring",D,['key information retrieval'],14:00-14:15
+2651,hROKtPqktO8.mp4,"Which objects appears at 16:46?
+(A) A barbecue grill
+(B) A table
+(C) A book
+(D) A keyboard",D,"['entity recognition', 'temporal grounding']",16:45-17:00
+2652,hROKtPqktO8.mp4,"What does the vlogger do after swimming in a hot spring?
+(A) She digs into the water
+(B) She finds a sauna with nobody in it
+(C) She finds a new spring with nobody in it
+(D) She finds a cave with nobody in it",D,['event understanding'],19:00-20:00
+2654,hROKtPqktO8.mp4,"What is the first warn on the warning sign in the volcano skali?
+(A) Do not walk on the lava
+(B) Attention
+(C) Do not throw anything at the lava
+(D) Do not make carvings on the lava",A,['key information retrieval'],21:15-21:30
+2657,hROKtPqktO8.mp4,"Why can't the vlogger close her mouth at 28:00?
+(A) Because the food is so delicious
+(B) Because the food tastes weird
+(C) Because the food is so hard
+(D) Because her jaw is dislocated",B,"['reasoning', 'temporal grounding']",27:30-28:12
+2658,hROKtPqktO8.mp4,"What does the vlogger do on the third day?
+(A) She watches bread being made in a restaurant, visits a waterfall, eats at a restaurant, and then sees the aurora
+(B) She eats at a restaurant, watches bread being made, visits a river, and then sees the aurora
+(C) She watches bread being made by the sea, visits a waterfall, eats at a restaurant, and then sees the aurora
+(D) She enjoys the sea, visits a waterfall, eats at a restaurant, and then sees the aurora",C,"['summarization', 'key information retrieval']",23:26-28:50
+2664,tH_5YbklevQ.mp4,"What is this video introducing?
+(A) My First Time in New Delhi
+(B) My First Time in Jakarta
+(C) My First Time in Tokyo
+(D) My First Time in Singapore",B,"['event understanding', 'key information retrieval']",00:00-57:25
+2665,tH_5YbklevQ.mp4,"Where is the first destination the vlogger goes to?
+(A) Subway Station
+(B) Shopping mall
+(C) Airport
+(D) Dining room",A,['event understanding'],01:00-02:30
+2672,tH_5YbklevQ.mp4,"What does the guy in green who rides a motorcycle with the plate number B 5237 FLM do to the vlogger?
+(A) Make a yeah gesture to the author
+(B) Kiss the author on the check
+(C) Make a discriminatory gesture towards the author
+(D) Give a high five to the author",A,"['entity recognition', 'key information retrieval']",14:16-14:18
+2673,tH_5YbklevQ.mp4,"What color hat is the person communicating with the vlogger wearing before entering the national monument?
+(A) Red
+(B) Black
+(C) Dark blue
+(D) White",C,['entity recognition'],18:00-18:10
+2674,tH_5YbklevQ.mp4,"What color is the door of the national monument in the video?
+(A) Dark blue
+(B) Red
+(C) Green
+(D) Black",C,['entity recognition'],19:40-19:55
+2675,tH_5YbklevQ.mp4,"What might be the most likely reason the vlogger doesn't enter the national monument on the first day?
+(A) Because it's closed on Monday
+(B) Because foreigners are not allowed to enter
+(C) Because the author does not have enough money to buy a ticket
+(D) Because the author has other things to do",A,['reasoning'],19:00-20:00
+2677,tH_5YbklevQ.mp4,"What happens to the vlogger between 21:50-22:30?
+(A) The vlogger asks a staff member
+(B) The vlogger buys a drink
+(C) The vlogger buys a food coupon
+(D) The vlogger buys a ticket",D,"['event understanding', 'temporal grounding', 'entity recognition']",21:50-22:30
+2678,tH_5YbklevQ.mp4,"What is the temperature like when the vlogger entered the national monument?
+(A) Mild
+(B) Cool
+(C) Cold
+(D) Intense heat",D,['event understanding'],23:00-24:00
+2680,tH_5YbklevQ.mp4,"What is the color of the vlogger's sunglasses frame?
+(A) Orange
+(B) Red
+(C) Black
+(D) Blue",A,['entity recognition'],20:15-28:00
+2682,tH_5YbklevQ.mp4,"Where does the vlogger go after crossing the street that has a no parking sign?
+(A) Church
+(B) Hotel
+(C) Mall
+(D) Subway station",A,"['event understanding', 'key information retrieval']",35:00-36:00
+2683,tH_5YbklevQ.mp4,"How is the weather after the vlogger walking out of the church?
+(A) Windy
+(B) Rainy
+(C) Cloudy
+(D) Sunny",C,"['entity recognition', 'event understanding']",37:00-38:00
+2684,tH_5YbklevQ.mp4,"Where does the vlogger go after leaving the church?
+(A) Mall
+(B) Hotel
+(C) Subway Station
+(D) Airport",B,['event understanding'],37:00-43:00
+2685,tH_5YbklevQ.mp4,"What kind of transportation does the vlogger use to get back to the hotel?
+(A) Bus
+(B) Bike
+(C) Motorcycle
+(D) Taxi",C,['event understanding'],37:00-43:00
+2689,tH_5YbklevQ.mp4,"What is the most possible relationship between the woman in white robe and the vlogger?
+(A) Teacher-student relationship
+(B) Friendship
+(C) Brother-sister relationship
+(D) Boyfriend and girlfriend",D,['reasoning'],43:00-43:30
+2692,tH_5YbklevQ.mp4,"Where does the vlogger go to after having a very American style meal?
+(A) Bedroom
+(B) Dining room
+(C) Swimming Pool
+(D) Bathroom",C,"['entity recognition', 'event understanding']",54:30-56:00
+2723,USfvmoalqsw.mp4,"Where does the vlogger travel to?
+(A) Bhutan
+(B) Indonesia
+(C) China
+(D) India",A,"['key information retrieval', 'event understanding']",00:04-00:06
+2725,USfvmoalqsw.mp4,"What happens between the vlogger's arrive and exit the airport?
+(A) Picks up the luggage, buys a simcard, checks the currency, go pass the boarder protection
+(B) Picks up the luggage, buys a simcard
+(C) Picks up the luggage, buys a simcard, checks the currency
+(D) Picks up the luggage, checks the currency",B,['summarization'],01:37-02:49
+2728,USfvmoalqsw.mp4,"Why does the vlogger wear a white accessory?
+(A) It is culture cloth to give to the guests
+(B) It is a gift from his girlfriend
+(C) It is a fashion piece for newest trend
+(D) It is a tool for sun protection",A,['reasoning'],03:10-03:14
+2729,USfvmoalqsw.mp4,"Where does the vlogger go first after landing in the city?
+(A) A cultural center
+(B) A local market
+(C) A grocery and gift store
+(D) An iconic landmark",C,['event understanding'],03:49-03:49
+2731,USfvmoalqsw.mp4,"How many percentage of the land is covered in forest mentioned in the video?
+(A) 60
+(B) 70
+(C) 40
+(D) 50",B,['key information retrieval'],05:37-05:37
+2732,USfvmoalqsw.mp4,"What happens between the vlogger's leave from the clothing shop and before the Bhutan promotional video?
+(A) He goes pass a bridge that is above a river, takes picture in front of a temple, goes to his hotel, checks the hotel and eats lunch
+(B) He goes pass a bridge that is above a river, takes picture in front of a temple, drives the car back to his hotel by himself, checks the hotel and eats lunch
+(C) He takes picture in front of a temple, goes pass a bridge that is above a river, goes to his hotel, checks the hotel and eats lunch
+(D) He takes picture in front of a temple, goes pass a bridge that is above a river, drives the car back to his hotel by himself, checks the hotel and eats lunch",C,"['summarization', 'event understanding']",03:44-09:41
+2733,USfvmoalqsw.mp4,"Why is the vlogger happy to see two Bhutanese who wear brown clothes and fake leaves hats?
+(A) They are dancing and giving traditional gifts to the vlogger
+(B) They are giving traditional gifts to the vlogger and are genuinely happy
+(C) They are dancing and are genuinely happy
+(D) They are dancing, giving traditional gifts to the vlogger and are genuinely happy",C,"['entity recognition', 'reasoning']",11:53-12:18
+2736,USfvmoalqsw.mp4,"What is the video time interval that the vlogger visit the cultural center?
+(A) 11:35-16:15
+(B) 11:35-14:15
+(C) 10:35-14:15
+(D) 10:35-16:15",C,"['event understanding', 'temporal grounding']",10:35-14:15
+2739,USfvmoalqsw.mp4,"What does the vlogger do after he tries a traditional hat and before he visits the white and red building?
+(A) He visits the zoo, walks in the forest, talks to a boy in green shirt in the forest and visits a local market
+(B) He visits the zoo, walks in the forest, visits a local market and talks to a boy in green shirt in the market
+(C) He walks in the forest, visits a local market, visits the zoo, and talks to a boy in green shirt in the zoo
+(D) He walks in the forest, visits the zoo, visits a local market and talks to a boy in green shirt in the market",B,['summarization'],25:29-35:56
+2741,USfvmoalqsw.mp4,"What is the best word that describes the local market?
+(A) Historic
+(B) Simple
+(C) Chaotic
+(D) Fancy",B,['entity recognition'],30:56-35:45
+2746,USfvmoalqsw.mp4,"Why does the vlogger's team park the car on the side of the road?
+(A) They want to eat some fresh corn
+(B) They want to make some friends
+(C) They want to drink some water
+(D) The car has something wrong",A,['event understanding'],49:20-49:36
+2747,USfvmoalqsw.mp4,"What might be the most common type of grain in this city?
+(A) Wheat
+(B) Quinoa
+(C) Rice
+(D) Bread",C,"['reasoning', 'entity recognition']",56:10-56:10
+2750,USfvmoalqsw.mp4,"What color of the jacket does Sophia wear when she sees the crane status?
+(A) Pink
+(B) Black
+(C) White
+(D) Blue",A,"['event understanding', 'entity recognition']",91:05-91:07
+2751,USfvmoalqsw.mp4,"Where does the vlogger go at 104:44?
+(A) A school
+(B) An office
+(C) A zoo
+(D) A park",A,"['event understanding', 'temporal grounding']",104:44-104:44
+2753,evYm0cELO3I.mp4,"Who is the owner of Gourment Conch Salad?
+(A) Dino
+(B) Jonny
+(C) Conny
+(D) Sonny",A,"['entity recognition', 'key information retrieval']",21:58-22:02
+2754,evYm0cELO3I.mp4,"Which animal appears at 00:07?
+(A) Manatee
+(B) Sea turtle
+(C) Lobster
+(D) Clownfish",C,"['entity recognition', 'temporal grounding']",00:07-00:07
+2756,evYm0cELO3I.mp4,"Which animal does the vlogger hold on a boat?
+(A) Starfish
+(B) Jellyfish
+(C) Lobster
+(D) Conch",D,"['event understanding', 'entity recognition']",17:35-17:35
+2757,evYm0cELO3I.mp4,"Miko goes from sea to ___.
+(A) The land
+(B) The sea
+(C) The seabeach
+(D) The boat",D,"['event understanding', 'key information retrieval']",16:46-16:50
+2759,evYm0cELO3I.mp4,"What is the name of the vlogger?
+(A) Sonny
+(B) Alan Brown
+(C) Jonny
+(D) Conny",A,"['key information retrieval', 'entity recognition']",01:50-01:55
+2762,evYm0cELO3I.mp4,"What happens from 02:45-04:00?
+(A) There is a continuous clips. The basic information about The Bahama
+(B) There are lots of short clips. The basic information about the Montagu Beach Fish Market
+(C) There is a continuous clips. The basic information about the Montagu Beach Fish Market
+(D) There are lots of short clips. The basic information about The Bahama",D,"['summarization', 'temporal grounding']",02:45-04:00
+2763,evYm0cELO3I.mp4,"What happens from 04:19-04:45?
+(A) Sonny tastes Lobster Quesadilla
+(B) The chef cooks Bohemain Lobster
+(C) The chef cooks Lobster Quesadilla
+(D) Sonny tastes Bohemain Lobster",C,"['temporal grounding', 'event understanding']",04:19-04:45
+2764,evYm0cELO3I.mp4,"What happens from 04:50-05:20?
+(A) Sonny tastes Bohemain Lobster
+(B) The chef cooks Lobster Quesadilla
+(C) The chef cooks Bohemain Lobster
+(D) Sonny tastes  Lobster Quesadilla",D,"['temporal grounding', 'event understanding']",04:50-05:20
+2766,evYm0cELO3I.mp4,"How does Maxine Smith prepare the lobster?
+(A) She splits the lobster in half and stir fries it
+(B) She chops the lobster and grills it
+(C) She chops the lobster and stir fries it
+(D) She splits the lobster in half and grills it",D,"['entity recognition', 'event understanding']",06:51-06:55
+2767,evYm0cELO3I.mp4,"How does the vlogger eat the grilled lobster?
+(A) Fork
+(B) Hand and fork
+(C) Hand, fork and knife
+(D) Hand",B,['entity recognition'],06:33-07:20
+2768,evYm0cELO3I.mp4,"Why does Sonny look so expected at 07:27?
+(A) He wants to eat the Lobster Quesadilla
+(B) He wants to eat the Bohemian Lobster
+(C) He wants to start the maritime navigation
+(D) He enjoys the juicy cheese",B,"['reasoning', 'temporal grounding']",07:27-07:27
+2769,evYm0cELO3I.mp4,"What does the vlogger wear?
+(A) An earring
+(B) A scarf
+(C) A ring
+(D) A headband",D,['entity recognition'],00:00-90:18
+2770,evYm0cELO3I.mp4,"What does Sonny look so happy at 08:23?
+(A) He eats the delicious lobster guts
+(B) He eats the delicious cheese
+(C) He eats the delicious lobster tail
+(D) He eats the delicious chunks of the lobster",D,"['reasoning', 'temporal grounding']",08:23-08:23
+2771,evYm0cELO3I.mp4,"Where does the vlogger and crab catcher catch a carb?
+(A) Cave
+(B) Sea
+(C) Land
+(D) Beach",C,['event understanding'],53:30-57:07
+2773,evYm0cELO3I.mp4,"Why does the vlogger take the whole tail of a lobster out?
+(A) To split more easily
+(B) To ask the price
+(C) To eat more easily
+(D) To show the size",D,['reasoning'],09:05-09:15
+2776,evYm0cELO3I.mp4,"What happens from 24:46-25:12?
+(A) Sonny tastes  Lobster Quesadilla
+(B) Sonny tastes Bohemian Lobster
+(C) Sonny tastes Kung Fruit Salad
+(D) The chef cooks Lobster Quesadilla",C,"['temporal grounding', 'event understanding']",24:46-25:12
+2778,evYm0cELO3I.mp4,"Who is Shay?
+(A) The chef of the Captain's table
+(B) The founder of Mongu Beach Fish Market
+(C) The food expert who makes the video
+(D) The chef of the Frankie Gone Bananas",A,['entity recognition'],25:50-25:54
+2779,evYm0cELO3I.mp4,"What does the man do from 28:43-29:14?
+(A) The man cooks a conch
+(B) The man tastes a conch
+(C) The man cooks a lobster
+(D) The man tastes a lobster",A,"['temporal grounding', 'event understanding']",28:43-29:14
+2780,evYm0cELO3I.mp4,"What is the name of MT. Pleasant Fishing Lodge's chef?
+(A) Amber
+(B) Alan Brown
+(C) Jupy
+(D) Emerson",D,['key information retrieval'],50:45-50:51
+2781,evYm0cELO3I.mp4,"What does Kishley cook for the vlogger?
+(A) Johnny Cakes
+(B) Amputated Crabs
+(C) Boar Soup
+(D) Peppa Pig Pepper",A,['entity recognition'],59:40-60:10
+2783,RbpKkvlHYTw.mp4,"Which city does the vlogger first go to?
+(A) Incheon
+(B) Busan
+(C) Yesan
+(D) Seoul",A,"['key information retrieval', 'event understanding']",00:00-01:54
+2786,RbpKkvlHYTw.mp4,"What is the first food the vlogger eat?
+(A) Budae-jjigae
+(B) Hangover stew
+(C) Oriental roast chicken
+(D) Casseroles",B,['entity recognition'],02:46-05:10
+2787,RbpKkvlHYTw.mp4,"How does the vlogger get to Hannam?
+(A) By plane
+(B) By subway
+(C) By train
+(D) By car",B,['event understanding'],08:00-09:00
+2788,RbpKkvlHYTw.mp4,"What is the vlogger's first meal in Hannam?
+(A) Beggar's chicken
+(B) Hangover stew
+(C) Kiln-roasted chicken
+(D) Oriental roast chicken",D,['entity recognition'],09:00-12:18
+2790,RbpKkvlHYTw.mp4,"How many pictures of food are on the menu at 17:49?
+(A) 6
+(B) 5
+(C) 11
+(D) 10",C,"['entity recognition', 'temporal grounding']",17:45-17:55
+2795,RbpKkvlHYTw.mp4,"How many meals does the vlogger eat in Seoul?
+(A) 8
+(B) 6
+(C) 7
+(D) 5",A,['event understanding'],00:00-101:00
+2804,RbpKkvlHYTw.mp4,"Where is the vlogger when it comes to day 6?
+(A) Masan
+(B) Seoul
+(C) Muan
+(D) Busan",D,['key information retrieval'],53:00-54:20
+2805,RbpKkvlHYTw.mp4,"Where is the vlogger at when there is gondola above him?
+(A) On a beach
+(B) By the sea
+(C) In a mountain
+(D) At an amusement park",B,"['event understanding', 'entity recognition']",63:29-63:29
+2806,RbpKkvlHYTw.mp4,"At 65:20, what is put on the scallop?
+(A) Peanut
+(B) Cheese
+(C) Lard
+(D) Seasoning",B,"['entity recognition', 'temporal grounding']",65:20-65:20
+2807,RbpKkvlHYTw.mp4,"Why does the vlogger do push-ups in hotel?
+(A) He is in a push-up competition
+(B) Hotel asks all guests to do so
+(C) He eats too much food these days
+(D) He is engaged in a workout",C,['reasoning'],79:40-80:00
+2809,RbpKkvlHYTw.mp4,"How many time has the vlogger been to Seoul in this video?
+(A) 0
+(B) 2
+(C) 3
+(D) 1",B,"['key information retrieval', 'entity recognition']",00:00-101:00
+2810,RbpKkvlHYTw.mp4,"Where does the vlogger have his last meal in Korea?
+(A) Incheon
+(B) Busan
+(C) Sokcho
+(D) Seoul",A,"['key information retrieval', 'event understanding']",116:50-108:00
+2812,RbpKkvlHYTw.mp4,"What is the category of this video?
+(A) A vlog of all kinds of food around Korea
+(B) A vlog of travel around Korea
+(C) A vlog of all kinds of food around Seoul
+(D) A vlog of travel around Seoul",A,['event understanding'],00:00-108:53
+2815,Mcggugol2ts.mp4,"Why does the vlogger not take the Narita express?
+(A) Because the vlogger is a foreigner
+(B) Because the vlogger comes too late and misses the train time
+(C) Because the train is suspended
+(D) Because the vlogger does not make a reservation",D,['event understanding'],02:00-03:00
+2817,Mcggugol2ts.mp4,"What is the time when the vlogger gets out of the Shinjuku Station?
+(A) Afternoon
+(B) Midnight
+(C) Morning
+(D) Evening",D,"['key information retrieval', 'entity recognition']",07:40-08:00
+2819,Mcggugol2ts.mp4,"What is the best word that describes Tokyo's night view?
+(A) Dark
+(B) Colorful
+(C) Bright white
+(D) Sparkling",B,['event understanding'],09:40-10:00
+2821,Mcggugol2ts.mp4,"What does the vlogger do after settling in the hotel?
+(A) Eating with friends
+(B) Planning for the next day
+(C) Taking a shower and resting
+(D) Strolling the street and finding a place to eat",D,['event understanding'],13:00-17:30
+2822,Mcggugol2ts.mp4,"What does the vlogger order in the restaurant?
+(A) Sushi
+(B) Hitsumabushi
+(C) Yakiniku
+(D) Spicy ramen",D,['entity recognition'],16:20-17:25
+2823,Mcggugol2ts.mp4,"What does the vlogger do first after finishing dinner at the restaurant?
+(A) Go to the vending machine to buy beer
+(B) Go to the 82 Ale House to buy beer
+(C) Go to the vending machine to buy water
+(D) Go to the 82 Ale House to buy water",B,"['event understanding', 'entity recognition']",17:25-17:40
+2824,Mcggugol2ts.mp4,"The vlogger spend ___  yen to buy water from the vending machine for the first time.
+(A) 150
+(B) 120
+(C) 75
+(D) 100",D,"['key information retrieval', 'event understanding']",17:40-18:50
+2825,Mcggugol2ts.mp4,"What is the most likely way the vlogger hold the phone?
+(A) By another friend
+(B) By a tripod
+(C) By a selfie stick
+(D) By hand",C,['key information retrieval'],19:00-19:30
+2826,Mcggugol2ts.mp4,"What does vlogger do in the second half of the video?
+(A) The vlogger strolls on the street, trys to catch a doll from the claw machine, browses merchandise, buys a drink from the vending machine, and trys slot machine
+(B) The vlogger strolls on the street, trys to catch a doll from the claw machine, goes to a Bookoff, browses merchandise, buys a drink from the vending machine, and trys slot machine
+(C) The vlogger strolls on the street, goes to a Bookoff, browses merchandise, buys a drink from the vending machine, and trys slot machine
+(D) The vlogger strolls on the street, trys to catch a doll from the claw machine, goes to a Bookoff, browses merchandise, and trys slot machine",C,['summarization'],21:50-44:27
+2827,Mcggugol2ts.mp4,"What are the items sold in the bookoff that the vlogger went to?
+(A) Book, Handmade, switch, DVDs, MP3
+(B) Book, phone, switch, trinkets, cards, TV, MP3
+(C) Book, phone, switch, DVDs
+(D) Book, phone, switch, trinkets, cards",D,['entity recognition'],33:35-35:40
+2828,Mcggugol2ts.mp4,"What does the vlogger buy after coming out of the bookstore?
+(A) Beer
+(B) Coke
+(C) Juice
+(D) Sparkling water",D,"['entity recognition', 'event understanding']",36:00-36:30
+2829,Mcggugol2ts.mp4,"What vehicle passes on the right side of the vlogger when there is a SUBNADE sign above?
+(A) Bike
+(B) Train
+(C) Motobike
+(D) Car",A,"['entity recognition', 'key information retrieval']",42:19-42:25
+2832,Mcggugol2ts.mp4,"Which floor is the bookoff on?
+(A) 4
+(B) 5
+(C) 3
+(D) 6",A,['key information retrieval'],33:37-33:38
+2833,Mcggugol2ts.mp4,"The vlogger spend ___  yen to buy water from the vending machine for the second time.
+(A) 150
+(B) 130
+(C) 110
+(D) 100",C,"['key information retrieval', 'event understanding']",38:05-38:07
+2834,Mcggugol2ts.mp4,"What is the overall expression of the vlogger on the train?
+(A) Shocked
+(B) Happy
+(C) Tired
+(D) Upset",C,['reasoning'],03:38-03:43
+2837,Mcggugol2ts.mp4,"Which of the following event occurs after the bookoff visit?
+(A) Buy a beer
+(B) Find a coin-locker
+(C) Eat a spicy ramen
+(D) Explore the Golden Guy bars",B,['event understanding'],16:00-36:40
+2958,JPPMz8fEml0.mp4,"What is the highest percentage of the country's respondents who experienced anger on the day previous to the survey?
+(A) 48%
+(B) 51%
+(C) 53%
+(D) 49%",D,['key information retrieval'],00:09-00:12
+2963,JPPMz8fEml0.mp4,"Which country do the travelers choose?
+(A) Isreal
+(B) Afghanistan
+(C) Palestine
+(D) Lebanon",D,['key information retrieval'],01:18-01:21
+2965,JPPMz8fEml0.mp4,"What is the discount on the vlogger's merchandise?
+(A) 50% off
+(B) 30% off
+(C) 20% off
+(D) 40% off",B,['key information retrieval'],02:14-02:18
+2967,JPPMz8fEml0.mp4,"Among the three vloggers, ___ has the most normal night.
+(A) Thomas
+(B) No one
+(C) Staffan
+(D) Ammar",C,['reasoning'],00:00-34:34
+2972,JPPMz8fEml0.mp4,"How many vloggers find a place to live before sunset?
+(A) 0
+(B) 1
+(C) 2
+(D) 3",A,['event understanding'],06:35-06:39
+2975,JPPMz8fEml0.mp4,"What is the attitudes of people living in Lebanon towards life?
+(A) They think their life are meaningless
+(B) They are happy about their life
+(C) They are hopeless about their life
+(D) They are angry about their life",B,['reasoning'],08:37-08:50
+2976,JPPMz8fEml0.mp4,"Does the car driver accept the request at 09:00?
+(A) Yes
+(B) He didn't say anything
+(C) No
+(D) I don't know",C,"['reasoning', 'temporal grounding']",09:00-09:37
+2977,JPPMz8fEml0.mp4,"Who goes to a party at night?
+(A) Ammar
+(B) Staffan
+(C) Ammar, Thomas, Staffan
+(D) Thomas",D,['key information retrieval'],09:38-09:47
+2981,JPPMz8fEml0.mp4,"Thomas sleeps at ___ house.
+(A) A stranger's
+(B) His
+(C) A friend's
+(D) A stranger's friend's",D,['reasoning'],16:03-16:07
+2982,JPPMz8fEml0.mp4,"Who is Staffan's roommate?
+(A) Christ
+(B) Danny
+(C) Ammar
+(D) No roommate",B,['entity recognition'],20:05-20:26
+2983,JPPMz8fEml0.mp4,"What does Staffen choose when his host offers him some food?
+(A) Some popcorn
+(B) Some nuts
+(C) An ice cream
+(D) Nothing",C,['event understanding'],25:49-25:56
+2984,JPPMz8fEml0.mp4,"What does Thomas do before sleeping?
+(A) He has a bath
+(B) He watches a film
+(C) He goes to a party
+(D) He chats with his roommates",C,"['event understanding', 'entity recognition']",26:58-27:13
+2987,JPPMz8fEml0.mp4,"How many vloggers find a place to live at night?
+(A) 1
+(B) 0
+(C) 2
+(D) 3",D,"['event understanding', 'entity recognition']",00:00-34:34
+3166,uusf1qG_uZ4.mp4,"What is the first exercise the substitute daycare teacher does with these infants?
+(A) Sit-ups
+(B) Push-ups
+(C) Hands-up
+(D) Jumping jacks",D,['entity recognition'],00:50-00:57
+3167,uusf1qG_uZ4.mp4,"What do these kids think of the substitute daycare teacher?
+(A) They hate her
+(B) They like her
+(C) They adore her
+(D) They don't care about her",A,['reasoning'],01:32-01:37
+3168,uusf1qG_uZ4.mp4,"How do the kids feel when the substitute  daycare teacher falls into the pool?
+(A) Happy
+(B) Scared
+(C) Worried
+(D) Sad",A,"['event understanding', 'reasoning']",02:46-02:55
+3171,uusf1qG_uZ4.mp4,"Why does Boss Baby sneak JJ's birthday cake?
+(A) Because he was hungry
+(B) Because he doesn't like JJ
+(C) Because he likes to eat sweets
+(D) Because he wanted to play a trick",A,['event understanding'],09:58-10:58
+3173,uusf1qG_uZ4.mp4,"Why does JJ look terrified after Boss Baby says 'It's boss boy'?
+(A) Because he is afraid of Boss Baby
+(B) Because it reminds him of his nightmare
+(C) Because he notices something that scares him
+(D) Because he doesn't want to be woke up",B,['reasoning'],14:05-15:51
+3174,uusf1qG_uZ4.mp4,"Who is the third kid to slide into the pool?
+(A) Boss Baby
+(B) Zoey
+(C) JJ
+(D) Pablo",B,['entity recognition'],16:50-17:11
+3176,uusf1qG_uZ4.mp4,"Who opens the door for JJ when he rings the doorbell on Masha's birthday?
+(A) Masha's grandma
+(B) Masha's mom
+(C) Masha's grandpa
+(D) Masha's dad",A,"['entity recognition', 'event understanding']",36:33-36:42
+3177,uusf1qG_uZ4.mp4,"Why does Janice act so nice?
+(A) Because she is a nice person
+(B) Because she treats other kids as good friends
+(C) Because her mom is the teacher
+(D) Because she is happy to see the visitors",C,['reasoning'],33:04-33:32
+3178,uusf1qG_uZ4.mp4,"Who is pushing over by Janice?
+(A) Zoey
+(B) Boss Baby
+(C) JJ
+(D) Pablo",C,['entity recognition'],34:47-35:10
+3180,uusf1qG_uZ4.mp4,"What is the name of the coffee shop behind the road that appears at 49:50?
+(A) Starbrooklyn coffee
+(B) Starbrooks coffee
+(C) Starbucks coffee
+(D) Starboom coffee",B,"['key information retrieval', 'temporal grounding']",49:50-49:50
+3181,uusf1qG_uZ4.mp4,"Why is the daycare teacher very irritable with the kids?
+(A) She receives a hefty fine by mistake
+(B) She goes through a breakup
+(C) She doesn't like these kids
+(D) She doesn't like her job",A,['reasoning'],56:59-59:40
+3182,uusf1qG_uZ4.mp4,"Which kid has a little sister?
+(A) Boss Baby
+(B) JJ
+(C) Pablo
+(D) Masha",C,['entity recognition'],69:58-70:15
+3183,uusf1qG_uZ4.mp4,"What are the words that appear in the top left corner of the screen at 71:00?
+(A) Comment ""BIKE"" if you see this!
+(B) Comment ""SIKE"" if you see this!
+(C) Comment ""LIKE"" if you see this!
+(D) Comment ""NIKE"" if you see this!",B,"['key information retrieval', 'temporal grounding']",71:00-71:00
+3184,uusf1qG_uZ4.mp4,"What is the main content discussed from 73:13-73:31?
+(A) Memories kids have about Janice, who did something bad in the past
+(B) Memories kids have about Boss Baby, who did something bad in the past
+(C) Memories kids have about Pablo, who did something nice in the past
+(D) Memories kids have about JJ, who did something nice in the past",A,"['temporal grounding', 'summarization']",73:13-73:31
+3186,uusf1qG_uZ4.mp4,"What color does Pablo wear most often?
+(A) Red
+(B) Black
+(C) Blue
+(D) Yellow",D,['entity recognition'],00:55-132:00
+3187,uusf1qG_uZ4.mp4,"How many times do these kids take the school bus together?
+(A) 3
+(B) 2
+(C) 4
+(D) 1",A,['event understanding'],18:36-32:34
+3188,uusf1qG_uZ4.mp4,"How many female substitute daycare teachers have appeared in total?
+(A) 3
+(B) 4
+(C) 2
+(D) 1",C,['entity recognition'],00:01-26:45
+3189,uusf1qG_uZ4.mp4,"Who is the biggest crybaby among these kids?
+(A) Pablo
+(B) JJ
+(C) Bobby
+(D) Masha",A,"['entity recognition', 'reasoning']",00:55-132:00
+3335,O14bbpvy2x0.mp4,"What vegetables are in the first burger?
+(A) Peppers and lettuce
+(B) Onions and peppers
+(C) Onions and tomatos
+(D) Tomatos and lettuce",C,['event understanding'],02:49-03:07
+3336,O14bbpvy2x0.mp4,"How many burgers does the vlogger make during the video?
+(A) 24
+(B) 19
+(C) 25
+(D) 12",B,['event understanding'],00:00-33:26
+3339,O14bbpvy2x0.mp4,"What type of sauce does the label indicate on the second bottle that is closest to the view?
+(A) Barbecue Sauce
+(B) Ketchup
+(C) Sweet chili sauce
+(D) Mustard",C,['key information retrieval'],23:36-24:00
+3341,O14bbpvy2x0.mp4,"At 24:09 what does the people at background do?
+(A) They are having a conference
+(B) They are frying fries
+(C) They are cooking meals
+(D) They are eating meals",D,"['entity recognition', 'temporal grounding']",24:09-24:15
+3343,O14bbpvy2x0.mp4,"What does the vlogger do at 14:42?
+(A) He cracks an egg
+(B) He puts chicken on top of the burger
+(C) He grabs a beacon slice
+(D) He grabs some tissues",D,"['entity recognition', 'temporal grounding']",14:41-14:44
+3347,O14bbpvy2x0.mp4,"How many pieces of patties does the vlogger cook at the very begining?
+(A) 3
+(B) 2
+(C) 1
+(D) 4",B,['entity recognition'],00:30-00:40
+3350,O14bbpvy2x0.mp4,"How many patties are there in the first hamburger made by the vlogger?
+(A) 0
+(B) 2
+(C) 1
+(D) 3",B,['entity recognition'],03:25-03:40
+3352,O14bbpvy2x0.mp4,"What does the vlogger use to wipe the yellow chopping board after cleaning it?
+(A) White tissue
+(B) Black tissue
+(C) Blue tissue
+(D) Yellow tissue",C,['event understanding'],01:30-01:40
+3356,O14bbpvy2x0.mp4,"When making the side salad, what does the vlogger put on the tomato slice?
+(A) Salad sauce
+(B) Cucumber slices
+(C) Onion slices
+(D) Onion rings",B,"['event understanding', 'entity recognition']",11:16-11:30
+3357,O14bbpvy2x0.mp4,"What color is the rubber part of the tong?
+(A) Navy blue
+(B) Dark green
+(C) Baby blue
+(D) Light yellow",B,['entity recognition'],11:59-12:00
+3358,O14bbpvy2x0.mp4,"What is the side of the no-bun burger?
+(A) Onion rings
+(B) Salad
+(C) Fries
+(D) Chili",C,['event understanding'],12:31-12:37
+3361,O14bbpvy2x0.mp4,"How many melting domes are there in total?
+(A) 2
+(B) 3
+(C) 5
+(D) 4",D,['entity recognition'],13:35-13:40
+3363,O14bbpvy2x0.mp4,"What is this video about?
+(A) Candy making
+(B) Steak making
+(C) Hamburg making
+(D) Ice cream making",C,['event understanding'],00:00-10:00
+3364,O14bbpvy2x0.mp4,"Who are the vlogger's customers?
+(A) Construction workers and students
+(B) Construction workers, students, and office workers
+(C) Construction workers and office workers
+(D) Students and office workers",C,['reasoning'],00:00-33:25
+3367,O14bbpvy2x0.mp4,"What is the vlogger's job other than making videos?
+(A) Variety show director
+(B) Dining customer
+(C) Food program instructor
+(D) Hamburger maker",D,['reasoning'],00:00-10:00
+3368,O14bbpvy2x0.mp4,"What is the content of the video?
+(A) The vlogger makes single kind of burger, he is also responsible for putting french fries on the side
+(B) The vlogger makes variety of burgers by the customer's order, he is also responsible for various side
+(C) The vlogger makes variety of burgers by the customer's order, he is also responsible for putting french fries on the side
+(D) The vlogger makes single kind of burger, he is also responsible for various side",B,['summarization'],00:00-33:25
+3369,O14bbpvy2x0.mp4,"How many slices of cheese does the vlogger put on each patty from 19:25-19:45?
+(A) 3 in total. 2 on the left, 1 one the right
+(B) 4 in total. 2 on the left, 2 one the right
+(C) 2 in total. 1 on the left, 1 one the right
+(D) 3 in total. 1 on the left, 2 one the right",C,"['temporal grounding', 'event understanding']",19:25-19:45
+3370,O14bbpvy2x0.mp4,"Where are the hamburger bun stored?
+(A) In the right drawer under the iron plate
+(B) On the right side of the iron plate
+(C) In the left drawer under the iron plate
+(D) On the left side of the iron plate",B,['event understanding'],08:45-08:51
+3371,3_upA09AntU.mp4,"What color of the sauce which is put on the dish that has pepper as its side?
+(A) Green
+(B) Orange
+(C) Yellow
+(D) Red",A,['entity recognition'],00:08-00:21
+3372,3_upA09AntU.mp4,"What does the chef do from 01:06-01:24?
+(A) To break the container
+(B) To find the container and wash it
+(C) To replace the container with a new one
+(D) To change the container",B,"['event understanding', 'temporal grounding']",01:16-01:24
+3377,3_upA09AntU.mp4,"What does the chef write when he first writing on paper?
+(A) Burger Good
+(B) Burger Branding
+(C) Burger Burger
+(D) Burger Bad",B,"['key information retrieval', 'event understanding']",03:52-04:02
+3378,3_upA09AntU.mp4,"How many plates does the chef place on the table from 04:40-04:46?
+(A) 3
+(B) 1
+(C) 2
+(D) 4",A,"['temporal grounding', 'entity recognition']",04:44-05:00
+3380,3_upA09AntU.mp4,"What color of the sauce which is put on the dish from 07:25-07:34?
+(A) Red
+(B) Yellow
+(C) Green
+(D) Blue",C,"['entity recognition', 'temporal grounding']",07:25-07:34
+3382,3_upA09AntU.mp4,"How many spoonfuls of sauce are placed on the two plates from 09:13-09:30?
+(A) 3
+(B) 1
+(C) 2
+(D) 4",D,"['temporal grounding', 'event understanding']",09:13-09:30
+3383,3_upA09AntU.mp4,"When the action of scooping out fried food appears for the first time, what kind of food is scooped out?
+(A) Broccoli
+(B) Fries
+(C) Meat
+(D) Hamburger",A,['event understanding'],10:36-10:47
+3385,3_upA09AntU.mp4,"How many times does the chef put condiments on broccoli?
+(A) 6
+(B) 5
+(C) 8
+(D) 7",C,['entity recognition'],12:16-13:43
+3389,3_upA09AntU.mp4,"What does the chef do after organizing the receipts?
+(A) He fetchs a dish
+(B) He tastes a dish
+(C) He puts the dish on a plate
+(D) He cooks a dish",C,['event understanding'],18:19-18:39
+3390,3_upA09AntU.mp4,"There are four containers on the left side of the table where the bills are placed. What are they used for?
+(A) For cooking the dishes
+(B) For cooling the sauce
+(C) For heating the sauce
+(D) For cleaning other containers",C,['reasoning'],00:00-41:39
+3392,3_upA09AntU.mp4,"How many steak on the left side of the table at 21:00?
+(A) 3
+(B) 1
+(C) 2
+(D) 4",A,"['key information retrieval', 'temporal grounding']",21:00-21:22
+3393,3_upA09AntU.mp4,"How many times does the chef wash his hands during the entire process?
+(A) 3
+(B) 2
+(C) 1
+(D) 4",C,['event understanding'],22:37-22:48
+3395,3_upA09AntU.mp4,"Which color of the sauce is mostly used?
+(A) Green
+(B) Red
+(C) Orange
+(D) Yellow",A,"['reasoning', 'entity recognition']",00:00-41:39
+3397,3_upA09AntU.mp4,"What might be the number on the stove above the table next to the trash can?
+(A) Countdown numbers
+(B) Timing numbers
+(C) Random numbers
+(D) Clock numbers",A,"['reasoning', 'entity recognition']",37:43-37:45
+3399,3_upA09AntU.mp4,"Given the vlog, is the restaurant profitable?
+(A) No loss, no profit
+(B) I don't know
+(C) No
+(D) Yes",D,['reasoning'],00:00-41:39
+3436,gbDR39yIs3Y.mp4,"What color is the atmosphere of the room?
+(A) Purple
+(B) Green
+(C) Pink
+(D) Red",A,['entity recognition'],00:00-01:23
+3437,gbDR39yIs3Y.mp4,"What does the vlogger do after she ties her hair?
+(A) Sleep again
+(B) Drink water
+(C) Play with her mobile phone
+(D) Read a book",B,['event understanding'],00:23-00:32
+3438,gbDR39yIs3Y.mp4,"What is the first thing the vlogger drops?
+(A) The mobile phone
+(B) The water bottle
+(C) The charger
+(D) The pillow",B,['entity recognition'],00:34-00:36
+3439,gbDR39yIs3Y.mp4,"Given the vlogger's behavior from 00:38-01:22, what does she want to do?
+(A) To fall asleep again
+(B) To move a house
+(C) To wash the bedding
+(D) To move her bed",C,"['reasoning', 'temporal grounding']",00:38-00:57
+3442,gbDR39yIs3Y.mp4,"What does the vlogger do after putting things into the washing machine?
+(A) She plays with her mobile phone
+(B) She reads a book
+(C) She cooks some food
+(D) She washes her face",D,['event understanding'],02:07-02:13
+3443,gbDR39yIs3Y.mp4,"How long does the vlogger set the timer for when brushing her teeth?
+(A) 3:10
+(B) 2:40
+(C) 3:00
+(D) 2:50",B,['key information retrieval'],02:31-02:36
+3444,gbDR39yIs3Y.mp4,"What does the vlogger do in the washroom when she gets up?
+(A) Do the laundry, wash her face, brush her teeth, comb her hair, and apply makeup
+(B) Wash her face, brush her teeth, and comb her hair
+(C) Do the laundry, wash her face, brush her teeth, and apply makeup
+(D) Do the laundry, wash her face, brush her teeth, and comb her hair",D,"['event understanding', 'summarization']",01:25-03:05
+3446,gbDR39yIs3Y.mp4,"How many tops does the vlogger wear to go out?
+(A) 2, a camisole and a down coat
+(B) 3, a camisole, a hoodie, and a down coat
+(C) 4, a camisole, a shirt, a hoodie, and a down coat
+(D) 1, a camisole",B,"['entity recognition', 'event understanding']",03:43-04:01
+3449,gbDR39yIs3Y.mp4,"When does the vlogger go out again?
+(A) 9 a.m
+(B) 10 a.m
+(C) 9.30 a.m
+(D) 8 a.m",D,['key information retrieval'],08:21-08:24
+3451,gbDR39yIs3Y.mp4,"How long does the vlogger go out for groceries?
+(A) 39 minutes
+(B) 30 minutes
+(C) 1 hour and 39 minutes
+(D) 1 hour and 30 minutes",C,"['reasoning', 'key information retrieval', 'event understanding']",08:21-09:38
+3453,gbDR39yIs3Y.mp4,"What does the vlogger do after cleaning the grocery and fruit?
+(A) She takes out her clothes
+(B) She has a rest
+(C) She goes to bed
+(D) She does some cleanings",D,['event understanding'],11:13-15:25
+3454,gbDR39yIs3Y.mp4,"What is the main reason the vlogger goes out again, where she also buys beauty products?
+(A) To go to the gym
+(B) To eat salmon
+(C) To buy food containers
+(D) To go to school",D,"['event understanding', 'reasoning', 'key information retrieval']",15:37-15:42
+3455,gbDR39yIs3Y.mp4,"Which beauty brand does the vlogger visit?
+(A) Kicks
+(B) Chanel
+(C) Buxom
+(D) Sephora",A,"['key information retrieval', 'reasoning']",16:13-16:19
+3457,gbDR39yIs3Y.mp4,"When does the vlogger go home for the last time?
+(A) 16:49
+(B) 12:30
+(C) 15:51
+(D) 19:50",C,"['key information retrieval', 'event understanding']",17:10-17:13
+3459,gbDR39yIs3Y.mp4,"What does she do after cleaning her face?
+(A) Polish her nails
+(B) Sleep
+(C) Take a nap
+(D) Watch TV",A,['event understanding'],29:20-29:49
+3628,rSE2YPcv89U.mp4,"Which player is responsible for the first throw-in?
+(A) Player 7
+(B) Player 4
+(C) Player 5
+(D) Player 8",B,"['key information retrieval', 'event understanding']",01:47-01:47
+3629,rSE2YPcv89U.mp4,"How is the situation in the first half of the match?
+(A) In the first half, both Arsenal and Liverpool had opportunities to score but failed to capitalize. Arsenal created several chances, including one shot that narrowly missed the goal frame, but were unable to convert. Liverpool, on the other hand, managed to score twice. Despite Arsenal's efforts to find the back of the net, Liverpool's goalkeeper made some impressive saves to maintain their lead. At halftime, the score stood at 2-0 in favor of Liverpool
+(B) In the first half, both Arsenal and Liverpool had opportunities to score but failed to capitalize. Arsenal created several chances, including one shot that narrowly missed the goal frame, but were unable to convert. Liverpool also had a few opportunities, but Arsenal's goalkeeper made some impressive saves to keep them out. Despite both teams' efforts to score, the first half ended with the score still 0-0
+(C) In the first half, both Arsenal and Liverpool had opportunities to score and both managed to find the back of the net once. Arsenal created several chances, including one shot that narrowly missed the goal frame, but they eventually scored. Similarly, Liverpool also capitalized on their chances and scored one goal. Despite both teams' efforts to add to their tally, the score remained 1-1 at halftime
+(D) In the first half, both Arsenal and Liverpool had opportunities to score but failed to capitalize. Arsenal created several chances, including one shot Liverpool also had a few opportunities, but Arsenal's goalkeeper made some impressive saves to keep them out. The first half ended with the score still 1-0",B,['summarization'],01:19-48:53
+3630,rSE2YPcv89U.mp4,"What happens in the second half of the game?
+(A) After switching sides, Liverpool capitalized on a defensive lapse by Arsenal. A midfielder intercepted the ball and played a through pass into the penalty area, where a forward calmly slotted the ball into the net, putting the Reds ahead. Trailing behind, Arsenal intensified their offensive efforts and successfully equalized. As the match entered its closing stages, Liverpool scored again. After a combination play on the right flank, a player found himself one-on-one with the goalkeeper. From a tight angle, his shot struck the inside of the far post and nestled into the back of the net, sealing the score at 2-1.
+(B) Shortly after the game resumed, Liverpool's midfield launched a swift attack. After a series of exquisite passes, the team's top striker headed the ball into the net inside the penalty area, establishing a valuable 1-0 lead for the team. As the game progressed, Arsenal intensified their offensive efforts, but Liverpool's defensive line remained solid. Towards the end of the match, Liverpool capitalized on another opportunity. A cross from the flank found another forward, who poked the ball into the goal from close range inside the six-yard box, securing a 2-0 victory.
+(C) In the second half, Liverpool displayed a more aggressive attacking stance, particularly showcasing greater organization and creativity in midfield. As the game progressed towards its final stages, Liverpool's offensive pressure gradually intensified, resulting in threats near the penalty area. One particular instance saw a free kick from Liverpool leading to an own goal by an Arsenal player in the penalty area. This goal laid the foundation for Liverpool's victory. Later in the game's dying moments, Liverpool once again scored another goal, resulting in a 2-0 victory.
+(D) In the second half, Arsenal displayed a more proactive and aggressive attacking approach, particularly in the midfield, where they demonstrated stronger organization and creativity, leading to the opening goal. However, as the match neared its final stages, Liverpool's attacking pressure steadily increased, resulting in threats around the penalty area. In one such instance, a Liverpool free kick led to an own goal by an Arsenal player inside the box, ultimately ending the game in a 1-1 draw.",C,['summarization'],49:23-99:46
+3632,rSE2YPcv89U.mp4,"Which team scores the first goal of the match?
+(A) It is an goal scored by an Livepool's player
+(B) It is an own goal scored by an Livepool's player
+(C) It is an own goal scored by an Arsenal player
+(D) It is an goal scored by an Barcelona's player",C,['event understanding'],84:06-85:08
+3633,rSE2YPcv89U.mp4,"How long does the entire match last?
+(A) 90:10
+(B) 94:34
+(C) 95:28
+(D) 97:30",C,['key information retrieval'],99:53-99:53
+3634,rSE2YPcv89U.mp4,"Who does the player pass the ball to when the top left corners indicates it is 18:30 into the game?
+(A) The player passes the ball to the opposing goalkeeper
+(B) The player passes the ball to their own goalkeeper
+(C) The player passes the ball to the referee
+(D) The player passes the ball to the defender",B,"['event understanding', 'key information retrieval']",19:48-19:50
+3637,rSE2YPcv89U.mp4,"What part of the body is used to score the second goal?
+(A) The chest
+(B) The back
+(C) The head
+(D) Right foot",D,['entity recognition'],98:30-98:30
+3638,rSE2YPcv89U.mp4,"Which team is controlling the ball at 27:18 in the video?
+(A) Manchester City
+(B) Real Madrid
+(C) Arsenal
+(D) Liverpool",C,"['temporal grounding', 'key information retrieval']",27:18-27:18
+3641,rSE2YPcv89U.mp4,"How does the goalkeeper prevent Liverpool's shot from scoring at 81:38 in the video?
+(A) He uses his right hand to deflect the ball out of bounds
+(B) He kicks the ball away
+(C) He blocks the ball with his head
+(D) He catches the ball and throws it",A,"['key information retrieval', 'temporal grounding']",81:38-81:38
+3640,rSE2YPcv89U.mp4,"What color is the football in the video?
+(A) Yellow
+(B) Green
+(C) Blue
+(D) White",A,['key information retrieval'],01:19-99:48
+3646,rSE2YPcv89U.mp4,"After the opposing team scored an own goal, how does the Liverpool players celebrate?
+(A) They high-five the referee
+(B) They hug each other
+(C) They wave to the crowd
+(D) They do a victory dance",B,['entity recognition'],85:24-85:24
+3642,rSE2YPcv89U.mp4,"Why did Player number 4 in white push down Player number 17 in purple during the match?
+(A) Player number 4 in white was attempting to maneuver past Player number 17 in purple during an offensive play.
+(B) Player number 4 in white was retaliating for an earlier foul by Player number 17 in purple.
+(C) Player number 4 in white was making a defensive play to prevent Player number 17 in purple from successfully dribbling past him.
+(D) It was an accidental collision as both players were competing for the ball.",C,['reasoning'],34:04-34:24
+3649,rSE2YPcv89U.mp4,"How many substitutions does Liverpool make?
+(A) Liverpool makes ten substitutions during the match
+(B) Liverpool makes two substitutions during the match
+(C) Liverpool makes four substitutions during the match
+(D) Liverpool makes three substitutions during the match",B,['event understanding'],01:19-99:30
+3773,T1yhBv1ytzw.mp4,"What is the category of this video?
+(A) Sports
+(B) Cartoon
+(C) Movie
+(D) Vlog",A,['event understanding'],00:00-100:28
+3774,T1yhBv1ytzw.mp4,"What is the score of Liverpool in the FA Cup at Anfield?
+(A) 6:1
+(B) 4:1
+(C) 3:1
+(D) 5:1",A,['event understanding'],00:12-00:22
+3777,T1yhBv1ytzw.mp4,"At 06:06, considering the player's facial expressions, whose belief and confidence is a little bit down?
+(A) Thiago
+(B) Gomez
+(C) Alisson
+(D) Salah",D,"['temporal grounding', 'entity recognition', 'reasoning']",06:06-06:13
+3779,T1yhBv1ytzw.mp4,"Who is hit by Thiago and therefore, Thiago gets a warn?
+(A) Gross
+(B) Dunk
+(C) Steele
+(D) Webster",A,['entity recognition'],10:03-10:24
+3782,T1yhBv1ytzw.mp4,"Where does Keita hurt?
+(A) His head
+(B) His knee
+(C) His leg
+(D) His muscle",A,['event understanding'],18:09-18:37
+3783,T1yhBv1ytzw.mp4,"Who nearly gets the score at 21:09?
+(A) Dunk
+(B) March
+(C) Ferguson
+(D) Mitoma",D,"['entity recognition', 'temporal grounding']",21:09-21:39
+3785,T1yhBv1ytzw.mp4,"Who scores the first goal?
+(A) Salah
+(B) Gomez
+(C) Elliott
+(D) Thiago",C,['entity recognition'],30:04-31:20
+3786,T1yhBv1ytzw.mp4,"Who has the most attempts in Brighton?
+(A) March
+(B) Ferguson
+(C) Mitoma
+(D) Dunk",C,['entity recognition'],00:00-64:28
+3787,T1yhBv1ytzw.mp4,"Who gets the second score?
+(A) Lamptey
+(B) Dunk
+(C) Mitoma
+(D) Ferguson",A,['entity recognition'],39:06-40:14
+3789,T1yhBv1ytzw.mp4,"Why does Elliott fall at 42:37?
+(A) His leg hurts
+(B) His bowl hurts
+(C) His head hurts
+(D) His knee hurts",C,"['event understanding', 'temporal grounding']",42:37-43:20
+3790,T1yhBv1ytzw.mp4,"What is the stoppage time for the first half?
+(A) 1 minute
+(B) 0 minute
+(C) 2 minute
+(D) 3 minute",B,['key information retrieval'],47:10-47:15
+3791,T1yhBv1ytzw.mp4,"What is the score for the first half of the game?
+(A) 3:1
+(B) 2:1
+(C) 1:1
+(D) 1:2",C,['key information retrieval'],00:00-47:39
+3792,T1yhBv1ytzw.mp4,"Who wants to cheat the referee at 51:24?
+(A) Ferguson
+(B) Allister
+(C) Dunk
+(D) Mitoma",B,"['entity recognition', 'temporal grounding']",51:24-51:52
+3793,T1yhBv1ytzw.mp4,"What does the commentator say during 58:39-58:48
+(A) Liverpool does a good job in the second part of the game before
+(B) Liverpool performs badly in the second part of the game before
+(C) Liverpool attacks many times in the second part of the game before
+(D) Liverpool doesn't attack in the second part of the game before",D,"['reasoning', 'temporal grounding']",58:39-58:48
+3794,T1yhBv1ytzw.mp4,"Who substitutes Arnold?
+(A) Henderson
+(B) Jones
+(C) Núñez
+(D) Milner",C,['entity recognition'],60:49-61:54
+3796,T1yhBv1ytzw.mp4,"Who falls in the restricted area at 65:42?
+(A) Salah
+(B) Keita
+(C) Thiago
+(D) Konaté",D,"['temporal grounding', 'entity recognition']",65:42-66:09
+3798,T1yhBv1ytzw.mp4,"Who gets the ball and saves Brighton at 78:07?
+(A) Robertson
+(B) Salah
+(C) Allison
+(D) Nunez",A,"['temporal grounding', 'event understanding']",78:07-78:20
+3799,T1yhBv1ytzw.mp4,"What is the best perform of Jones till now?
+(A) Win the game
+(B) Fight for Liverpool
+(C) Fight for Brighton
+(D) Get a score",B,['event understanding'],81:13-81:20
+3801,T1yhBv1ytzw.mp4,"Given all the performance, we can predict that ____ is the best player?
+(A) Mitoma
+(B) Ferguson
+(C) Salah
+(D) Thiago",A,['event understanding'],94:59-95:25
+3802,T1yhBv1ytzw.mp4,"What is the final score of the game?
+(A) 2:1
+(B) 1:3
+(C) 2:2
+(D) 2:3",A,"['event understanding', 'key information retrieval']",00:00-100:28
+3946,Xjf5N9S3jAA.mp4,"Who comes to the sports field?
+(A) Margaret Smith Court
+(B) Stefanos Tsitsipas
+(C) Goran Ivanisevic
+(D) Novak Djokovic",B,['event understanding'],00:03-00:44
+3948,Xjf5N9S3jAA.mp4,"Where might the conversation take place?
+(A) Park
+(B) Conference
+(C) Playground
+(D) Tennis court",D,['reasoning'],00:00-47:25
+3955,Xjf5N9S3jAA.mp4,"How many titles did Tsitsipas got?
+(A) 98
+(B) 12
+(C) 3
+(D) 10",D,['event understanding'],07:37-08:20
+3959,Xjf5N9S3jAA.mp4,"What can we know about Djokovbic and Tsitsipas?
+(A) They were champion players in different competitions
+(B) They have no ATP ranking
+(C) They had a peak match together
+(D) Their match was an exhibition match with no winner or loser",A,"['reasoning', 'entity recognition', 'event understanding']",00:00-47:25
+3960,Xjf5N9S3jAA.mp4,"How long did it take to transition from the warmup to the start of the match?
+(A) 2 min
+(B) 3 min
+(C) 10 min
+(D) 4 min",D,"['temporal grounding', 'event understanding']",06:44-10:55
+3961,Xjf5N9S3jAA.mp4,"Who served first in this game?
+(A) Novak Djokovic
+(B) The referee
+(C) Stefanos Tsitsipas
+(D) Nobody",C,['reasoning'],10:58-11:16
+3962,Xjf5N9S3jAA.mp4,"Who scored the first score?
+(A) No one scored
+(B) Novak Djokovic
+(C) Stefanos Tsitsipas
+(D) It was a draw, no one scored",B,"['reasoning', 'event understanding']",10:58-11:16
+3963,Xjf5N9S3jAA.mp4,"Why was the start of this game considered awful?
+(A) Because Djokovic was distracted when he plays
+(B) Because Tsitsipas lost the first point due to a service error
+(C) Because the level of the two athletes were very poor
+(D) Because their skills were too high to be enjoyable to watch",B,['reasoning'],10:58-11:16
+3964,Xjf5N9S3jAA.mp4,"Who won the first round?
+(A) Novak Djokovic
+(B) Nobody
+(C) Not mentioned in the video
+(D) Stefanos Tsitsipas",A,['event understanding'],12:18-13:05
+3966,Xjf5N9S3jAA.mp4,"Who is the first person being interviewed who is not a tennis athlete?
+(A) Peter Bol
+(B) Stefanos Tsitsipas
+(C) Steve Smith
+(D) Novak Djokovic",C,"['entity recognition', 'key information retrieval']",33:28-34:51
+3968,Xjf5N9S3jAA.mp4,"Who is the second person being interviewed who is not a tennis athlete?
+(A) Novak Djokovic
+(B) Steve Smith
+(C) Stefanos Tsitsipas
+(D) Peter Bol",D,"['entity recognition', 'temporal grounding']",35:07-35:43
+3970,Xjf5N9S3jAA.mp4,"When does one of the break time end?
+(A) 07:34
+(B) 36:25
+(C) 10:58
+(D) 06:44",B,"['event understanding', 'temporal grounding']",33:44-36:30
+3974,Xjf5N9S3jAA.mp4,"What was the final score of the game?
+(A) 6:3
+(B) 4:2
+(C) 5:3
+(D) 2:1",A,['event understanding'],00:00-47:25
+3976,tKIFQI9cH2c.mp4,"What happens at the beginning of the video?
+(A) The players are warming up now
+(B) Serena to serve
+(C) A player is practicing racquet
+(D) The players are waiting",C,['event understanding'],00:00-00:24
+3977,tKIFQI9cH2c.mp4,"What is the process and result of the first official ball of the first game?
+(A) Serena blocks Venus's big serve, and a wide backhand makes it 0-15
+(B) Serena pushes Venus around the court for the opening point, and a wide backspin makes it 0-15
+(C) Venus pushes Serena around the court for the opening point, and a wide backhand makes it 0-15
+(D) Serena pushes Venus around the court for the opening point, and a wide backhand makes it 0-15",D,['summarization'],00:33-00:49
+3978,tKIFQI9cH2c.mp4,"Why is the score 0-30 after the second ball?
+(A) Serena's nother backhand error takes it to 0-30
+(B) Serena's chip and charge
+(C) Venus's nother backhand error takes it to 0-30
+(D) Venus's chip and charge",C,['event understanding'],01:03-01:11
+3979,tKIFQI9cH2c.mp4,"What is the highlight of the first inning in the video?
+(A) With a powerful serve, Serena scores, but Venus responds strongly with skillful shots, securing a break point and ultimately taking a 1-0 lead in the match
+(B) With a powerful serve, Serena scores, securing a break point and ultimately taking a 1-0 lead in the match
+(C) With a powerful serve, Venus scores, but Serena responds strongly with skillful shots, securing a break point and ultimately taking a 1-0 lead in the match
+(D) With a powerful serve, Serena scores, but Venus responds strongly with skillful shots",C,['summarization'],01:11-02:37
+3982,tKIFQI9cH2c.mp4,"How does the point tie occur when the game score is 0-1 and the point score is 30-30?
+(A) After Venus hits back with a powerful crosscourt forehand winner for 30-30
+(B) After Serena hits back with a powerful crosscourt forehand winner for 30-30
+(C) After Venus slips over at one point, she recovers to win the point
+(D) After Serena misses a forehand",D,['event understanding'],05:12-05:12
+3984,tKIFQI9cH2c.mp4,"What happens after Serena's first stumble?
+(A) Her tennis racket breaks
+(B) She fells to the ground
+(C) She is helps up by her coach
+(D) She continues playing without stopping",A,['event understanding'],11:17-12:30
+3986,tKIFQI9cH2c.mp4,"What is Venus's expression when waiting for Serena to serve, when the game score is 1-2, point score is 30-40?
+(A) Venus looks very relaxed here
+(B) Venus looks very pumped up and nervous here
+(C) Venus looks very tired and has no more energy here
+(D) Venus looks like being in a state of confusion",B,"['reasoning', 'key information retrieval']",17:33-17:38
+3988,tKIFQI9cH2c.mp4,"What does the man in the green hat and coat do when the background shows 126km/h?
+(A) Cleaning the court
+(B) Delivering tennis balls to the players
+(C) Checking the net in the middle
+(D) Helping pick up balls",D,['event understanding'],19:42-19:42
+3989,tKIFQI9cH2c.mp4,"___ is best fitted commentary for the main events that take place between 19:30-20:08.
+(A) Venus unloads on a forehand return to force an error from Serena, and then drills a backhand right to the line for 30-30. But a netted return makes it 40-30 to Serena
+(B) That is a poor second serve from Serena, and Venus forces another error and another break point. AND A THIRD DOUBLE! That's a fourth straight break of serve, and it's 2-2
+(C) This ball is staying hit out there - the combined power of Venus and Serena is quite awesome. Serena forces an error from her opponent for 15-0, then follows it with an ace for 30-0
+(D) Serena double faults for deuce, and now another double to give Venus a break point again! Now an ace to save her serve",B,"['summarization', 'temporal grounding']",19:48-20:18
+3990,tKIFQI9cH2c.mp4,"After IBM is 155 and the tennis ball is out of bounds, what do the two people in green shirts at the top of the screen do?
+(A) They both raise the same arm
+(B) They run to pick up the ball
+(C) They do not move
+(D) Each of them raises one arm",D,['event understanding'],20:49-20:51
+3994,tKIFQI9cH2c.mp4,"What is Venus's mood at IBM 163 when she hit the ball out of bounds to make it 30-40?
+(A) Venus feels under pressure, but she gets the return back
+(B) Venus feels bad that she made a bad error to give her sister game point
+(C) Venus maintains her composure, quickly refocusing for the next point with a determined expression
+(D) Venus shows frustration as she clenches her fist and shakes her head in disappointment",B,['reasoning'],31:57-31:59
+3997,tKIFQI9cH2c.mp4,"After the game score is 3-5 and the point score is 30-30, what speed does the ball's display on the screen indicate for Venus's shot?
+(A) 138 km/h
+(B) 140 km/h
+(C) 130 km/h
+(D) 183 km/h",D,['key information retrieval'],34:38-34:39
+3998,tKIFQI9cH2c.mp4,"When does the game start?
+(A) Noon
+(B) Night
+(C) Dusk
+(D) It's cloudy so we can't tell",C,['event understanding'],35:19-35:19
+3999,tKIFQI9cH2c.mp4,"What happens between the scores of 4-5 and 4-6 in the game?
+(A) Another strong serve, and Serena hits it long. Venus holds
+(B) A better serve puts Venus under pressure, but she gets the return back and Serena flays one well wide for 0-30. An error from Venus brings it back to 15-30, and then an ace out wide levels it at 30-30
+(C) Serena pushes Venus into the corner and drills the winner into the open court. But Venus gets a cross-court backhand winner, and then forces Serena to block a return of serve into the net
+(D) Two unforced errors from Venus to start the 10th game. Serena closes in on the set. And another ace brings three set points. And Serena hits an ace",D,['summarization'],32:56-35:16
+4083,VTCDQYYKA9o.mp4,"Who is the person in the video wearing red clothes and then taking them off to reveal the blue clothes underneath?
+(A) Fan Zhendong
+(B) Wang hao
+(C) Ma Long
+(D) Zhang Jike",A,['entity recognition'],03:00-03:00
+4086,VTCDQYYKA9o.mp4,"How was the point won at 15:04 and had a slow motion replay from 15:10-15:14?
+(A) A chop shot
+(B) A backhand topspin
+(C) A forehand smash
+(D) A lob shot",B,"['temporal grounding', 'event understanding']",15:04-15:04
+4089,VTCDQYYKA9o.mp4,"From 28:50-28:57 in the video, what happens to the ball after Ma Long's final forehand stroke?
+(A) It lands out of bounds
+(B) It hits the table edge
+(C) It is hit back by the opponent
+(D) It goes into the net",D,"['entity recognition', 'temporal grounding']",28:44-28:44
+4090,VTCDQYYKA9o.mp4,"Is the staff wiping the table tennis table with their left hand or right hand?
+(A) No staff wiping the table
+(B) Left hand
+(C) Right hand
+(D) Both used",C,['event understanding'],38:45-39:00
+4092,VTCDQYYKA9o.mp4,"How many points does Fan Zhendong score in the fourth game?
+(A) 7
+(B) 2
+(C) 9
+(D) 4",C,['key information retrieval'],41:50-50:50
+4098,VTCDQYYKA9o.mp4,"In what order do the three athletes, from front to back, walk to the podium?
+(A) Fan Zhendong, Ma Long, Dimitrij Ovtcharov
+(B) Ma Long, Dimitrij Ovtcharov, Fan Zhendong
+(C) Ma Long, Dimitrij Ovtcharov, Wang Hao
+(D) Dimitrij Ovtcharov, Fan Zhendong, Ma Long",A,['entity recognition'],71:17-71:17
+4104,VTCDQYYKA9o.mp4,"Who is wearing the black mask and orange shirt in the video?
+(A) The referee
+(B) The player
+(C) The audience
+(D) The coach",A,['entity recognition'],03:33-04:44
+4167,KLIa2UaE2KE.mp4,"What is the content of the entire video about?
+(A) This video narrates the entire process of the 2016 men's volleyball final, in which the Brazilian team defeated China 3-0 to win the championship
+(B) This video narrates the entire process of the 2016 men's volleyball final, in which the Brazilian team defeated Italy 3-2 to win the championship
+(C) This video narrates the entire process of the 2020 men's volleyball final, in which the Brazilian team defeated Italy 3-0 to win the championship
+(D) This video narrates the entire process of the 2016 men's volleyball final, in which the Brazilian team defeated Italy 3-0 to win the championship",D,['summarization'],00:00-118:28
+4169,KLIa2UaE2KE.mp4,"Which country's flag is being waved at the beginning of the video?
+(A) Italy
+(B) China
+(C) Brazil
+(D) Japan",A,['key information retrieval'],00:01-00:03
+4172,KLIa2UaE2KE.mp4,"Which player scored the tenth point for Italy in the first set of the video?
+(A) 13
+(B) 20
+(C) 5
+(D) 15",C,['entity recognition'],11:13-11:20
+4174,KLIa2UaE2KE.mp4,"The ball was in during the video replay of the first set, so who scored this point?
+(A) China
+(B) Brazil
+(C) Japan
+(D) Italy",B,['event understanding'],17:40-17:50
+4177,KLIa2UaE2KE.mp4,"What is the name of the player wearing number 16 for Brazil in the video?
+(A) Ken
+(B) Dante
+(C) Lucas
+(D) James",C,['entity recognition'],00:00-37:25
+4178,KLIa2UaE2KE.mp4,"Which team was leading before the eighteenth point in the second set?
+(A) Japan
+(B) China
+(C) Italy
+(D) Brazil",C,['key information retrieval'],32:20-41:20
+4182,KLIa2UaE2KE.mp4,"Which team scored the first point of the third set?
+(A) China
+(B) Italy
+(C) Brazil
+(D) Japan",C,['key information retrieval'],68:00-68:08
+4187,KLIa2UaE2KE.mp4,"What is the number of the player being substituted when the game score is 0-2, point score is 14-15?
+(A) 19
+(B) 45
+(C) 2
+(D) 18",D,"['entity recognition', 'key information retrieval']",83:13-83:13
+4188,KLIa2UaE2KE.mp4,"What did number seven do after being substituted in?
+(A) He cried
+(B) He injuried
+(C) He danced
+(D) He served",D,['event understanding'],15:02-92:11
+4189,KLIa2UaE2KE.mp4,"A famous football star comes to watch the game, who is he?
+(A) Aguero
+(B) Neymar
+(C) Ronaldo
+(D) Messi",B,['entity recognition'],98:18-98:18
+4190,KLIa2UaE2KE.mp4,"Which national team was the first to receive medals on the podium after the match?
+(A) Italy
+(B) The USA
+(C) Brazil
+(D) China",B,['entity recognition'],101:20-102:00
+4450,CgvJqGxzRfE.mp4,"What type of video is this?
+(A) News report
+(B) Documentary
+(C) Sporting events
+(D) TV show",D,['event understanding'],00:00-75:57
+4452,CgvJqGxzRfE.mp4,"What is the name of the judge who is second to the left from the camera's view during the first performance?
+(A) MICHAL
+(B) GWEN
+(C) JAMES
+(D) NIALL",D,"['key information retrieval', 'entity recognition', 'event understanding']",00:41-00:41
+4454,CgvJqGxzRfE.mp4,"What color top is the second conteatant wearing?
+(A) Gold
+(B) Red
+(C) Black
+(D) White",A,['entity recognition'],01:40-01:40
+4455,CgvJqGxzRfE.mp4,"How many coaches are turning for the second player?
+(A) One referee turns around for him
+(B) Two referees turn around for him
+(C) No referee turns around for him
+(D) Three referees turn around for him",A,['event understanding'],02:15-02:20
+4458,CgvJqGxzRfE.mp4,"What instrument is the man playing while the girl, wearing a blue sweetheart bandeau top and wide jeans with holes on them, sings?
+(A) Erhu
+(B) Cello
+(C) Piano
+(D) Guitar",C,['entity recognition'],03:18-03:18
+4459,CgvJqGxzRfE.mp4,"What color coat does the sixth contestant wear?
+(A) White
+(B) Green
+(C) Yellow
+(D) Red",B,"['entity recognition', 'event understanding']",11:36-11:36
+4461,CgvJqGxzRfE.mp4,"What instrument is the eighth contestant playing?
+(A) Piano
+(B) Cello
+(C) Erhu
+(D) Guitar",D,['entity recognition'],14:13-14:13
+4462,CgvJqGxzRfE.mp4,"Which judge turns last when the ninth contestant performs?
+(A) BILL+TOM
+(B) Blocked
+(C) SHIRIN
+(D) GIOVANNI",B,['event understanding'],17:00-17:30
+4463,CgvJqGxzRfE.mp4,"What color shirt is the tenth contestant singing on stage wearing?
+(A) Blue
+(B) Red
+(C) Black
+(D) White",A,['entity recognition'],17:50-17:50
+4467,CgvJqGxzRfE.mp4,"What happens after the 11th contestant performs?
+(A) The blocked judge lies down
+(B) Justina lies down
+(C) The blocked judge stands up
+(D) The blocked judge sits down",A,['entity recognition'],21:00-21:20
+4469,CgvJqGxzRfE.mp4,"What does the second girl on the right do between 32:00-32:05?
+(A) She is angry
+(B) She smiles
+(C) She crys
+(D) She sits down",C,"['entity recognition', 'temporal grounding']",32:00-32:05
+4470,CgvJqGxzRfE.mp4,"Who turns around first when the 17th contestant performs?
+(A) GIOVANNI
+(B) URBAN
+(C) VANNA
+(D) Justina",C,['entity recognition'],32:10-32:30
+4471,CgvJqGxzRfE.mp4,"What does the blonde woman do during Joao Duarte's performance?
+(A) She smiles
+(B) She sat down
+(C) She crys
+(D) She is angry",C,['entity recognition'],34:45-35:00
+4472,CgvJqGxzRfE.mp4,"Who turns first for the contestant with curly hair, wearing glasses, and a white and blue sweatshirt?
+(A) Benas
+(B) Monika Liu
+(C) Justina
+(D) Mantas",D,"['key information retrieval', 'entity recognition', 'event understanding']",44:43-44:43
+4473,CgvJqGxzRfE.mp4,"What color is the 24th contestant on stage wearing?
+(A) Blue and black
+(B) Blue and white
+(C) Black and white
+(D) Red and white",B,['entity recognition'],44:54-44:54
+4476,CgvJqGxzRfE.mp4,"All the players in the video get ___ -Chair Turns.
+(A) 2
+(B) 4
+(C) 3
+(D) 1",B,['event understanding'],00:00-75:57
+4477,CgvJqGxzRfE.mp4,"What hairstyle does the woman who sings ""El Me Mintió"" have?
+(A) Short hair
+(B) Long hair
+(C) Other
+(D) Bald",D,['entity recognition'],68:40-68:40
+4478,CgvJqGxzRfE.mp4,"What is the main color of the scene while the contestant sings ""Kiss Me""?
+(A) Blue
+(B) Red
+(C) Black
+(D) Green",D,"['entity recognition', 'key information retrieval']",70:31-70:31

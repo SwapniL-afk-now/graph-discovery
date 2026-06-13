@@ -1,0 +1,16 @@
+__pycache__/
+.pytest_cache/
+.vllm_cache/
+.hf_home/
+.claude/
+.env
+wandb/
+*.log
+*.lock
+*.bak
+*.jsonl
+*.jsonl.transcripts/
+data/
+videos/
+vkgs/
+models/

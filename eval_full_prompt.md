@@ -1,0 +1,2126 @@
+# Video Knowledge Graph (VKG) for Cm73ma6Ibcs
+
+## Video Info
+- Type: Anime-style, snowy feudal Japan (~61 min)
+- Nodes: 2,714 | Edges: 16,225 | Edge types: 22
+
+## Key Characters
+
+- narrator: Narrator — narrator / voice-over
+- char_chef_01: The Chef — Bald man with grey shirt, black vest, white headband, and distinctive topknot hairstyle (or shaved head). Appears multiple times across scenes.
+- char_man_hat_glasses_pistol: The Man with Hat/Glasses/Pistol — Man wearing a wide-brimmed hat, round glasses, often holding a pistol or standing passively. Wears dark clothing.
+- char_man_topknot_brown_robe_sword: The Topknot Swordman — Young man/older man with topknot, wearing brown or green robe/sash, wielding sword or carrying long object.
+- char_woman_orange_kimono_floral: Woman in Orange Floral Kimono — Woman with elaborate black hair adorned with gold ornaments, wearing an orange/pink/red kimono with floral patterns or white collar. Often seen bowing or comforting.
+- char_man_white_headband_chief: Man in White Headband/Belt — Middle-aged man with grey/golden belt/headband, wearing white robe. Often seen as leader or elder figure.
+- char_elder_blacksmith: The Elder Blacksmith — Elderly man with white/grey hair or topknot, shaving head, wearing sleeveless vest or patterned top, working on forge/anvil.
+- char_young_blacksmith_assistant: The Young Assistant — Young person/boy with dark hair, wearing dark/blue outfit or kimono, observing blacksmith or holding hammer.
+- char_dark_cloak_walks_alone: The Dark Cloaked Figure — Person (often male) wearing a large dark cloak or robe, sometimes with a wide-brimmed hat. Often walking alone in snow or on pier.
+- char_middle_agd_man_green_tunic_sword: Samurai Guard — Man with conical hat or standard samurai armor/tunic, wielding a sword, acting as guard.
+- char_bald_hat_round_glasses: The Bald/Hat/Glasses Man — Man with bald head/topknot wearing round glasses and wide brimmed hat. Sometimes holding a sword or writing.
+- char_woman_red_kimono_gold_embellishments: The Red Kimono Queen — Woman with black hair tied back/updo, wearing a red/pink/orange kimono with gold ornaments, often bowing or comforting.
+- char_sumo_wrestler_headband: Sumo Wrestler — Large man with short hair, possibly bald or topknot, wearing a white headband or shirtless, muscular build.
+- char_middle_agd_man_blue_vest: Middle-Aged Man Blue Vest — Middle-aged man with short white/grey hair, wearing a blue patterned sleeveless top or vest.
+- char_young_child_topknot: Child with Topknot — Young child or boy with black hair in topknot, wearing orange/brown kimono, holding small object.
+- char_crowd_observer: Crowd Observer — Group of people in robes, some wearing straw hats, gathered together or watching martial arts.
+- char_martial_artist: Martial Artist — Male practitioner in brown robe, performing martial arts with focused stance.
+- char_man_topknot_purple_kimono: The Purple Kimono Lord — Man with topknot/hair tied back, goatee, wearing purple robe with floral patterns, high status.
+- char_man_topknot_green_kimono: The Green Kimono Man — Man with topknot/hair tied back, wearing green robe or clothing.
+- char_white_cap_mechanic: Mechanic with White Cap — Man wearing a light-colored cap or head covering, often involved in mechanical work or observation.
+
+## All Nodes (grouped by type)
+
+### OCRNode (157)
+
+- [ocr_00000] @12.0s: In 1633, Japan closed its borders TO THE OUTSIDE WORLD.
+- [ocr_00001] @26.0s: CITIZENS WOULD NEVER SEE A WHITE FACE,
+- [ocr_00002] @26.0s: NOR ANY FACE THAT WAS NOT JAPANESE.
+- [ocr_00003] @51.0s: FROM THESE TIMES ROSE A LEGEND.
+- [ocr_00004] @84.0s: t=84.0s
+- [ocr_00005] @92.0s: 碧眼
+- [ocr_00006] @92.0s: BLUE EYE
+- [ocr_00007] @92.0s: SAMURAI
+- [ocr_00008] @98.0s: 碧眼
+- [ocr_00009] @98.0s: BLUE EYE
+- [ocr_00010] @98.0s: SAMURAI
+- [ocr_00011] @102.0s: BLUE EYE SAMURAI
+- [ocr_00012] @102.0s: NETFLIX
+- [ocr_00013] @116.0s: NETFLIX
+- [ocr_00014] @222.0s: NETFLIX
+- [ocr_00015] @276.0s: NETFLIX
+- [ocr_00016] @320.0s: NETFLIX
+- [ocr_00017] @370.0s: NETFLIX
+- [ocr_00018] @424.0s: NETFLIX
+- [ocr_00019] @479.2s: NETFLIX
+- [ocr_00020] @586.2s: NETFLIX
+- [ocr_00021] @662.2s: NETFLIX
+- [ocr_00022] @695.2s: NETFLIX
+- [ocr_00023] @699.2s: NETFLIX
+- [ocr_00024] @706.2s: NETFLIX
+- [ocr_00025] @710.2s: NETFLIX
+- [ocr_00026] @793.2s: NETFLIX
+- [ocr_00027] @835.2s: NETFLIX
+- [ocr_00028] @898.2s: NETFLIX
+- [ocr_00029] @951.4s: NETFLIX
+- [ocr_00030] @994.4s: NETFLIX
+- [ocr_00031] @1056.4s: NETFLIX
+- [ocr_00032] @1114.4s: NETFLIX
+- [ocr_00033] @1120.4s: NETFLIX
+- [ocr_00034] @1121.4s: NETFLIX
+- [ocr_00035] @1122.4s: NETFLIX
+- [ocr_00036] @1158.4s: NETFLIX
+- [ocr_00037] @1206.4s: NETFLIX
+- [ocr_00038] @1260.4s: NETFLIX
+- [ocr_00039] @1260.4s: NETFLIX
+- [ocr_00040] @1260.4s: NETFLIX
+- [ocr_00041] @1260.4s: NETFLIX
+- [ocr_00042] @1260.4s: NETFLIX
+- [ocr_00043] @1260.4s: NETFLIX
+- [ocr_00044] @1260.4s: NETFLIX
+- [ocr_00045] @1260.4s: NETFLIX
+- [ocr_00046] @1260.4s: NETFLIX
+- [ocr_00047] @1357.4s: NETFLIX
+- [ocr_00048] @1396.6s: NETFLIX
+- [ocr_00049] @1430.6s: NETFLIX
+- [ocr_00050] @1511.6s: NETFLIX
+- [ocr_00051] @1522.6s: NETFLIX
+- [ocr_00052] @1568.6s: NETFLIX
+- [ocr_00053] @1622.6s: NETFLIX
+- [ocr_00054] @1667.6s: NETFLIX
+- [ocr_00055] @1716.6s: NETFLIX
+- [ocr_00056] @1786.6s: NETFLIX
+- [ocr_00057] @1793.6s: NETFLIX
+- [ocr_00058] @1848.8s: NETFLIX
+- [ocr_00059] @1855.8s: NETFLIX
+- [ocr_00060] @1914.8s: NETFLIX
+- [ocr_00061] @1942.8s: NETFLIX
+- [ocr_00062] @1942.8s: 心道
+- [ocr_00063] @1951.8s: NETFLIX
+- [ocr_00064] @1973.8s: NETFLIX
+- [ocr_00065] @2014.8s: NETFLIX
+- [ocr_00066] @2082.8s: NETFLIX
+- [ocr_00067] @2089.8s: NETFLIX
+- [ocr_00068] @2093.8s: NETFLIX
+- [ocr_00069] @2148.8s: NETFLIX
+- [ocr_00070] @2154.8s: NETFLIX
+- [ocr_00071] @2202.8s: NETFLIX
+- [ocr_00072] @2254.8s: NETFLIX
+- [ocr_00073] @2304.9s: NETFLIX
+- [ocr_00074] @2384.9s: NETFLIX
+- [ocr_00075] @2451.9s: NETFLIX
+- [ocr_00076] @2460.9s: NETFLIX
+- [ocr_00077] @2471.9s: NETFLIX
+- [ocr_00078] @2476.9s: NETFLIX
+- [ocr_00079] @2478.9s: NETFLIX
+- [ocr_00080] @2478.9s: [t=2478.9s]
+- [ocr_00081] @2478.9s: [t=2483.9s]
+- [ocr_00082] @2485.9s: NETFLIX
+- [ocr_00083] @2489.9s: NETFLIX
+- [ocr_00084] @2536.9s: NETFLIX
+- [ocr_00085] @2536.9s: 道
+- [ocr_00086] @2667.9s: NETFLIX
+- [ocr_00087] @2751.1s: NETFLIX
+- [ocr_00088] @2754.1s: NETFLIX
+- [ocr_00089] @2839.1s: NETFLIX
+- [ocr_00090] @2856.1s: NETFLIX
+- [ocr_00091] @2875.1s: NETFLIX
+- [ocr_00092] @2878.1s: NETFLIX
+- [ocr_00093] @2899.1s: NETFLIX
+- [ocr_00094] @2911.1s: NETFLIX
+- [ocr_00095] @2916.1s: NETFLIX
+- [ocr_00096] @2927.1s: NETFLIX
+- [ocr_00097] @2935.1s: NETFLIX
+- [ocr_00098] @2941.1s: NETFLIX
+- [ocr_00099] @2952.1s: NETFLIX
+- [ocr_00100] @2994.1s: NETFLIX
+- [ocr_00101] @2997.1s: NETFLIX
+- [ocr_00102] @3001.1s: NETFLIX
+- [ocr_00103] @3003.1s: NETFLIX
+- [ocr_00104] @3006.1s: NETFLIX
+- [ocr_00105] @3010.1s: NETFLIX
+- [ocr_00106] @3072.1s: NETFLIX
+- [ocr_00107] @3077.1s: NETFLIX
+- [ocr_00108] @3080.1s: NETFLIX
+- [ocr_00109] @3091.1s: NETFLIX
+- [ocr_00110] @3127.1s: NETFLIX
+- [ocr_00111] @3130.1s: NETFLIX
+- [ocr_00112] @3141.1s: NETFLIX
+- [ocr_00113] @3180.1s: NETFLIX
+- [ocr_00114] @3209.3s: NETFLIX
+- [ocr_00115] @3264.3s: NETFLIX
+- [ocr_00116] @3297.3s: NETFLIX
+- [ocr_00117] @3317.3s: NETFLIX
+- [ocr_00118] @3367.3s: NETFLIX
+- [ocr_00119] @3375.3s: NETFLIX
+- [ocr_00120] @3382.3s: NETFLIX
+- [ocr_00121] @3450.3s: NETFLIX
+- [ocr_00122] @3475.3s: NETFLIX
+- [ocr_00123] @3478.3s: NETFLIX
+- [ocr_00124] @3480.3s: NETFLIX
+- [ocr_00125] @3483.3s: NETFLIX
+- [ocr_00126] @3490.3s: NETFLIX
+- [ocr_00127] @3492.3s: NETFLIX
+- [ocr_00128] @3505.3s: NETFLIX
+- [ocr_00129] @3517.3s: NETFLIX
+- [ocr_00130] @3520.3s: NETFLIX
+- [ocr_00131] @3529.3s: NETFLIX
+- [ocr_00132] @3534.3s: NETFLIX
+- [ocr_00133] @3538.3s: NETFLIX
+- [ocr_00134] @3557.3s: NETFLIX
+- [ocr_00135] @3575.3s: NETFLIX
+- [ocr_00136] @3583.3s: NETFLIX
+- [ocr_00137] @3584.3s: NETFLIX
+- [ocr_00138] @3594.3s: WRITTEN BY AMBER NOIZUMI & MICHAEL GREEN
+- [ocr_00139] @3594.3s: EXECUTIVE PRODUCER MICHAEL GREEN
+- [ocr_00140] @3594.3s: GEORGE TAKEI AS SEKI
+- [ocr_00141] @3594.3s: PRODUCTION DESIGNER TOBY WILSON
+- [ocr_00142] @3594.3s: Cast ERIC BAUZA - INSPECTOR, BRAWNY SAMURAI, NAKED MAN BRITTANY ISHIBASHI - MOMO, RAGGED FEMALE MERCHANT MARCUS CHOI - SHINDO SAMURAI 1, TOWNSPERSON, EVEN BRAWNIER SAMURAI MATT YANG KING - BRAWNIEST SAMURAI HOLLY CHOU - CHIKI CLYDE KUSATSU - ELDER DO
+- [ocr_00143] @3594.3s: PRODUCTION MANAGER PAIGE COBLENTZ PRODUCTION SUPERVISORS BROOKE RUDISILL KIMBERLY SIAPNO PRODUCTION COORDINATORS DARLA CHAVEZ TIFFANY CHIU JINNY CHUNG SARA COOK ANDREA FLORES BILLIE ROSE NEWBY MANUEL JESSE NIETO JR. OLIVIA POWERS-LI SAMUEL TAYLOR DIA
+- [ocr_00144] @3594.3s: BLUE SPIRIT PRODUCTIONS HEAD OF CHARACTER MAXIME BARON ARNAUD CAUSSANEL LAURA PEYROU GUILLAUME RIBERA HEAD OF ANIMATION AGNÈS CHEVREAU ANIMATION SUPERVISORS MATTHIEU BARBIER CHRISTOPHE MENCHIOR MODELING / TEXTURING ANNA BENETTON-BOISSON ALEXIS CAPITA
+- [ocr_00145] @3594.3s: THIS FILM BENEFITED FROM THE FRENCH TAX REBATE FOR INTERNATIONAL PRODUCTION. WITH THE PARTICIPATION OF THE PROVINCE OF ONTARIO PRODUCTION SERVICES TAX CREDITS. WITH THE PARTICIPATION OF THE CANADIAN FILM OR VIDEO PRODUCTION SERVICES TAX CREDIT. THIS 
+- [ocr_00146] @3594.3s: SAG-AFTRA
+- [ocr_00147] @3594.3s: FILM FRANCE
+- [ocr_00148] @3594.3s: Québec Production Services Tax Credit SODEC
+- [ocr_00149] @3594.3s: ONTARIO CREATIF
+- [ocr_00150] @3647.3s: J.A. GREEN CONSTRUCTION CORP.
+- [ocr_00151] @3647.3s: SINCE 1941
+- [ocr_00152] @3649.3s: 3
+- [ocr_00153] @3649.3s: ARTS
+- [ocr_00154] @3649.3s: ENTERTAINMENT
+- [ocr_00155] @3651.3s: N
+- [ocr_00156] @3651.3s: SUBSCRIBE
+
+### SceneNode (155)
+
+- [scene_0000_w00] @4.0s: unknown - insufficient visual data
+- [scene_0011_w00] @11.0s: scene_0011_w00
+- [scene_0012_w00] @12.0s: Historical Documentary/Animation
+- [scene_0021_w00] @21.0s: scene_0021_w00
+- [scene_0026_w00] @26.0s: snowy landscape
+- [scene_0033_w00] @33.0s: blank/white screen
+- [scene_0038_w00] @38.0s: scene_0038_w00
+- [scene_0044_w00] @44.0s: blank_screen
+- [scene_0051_w00] @51.0s: snowy village
+- [scene_0081_w00] @84.0s: fire/forge
+- [scene_0089_w00] @89.0s: scene_0089_w00
+- [scene_0091_w00] @91.0s: blank_screen
+- [scene_0092_w00] @92.0s: title_card
+- [scene_0098_w00] @98.0s: Title Card
+- [scene_0102_w00] @102.0s: static_shot
+- [scene_0116_w00] @116.0s: kitchen
+- [scene_0116_w01] @168.0s: traditional_japanese_kitchen
+- [scene_0116_w02] @222.0s: traditional Japanese-style room
+- [scene_0116_w03] @276.0s: tense confrontation
+- [scene_0116_w04] @320.0s: confrontation
+- [scene_0116_w05] @370.0s: sumo_dojo
+- [scene_0116_w06] @424.0s: indoor_to_outdoor_transition
+- [scene_0116_w07] @479.2s: snowy_bamboo_forest
+- [scene_0116_w08] @531.2s: snowy_forest
+- [scene_0116_w09] @586.2s: snowy forest shrine
+- [scene_0663_w00] @662.2s: incense_burning
+- [scene_0696_w00] @695.2s: dark_screen
+- [scene_0700_w00] @699.2s: Rainy outdoor scene with water effects
+- [scene_0707_w00] @706.2s: Netflix Intro/Outro Screen
+- [scene_0708_w00] @707.2s: scene_0708_w00
+- [scene_0711_w00] @710.2s: storm
+- [scene_0783_w00] @782.2s: cosmic landscape
+- [scene_0786_w00] @785.2s: scene_0786_w00
+- [scene_0794_w00] @793.2s: stormy confrontation
+- [scene_0794_w01] @835.2s: stormy mountain landscape
+- [scene_0899_w00] @898.2s: stormy night rescue
+- [scene_0899_w01] @951.4s: workshop
+- [scene_0899_w02] @994.4s: workshop
+- [scene_1058_w00] @1056.4s: forge
+- [scene_1112_w00] @1110.4s: scene_1112_w00
+- [scene_1116_w00] @1114.4s: elderly man in distress
+- [scene_1122_w00] @1120.4s: molten metal manipulation
+- [scene_1123_w00] @1121.4s: explosion/impact
+- [scene_1124_w00] @1122.4s: blacksmith forging
+- [scene_1139_w00] @1137.4s: unknown
+- [scene_1146_w00] @1144.4s: scene_1146_w00
+- [scene_1160_w00] @1158.4s: snowy_japanese_village_gate
+- [scene_1160_w01] @1206.4s: snowy_japanese_town
+- [scene_1160_w02] @1260.4s: snowy_japanese_street
+- [scene_1324_w00] @1322.4s: snowy street
+- [scene_1359_w00] @1357.4s: traditional japanese interior
+- [scene_1376_w00] @1374.4s: snowy street gathering
+- [scene_1399_w00] @1396.6s: sumo_wrestler_confrontation
+- [scene_1433_w00] @1430.6s: snowy village pier
+- [scene_1510_w00] @1507.6s: snowy landscape with waterfall
+- [scene_1514_w00] @1511.6s: Netflix Animated Scene - Snowy Courtyard Procession
+- [scene_1525_w00] @1522.6s: traditional_japanese_interior
+- [scene_1525_w01] @1568.6s: traditional japanese interior
+- [scene_1525_w02] @1622.6s: traditional_japanese_gathering
+- [scene_1525_w03] @1667.6s: dramatic confrontation
+- [scene_1525_w04] @1716.6s: Historical Drama
+- [scene_1789_w00] @1786.6s: abstract_pattern
+- [scene_1796_w00] @1793.6s: snowy_outdoor_conversation
+- [scene_1852_w00] @1848.8s: snowy_japanese_landscape
+- [scene_1855_w00] @1851.8s: scene_1855_w00
+- [scene_1859_w00] @1855.8s: snowy courtyard
+- [scene_1918_w00] @1914.8s: ceremonial_gathering
+- [scene_1946_w00] @1942.8s: martial arts demonstration
+- [scene_1955_w00] @1951.8s: calligraphy ceremony
+- [scene_1977_w00] @1973.8s: ceremonial hall
+- [scene_2007_w00] @2003.8s: group_of_characters_in_formal_attire
+- [scene_2018_w00] @2014.8s: Observation
+- [scene_2086_w00] @2082.8s: Close-up of a young man in a contemplative mood
+- [scene_2093_w00] @2089.8s: Fire
+- [scene_2096_w00] @2092.8s: scene_2096_w00
+- [scene_2097_w00] @2093.8s: blacksmith_forging
+- [scene_2152_w00] @2148.8s: Impact/Collision Scene
+- [scene_2158_w00] @2154.8s: blacksmith forging
+- [scene_2158_w01] @2202.8s: blacksmith working
+- [scene_2158_w02] @2254.8s: forging
+- [scene_2158_w03] @2304.9s: emotional confrontation
+- [scene_2389_w00] @2384.9s: suspense
+- [scene_2456_w00] @2451.9s: captivity
+- [scene_2465_w00] @2460.9s: snowy_forest
+- [scene_2476_w00] @2471.9s: Action
+- [scene_2481_w00] @2476.9s: Action
+- [scene_2483_w00] @2478.9s: confrontation
+- [scene_2490_w00] @2485.9s: snowy_mountain_landscape
+- [scene_2494_w00] @2489.9s: indoor
+- [scene_2541_w00] @2536.9s: martial arts training
+- [scene_2541_w01] @2586.9s: combat
+- [scene_2672_w00] @2667.9s: martial arts confrontation
+- [scene_2756_w00] @2751.1s: outdoor
+- [scene_2759_w00] @2754.1s: confrontation
+- [scene_2844_w00] @2839.1s: tense confrontation
+- [scene_2861_w00] @2856.1s: snowy courtyard at night
+- [scene_2880_w00] @2875.1s: close-up
+- [scene_2883_w00] @2878.1s: tense confrontation
+- [scene_2904_w00] @2899.1s: snowy battlefield
+- [scene_2916_w00] @2911.1s: Netflix Logo Screen
+- [scene_2921_w00] @2916.1s: Snowy Outdoors
+- [scene_2924_w00] @2919.1s: snowy courtyard
+- [scene_2930_w00] @2925.1s: scene_2930_w00
+- [scene_2931_w00] @2927.1s: Abstract Visual Effect
+- [scene_2940_w00] @2935.1s: ice
+- [scene_2946_w00] @2941.1s: snowy wilderness
+- [scene_2954_w00] @2952.1s: abstract
+- [scene_2964_w00] @2959.1s: scene_2964_w00
+- [scene_2971_w00] @2966.1s: swordsman_confrontation
+- [scene_2999_w00] @2994.1s: Character contemplation in snowy setting
+- [scene_3002_w00] @2997.1s: dramatic confrontation
+- [scene_3006_w00] @3001.1s: samurai_confrontation
+- [scene_3008_w00] @3003.1s: Hand Reaching Over Ice
+- [scene_3011_w00] @3006.1s: grief
+- [scene_3015_w00] @3010.1s: confrontation
+- [scene_3077_w00] @3072.1s: dramatic confrontation
+- [scene_3082_w00] @3077.1s: Formal Assembly
+- [scene_3085_w00] @3080.1s: Snowy Night Confrontation
+- [scene_3096_w00] @3091.1s: Formal Gathering
+- [scene_3118_w00] @3113.1s: scene_3118_w00
+- [scene_3132_w00] @3127.1s: Character Profile Shot
+- [scene_3135_w00] @3130.1s: intense moment
+- [scene_3146_w00] @3141.1s: snowy night
+- [scene_3181_w00] @3180.1s: man in hat in snowy forest
+- [scene_3215_w00] @3209.3s: Scene 1
+- [scene_3247_w00] @3241.3s: throne room
+- [scene_3270_w00] @3264.3s: Dramatic Action Scene
+- [scene_3303_w00] @3297.3s: Underwater/Nature Scene
+- [scene_3323_w00] @3317.3s: ancient fantasy cave
+- [scene_3373_w00] @3367.3s: Animated character moving through a misty environment
+- [scene_3381_w00] @3375.3s: four riders on horseback
+- [scene_3388_w00] @3382.3s: dramatic confrontation
+- [scene_3456_w00] @3450.3s: snowy forest at night
+- [scene_3481_w00] @3475.3s: Mountain confrontation
+- [scene_3484_w00] @3478.3s: samurai combat
+- [scene_3486_w00] @3480.3s: fantasy outdoor sunset
+- [scene_3489_w00] @3483.3s: snowy forest
+- [scene_3493_w00] @3490.3s: Action
+- [scene_3498_w00] @3492.3s: Action Sequence
+- [scene_3503_w00] @3497.3s: scene_3503_w00
+- [scene_3511_w00] @3505.3s: intro
+- [scene_3520_w00] @3517.3s: Netflix Logo Screen
+- [scene_3526_w00] @3520.3s: snowy forest
+- [scene_3535_w00] @3529.3s: Title Card / Black Screen
+- [scene_3540_w00] @3534.3s: snowy mountain climb
+- [scene_3544_w00] @3538.3s: Action/Combat Scene
+- [scene_3554_w00] @3548.3s: scene_3554_w00
+- [scene_3563_w00] @3557.3s: Historical Japanese Village Conflict
+- [scene_3581_w00] @3575.3s: Action Sequence
+- [scene_3589_w00] @3583.3s: Character Portrait
+- [scene_3590_w00] @3584.3s: Combat Confrontation
+- [scene_3600_w00] @3594.3s: end_credits
+- [scene_3653_w00] @3647.3s: title_card
+- [scene_3655_w00] @3649.3s: logo
+- [scene_3657_w00] @3651.3s: abstract
+
+### SpeechNode (425)
+
+- [speech_00000] @135.4s: Welcome, sir. I'll bring you some tea. It's not good tea, but it's hot. And you're frozen, and I'll bring you a rag, because when I'm frozen, my snot drips. Then a nice, big soba. We make the best soba. Honest, bad tea, great soba, okay?
+- [speech_00001] @157.6s: Stumpy! More noodles. Fast!
+- [speech_00002] @161.7s: Finish your balls.
+- [speech_00003] @163.3s: I paid your father's good money for you.
+- [speech_00004] @165.9s: The brothels will pay me even more
+- [speech_00005] @168.0s: once you get some curve on you skinny country nothings.
+- [speech_00006] @170.9s: Eat!
+- [speech_00007] @171.8s: That flesh-treater kills anyone here,
+- [speech_00008] @184.3s: he'll be back for business.
+- [speech_00009] @188.0s: Go and don't spill!
+- [speech_00010] @216.6s: Eat up, girls.
+- [speech_00011] @218.0s: Eat it all!
+- [speech_00012] @222.5s: What are you?
+- [speech_00013] @224.1s: A dog?
+- [speech_00014] @225.0s: You let a dog serve food?
+- [speech_00015] @227.2s: Forgive my son.
+- [speech_00016] @228.5s: Can't go a day without breaking dishes.
+- [speech_00017] @231.7s: Ringo, clean him!
+- [speech_00018] @233.1s: I'm sorry.
+- [speech_00019] @238.0s: Sorry.
+- [speech_00020] @250.8s: I should put...
+- [speech_00021] @256.2s: I'm not a dog.
+- [speech_00022] @257.9s: Did you just bark?
+- [speech_00023] @261.8s: Do you know who I am?
+- [speech_00024] @263.9s: I am Hachiman the Flush Trader.
+- [speech_00025] @292.8s: Impressive.
+- [speech_00026] @294.1s: I've never seen a gun like it.
+- [speech_00027] @296.9s: Front-loading.
+- [speech_00028] @298.7s: Not a Japanese pistol.
+- [speech_00029] @302.7s: A European design, isn't it?
+- [speech_00030] @304.5s: Make it illegal.
+- [speech_00031] @312.4s: Hachimon the flesh trader.
+- [speech_00032] @314.7s: Of course.
+- [speech_00033] @315.9s: I heard of you.
+- [speech_00034] @317.5s: Never leaves a village without buying one of its daughters.
+- [speech_00035] @321.3s: Must have important friends to own a weapon like that.
+- [speech_00036] @324.6s: Why do you know so much about Hachi?
+- [speech_00037] @327.9s: Maybe I've been following you.
+- [speech_00038] @330.2s: The famous Hachi with the famous gun.
+- [speech_00039] @335.8s: I love a gun like that.
+- [speech_00040] @337.7s: But you can tell me who sold it to you.
+- [speech_00041] @344.3s: Fuck off.
+- [speech_00042] @347.8s: You will tell me who sold you that gun.
+- [speech_00043] @356.7s: You put my bullet against your blade.
+- [speech_00044] @362.4s: You don't deserve my blade.
+- [speech_00045] @364.4s: You don't even deserve this blade.
+- [speech_00046] @381.3s: Take the gun if you want it.
+- [speech_00047] @386.2s: Take it.
+- [speech_00048] @387.6s: No.
+- [speech_00049] @389.3s: It's a filthy gun from a filthy place.
+- [speech_00050] @392.1s: I don't want it.
+- [speech_00051] @394.6s: I want to know who sold it to you.
+- [speech_00052] @396.8s: Tell me now.
+- [speech_00053] @399.4s: Heiji Shindo! I brought it from Heiji Shindo!
+- [speech_00054] @404.4s: Heiji Shindo...
+- [speech_00055] @406.4s: Where is Heiji Shindo?
+- [speech_00056] @408.4s: I don't know! I swear!
+- [speech_00057] @427.1s: Dead-eyed, half-blooded demon bastard! You look like an unreal!
+- [speech_00058] @500.6s: I knew I'd never catch up on the path, but I remember this shortcut
+- [speech_00059] @503.3s: because when we were traveling to the Yazushi Shrine for my seventh birthday, I went to pee and got lost.
+- [speech_00060] @507.0s: So I slept with a family of Tanuki for three days and ate leaves and scarves and got to know the forest really really well, so...
+- [speech_00061] @515.8s: Go home.
+- [speech_00062] @521.1s: I hate home!
+- [speech_00063] @524.4s: Please!
+- [speech_00064] @525.3s: My whole life I couldn't do anything right, but now I know what I'm supposed to do.
+- [speech_00065] @530.2s: Be a samurai.
+- [speech_00066] @532.3s: Like you!
+- [speech_00067] @533.9s: Please!
+- [speech_00068] @534.7s: Let me be your apprentice.
+- [speech_00069] @536.2s: I'll do anything!
+- [speech_00070] @541.5s: A breeze can throw a crane off course.
+- [speech_00071] @545.8s: You...
+- [speech_00072] @547.4s: are a typhoon.
+- [speech_00073] @561.1s: Please! I'm strong and can carry your things,
+- [speech_00074] @563.6s: and you can have the best soba in the world every day,
+- [speech_00075] @566.2s: and I'll do anything you ask.
+- [speech_00076] @569.2s: Master, anything so I can learn to be just like you.
+- [speech_00077] @573.5s: Like me?
+- [speech_00078] @576.1s: You're deformed, but you're still strong.
+- [speech_00079] @594.5s: I'm lost in the dark, and Ember can light the way.
+- [speech_00080] @655.8s: Thank you for my Ember.
+- [speech_00081] @658.8s: I was lost without course so long.
+- [speech_00082] @663.8s: Please, let this ember's light brighten a path from Ms. Hei Shindo to the men I seek.
+- [speech_00083] @672.0s: Please guide my steps until I find them.
+- [speech_00084] @676.4s: Please give me the strength to kill them, or let me die.
+- [speech_00085] @688.0s: Please, protect Swordfather from time and harm.
+- [speech_00086] @754.9s: Jump. An orphan? I know what you are.
+- [speech_00087] @770.5s: Your whore mother killed herself because your father is a white devil.
+- [speech_00088] @780.5s: Told you.
+- [speech_00089] @804.1s: Round-eyed.
+- [speech_00090] @806.3s: Like a dog.
+- [speech_00091] @809.1s: The heavens throw treasure.
+- [speech_00092] @888.0s: Take the ball as you go, thank you.
+- [speech_00093] @966.8s: Did not go.
+- [speech_00094] @969.5s: Hmm.
+- [speech_00095] @970.8s: Have you somewhere to go?
+- [speech_00096] @972.1s: Go then.
+- [speech_00097] @978.7s: Now.
+- [speech_00098] @979.9s: Goodbye.
+- [speech_00099] @1066.2s: It would be nice if someone made tea.
+- [speech_00100] @1094.7s: Hmm.
+- [speech_00101] @1096.0s: Would be nice if someone got my tongs.
+- [speech_00102] @1103.7s: The longer ones.
+- [speech_00103] @1113.7s: It would be nice if somebody hammered out the impurities.
+- [speech_00104] @1127.6s: Would be nice if someone kept proper time.
+- [speech_00105] @1187.0s: This travel pass is invalid.
+- [speech_00106] @1188.8s: It's my husband's.
+- [speech_00107] @1190.8s: It's invalid without him.
+- [speech_00108] @1193.0s: Next!
+- [speech_00109] @1194.4s: He died. I make the baskets. He only sold them.
+- [speech_00110] @1198.8s: Please.
+- [speech_00111] @1200.1s: Or I can't feed my children.
+- [speech_00112] @1202.1s: You know the rules. Women can't travel without a chaperone.
+- [speech_00113] @1205.8s: Next!
+- [speech_00114] @1209.9s: Travel pass.
+- [speech_00115] @1214.6s: Next!
+- [speech_00116] @1215.5s: Please!
+- [speech_00117] @1218.8s: Excuse me, would you perhaps be able to tell me where...
+- [speech_00118] @1250.1s: Excuse me, could you help me find the...
+- [speech_00119] @1254.6s: Watch it, asshole!
+- [speech_00120] @1257.4s: Apologies.
+- [speech_00121] @1258.5s: Apologies.
+- [speech_00122] @1258.5s: I'm looking for something, but Kyoto's very big.
+- [speech_00123] @1262.7s: Do you know where I can find the Shindo Dojo?
+- [speech_00124] @1265.0s: Shindo? That's our dojo. You're gonna apply?
+- [speech_00125] @1269.7s: You look like a blind beggar.
+- [speech_00126] @1274.9s: If you would please show me how to find your dojo, I would be grateful.
+- [speech_00127] @1280.7s: Sure. Follow the road to the shrine. Once you go around the gates, you'll see a sign across the puppet show.
+- [speech_00128] @1287.2s: Good luck.
+- [speech_00129] @1289.9s: You look lost, lost boy. Come on inside. Rest a while.
+- [speech_00130] @1332.1s: I'm looking for the Shindo Dojo.
+- [speech_00131] @1341.0s: This I see is not.
+- [speech_00132] @1342.8s: This is better. This is the Shindo house.
+- [speech_00133] @1345.6s: If you want to show off your sword skills, you can do it here.
+- [speech_00134] @1349.3s: We can polish the tip up for you.
+- [speech_00135] @1351.8s: I must decline. My business is urgent.
+- [speech_00136] @1356.6s: Most men grab first, ask prices later.
+- [speech_00137] @1360.5s: You are different. Polite. Sweet.
+- [speech_00138] @1366.8s: But firm.
+- [speech_00139] @1368.7s: Okay, lost boy. Walk east to the Kamo River. Take the bridge to the temple with a thousand creepy statues. It's on the hill just passed.
+- [speech_00140] @1377.8s: I wish you a successful day of business.
+- [speech_00141] @1384.4s: Uh-oh.
+- [speech_00142] @1386.2s: How much for one night? How much for three?
+- [speech_00143] @1398.5s: It's all paid for. Just relax and enjoy.
+- [speech_00144] @1404.0s: Have you ever been with a woman before?
+- [speech_00145] @1405.9s: You just have to learn.
+- [speech_00146] @1412.8s: Round.
+- [speech_00147] @1413.7s: Firm.
+- [speech_00148] @1414.7s: Like a pumpkin.
+- [speech_00149] @1416.5s: You can be a little rough with it.
+- [speech_00150] @1419.4s: These you have to be gentler.
+- [speech_00151] @1421.9s: Soft.
+- [speech_00152] @1422.7s: Like ripe peaches.
+- [speech_00153] @1424.8s: You like peaches?
+- [speech_00154] @1427.7s: Peaches.
+- [speech_00155] @1438.8s: Make way!
+- [speech_00156] @1439.7s: Make way for Princess Akemi!
+- [speech_00157] @1441.8s: Make way!
+- [speech_00158] @1442.7s: Make way!
+- [speech_00159] @1487.5s: I know your wisdom is beyond reproach.
+- [speech_00160] @1490.5s: I submit to your will wholeheartedly.
+- [speech_00161] @1493.0s: I would be remiss if I did not speak my mind in regards to my future.
+- [speech_00162] @1533.4s: Twinseki, tell me.
+- [speech_00163] @1535.7s: Ah, I am well, Akimi-sama.
+- [speech_00164] @1539.2s: Thank you for asking.
+- [speech_00165] @1541.0s: Hmm.
+- [speech_00166] @1543.0s: This morning I made indelicate mention,
+- [speech_00167] @1546.3s: and now he told me to fetch you.
+- [speech_00168] @1550.2s: When you speak to him, remember to live to your voice.
+- [speech_00169] @1555.5s: So I should speak like a child?
+- [speech_00170] @1558.3s: Or like a woman who intends to get what she wants.
+- [speech_00171] @1572.9s: Forgive my interruptions.
+- [speech_00172] @1578.9s: Tomoe will make a great lord one day.
+- [speech_00173] @1581.8s: He does what he wants.
+- [speech_00174] @1585.0s: Right now, Tomoe wants a mess.
+- [speech_00175] @1588.2s: But you, my pearl, you have a different duty, no?
+- [speech_00176] @1592.8s: To create alliances by being a pleasing wife to a great man.
+- [speech_00177] @1598.6s: Now I'm told you believe you have an opinion on who you might want to marry.
+- [speech_00178] @1607.1s: Father, I know your wisdom is beyond reproach and I submit your will wholly.
+- [speech_00179] @1612.9s: But I would be remiss if it's not...
+- [speech_00180] @1614.5s: You know what happens when you feed a pig sweets?
+- [speech_00181] @1616.9s: Of course you don't.
+- [speech_00182] @1618.7s: Your life has been robed in silk.
+- [speech_00183] @1621.3s: You've never seen the mud of the sty.
+- [speech_00184] @1623.3s: Your father wasn't a pig farmer like mine.
+- [speech_00185] @1627.2s: When a farmer feeds his pig too many sweets, its teeth rot, its gums fester,
+- [speech_00186] @1632.6s: the infection goes to its brain and it must be slaughtered before it reaches full size.
+- [speech_00187] @1637.8s: The pig can't be blamed. He's a pig and will eat all it can.
+- [speech_00188] @1642.1s: The fault is with the farmer.
+- [speech_00189] @1645.3s: Who knows better?
+- [speech_00190] @1647.5s: Am I a pig, father?
+- [speech_00191] @1650.5s: You want sugar.
+- [speech_00192] @1652.1s: When there are proper options.
+- [speech_00193] @1654.6s: More than a few lords have taken notice of you and inquired.
+- [speech_00194] @1657.5s: Ah! News came just this morning.
+- [speech_00195] @1659.6s: Lord Saito's wife died in childbirth, and he needs a new bride.
+- [speech_00196] @1663.2s: He's an old man! And a drunk and a whoremonger!
+- [speech_00197] @1666.7s: Lord Saito earns a hundred thousand koku.
+- [speech_00198] @1670.5s: Is that your price for me?
+- [speech_00199] @1676.2s: If I don't marry you off, you'll end up in a brothel line with him anyway.
+- [speech_00200] @1680.3s: So would you rather be his wife or his whore?
+- [speech_00201] @1683.8s: I know your wisdom is beyond reproach, and I submit your will wholeheartedly.
+- [speech_00202] @1708.1s: I spoke from fear, as these men live so far away, and I cannot imagine a life without my father close.
+- [speech_00203] @1715.2s: Please, consider someone who lives near, someone you trust to protect me, and the interests of our clan.
+- [speech_00204] @1724.2s: My dove, I forget you are a simple girl. You know nothing of the world.
+- [speech_00205] @1732.2s: Perhaps I need a husband who knows the toil of life in the battle as you have. One who has seen the Stai.
+- [speech_00206] @1741.2s: Hmm. I do know of a fierce and undefeated young samurai Seki told me of. Ah, but Seki exaggerates.
+- [speech_00207] @1749.0s: Best swordsman in the best school, he said.
+- [speech_00208] @1752.3s: Won 24 duels with every opponent dead.
+- [speech_00209] @1755.7s: Not a noble family, a fisherman's son from Kohama, but...
+- [speech_00210] @1759.8s: His rise reminds me of my own.
+- [speech_00211] @1762.5s: What was his name again?
+- [speech_00212] @1766.4s: Taigan, I believe.
+- [speech_00213] @1768.8s: If his skills match his reputation, he'll be offered a handsome salary.
+- [speech_00214] @1773.0s: Perhaps even at the castle here.
+- [speech_00215] @1775.6s: Close to your father.
+- [speech_00216] @1778.2s: I only hope he's better than I am at denying you sweets.
+- [speech_00217] @1803.6s: One, two, three.
+- [speech_00218] @1807.9s: Gold. Wow. That's too much. I only brought candy.
+- [speech_00219] @1815.3s: Have I defeated the undefeatable Taigen? Think of it as an engagement gift.
+- [speech_00220] @1825.2s: He said yes? He's sure. You're sure.
+- [speech_00221] @1834.0s: The Lord's daughter marrying the son of a poor fisherman.
+- [speech_00222] @1839.5s: I'd marry you if you were the son of a poor fish.
+- [speech_00223] @1876.9s: No new students. Find another school.
+- [speech_00224] @1887.3s: I'm not a student. I bring a message for the Master of the Shindo Dojo.
+- [speech_00225] @1896.0s: I must deliver it personally.
+- [speech_00226] @1898.3s: You may leave any message with me.
+- [speech_00227] @1956.4s: What must be said must be said to the Master directly.
+- [speech_00228] @1960.5s: I assure you, what is for the Master is for me.
+- [speech_00229] @1964.0s: As I assure you, the master does not meet with messengers.
+- [speech_00230] @1971.3s: He will for me.
+- [speech_00231] @1975.0s: You stand before the Shindo school.
+- [speech_00232] @1978.4s: For 200 years, we have taught here the Shindo rule.
+- [speech_00233] @1982.5s: Secret methods passed down from Priest Soto,
+- [speech_00234] @1985.3s: taught to him on the peak of Mount Kurama,
+- [speech_00235] @1987.4s: by the mystic Tengu themselves.
+- [speech_00236] @1989.9s: Show your respect.
+- [speech_00237] @1994.6s: I must insist.
+- [speech_00238] @1999.3s: Escort him anywhere you please that is far from here.
+- [speech_00239] @2003.3s: Come on, blind beggar.
+- [speech_00240] @2005.9s: You are bound by hospitality to feed a traveler within your gates.
+- [speech_00241] @2009.3s: I came very far. I'm very hungry.
+- [speech_00242] @2012.1s: Or has the Shindo Dojo done away with etiquette?
+- [speech_00243] @2015.7s: Feed him.
+- [speech_00244] @2017.4s: Then throw him out.
+- [speech_00245] @2023.2s: Eat and leave.
+- [speech_00246] @2055.5s: Show me everything.
+- [speech_00247] @2057.8s: To make the right sword, I must know all that a samurai will do with it.
+- [speech_00248] @2062.4s: All his techniques.
+- [speech_00249] @2064.7s: But my Shindoryu is secret.
+- [speech_00250] @2068.5s: Every secret is revealed here.
+- [speech_00251] @2096.4s: The sword is the soul of the samurai, and so it must match the man.
+- [speech_00252] @2101.9s: His blade should be rigid and thin.
+- [speech_00253] @2104.6s: We fold the steel to blend it.
+- [speech_00254] @2113.9s: We beat the blend to remove the impurities.
+- [speech_00255] @2117.1s: The more pure the steel, the harder it is.
+- [speech_00256] @2125.4s: But too pure and it becomes brittle.
+- [speech_00257] @2130.7s: We must leave something of how God made it.
+- [speech_00258] @2135.6s: I thought we must beat out impurity.
+- [speech_00259] @2138.1s: Yes, yet an impurity in the right place is a quality.
+- [speech_00260] @2142.4s: Saw steel in the center.
+- [speech_00261] @2144.8s: Hard steel for the edge.
+- [speech_00262] @2179.7s: This is good, but it is not perfect.
+- [speech_00263] @2189.0s: What is a sword?
+- [speech_00264] @2191.0s: The soul of a samurai.
+- [speech_00265] @2193.2s: It is a line. On one side of the line is life, the other, death. The edge we forge cuts the line between life and death.
+- [speech_00266] @2214.0s: Good enough for cooking. Kitchen knives. Make a thousand kitchen knives.
+- [speech_00267] @2222.1s: Then you may be ready to make a sword. A smith signs his name.
+- [speech_00268] @2229.9s: All these years, how many fires is cursed in metal?
+- [speech_00269] @2272.8s: Perhaps it does not want to be a sword.
+- [speech_00270] @2275.1s: All metal wants to be a sword.
+- [speech_00271] @2279.8s: A sword? Are you stealing from me?
+- [speech_00272] @2305.8s: I am not stealing. I am practicing.
+- [speech_00273] @2311.6s: What is a sword maker's apprentice practice swordplay?
+- [speech_00274] @2321.6s: Because I must become a great swordsman. I must become the greatest swordsman alive.
+- [speech_00275] @2329.3s: Is that all?
+- [speech_00276] @2332.1s: And why must you become such a sorcerer?
+- [speech_00277] @2339.8s: Forgive me.
+- [speech_00278] @2341.8s: I've kept from you a secret.
+- [speech_00279] @2344.6s: One everyone else knows as plain as my face, but you do not.
+- [speech_00280] @2350.2s: I know you're ugly.
+- [speech_00281] @2352.7s: What does ugly mean?
+- [speech_00282] @2354.7s: You are blind, and so cannot see the shame of my face.
+- [speech_00283] @2360.3s: I am...
+- [speech_00284] @2362.7s: Made of mixed metal.
+- [speech_00285] @2366.9s: No amount of hammering can remove my impurity.
+- [speech_00286] @2373.7s: At the time I was born, there were four white men in all of Japan.
+- [speech_00287] @2378.1s: Men who traded in weapons and opium and flesh.
+- [speech_00288] @2386.0s: One of them took my mother and made of me a monster, a creature of shame.
+- [speech_00289] @2402.9s: I do not know their names.
+- [speech_00290] @2406.3s: I do know their fate.
+- [speech_00291] @2409.2s: They will all die by my hand. I have vowed this.
+- [speech_00292] @2418.2s: What have I taught you about steel?
+- [speech_00293] @2422.1s: Strongest sword is a blend of steel.
+- [speech_00294] @2425.5s: Soft and hard.
+- [speech_00295] @2427.5s: Pure and impure.
+- [speech_00296] @2429.9s: You may be something shameful.
+- [speech_00297] @2432.8s: You may also be strong.
+- [speech_00298] @2438.2s: You may train at nights.
+- [speech_00299] @2509.7s: Come on, beggar boy. Move it.
+- [speech_00300] @2512.1s: This will be much simpler if you allow me to speak with your master.
+- [speech_00301] @2515.0s: No one sees the master.
+- [speech_00302] @2522.3s: I cannot leave here until I speak to the master of this dojo.
+- [speech_00303] @2527.9s: Oh good. We get to kill you.
+- [speech_00304] @2549.4s: How dare you? Be warned. You face my Shindoryu.
+- [speech_00305] @2554.3s: The problem with Shindoryu is... it's trash.
+- [speech_00306] @2559.5s: Poor technique. Easily learned. Easily defeated.
+- [speech_00307] @2579.0s: Swallow's return crumbles against the fisherman's net of the Rogan Rue.
+- [speech_00308] @2593.4s: What can you do?
+- [speech_00309] @2624.3s: No.
+- [speech_00310] @2625.9s: It is also trash.
+- [speech_00311] @2628.1s: What school are you?
+- [speech_00312] @2630.3s: Your Naaman teacher.
+- [speech_00313] @2632.1s: Announce yourself!
+- [speech_00314] @2675.9s: And take a bow.
+- [speech_00315] @2680.9s: Do I duel the mystic Tengu themselves?
+- [speech_00316] @2684.3s: Put down that toy and draw your sword.
+- [speech_00317] @2687.5s: But... then you'll die.
+- [speech_00318] @2696.5s: ...daughter. This beautiful daughter, not even ugly.
+- [speech_00319] @2700.6s: And head of castle security with 5000 Koku.
+- [speech_00320] @2703.4s: Who wanna fuck?
+- [speech_00321] @2705.9s: Me?
+- [speech_00322] @2707.8s: Taigen, come quick! We have a problem.
+- [speech_00323] @2730.5s: Who dares challenge the Shindo dojo?
+- [speech_00324] @2734.1s: I'm afraid no one in this dojo has offered much of a sh...
+- [speech_00325] @2737.0s: You're from Kohama village.
+- [speech_00326] @2757.3s: Do I know you?
+- [speech_00327] @2760.0s: You've climbed some heights to be the prize of a miserable lot
+- [speech_00328] @2765.5s: Tygen has won 24 duels. How many of you won?
+- [speech_00329] @2771.8s: Should I have been counting?
+- [speech_00330] @2774.2s: Kill the son of a bitch Tygen teach him to respect Shindo. I have come to speak with your master and will go on my way once I have
+- [speech_00331] @2783.3s: You won't go anywhere except in the funeral cart.
+- [speech_00332] @2831.2s: With a naked blade, you'd be dead.
+- [speech_00333] @2841.6s: You had a name for me.
+- [speech_00334] @2845.9s: Tigan, you cannot allow that to dishonor us or you.
+- [speech_00335] @2852.8s: Kill him!
+- [speech_00336] @2874.6s: Are you afraid to fight with steel?
+- [speech_00337] @2877.5s: Thank you.
+- [speech_00338] @2879.1s: No one has yet deserved my blade.
+- [speech_00339] @2881.6s: I have a blade by Master Eiji.
+- [speech_00340] @3066.3s: Or the master of this school?
+- [speech_00341] @3069.4s: Hmm.
+- [speech_00342] @3073.5s: Your students need better training.
+- [speech_00343] @3076.9s: You have a message for me.
+- [speech_00344] @3081.4s: A question.
+- [speech_00345] @3084.7s: Where may I find your brother, the black market merchant, Heiji Shindo?
+- [speech_00346] @3091.6s: You did all this?
+- [speech_00347] @3093.7s: To find my brother?
+- [speech_00348] @3096.1s: Why?
+- [speech_00349] @3101.5s: Heiji Shindo is in the fortress on Tanabe Island, protected by the Gengen clan.
+- [speech_00350] @3107.2s: Whatever business you have with it will never reach him.
+- [speech_00351] @3125.0s: A dog.
+- [speech_00352] @3126.1s: Thank you.
+- [speech_00353] @3177.5s: For my Ember.
+- [speech_00354] @3178.6s: Your location, my brother.
+- [speech_00355] @3253.3s: Your students need better training.
+- [speech_00356] @3255.7s: The Samurai...
+- [speech_00357] @3257.3s: He's not human.
+- [speech_00358] @3272.8s: The Four Fangs.
+- [speech_00359] @3277.5s: Send the Four Fangs after this Samurai.
+- [speech_00360] @3282.8s: Double their price and be done with it.
+- [speech_00361] @3285.3s: It is time for me to begin my quest.
+- [speech_00362] @3319.3s: Revenge is like gold.
+- [speech_00363] @3321.2s: It does not rust.
+- [speech_00364] @3323.1s: It will wait.
+- [speech_00365] @3325.6s: I am ready.
+- [speech_00366] @3327.3s: You will get yourself killed.
+- [speech_00367] @3329.5s: I am ready. I am.
+- [speech_00368] @3338.0s: I can never repay your kindness.
+- [speech_00369] @3342.3s: When I told you my shame, you did not disown me.
+- [speech_00370] @3346.3s: Even though I am hideous to men's eyes.
+- [speech_00371] @3349.8s: I have no eyes, so I can accept you.
+- [speech_00372] @3355.2s: I will always be grateful to you.
+- [speech_00373] @3361.0s: Swordfather.
+- [speech_00374] @3362.0s: Before I leave, Swordfather,
+- [speech_00375] @3386.5s: there is something more I must confess.
+- [speech_00376] @3388.7s: You've spoken enough nonsense today.
+- [speech_00377] @3390.8s: We cannot part in a lie.
+- [speech_00378] @3393.1s: That is your burden to keep.
+- [speech_00379] @3395.0s: I have made your swords unclean.
+- [speech_00380] @3397.1s: Quiet!
+- [speech_00381] @3398.8s: You came to me as a stupid lost boy.
+- [speech_00382] @3403.1s: If you insist on leaving now, it would be as a stupid lost man.
+- [speech_00383] @3422.5s: If you must do this, take a sword.
+- [speech_00384] @3428.6s: I already have one.
+- [speech_00385] @3431.3s: Swordfather.
+- [speech_00386] @3432.2s: This season on Blue-Eye Samurai.
+- [speech_00387] @3483.0s: You have enemies now, rich ones.
+- [speech_00388] @3486.4s: Oh, Kyoto is talking about the unnamed samurai who cut through Shindo Dojo.
+- [speech_00389] @3492.6s: You will not find what you seek at my side.
+- [speech_00390] @3495.6s: I know why you don't want me around, but you can trust me.
+- [speech_00391] @3498.6s: I never, ever, ever, ever tell anyone that you're a girl.
+- [speech_00392] @3502.2s: If I see you again, I will kill you.
+- [speech_00393] @3505.7s: The cut is so clean.
+- [speech_00394] @3507.9s: It's not so bad. We'll be married.
+- [speech_00395] @3510.2s: Your father will never allow it now.
+- [speech_00396] @3512.4s: It wasn't even a duel. Therefore, you never lost.
+- [speech_00397] @3514.7s: He must have left a trail.
+- [speech_00398] @3518.7s: You cost me my station and my honor.
+- [speech_00399] @3521.9s: I'll have it all back when I return with your corpse.
+- [speech_00400] @3524.8s: I've been a captive my whole life.
+- [speech_00401] @3526.9s: I won't be locked away, buried to a stranger.
+- [speech_00402] @3529.4s: I just have to find Taiken.
+- [speech_00403] @3531.8s: I always dreamt of greatness.
+- [speech_00404] @3535.0s: You think you can be great?
+- [speech_00405] @3538.4s: I've actually seen what greatness looks like.
+- [speech_00406] @3541.9s: You don't want revenge.
+- [speech_00407] @3545.8s: Revenge does not hesitate.
+- [speech_00408] @3548.4s: Something I need to tell you.
+- [speech_00409] @3551.0s: Fowler's castle is impenetrable.
+- [speech_00410] @3553.2s: With some problems you can't kill.
+- [speech_00411] @3555.4s: An offer.
+- [speech_00412] @3556.5s: You have murder in your eyes.
+- [speech_00413] @3558.8s: He deserves to die.
+- [speech_00414] @3561.5s: Ten years I have waited for this moment.
+- [speech_00415] @3564.3s: Your guns will be ready?
+- [speech_00416] @3566.6s: They are all ready.
+- [speech_00417] @3569.9s: I want to see all of you.
+- [speech_00418] @3572.2s: Show me.
+- [speech_00419] @3573.0s: Don't hold back.
+- [speech_00420] @3575.4s: I'm on the path of revenge.
+- [speech_00421] @3577.1s: There's no place on it for love or friendship.
+- [speech_00422] @3580.1s: I have no interest in money or power.
+- [speech_00423] @3582.8s: I have no interest in being happy.
+- [speech_00424] @3587.3s: Only satisfied.
+
+### ActionNode (301)
+
+- [act_00000] @12.0s: A white streak moves across the cloudy sky.
+- [act_00001] @12.0s: Text appears on screen providing historical context.
+- [act_00003] @26.0s: Snow is falling in the background.
+- [act_00004] @26.0s: Text appears on screen stating a narrative fact.
+- [act_00006] @51.0s: character walking through snow
+- [act_00008] @84.0s: embers burning and glowing
+- [act_00009] @92.0s: Static title card display
+- [act_00010] @116.0s: A man in a chef's uniform is working at a counter.
+- [act_00011] @116.0s: Another person wearing a conical hat approaches the chef.
+- [act_00012] @116.0s: Characters are seated at low tables, eating from bowls.
+- [act_00013] @116.0s: A close-up of a pot with boiling liquid.
+- [act_00015] @168.0s: Chef preparing food in a large pot
+- [act_00016] @168.0s: Mysterious figure sitting and watching
+- [act_00017] @168.0s: Man in yellow robes eating
+- [act_00018] @168.0s: Two women seated quietly
+- [act_00019] @222.0s: Character sitting at table
+- [act_00020] @222.0s: Hand resting on lap
+- [act_00021] @276.0s: A man in a striped kimono points a knife at another man while two women watch.
+- [act_00022] @276.0s: Close-up of the man in the striped kimono showing his angry expression.
+- [act_00024] @320.0s: older man looking sternly
+- [act_00025] @320.0s: hand gripping bokken
+- [act_00026] @320.0s: man with hat holding pistol
+- [act_00027] @320.0s: blood splatter
+- [act_00028] @320.0s: large man looking surprised
+- [act_00030] @370.0s: red liquid splashing in air
+- [act_00031] @370.0s: man in sumo attire looks concerned
+- [act_00032] @370.0s: man lies on ground, mouth open
+- [act_00033] @370.0s: man in hat holds object
+- [act_00034] @370.0s: man in hat stands over platform
+- [act_00036] @424.0s: Character in orange robe standing still near fire structure
+- [act_00037] @424.0s: Scene fades to black
+- [act_00038] @424.0s: Exterior shot of snowy village
+- [act_00039] @424.0s: View of snowy path with footprints
+- [act_00040] @424.0s: Low-angle shot looking up at snow-covered bamboo trees
+- [act_00041] @424.0s: Figure walking through bamboo forest
+- [act_00042] @424.0s: Close-up of figure's face obscured by wide-brimmed hat
+- [act_00045] @479.2s: Characters walking through the forest
+- [act_00046] @479.2s: Characters encounter each other
+- [act_00047] @479.2s: Characters stand together facing away
+- [act_00048] @531.2s: Two men walking through a snowy forest
+- [act_00049] @586.2s: Character standing still in snow
+- [act_00050] @586.2s: Camera pans across snowy landscape
+- [act_00051] @586.2s: Hand holding staff appears
+- [act_00052] @586.2s: Incense burning
+- [act_00053] @662.2s: Incense sticks burning with smoke rising
+- [act_00054] @662.2s: Man standing and praying/meditating
+- [act_00055] @699.2s: Foot stepping into shallow water while it rains
+- [act_00056] @710.2s: A young boy stands in heavy rain, looking distressed while wearing a blindfold.
+- [act_00057] @710.2s: Close-up of feet in sandals walking on wet ground.
+- [act_00058] @710.2s: Wide shot of a massive blue wave approaching a coastline where people are running.
+- [act_00059] @710.2s: The boy looks up at the stormy sky with determination or fear.
+- [act_00060] @710.2s: A group of people stand together in the rain, led by a man in a brown robe.
+- [act_00062] @782.2s: A large blue celestial body illuminates the scene from the right.
+- [act_00063] @793.2s: A foot steps into the rain.
+- [act_00064] @793.2s: Two men are on the ground, one falling.
+- [act_00065] @793.2s: Confrontation between man in brown and man in black.
+- [act_00066] @793.2s: Men with swords run away in fear.
+- [act_00067] @793.2s: Woman holds her head against the rain.
+- [act_00068] @793.2s: Explosion of energy/energy burst occurs.
+- [act_00069] @793.2s: Figures flee across the landscape.
+- [act_00071] @835.2s: Heavy rain falling across the landscape
+- [act_00072] @835.2s: Elderly man crouching on rocky terrain
+- [act_00073] @835.2s: Elderly man standing near a skull
+- [act_00074] @898.2s: Old man reaches out to help boy in water
+- [act_00075] @898.2s: Boy sits in water, looking up
+- [act_00076] @898.2s: Cart wheel shown in rain
+- [act_00077] @898.2s: Wide shot of stormy landscape
+- [act_00078] @898.2s: Boy holds bowl indoors
+- [act_00079] @898.2s: Old man silhouetted against light
+- [act_00081] @951.4s: older man working on object
+- [act_00082] @951.4s: young boy approaching
+- [act_00084] @994.4s: Elderly man working at forge
+- [act_00085] @994.4s: Young boy entering and observing
+- [act_00086] @994.4s: Close-up of boy's shocked expression
+- [act_00087] @994.4s: Close-up of glowing object in fire
+- [act_00088] @1056.4s: elderly man concentrating on fire/heat
+- [act_00089] @1056.4s: elderly man's hand near molten material
+- [act_00090] @1056.4s: close-up of glowing molten object
+- [act_00091] @1114.4s: Elderly man with eyes closed and grimacing face, appearing to be in pain or discomfort.
+- [act_00092] @1120.4s: molten metal being held by tongs
+- [act_00093] @1121.4s: Large explosion or impact with flying debris
+- [act_00094] @1122.4s: Blacksmith using tongs to hold hot metal on anvil
+- [act_00095] @1122.4s: Boy holding hammer, ready to strike
+- [act_00096] @1122.4s: Close-up of glowing hot metal being forged
+- [act_00097] @1158.4s: wide_shot_of_snowy_village
+- [act_00098] @1158.4s: people_waiting_at_gate
+- [act_00099] @1158.4s: woman_crying
+- [act_00100] @1158.4s: guards_interacting_with_group
+- [act_00102] @1206.4s: Characters standing and observing each other in a snowy environment.
+- [act_00103] @1206.4s: Man in dark robe walks past the group.
+- [act_00104] @1206.4s: Close-up on face of man in dark robe with glasses.
+- [act_00105] @1206.4s: Wide shot showing the snowy street and buildings.
+- [act_00106] @1206.4s: Character in orange kimono stands prominently in foreground.
+- [act_00108] @1260.4s: Man in orange kimono stands looking forward
+- [act_00109] @1260.4s: Figure in hat and cloak holds glasses
+- [act_00110] @1260.4s: Group of men on horseback approach
+- [act_00111] @1260.4s: Men on horseback ride away
+- [act_00112] @1260.4s: Puppet-like figure shown
+- [act_00113] @1260.4s: People gather outside a building
+- [act_00114] @1260.4s: Close-up of woman's face behind bars
+- [act_00116] @1322.4s: man sitting at table
+- [act_00117] @1322.4s: two women standing indoors
+- [act_00118] @1322.4s: three figures silhouetted at doorway
+- [act_00119] @1322.4s: man leaning on railing, person walking by
+- [act_00123] @1357.4s: two women standing together
+- [act_00124] @1357.4s: hands holding each other
+- [act_00125] @1357.4s: someone viewing through binoculars
+- [act_00128] @1374.4s: Man stands under umbrella observing crowd
+- [act_00129] @1374.4s: Crowd gathers around table
+- [act_00130] @1396.6s: man looking concerned
+- [act_00131] @1396.6s: woman standing with arms crossed
+- [act_00132] @1430.6s: Characters walking on a snowy pier
+- [act_00133] @1430.6s: Woman in red kimono standing indoors
+- [act_00134] @1430.6s: Young man with glasses looking out
+- [act_00135] @1507.6s: A person stands atop a large snow-covered slope next to a massive waterfall.
+- [act_00136] @1511.6s: Group of figures carrying a large ornate structure through a snowy courtyard.
+- [act_00137] @1511.6s: Overhead view showing the procession continuing past a red object on the ground.
+- [act_00139] @1522.6s: Two people walking into a large room
+- [act_00140] @1522.6s: Close-up of older man's face, possibly speaking
+- [act_00141] @1522.6s: Child looking at someone off-screen
+- [act_00142] @1568.6s: Child standing/sitting while being held by man in purple
+- [act_00143] @1568.6s: Woman in red bowing deeply
+- [act_00144] @1568.6s: Man in purple holding child and speaking
+- [act_00145] @1622.6s: Man in purple robes pours tea from a kettle into a cup.
+- [act_00146] @1622.6s: Young child looks up at the man in purple robes.
+- [act_00147] @1622.6s: Woman in red kimono bows or sits with head down.
+- [act_00148] @1622.6s: Older man in black robe stands in background.
+- [act_00150] @1667.6s: Man in purple sits with arms crossed, looking stern
+- [act_00151] @1667.6s: Woman in red kimono approaches the man, touching his shoulder
+- [act_00152] @1716.6s: Woman places hand on man's shoulder while looking at him with concern
+- [act_00153] @1716.6s: Man looks surprised as woman speaks to him
+- [act_00154] @1716.6s: Woman smiles softly while continuing her conversation
+- [act_00155] @1793.6s: Woman and man standing facing each other in snow
+- [act_00156] @1793.6s: Close-up on man's face showing concern/surprise
+- [act_00157] @1793.6s: Close-up on woman's face, calm expression
+- [act_00158] @1793.6s: Man's expression shifts to contemplation
+- [act_00159] @1855.8s: Character approaches gate
+- [act_00160] @1855.8s: Character reaches for door knocker
+- [act_00161] @1855.8s: Gate opens revealing inner courtyard
+- [act_00163] @1914.8s: Two figures walking through a snowy courtyard towards a gate
+- [act_00164] @1914.8s: Close-up of Shogun's flags waving in the wind
+- [act_00165] @1914.8s: Four people seated in a formal indoor gathering
+- [act_00166] @1914.8s: Five men meditating or listening in a hall
+- [act_00167] @1914.8s: Two figures standing before a temple entrance
+- [act_00169] @1942.8s: Two practitioners performing a martial arts demonstration
+- [act_00170] @1942.8s: Spectators watching the demonstration
+- [act_00171] @1942.8s: Close-up of inkstone and writing tools
+- [act_00172] @1951.8s: writing calligraphy
+- [act_00173] @1951.8s: observing
+- [act_00174] @1973.8s: Writing calligraphy on parchment
+- [act_00175] @1973.8s: Standing in front of golden relief
+- [act_00176] @1973.8s: Observing the scene
+- [act_00177] @2003.8s: Characters standing in formation with serious expressions
+- [act_00178] @2003.8s: Rain falling in the background
+- [act_00179] @2014.8s: Older man looks upward with a thoughtful expression
+- [act_00180] @2014.8s: Group of people stand outside in snow
+- [act_00181] @2014.8s: Young person with glasses observes from behind structure
+- [act_00182] @2014.8s: Young person with blue eyes peeks through slats
+- [act_00184] @2082.8s: Standing still, looking forward with a serious expression
+- [act_00185] @2082.8s: Rain or water droplets falling across the frame
+- [act_00186] @2089.8s: Fire burning with flames and embers rising
+- [act_00187] @2093.8s: Older man hammers glowing metal on anvil
+- [act_00188] @2093.8s: Young person sweeps floor
+- [act_00189] @2093.8s: Hot metal is hammered on anvil
+- [act_00191] @2148.8s: A large object collides with a surface, creating a massive spark explosion.
+- [act_00192] @2154.8s: Blacksmith using tongs to hold hot metal over the forge
+- [act_00193] @2154.8s: Young boy standing and observing the blacksmith
+- [act_00194] @2154.8s: Close-up of the sharpened blade resting on the anvil
+- [act_00195] @2154.8s: Close-up of the young boy's face showing concentration
+- [act_00196] @2154.8s: Close-up of hands holding the finished blade
+- [act_00197] @2154.8s: Close-up of the blacksmith's face, looking focused
+- [act_00199] @2202.8s: Older man hammering metal
+- [act_00200] @2202.8s: Young person holding tool
+- [act_00201] @2202.8s: Older man sitting by fire
+- [act_00202] @2254.8s: Elderly man swinging hammer
+- [act_00203] @2254.8s: Young person drawing sword
+- [act_00205] @2304.9s: Young person looks down then up with surprised expression
+- [act_00206] @2304.9s: Elderly man closes eyes in distress
+- [act_00208] @2384.9s: Silhouettes emerge from a tower
+- [act_00209] @2384.9s: Young person reacts with shock
+- [act_00210] @2384.9s: Characters stand in rain-swept courtyard
+- [act_00211] @2384.9s: Older man looks on sternly
+- [act_00213] @2451.9s: Character is tied up with rope, standing still
+- [act_00214] @2451.9s: Camera focuses on tied hands/ankles then pulls back to show full figure
+- [act_00215] @2460.9s: Man standing in snow holding sword
+- [act_00216] @2460.9s: Close-up of hand gripping sword hilt
+- [act_00217] @2471.9s: A young man holds a sword upright in his bandaged hands during a rainstorm.
+- [act_00218] @2476.9s: Character moving with sword
+- [act_00219] @2478.9s: Two men observe a man holding a sword in the rain.
+- [act_00220] @2478.9s: A man stands alone near a fire in the rain.
+- [act_00221] @2489.9s: men standing indoors
+- [act_00222] @2536.9s: Master strikes student with sword
+- [act_00223] @2536.9s: Students practice sword stance
+- [act_00224] @2536.9s: Student falls after being struck
+- [act_00226] @2586.9s: Man in orange robe charges forward with wooden sword
+- [act_00227] @2586.9s: Combatants engage in close-quarters struggle
+- [act_00229] @2667.9s: Extreme close-up of a woman's face with a bloody, injured eye.
+- [act_00230] @2667.9s: Man in black robes kneels on the floor next to a fallen staff.
+- [act_00231] @2667.9s: Close-up of the wooden staff lying on the tatami mat.
+- [act_00232] @2667.9s: Close-up of the man's face, showing determination.
+- [act_00233] @2667.9s: Group of women in kimonos are seen from behind, watching the scene.
+- [act_00234] @2667.9s: Three women in kimonos look at each other with expressions of concern or shock.
+- [act_00235] @2667.9s: A view down a misty, dimly lit corridor.
+- [act_00236] @2667.9s: A group of people in orange robes engage in a martial arts fight with the man in black.
+- [act_00237] @2667.9s: Aftermath of the fight; one person lies defeated on the floor.
+- [act_00241] @2751.1s: Standing still in the rain, looking forward with a serious expression
+- [act_00242] @2754.1s: Man with glasses looks angry and determined
+- [act_00243] @2754.1s: Wide shot shows the confrontation between two men
+- [act_00244] @2754.1s: Close-up of man with glasses showing intense expression
+- [act_00245] @2754.1s: Man in green kimono looks stern and focused
+- [act_00246] @2754.1s: Physical combat begins - man with glasses attacks
+- [act_00247] @2754.1s: Overhead view of the fight continuing
+- [act_00249] @2839.1s: Man in green kimono stands with a stern expression, facing another person.
+- [act_00250] @2839.1s: Two men face each other on a stage-like area while snow falls outside.
+- [act_00251] @2839.1s: A third person holds a sword upright while observing the confrontation.
+- [act_00252] @2856.1s: characters walking through snowy courtyard
+- [act_00253] @2856.1s: character standing still
+- [act_00255] @2875.1s: character looking forward with serious expression
+- [act_00256] @2878.1s: Character standing still, observing something off-screen
+- [act_00257] @2878.1s: Character maintaining serious expression
+- [act_00258] @2899.1s: Two men engaged in a sword fight in a snowy environment.
+- [act_00259] @2916.1s: Person lying on ground with red marks
+- [act_00260] @2916.1s: Person standing nearby
+- [act_00261] @2919.1s: man in blue kimono performing martial arts move with glowing sword
+- [act_00262] @2919.1s: man in green kimono standing still, observing
+- [act_00263] @2935.1s: Character standing still in dark robe
+- [act_00264] @2935.1s: Background figure moving/running
+- [act_00265] @2941.1s: Large dark animal moving through snow
+- [act_00266] @2941.1s: Blood trail visible on snow surface
+- [act_00268] @2966.1s: Two individuals engaged in a sword confrontation in a snowy environment.
+- [act_00269] @2966.1s: Man bows his head after the confrontation.
+- [act_00270] @2966.1s: Man looks up at a large golden object.
+- [act_00272] @2994.1s: Standing still, gazing into the distance with a serious expression
+- [act_00273] @2997.1s: Standing man observing kneeling figure
+- [act_00274] @3001.1s: Samurai stands facing two monks, holding a sword.
+- [act_00275] @3001.1s: Two monks stand observing the samurai.
+- [act_00276] @3003.1s: Hand reaching out towards a small object on the ice
+- [act_00277] @3006.1s: Character crying with hand on face
+- [act_00278] @3010.1s: protagonist stands over defeated opponent
+- [act_00279] @3010.1s: opponent lies on ground
+- [act_00280] @3010.1s: protagonist holds sword
+- [act_00281] @3010.1s: onlookers observe
+- [act_00283] @3072.1s: Man kneeling over another person
+- [act_00284] @3080.1s: Characters are standing still in a snowy environment, suggesting tension or waiting.
+- [act_00285] @3080.1s: Close-up reveals intense emotion on the face of the central character.
+- [act_00286] @3091.1s: Standing still, looking forward with a serious expression
+- [act_00287] @3127.1s: Standing still, gazing into the distance
+- [act_00288] @3130.1s: Character shown in close-up with intense expression
+- [act_00289] @3130.1s: Scene fades to black
+- [act_00291] @3141.1s: character walking away from camera
+- [act_00292] @3141.1s: snow falling
+- [act_00294] @3180.1s: looking up
+- [act_00295] @3180.1s: standing still
+- [act_00296] @3180.1s: walking away
+- [act_00297] @3180.1s: adjusting hat
+- [act_00300] @3209.3s: Woman looking into mirror
+- [act_00301] @3209.3s: Man lying on snow
+- [act_00302] @3209.3s: Man sitting up in snow
+- [act_00304] @3241.3s: character kneeling and bowing
+- [act_00305] @3241.3s: character sitting on throne
+- [act_00306] @3264.3s: Character sitting on snowy ledge, holding sword
+- [act_00307] @3264.3s: Close-up of character's face showing bandages
+- [act_00308] @3264.3s: Character indoors, back turned to camera
+- [act_00310] @3297.3s: Water flowing/moving
+- [act_00311] @3317.3s: Two characters are engaged in a serious conversation while kneeling opposite each other in a dimly lit cave.
+- [act_00312] @3367.3s: Character moving through mist/fog
+- [act_00313] @3375.3s: Four men riding horses towards the camera
+- [act_00314] @3382.3s: Older man looks contemplative against sunset/firelight
+- [act_00315] @3382.3s: Two men kneel facing each other by a fire
+- [act_00316] @3382.3s: Young woman looks shocked/concerned
+- [act_00317] @3382.3s: Men continue their conversation
+- [act_00318] @3382.3s: Older man looks down in pain/sorrow
+- [act_00319] @3382.3s: Figure in wide-brimmed hat shown from below
+- [act_00320] @3382.3s: Figure in hat stands at open gate at night
+- [act_00321] @3382.3s: Close-up of older man's sorrowful face
+- [act_00323] @3450.3s: A person looks up with concern while a sword lies nearby.
+- [act_00324] @3450.3s: A man in a headband looks surprised.
+- [act_00325] @3475.3s: Man in foreground looking up at ninja
+- [act_00326] @3475.3s: Ninja standing on cliff with swords drawn
+- [act_00327] @3478.3s: Samurai jumping into the air with sword drawn
+- [act_00328] @3480.3s: standing still, looking forward
+- [act_00329] @3483.3s: Character standing or walking slowly in snowy forest
+- [act_00330] @3490.3s: Character standing with a weapon held horizontally
+- [act_00331] @3492.3s: Woman attacks with red energy
+- [act_00332] @3492.3s: Man falls backward while holding swords
+- [act_00333] @3505.3s: character shown in close-up with concerned expression
+- [act_00334] @3520.3s: Man standing in snowy forest
+- [act_00335] @3520.3s: Door slightly ajar
+- [act_00336] @3534.3s: A man climbs up a snowy cliff face.
+- [act_00337] @3534.3s: A person in a dark cloak moves across the frame.
+- [act_00338] @3538.3s: Three characters engaged in combat on rocky terrain
+- [act_00339] @3538.3s: Close-up of character with conical hat looking down
+- [act_00340] @3557.3s: Character climbing through narrow passage
+- [act_00341] @3557.3s: Samurai soldiers standing guard
+- [act_00342] @3557.3s: Man with goatee looking forward
+- [act_00343] @3575.3s: Woman climbing tree with pole
+- [act_00344] @3575.3s: Man observing woman with sword
+- [act_00345] @3575.3s: Feet walking on wet pavement
+- [act_00346] @3583.3s: Standing still, looking forward with a serious expression
+- [act_00347] @3584.3s: A man in grey robes stands ready for combat, surrounded by masked ninjas.
+- [act_00348] @3584.3s: Close-up reveals the man's determined expression and injuries from battle.
+
+### ObjectNode (307)
+
+- [obj_00000] @12.0s: comet/streak
+- [obj_00001] @51.0s: man
+- [obj_00002] @51.0s: building
+- [obj_00003] @51.0s: building
+- [obj_00005] @84.0s: glowing ember
+- [obj_00006] @98.0s: text
+- [obj_00007] @98.0s: logo
+- [obj_00008] @102.0s: red_curtain
+- [obj_00009] @116.0s: man
+- [obj_00010] @116.0s: person
+- [obj_00016] @168.0s: chef
+- [obj_00017] @168.0s: mysterious figure
+- [obj_00018] @168.0s: man in yellow robes
+- [obj_00019] @168.0s: woman 1
+- [obj_00020] @168.0s: woman 2
+- [obj_00026] @222.0s: man
+- [obj_00027] @222.0s: table
+- [obj_00028] @222.0s: bowl
+- [obj_00029] @222.0s: vase
+- [obj_00030] @222.0s: straw mat
+- [obj_00032] @276.0s: straw mat
+- [obj_00033] @276.0s: man in striped kimono
+- [obj_00034] @276.0s: man with hat
+- [obj_00035] @276.0s: woman 1
+- [obj_00036] @276.0s: woman 2
+- [obj_00041] @320.0s: older man
+- [obj_00042] @320.0s: man with hat
+- [obj_00046] @370.0s: man in sumo attire
+- [obj_00050] @424.0s: man in orange robe
+- [obj_00051] @424.0s: person (back view)
+- [obj_00052] @424.0s: person (back view)
+- [obj_00053] @424.0s: fire pit/structure
+- [obj_00058] @479.2s: young man in blue robe
+- [obj_00059] @479.2s: older man in grey
+- [obj_00062] @531.2s: older man with white headband
+- [obj_00063] @531.2s: man in dark cloak
+- [obj_00066] @586.2s: character
+- [obj_00068] @662.2s: man
+- [obj_00069] @662.2s: incense stick
+- [obj_00071] @699.2s: foot
+- [obj_00072] @710.2s: boy
+- [obj_00073] @710.2s: man
+- [obj_00081] @793.2s: foot
+- [obj_00082] @793.2s: man
+- [obj_00083] @793.2s: man
+- [obj_00084] @793.2s: woman
+- [obj_00085] @793.2s: man
+- [obj_00086] @793.2s: man
+- [obj_00087] @793.2s: man
+- [obj_00088] @793.2s: man
+- [obj_00089] @793.2s: rock
+- [obj_00090] @793.2s: sword
+- [obj_00098] @835.2s: Netflix logo
+- [obj_00100] @898.2s: old man
+- [obj_00101] @898.2s: young boy
+- [obj_00104] @951.4s: older man
+- [obj_00105] @951.4s: young boy
+- [obj_00108] @994.4s: elderly man
+- [obj_00109] @994.4s: young boy
+- [obj_00110] @994.4s: forge/furnace
+- [obj_00113] @1056.4s: elderly man
+- [obj_00115] @1114.4s: man
+- [obj_00117] @1120.4s: molten metal
+- [obj_00118] @1121.4s: explosion/fireball
+- [obj_00119] @1122.4s: older man/blacksmith
+- [obj_00120] @1122.4s: young boy
+- [obj_00123] @1158.4s: woman_in_blue
+- [obj_00124] @1158.4s: samurai_guard_cone_hat
+- [obj_00129] @1206.4s: man in conical hat
+- [obj_00130] @1206.4s: man in dark robe
+- [obj_00131] @1206.4s: woman in orange kimono
+- [obj_00132] @1206.4s: people in background
+- [obj_00137] @1260.4s: man in orange kimono
+- [obj_00138] @1260.4s: figure in hat and cloak
+- [obj_00145] @1322.4s: man in grey robe
+- [obj_00146] @1322.4s: woman with dark hair
+- [obj_00147] @1322.4s: woman with light skin
+- [obj_00151] @1357.4s: woman
+- [obj_00152] @1357.4s: woman
+- [obj_00153] @1357.4s: hands
+- [obj_00154] @1357.4s: binoculars
+- [obj_00157] @1374.4s: man with glasses
+- [obj_00158] @1374.4s: woman in white kimono
+- [obj_00159] @1374.4s: woman in pink kimono
+- [obj_00160] @1374.4s: crowd of people
+- [obj_00165] @1396.6s: white_sandals
+- [obj_00169] @1430.6s: man in dark robe
+- [obj_00170] @1430.6s: woman in red kimono
+- [obj_00171] @1430.6s: young man with glasses
+- [obj_00175] @1507.6s: person
+- [obj_00176] @1507.6s: waterfall/ice cascade
+- [obj_00177] @1511.6s: guard/attendant figure
+- [obj_00178] @1511.6s: ornate structure
+- [obj_00179] @1511.6s: red object
+- [obj_00180] @1522.6s: older_man
+- [obj_00181] @1522.6s: woman_in_red
+- [obj_00185] @1568.6s: child
+- [obj_00186] @1568.6s: man in purple
+- [obj_00187] @1568.6s: woman in red
+- [obj_00188] @1568.6s: older man
+- [obj_00193] @1622.6s: man_in_purple_robes
+- [obj_00198] @1667.6s: man in purple robes
+- [obj_00199] @1667.6s: older man
+- [obj_00203] @1716.6s: woman
+- [obj_00206] @1793.6s: woman
+- [obj_00207] @1793.6s: man
+- [obj_00210] @1848.8s: tree
+- [obj_00211] @1848.8s: person
+- [obj_00212] @1848.8s: person
+- [obj_00213] @1848.8s: building
+- [obj_00214] @1848.8s: bridge
+- [obj_00217] @1855.8s: character in dark clothing
+- [obj_00220] @1914.8s: man
+- [obj_00221] @1914.8s: woman
+- [obj_00235] @1942.8s: practitioner
+- [obj_00236] @1942.8s: practitioner
+- [obj_00237] @1942.8s: spectator
+- [obj_00238] @1942.8s: spectator
+- [obj_00239] @1942.8s: spectator
+- [obj_00240] @1942.8s: spectator
+- [obj_00241] @1942.8s: spectator
+- [obj_00242] @1942.8s: banner
+- [obj_00243] @1942.8s: sword
+- [obj_00251] @1951.8s: man
+- [obj_00252] @1951.8s: man
+- [obj_00253] @1951.8s: man
+- [obj_00254] @1951.8s: man
+- [obj_00255] @1951.8s: man
+- [obj_00261] @1973.8s: calligraphy brush
+- [obj_00262] @1973.8s: parchment
+- [obj_00266] @2003.8s: man_with_conical_hat
+- [obj_00267] @2003.8s: bald_man_left
+- [obj_00268] @2003.8s: man_crossed_arms_1
+- [obj_00269] @2003.8s: man_crossed_arms_2
+- [obj_00270] @2003.8s: man_crossed_arms_3
+- [obj_00276] @2014.8s: older man
+- [obj_00280] @2082.8s: young man
+- [obj_00282] @2089.8s: fire
+- [obj_00283] @2093.8s: older_man
+- [obj_00284] @2093.8s: young_person
+- [obj_00285] @2093.8s: anvil
+- [obj_00286] @2093.8s: tongs
+- [obj_00287] @2093.8s: hot_metal
+- [obj_00290] @2148.8s: sparks
+- [obj_00291] @2148.8s: impact point
+- [obj_00292] @2154.8s: older man
+- [obj_00293] @2154.8s: young boy
+- [obj_00294] @2154.8s: anvil
+- [obj_00295] @2154.8s: forge fire
+- [obj_00296] @2154.8s: tongs
+- [obj_00297] @2154.8s: hammer
+- [obj_00298] @2154.8s: blade
+- [obj_00301] @2202.8s: older man
+- [obj_00302] @2202.8s: young person
+- [obj_00305] @2254.8s: elderly man
+- [obj_00306] @2254.8s: young person
+- [obj_00309] @2304.9s: young person
+- [obj_00312] @2384.9s: silhouette of figure
+- [obj_00313] @2384.9s: silhouette of figure
+- [obj_00314] @2384.9s: silhouette of figure
+- [obj_00315] @2384.9s: silhouette of figure
+- [obj_00316] @2384.9s: young person
+- [obj_00317] @2384.9s: older man
+- [obj_00318] @2384.9s: fire
+- [obj_00319] @2384.9s: rain
+- [obj_00326] @2451.9s: person tied with rope
+- [obj_00328] @2460.9s: man
+- [obj_00329] @2460.9s: sword
+- [obj_00330] @2460.9s: NETFLIX logo
+- [obj_00332] @2471.9s: young man
+- [obj_00333] @2471.9s: sword
+- [obj_00335] @2476.9s: man
+- [obj_00336] @2476.9s: sword
+- [obj_00337] @2476.9s: wooden structure
+- [obj_00339] @2478.9s: man in dark clothing
+- [obj_00340] @2478.9s: man in blue kimono
+- [obj_00343] @2485.9s: Netflix_logo
+- [obj_00344] @2489.9s: man
+- [obj_00347] @2536.9s: man with glasses and hat
+- [obj_00348] @2536.9s: student in orange robe
+- [obj_00349] @2536.9s: student in orange robe
+- [obj_00350] @2536.9s: student in orange robe
+- [obj_00351] @2536.9s: student in orange robe
+- [obj_00352] @2536.9s: student in orange robe
+- [obj_00353] @2536.9s: sword
+- [obj_00360] @2586.9s: man in orange robe
+- [obj_00361] @2586.9s: man in dark clothing
+- [obj_00364] @2667.9s: man in black robes
+- [obj_00365] @2667.9s: woman with injured eye
+- [obj_00375] @2751.1s: young man
+- [obj_00377] @2754.1s: man with glasses
+- [obj_00378] @2754.1s: man in green kimono
+- [obj_00381] @2839.1s: man in green kimono
+- [obj_00385] @2856.1s: man in green and black robes
+- [obj_00386] @2856.1s: person in brown robe
+- [obj_00387] @2856.1s: person in yellow robe
+- [obj_00388] @2856.1s: person in dark robe
+- [obj_00393] @2875.1s: man
+- [obj_00394] @2875.1s: netflix logo
+- [obj_00396] @2878.1s: young man
+- [obj_00398] @2899.1s: man
+- [obj_00399] @2899.1s: man
+- [obj_00400] @2899.1s: man
+- [obj_00403] @2916.1s: person lying down
+- [obj_00404] @2916.1s: person standing
+- [obj_00407] @2919.1s: man in blue kimono
+- [obj_00408] @2919.1s: man in green kimono
+- [obj_00411] @2927.1s: red splatter/paint
+- [obj_00412] @2935.1s: character in dark robe
+- [obj_00415] @2941.1s: dark animal/object
+- [obj_00416] @2941.1s: blood trail
+- [obj_00417] @2952.1s: fabric/water texture
+- [obj_00418] @2952.1s: light particles
+- [obj_00419] @2952.1s: NETFLIX logo
+- [obj_00420] @2966.1s: man_in_blue_suit
+- [obj_00421] @2966.1s: second_person
+- [obj_00424] @2994.1s: man
+- [obj_00426] @2997.1s: man in green robe
+- [obj_00427] @2997.1s: kneeling figure
+- [obj_00430] @3001.1s: monk_figure_1
+- [obj_00431] @3001.1s: monk_figure_2
+- [obj_00432] @3001.1s: samurai_man
+- [obj_00436] @3003.1s: hand
+- [obj_00437] @3003.1s: ice
+- [obj_00438] @3006.1s: man
+- [obj_00440] @3010.1s: man with dark hair
+- [obj_00441] @3010.1s: man in green robes
+- [obj_00442] @3010.1s: sword
+- [obj_00447] @3072.1s: man kneeling
+- [obj_00448] @3072.1s: person lying down
+- [obj_00451] @3077.1s: man
+- [obj_00452] @3077.1s: man
+- [obj_00453] @3077.1s: man
+- [obj_00454] @3077.1s: man
+- [obj_00455] @3077.1s: man
+- [obj_00461] @3080.1s: man in black robe
+- [obj_00462] @3080.1s: person in yellow robe
+- [obj_00463] @3080.1s: fallen body
+- [obj_00464] @3080.1s: lantern
+- [obj_00465] @3080.1s: building
+- [obj_00469] @3091.1s: man
+- [obj_00471] @3127.1s: young man
+- [obj_00473] @3130.1s: man
+- [obj_00475] @3141.1s: pagoda/temple
+- [obj_00476] @3141.1s: snow
+- [obj_00477] @3141.1s: trees
+- [obj_00479] @3180.1s: man
+- [obj_00480] @3180.1s: hat
+- [obj_00482] @3209.3s: woman
+- [obj_00483] @3209.3s: mirror
+- [obj_00486] @3241.3s: kneeling character
+- [obj_00487] @3241.3s: seated character
+- [obj_00488] @3241.3s: throne
+- [obj_00489] @3241.3s: carpet
+- [obj_00492] @3264.3s: character
+- [obj_00493] @3264.3s: sword
+- [obj_00494] @3264.3s: snow
+- [obj_00495] @3264.3s: window
+- [obj_00497] @3297.3s: water
+- [obj_00498] @3317.3s: bald man
+- [obj_00501] @3367.3s: Netflix logo
+- [obj_00503] @3375.3s: man on horseback
+- [obj_00504] @3375.3s: man on horseback
+- [obj_00505] @3375.3s: man on horseback
+- [obj_00506] @3375.3s: man on horseback
+- [obj_00511] @3382.3s: older man
+- [obj_00512] @3382.3s: young man
+- [obj_00517] @3450.3s: sword
+- [obj_00520] @3475.3s: man in dark kimono
+- [obj_00521] @3475.3s: ninja figure
+- [obj_00524] @3478.3s: samurai warrior
+- [obj_00525] @3478.3s: building
+- [obj_00526] @3478.3s: NETFLIX logo
+- [obj_00528] @3480.3s: man
+- [obj_00529] @3480.3s: sword
+- [obj_00531] @3483.3s: man
+- [obj_00532] @3483.3s: trees
+- [obj_00534] @3490.3s: character
+- [obj_00535] @3490.3s: moon
+- [obj_00536] @3490.3s: sword/staff
+- [obj_00538] @3492.3s: woman in black outfit
+- [obj_00539] @3492.3s: man in black outfit
+- [obj_00542] @3505.3s: woman
+- [obj_00544] @3517.3s: Netflix logo
+- [obj_00545] @3520.3s: man
+- [obj_00546] @3520.3s: door
+- [obj_00548] @3534.3s: man with backpack
+- [obj_00549] @3534.3s: person in cloak
+- [obj_00552] @3538.3s: character in dark clothing
+- [obj_00553] @3538.3s: character in dark clothing (center)
+- [obj_00554] @3538.3s: character in dark clothing (right)
+- [obj_00555] @3538.3s: character with conical hat
+- [obj_00559] @3557.3s: character with reddish-brown hair
+- [obj_00560] @3557.3s: samurai soldier
+- [obj_00563] @3575.3s: woman in blue kimono
+- [obj_00564] @3575.3s: man with sword
+- [obj_00565] @3575.3s: tree branch
+- [obj_00566] @3575.3s: sword
+- [obj_00569] @3583.3s: man
+- [obj_00570] @3583.3s: sword/staff
+- [obj_00572] @3584.3s: man in grey robes
+- [obj_00573] @3584.3s: masked ninja (left)
+- [obj_00574] @3584.3s: masked ninja (center-right)
+- [obj_00575] @3584.3s: masked ninja (right)
+- [obj_00576] @3584.3s: weapon (katana/sword)
+- [obj_00581] @3651.3s: Netflix logo
+- [obj_00582] @3651.3s: subscribe button
+
+### CharacterNode (20)
+
+- [narrator] @0.0s: Narrator desc="narrator / voice-over"
+- [char_chef_01] @146.0s: The Chef desc="Bald man with grey shirt, black vest, white headband, and distinctive topknot hairstyle (or shaved head). Appears multip"
+- [char_man_hat_glasses_pistol] @65.0s: The Man with Hat/Glasses/Pistol desc="Man wearing a wide-brimmed hat, round glasses, often holding a pistol or standing passively. Wears dark clothing."
+- [char_man_topknot_brown_robe_sword] @65.0s: The Topknot Swordman desc="Young man/older man with topknot, wearing brown or green robe/sash, wielding sword or carrying long object."
+- [char_woman_orange_kimono_floral] @65.0s: Woman in Orange Floral Kimono desc="Woman with elaborate black hair adorned with gold ornaments, wearing an orange/pink/red kimono with floral patterns or w"
+- [char_man_white_headband_chief] @65.0s: Man in White Headband/Belt desc="Middle-aged man with grey/golden belt/headband, wearing white robe. Often seen as leader or elder figure."
+- [char_elder_blacksmith] @65.0s: The Elder Blacksmith desc="Elderly man with white/grey hair or topknot, shaving head, wearing sleeveless vest or patterned top, working on forge/an"
+- [char_young_blacksmith_assistant] @65.0s: The Young Assistant desc="Young person/boy with dark hair, wearing dark/blue outfit or kimono, observing blacksmith or holding hammer."
+- [char_dark_cloak_walks_alone] @65.0s: The Dark Cloaked Figure desc="Person (often male) wearing a large dark cloak or robe, sometimes with a wide-brimmed hat. Often walking alone in snow o"
+- [char_middle_agd_man_green_tunic_sword] @146.0s: Samurai Guard desc="Man with conical hat or standard samurai armor/tunic, wielding a sword, acting as guard."
+- [char_bald_hat_round_glasses] @65.0s: The Bald/Hat/Glasses Man desc="Man with bald head/topknot wearing round glasses and wide brimmed hat. Sometimes holding a sword or writing."
+- [char_woman_red_kimono_gold_embellishments] @65.0s: The Red Kimono Queen desc="Woman with black hair tied back/updo, wearing a red/pink/orange kimono with gold ornaments, often bowing or comforting."
+- [char_sumo_wrestler_headband] @65.0s: Sumo Wrestler desc="Large man with short hair, possibly bald or topknot, wearing a white headband or shirtless, muscular build."
+- [char_middle_agd_man_blue_vest] @65.0s: Middle-Aged Man Blue Vest desc="Middle-aged man with short white/grey hair, wearing a blue patterned sleeveless top or vest."
+- [char_young_child_topknot] @65.0s: Child with Topknot desc="Young child or boy with black hair in topknot, wearing orange/brown kimono, holding small object."
+- [char_crowd_observer] @65.0s: Crowd Observer desc="Group of people in robes, some wearing straw hats, gathered together or watching martial arts."
+- [char_martial_artist] @146.0s: Martial Artist desc="Male practitioner in brown robe, performing martial arts with focused stance."
+- [char_man_topknot_purple_kimono] @65.0s: The Purple Kimono Lord desc="Man with topknot/hair tied back, goatee, wearing purple robe with floral patterns, high status."
+- [char_man_topknot_green_kimono] @65.0s: The Green Kimono Man desc="Man with topknot/hair tied back, wearing green robe or clothing."
+- [char_white_cap_mechanic] @65.0s: Mechanic with White Cap desc="Man wearing a light-colored cap or head covering, often involved in mechanical work or observation."
+
+### LocationNode (117)
+
+- [loc_0000] @12.0s: Sky/Atmosphere
+- [loc_0001] @26.0s: outdoors, winter
+- [loc_0002] @51.0s: snowy village
+- [loc_0003] @84.0s: unknown (likely a forge or fireplace)
+- [loc_0004] @92.0s: unknown (abstract/cloudy background)
+- [loc_0005] @98.0s: Unknown (Graphic/Title Screen)
+- [loc_0006] @102.0s: traditional_japanese_interior
+- [loc_0007] @116.0s: traditional Japanese kitchen/dining area
+- [loc_0008] @168.0s: traditional japanese kitchen/dining hall
+- [loc_0009] @222.0s: traditional Japanese-style room
+- [loc_0010] @276.0s: traditional Japanese warehouse/storage room
+- [loc_0011] @320.0s: traditional Japanese dojo/hall
+- [loc_0012] @370.0s: traditional japanese house/dojo
+- [loc_0013] @424.0s: traditional Japanese building interior transitioning to snowy bamboo forest
+- [loc_0014] @479.2s: bamboo forest
+- [loc_0015] @531.2s: snowy forest
+- [loc_0016] @586.2s: snowy forest shrine
+- [loc_0017] @662.2s: indoor shrine/prayer room
+- [loc_0018] @699.2s: outdoor area in rain
+- [loc_0019] @706.2s: unknown (abstract)
+- [loc_0020] @710.2s: coastline during a storm
+- [loc_0021] @782.2s: alien planet surface / space
+- [loc_0022] @793.2s: grassy field
+- [loc_0023] @835.2s: mountainous region
+- [loc_0024] @898.2s: outdoor, near a body of water at night
+- [loc_0025] @951.4s: traditional Japanese workshop
+- [loc_0026] @994.4s: workshop
+- [loc_0027] @1056.4s: forge
+- [loc_0028] @1114.4s: indoor room
+- [loc_0029] @1120.4s: forge/workshop
+- [loc_0030] @1121.4s: unknown (outdoors/open space)
+- [loc_0031] @1122.4s: forge/blacksmith shop
+- [loc_0032] @1158.4s: Japanese village gate, snowy landscape
+- [loc_0033] @1206.4s: Japanese town/village street
+- [loc_0034] @1260.4s: traditional japanese street/courtyard
+- [loc_0035] @1322.4s: snowy Japanese street
+- [loc_0036] @1357.4s: traditional japanese interior (possibly teahouse)
+- [loc_0037] @1374.4s: traditional Japanese street
+- [loc_0038] @1396.6s: traditional_japanese_room
+- [loc_0039] @1430.6s: snowy village pier
+- [loc_0040] @1507.6s: outdoor, snowy mountain/glacier
+- [loc_0041] @1511.6s: Snowy Courtyard/Stone Paved Area
+- [loc_0042] @1522.6s: Japanese tatami room
+- [loc_0043] @1568.6s: traditional japanese interior
+- [loc_0044] @1622.6s: traditional_japanese_room_with_cherry_blossom_decorations
+- [loc_0045] @1667.6s: Japanese palace/residence
+- [loc_0046] @1716.6s: Japanese Interior (Palace/Noble Residence)
+- [loc_0047] @1793.6s: snowy forest/outside
+- [loc_0048] @1848.8s: outdoor_snowy_landscape
+- [loc_0049] @1855.8s: courtyard
+- [loc_0050] @1914.8s: Japanese temple/monastery grounds and interior
+- [loc_0051] @1942.8s: Japanese dojo
+- [loc_0052] @1951.8s: traditional hall
+- [loc_0053] @1973.8s: grand hall with golden relief
+- [loc_0054] @2003.8s: outdoor_night_rainy_setting
+- [loc_0055] @2014.8s: Traditional Asian-style building exterior, snowy night
+- [loc_0056] @2082.8s: Indoors, possibly near a window
+- [loc_0057] @2089.8s: unknown (likely outdoors)
+- [loc_0058] @2093.8s: blacksmith_workshop
+- [loc_0059] @2148.8s: Industrial/Unknown Setting
+- [loc_0060] @2154.8s: blacksmith workshop
+- [loc_0061] @2304.9s: unknown outdoor location at night
+- [loc_0062] @2384.9s: Japanese village/temple grounds at night
+- [loc_0063] @2471.9s: Unknown outdoor location (night, rainy)
+- [loc_0064] @2476.9s: Outdoor - Rustic Wooden Structure (Barn/Shed)
+- [loc_0065] @2478.9s: outdoor wooden platform/dock in rainy environment
+- [loc_0066] @2485.9s: outdoor_snowy_mountains
+- [loc_0067] @2489.9s: indoor
+- [loc_0068] @2586.9s: traditional Japanese dojo/temple hall
+- [loc_0069] @2667.9s: traditional Japanese dojo or training hall
+- [loc_0070] @2751.1s: unknown outdoor location
+- [loc_0071] @2754.1s: traditional Japanese building/dojo
+- [loc_0072] @2856.1s: Japanese courtyard/temple grounds
+- [loc_0073] @2875.1s: indoor formal setting
+- [loc_0074] @2878.1s: snowy outdoor area at night, possibly near traditional buildings
+- [loc_0075] @2899.1s: frozen outdoor area
+- [loc_0076] @2911.1s: unknown (likely intro/outro screen)
+- [loc_0077] @2916.1s: snowy field/outdoor area
+- [loc_0078] @2919.1s: snowy courtyard
+- [loc_0079] @2927.1s: Unknown/Abstract
+- [loc_0080] @2935.1s: icy landscape
+- [loc_0081] @2941.1s: snowy wilderness/tundra
+- [loc_0082] @2966.1s: snowy_outside_area
+- [loc_0083] @2994.1s: outdoor snowy area
+- [loc_0084] @2997.1s: snowy courtyard near traditional building
+- [loc_0085] @3001.1s: temple_hall
+- [loc_0086] @3003.1s: Ice Surface (Winter Setting)
+- [loc_0087] @3006.1s: unknown (outdoors at night)
+- [loc_0088] @3072.1s: outdoor courtyard at night
+- [loc_0089] @3077.1s: Unknown interior hall
+- [loc_0090] @3080.1s: Snow-covered street/village at night
+- [loc_0091] @3091.1s: Japanese Palace/Templeside
+- [loc_0092] @3127.1s: outdoor snowy area at night
+- [loc_0093] @3130.1s: unknown (dark setting)
+- [loc_0094] @3141.1s: snowy outdoor area near traditional building
+- [loc_0095] @3209.3s: Traditional Japanese interior / Snowy exterior
+- [loc_0096] @3241.3s: throne room
+- [loc_0097] @3264.3s: Snowy Outdoors / Indoor Room
+- [loc_0098] @3297.3s: Underwater/Aquatic Environment
+- [loc_0099] @3317.3s: cave/chamber
+- [loc_0100] @3367.3s: Unknown outdoor/indoor space with fog/mist
+- [loc_0101] @3375.3s: outdoor, misty area
+- [loc_0102] @3382.3s: traditional Asian dwelling interior
+- [loc_0103] @3475.3s: Rocky mountains / Cliffside
+- [loc_0104] @3478.3s: traditional japanese building exterior
+- [loc_0105] @3480.3s: outdoors
+- [loc_0106] @3490.3s: Unknown outdoor setting at night
+- [loc_0107] @3492.3s: Outdoors, Cliffside
+- [loc_0108] @3517.3s: unknown (dark screen)
+- [loc_0109] @3534.3s: snowy mountain
+- [loc_0110] @3538.3s: Canyon/Snowy Outdoors
+- [loc_0111] @3557.3s: Japanese Village Street
+- [loc_0112] @3575.3s: Forest/Outdoor Setting
+- [loc_0113] @3583.3s: Unknown outdoor setting at sunset/sunrise
+- [loc_0114] @3584.3s: Snowy Town Street
+- [loc_0115] @3647.3s: unknown (graphic/illustration)
+- [loc_0116] @3649.3s: unknown (graphic)
+
+### StateChangeNode (48)
+
+- [state_00002] @1.0s: visual_content changes state
+- [state_00005] @31.0s: text changes state
+- [state_00007] @71.0s: text overlay changes state
+- [state_00014] @116.0s: atmosphere changes state
+- [state_00023] @281.0s: camera angle changes state
+- [state_00029] @337.0s: atmosphere changes state
+- [state_00035] @384.0s: man on ground changes state
+- [state_00043] @433.0s: scene lighting changes state
+- [state_00044] @439.0s: setting changes state
+- [state_00061] @737.2s: weather changes state
+- [state_00070] @819.2s: weather changes state
+- [state_00080] @926.4s: setting changes state
+- [state_00083] @956.4s: young boy changes state
+- [state_00101] @1166.4s: viewpoint changes state
+- [state_00107] @1206.4s: weather changes state
+- [state_00115] @1273.4s: men on horseback changes state
+- [state_00120] @2.0s: camera angle changes state
+- [state_00121] @4.0s: camera angle changes state
+- [state_00122] @6.0s: camera angle changes state
+- [state_00126] @1.0s: camera angle changes state
+- [state_00127] @2.0s: camera angle changes state
+- [state_00138] @1518.6s: camera angle changes state
+- [state_00149] @1633.6s: man_in_purple_robes changes state
+- [state_00162] @1882.8s: gate changes state
+- [state_00168] @1914.8s: weather changes state
+- [state_00183] @2019.8s: scene setting changes state
+- [state_00190] @2117.8s: young_person changes state
+- [state_00198] @2170.8s: blade changes state
+- [state_00204] @2254.8s: lighting changes state
+- [state_00207] @2315.9s: young person's expression changes state
+- [state_00212] @2389.9s: scene lighting changes state
+- [state_00225] @2554.9s: students changes state
+- [state_00228] @2610.9s: combat intensity changes state
+- [state_00238] @2667.9s: woman with injured eye changes state
+- [state_00239] @2717.9s: man in black robes changes state
+- [state_00240] @2722.9s: fighters changes state
+- [state_00248] @2778.1s: man with glasses changes state
+- [state_00254] @2863.1s: camera angle changes state
+- [state_00267] @2941.1s: camera view changes state
+- [state_00271] @2972.1s: man_in_blue_suit changes state
+- [state_00282] @3016.1s: man in green robes changes state
+- [state_00290] @1.0s: scene visibility changes state
+- [state_00293] @3141.1s: snow changes state
+- [state_00298] @3192.1s: man's position changes state
+- [state_00299] @3198.1s: man's action changes state
+- [state_00303] @3215.3s: setting changes state
+- [state_00309] @5.0s: character changes state
+- [state_00322] @3423.3s: lighting changes state
+
+### AudioEventNode (403)
+
+- [audio_000023] @23.0s: audio peak at 23s
+- [audio_000040] @40.0s: audio peak at 40s
+- [audio_000041] @41.0s: audio peak at 41s
+- [audio_000042] @42.0s: audio peak at 42s
+- [audio_000043] @43.0s: audio peak at 43s
+- [audio_000044] @44.0s: audio peak at 44s
+- [audio_000066] @66.0s: audio peak at 66s
+- [audio_000067] @67.0s: audio peak at 67s
+- [audio_000159] @159.0s: audio peak at 159s
+- [audio_000162] @162.0s: audio peak at 162s
+- [audio_000166] @166.0s: audio peak at 166s
+- [audio_000167] @167.0s: audio peak at 167s
+- [audio_000175] @175.0s: audio peak at 175s
+- [audio_000176] @176.0s: audio peak at 176s
+- [audio_000187] @187.0s: audio peak at 187s
+- [audio_000188] @188.0s: audio peak at 188s
+- [audio_000189] @189.0s: audio peak at 189s
+- [audio_000190] @190.0s: audio peak at 190s
+- [audio_000191] @191.0s: audio peak at 191s
+- [audio_000193] @193.0s: audio peak at 193s
+- [audio_000194] @194.0s: audio peak at 194s
+- [audio_000195] @195.0s: audio peak at 195s
+- [audio_000196] @196.0s: audio peak at 196s
+- [audio_000548] @548.0s: audio peak at 548s
+- [audio_000549] @549.0s: audio peak at 549s
+- [audio_000551] @551.0s: audio peak at 551s
+- [audio_000735] @735.0s: audio peak at 735s
+- [audio_000736] @736.0s: audio peak at 736s
+- [audio_000766] @766.0s: audio peak at 766s
+- [audio_000777] @777.0s: audio peak at 777s
+- [audio_000869] @869.0s: audio peak at 869s
+- [audio_000916] @916.0s: audio peak at 916s
+- [audio_001395] @1395.0s: audio peak at 1395s
+- [audio_001396] @1396.0s: audio peak at 1396s
+- [audio_001397] @1397.0s: audio peak at 1397s
+- [audio_001398] @1398.0s: audio peak at 1398s
+- [audio_001399] @1399.0s: audio peak at 1399s
+- [audio_001400] @1400.0s: audio peak at 1400s
+- [audio_001401] @1401.0s: audio peak at 1401s
+- [audio_001402] @1402.0s: audio peak at 1402s
+- [audio_001403] @1403.0s: audio peak at 1403s
+- [audio_001404] @1404.0s: audio peak at 1404s
+- [audio_001405] @1405.0s: audio peak at 1405s
+- [audio_001406] @1406.0s: audio peak at 1406s
+- [audio_001407] @1407.0s: audio peak at 1407s
+- [audio_001411] @1411.0s: audio peak at 1411s
+- [audio_001412] @1412.0s: audio peak at 1412s
+- [audio_001413] @1413.0s: audio peak at 1413s
+- [audio_001414] @1414.0s: audio peak at 1414s
+- [audio_001415] @1415.0s: audio peak at 1415s
+- [audio_001416] @1416.0s: audio peak at 1416s
+- [audio_001417] @1417.0s: audio peak at 1417s
+- [audio_001430] @1430.0s: audio peak at 1430s
+- [audio_001453] @1453.0s: audio peak at 1453s
+- [audio_001454] @1454.0s: audio peak at 1454s
+- [audio_001455] @1455.0s: audio peak at 1455s
+- [audio_001461] @1461.0s: audio peak at 1461s
+- [audio_001462] @1462.0s: audio peak at 1462s
+- [audio_001464] @1464.0s: audio peak at 1464s
+- [audio_001465] @1465.0s: audio peak at 1465s
+- [audio_001466] @1466.0s: audio peak at 1466s
+- [audio_001467] @1467.0s: audio peak at 1467s
+- [audio_001468] @1468.0s: audio peak at 1468s
+- [audio_001469] @1469.0s: audio peak at 1469s
+- [audio_001470] @1470.0s: audio peak at 1470s
+- [audio_001471] @1471.0s: audio peak at 1471s
+- [audio_001472] @1472.0s: audio peak at 1472s
+- [audio_001473] @1473.0s: audio peak at 1473s
+- [audio_001474] @1474.0s: audio peak at 1474s
+- [audio_001476] @1476.0s: audio peak at 1476s
+- [audio_001481] @1481.0s: audio peak at 1481s
+- [audio_001487] @1487.0s: audio peak at 1487s
+- [audio_001488] @1488.0s: audio peak at 1488s
+- [audio_001489] @1489.0s: audio peak at 1489s
+- [audio_001490] @1490.0s: audio peak at 1490s
+- [audio_001496] @1496.0s: audio peak at 1496s
+- [audio_001497] @1497.0s: audio peak at 1497s
+- [audio_001563] @1563.0s: audio peak at 1563s
+- [audio_001564] @1564.0s: audio peak at 1564s
+- [audio_001565] @1565.0s: audio peak at 1565s
+- [audio_001566] @1566.0s: audio peak at 1566s
+- [audio_001567] @1567.0s: audio peak at 1567s
+- [audio_001568] @1568.0s: audio peak at 1568s
+- [audio_001569] @1569.0s: audio peak at 1569s
+- [audio_001570] @1570.0s: audio peak at 1570s
+- [audio_001571] @1571.0s: audio peak at 1571s
+- [audio_001575] @1575.0s: audio peak at 1575s
+- [audio_001576] @1576.0s: audio peak at 1576s
+- [audio_001579] @1579.0s: audio peak at 1579s
+- [audio_001580] @1580.0s: audio peak at 1580s
+- [audio_001581] @1581.0s: audio peak at 1581s
+- [audio_001582] @1582.0s: audio peak at 1582s
+- [audio_001583] @1583.0s: audio peak at 1583s
+- [audio_001584] @1584.0s: audio peak at 1584s
+- [audio_001585] @1585.0s: audio peak at 1585s
+- [audio_001586] @1586.0s: audio peak at 1586s
+- [audio_001587] @1587.0s: audio peak at 1587s
+- [audio_001589] @1589.0s: audio peak at 1589s
+- [audio_001590] @1590.0s: audio peak at 1590s
+- [audio_001591] @1591.0s: audio peak at 1591s
+- [audio_001592] @1592.0s: audio peak at 1592s
+- [audio_001621] @1621.0s: audio peak at 1621s
+- [audio_001622] @1622.0s: audio peak at 1622s
+- [audio_001625] @1625.0s: audio peak at 1625s
+- [audio_001626] @1626.0s: audio peak at 1626s
+- [audio_001627] @1627.0s: audio peak at 1627s
+- [audio_001628] @1628.0s: audio peak at 1628s
+- [audio_001638] @1638.0s: audio peak at 1638s
+- [audio_001642] @1642.0s: audio peak at 1642s
+- [audio_001643] @1643.0s: audio peak at 1643s
+- [audio_001644] @1644.0s: audio peak at 1644s
+- [audio_001645] @1645.0s: audio peak at 1645s
+- [audio_001646] @1646.0s: audio peak at 1646s
+- [audio_001647] @1647.0s: audio peak at 1647s
+- [audio_001648] @1648.0s: audio peak at 1648s
+- [audio_001649] @1649.0s: audio peak at 1649s
+- [audio_001650] @1650.0s: audio peak at 1650s
+- [audio_001651] @1651.0s: audio peak at 1651s
+- [audio_001652] @1652.0s: audio peak at 1652s
+- [audio_001653] @1653.0s: audio peak at 1653s
+- [audio_001654] @1654.0s: audio peak at 1654s
+- [audio_001655] @1655.0s: audio peak at 1655s
+- [audio_001656] @1656.0s: audio peak at 1656s
+- [audio_001657] @1657.0s: audio peak at 1657s
+- [audio_001658] @1658.0s: audio peak at 1658s
+- [audio_001659] @1659.0s: audio peak at 1659s
+- [audio_001660] @1660.0s: audio peak at 1660s
+- [audio_001661] @1661.0s: audio peak at 1661s
+- [audio_001666] @1666.0s: audio peak at 1666s
+- [audio_001845] @1845.0s: audio peak at 1845s
+- [audio_002089] @2089.0s: audio peak at 2089s
+- [audio_002090] @2090.0s: audio peak at 2090s
+- [audio_002271] @2271.0s: audio peak at 2271s
+- [audio_002272] @2272.0s: audio peak at 2272s
+- [audio_002273] @2273.0s: audio peak at 2273s
+- [audio_002274] @2274.0s: audio peak at 2274s
+- [audio_002275] @2275.0s: audio peak at 2275s
+- [audio_002954] @2954.0s: audio peak at 2954s
+- [audio_002955] @2955.0s: audio peak at 2955s
+- [audio_002957] @2957.0s: audio peak at 2957s
+- [audio_003013] @3013.0s: audio peak at 3013s
+- [audio_003014] @3014.0s: audio peak at 3014s
+- [audio_003741] @3741.0s: audio peak at 3741s
+- [audio_003743] @3743.0s: audio peak at 3743s
+- [audio_003744] @3744.0s: audio peak at 3744s
+- [audio_004180] @4180.0s: audio peak at 4180s
+- [audio_004188] @4188.0s: audio peak at 4188s
+- [audio_004217] @4217.0s: audio peak at 4217s
+- [audio_004495] @4495.0s: audio peak at 4495s
+- [audio_004515] @4515.0s: audio peak at 4515s
+- [audio_004519] @4519.0s: audio peak at 4519s
+- [audio_004521] @4521.0s: audio peak at 4521s
+- [audio_004894] @4894.0s: audio peak at 4894s
+- [audio_004898] @4898.0s: audio peak at 4898s
+- [audio_004899] @4899.0s: audio peak at 4899s
+- [audio_004901] @4901.0s: audio peak at 4901s
+- [audio_004902] @4902.0s: audio peak at 4902s
+- [audio_004903] @4903.0s: audio peak at 4903s
+- [audio_004904] @4904.0s: audio peak at 4904s
+- [audio_004907] @4907.0s: audio peak at 4907s
+- [audio_004908] @4908.0s: audio peak at 4908s
+- [audio_004909] @4909.0s: audio peak at 4909s
+- [audio_004911] @4911.0s: audio peak at 4911s
+- [audio_004913] @4913.0s: audio peak at 4913s
+- [audio_004916] @4916.0s: audio peak at 4916s
+- [audio_004917] @4917.0s: audio peak at 4917s
+- [audio_004918] @4918.0s: audio peak at 4918s
+- [audio_004919] @4919.0s: audio peak at 4919s
+- [audio_004921] @4921.0s: audio peak at 4921s
+- [audio_004922] @4922.0s: audio peak at 4922s
+- [audio_004923] @4923.0s: audio peak at 4923s
+- [audio_004924] @4924.0s: audio peak at 4924s
+- [audio_004926] @4926.0s: audio peak at 4926s
+- [audio_004927] @4927.0s: audio peak at 4927s
+- [audio_004928] @4928.0s: audio peak at 4928s
+- [audio_004929] @4929.0s: audio peak at 4929s
+- [audio_004931] @4931.0s: audio peak at 4931s
+- [audio_004932] @4932.0s: audio peak at 4932s
+- [audio_004934] @4934.0s: audio peak at 4934s
+- [audio_004935] @4935.0s: audio peak at 4935s
+- [audio_004937] @4937.0s: audio peak at 4937s
+- [audio_004938] @4938.0s: audio peak at 4938s
+- [audio_004939] @4939.0s: audio peak at 4939s
+- [audio_004941] @4941.0s: audio peak at 4941s
+- [audio_004942] @4942.0s: audio peak at 4942s
+- [audio_004943] @4943.0s: audio peak at 4943s
+- [audio_004944] @4944.0s: audio peak at 4944s
+- [audio_004946] @4946.0s: audio peak at 4946s
+- [audio_004947] @4947.0s: audio peak at 4947s
+- [audio_004948] @4948.0s: audio peak at 4948s
+- [audio_004949] @4949.0s: audio peak at 4949s
+- [audio_004950] @4950.0s: audio peak at 4950s
+- [audio_004951] @4951.0s: audio peak at 4951s
+- [audio_004952] @4952.0s: audio peak at 4952s
+- [audio_004953] @4953.0s: audio peak at 4953s
+- [audio_004954] @4954.0s: audio peak at 4954s
+- [audio_004955] @4955.0s: audio peak at 4955s
+- [audio_004956] @4956.0s: audio peak at 4956s
+- [audio_004957] @4957.0s: audio peak at 4957s
+- [audio_004958] @4958.0s: audio peak at 4958s
+- [audio_004959] @4959.0s: audio peak at 4959s
+- [audio_004960] @4960.0s: audio peak at 4960s
+- [audio_004961] @4961.0s: audio peak at 4961s
+- [audio_004962] @4962.0s: audio peak at 4962s
+- [audio_004963] @4963.0s: audio peak at 4963s
+- [audio_004964] @4964.0s: audio peak at 4964s
+- [audio_004965] @4965.0s: audio peak at 4965s
+- [audio_004966] @4966.0s: audio peak at 4966s
+- [audio_004967] @4967.0s: audio peak at 4967s
+- [audio_004968] @4968.0s: audio peak at 4968s
+- [audio_004969] @4969.0s: audio peak at 4969s
+- [audio_004970] @4970.0s: audio peak at 4970s
+- [audio_004972] @4972.0s: audio peak at 4972s
+- [audio_004973] @4973.0s: audio peak at 4973s
+- [audio_004974] @4974.0s: audio peak at 4974s
+- [audio_004975] @4975.0s: audio peak at 4975s
+- [audio_004976] @4976.0s: audio peak at 4976s
+- [audio_004978] @4978.0s: audio peak at 4978s
+- [audio_004981] @4981.0s: audio peak at 4981s
+- [audio_004983] @4983.0s: audio peak at 4983s
+- [audio_004984] @4984.0s: audio peak at 4984s
+- [audio_004985] @4985.0s: audio peak at 4985s
+- [audio_004986] @4986.0s: audio peak at 4986s
+- [audio_004987] @4987.0s: audio peak at 4987s
+- [audio_004988] @4988.0s: audio peak at 4988s
+- [audio_004989] @4989.0s: audio peak at 4989s
+- [audio_004990] @4990.0s: audio peak at 4990s
+- [audio_004991] @4991.0s: audio peak at 4991s
+- [audio_004992] @4992.0s: audio peak at 4992s
+- [audio_004993] @4993.0s: audio peak at 4993s
+- [audio_004994] @4994.0s: audio peak at 4994s
+- [audio_004995] @4995.0s: audio peak at 4995s
+- [audio_005078] @5078.0s: audio peak at 5078s
+- [audio_005086] @5086.0s: audio peak at 5086s
+- [audio_005093] @5093.0s: audio peak at 5093s
+- [audio_005119] @5119.0s: audio peak at 5119s
+- [audio_005120] @5120.0s: audio peak at 5120s
+- [audio_005121] @5121.0s: audio peak at 5121s
+- [audio_005122] @5122.0s: audio peak at 5122s
+- [audio_005123] @5123.0s: audio peak at 5123s
+- [audio_005125] @5125.0s: audio peak at 5125s
+- [audio_005126] @5126.0s: audio peak at 5126s
+- [audio_005128] @5128.0s: audio peak at 5128s
+- [audio_005129] @5129.0s: audio peak at 5129s
+- [audio_005130] @5130.0s: audio peak at 5130s
+- [audio_005131] @5131.0s: audio peak at 5131s
+- [audio_005132] @5132.0s: audio peak at 5132s
+- [audio_005133] @5133.0s: audio peak at 5133s
+- [audio_005136] @5136.0s: audio peak at 5136s
+- [audio_005168] @5168.0s: audio peak at 5168s
+- [audio_005169] @5169.0s: audio peak at 5169s
+- [audio_005170] @5170.0s: audio peak at 5170s
+- [audio_005171] @5171.0s: audio peak at 5171s
+- [audio_005172] @5172.0s: audio peak at 5172s
+- [audio_005173] @5173.0s: audio peak at 5173s
+- [audio_005174] @5174.0s: audio peak at 5174s
+- [audio_005187] @5187.0s: audio peak at 5187s
+- [audio_005192] @5192.0s: audio peak at 5192s
+- [audio_005193] @5193.0s: audio peak at 5193s
+- [audio_005194] @5194.0s: audio peak at 5194s
+- [audio_005198] @5198.0s: audio peak at 5198s
+- [audio_005199] @5199.0s: audio peak at 5199s
+- [audio_005201] @5201.0s: audio peak at 5201s
+- [audio_005204] @5204.0s: audio peak at 5204s
+- [audio_005205] @5205.0s: audio peak at 5205s
+- [audio_005206] @5206.0s: audio peak at 5206s
+- [audio_005209] @5209.0s: audio peak at 5209s
+- [audio_005210] @5210.0s: audio peak at 5210s
+- [audio_005211] @5211.0s: audio peak at 5211s
+- [audio_005212] @5212.0s: audio peak at 5212s
+- [audio_005213] @5213.0s: audio peak at 5213s
+- [audio_005217] @5217.0s: audio peak at 5217s
+- [audio_005219] @5219.0s: audio peak at 5219s
+- [audio_005221] @5221.0s: audio peak at 5221s
+- [audio_005222] @5222.0s: audio peak at 5222s
+- [audio_005223] @5223.0s: audio peak at 5223s
+- [audio_005224] @5224.0s: audio peak at 5224s
+- [audio_005227] @5227.0s: audio peak at 5227s
+- [audio_005228] @5228.0s: audio peak at 5228s
+- [audio_005230] @5230.0s: audio peak at 5230s
+- [audio_005231] @5231.0s: audio peak at 5231s
+- [audio_005232] @5232.0s: audio peak at 5232s
+- [audio_005233] @5233.0s: audio peak at 5233s
+- [audio_005267] @5267.0s: audio peak at 5267s
+- [audio_005268] @5268.0s: audio peak at 5268s
+- [audio_005283] @5283.0s: audio peak at 5283s
+- [audio_005290] @5290.0s: audio peak at 5290s
+- [audio_005301] @5301.0s: audio peak at 5301s
+- [audio_005307] @5307.0s: audio peak at 5307s
+- [audio_005311] @5311.0s: audio peak at 5311s
+- [audio_005312] @5312.0s: audio peak at 5312s
+- [audio_005327] @5327.0s: audio peak at 5327s
+- [audio_005328] @5328.0s: audio peak at 5328s
+- [audio_005329] @5329.0s: audio peak at 5329s
+- [audio_005330] @5330.0s: audio peak at 5330s
+- [audio_005331] @5331.0s: audio peak at 5331s
+- [audio_005333] @5333.0s: audio peak at 5333s
+- [audio_005334] @5334.0s: audio peak at 5334s
+- [audio_005335] @5335.0s: audio peak at 5335s
+- [audio_005457] @5457.0s: audio peak at 5457s
+- [audio_005467] @5467.0s: audio peak at 5467s
+- [audio_005476] @5476.0s: audio peak at 5476s
+- [audio_005588] @5588.0s: audio peak at 5588s
+- [audio_005593] @5593.0s: audio peak at 5593s
+- [audio_005595] @5595.0s: audio peak at 5595s
+- [audio_005598] @5598.0s: audio peak at 5598s
+- [audio_005605] @5605.0s: audio peak at 5605s
+- [audio_005614] @5614.0s: audio peak at 5614s
+- [audio_005615] @5615.0s: audio peak at 5615s
+- [audio_005622] @5622.0s: audio peak at 5622s
+- [audio_005626] @5626.0s: audio peak at 5626s
+- [audio_005632] @5632.0s: audio peak at 5632s
+- [audio_005634] @5634.0s: audio peak at 5634s
+- [audio_005635] @5635.0s: audio peak at 5635s
+- [audio_005639] @5639.0s: audio peak at 5639s
+- [audio_005641] @5641.0s: audio peak at 5641s
+- [audio_005642] @5642.0s: audio peak at 5642s
+- [audio_005647] @5647.0s: audio peak at 5647s
+- [audio_005648] @5648.0s: audio peak at 5648s
+- [audio_005649] @5649.0s: audio peak at 5649s
+- [audio_005650] @5650.0s: audio peak at 5650s
+- [audio_005709] @5709.0s: audio peak at 5709s
+- [audio_005832] @5832.0s: audio peak at 5832s
+- [audio_005864] @5864.0s: audio peak at 5864s
+- [audio_005921] @5921.0s: audio peak at 5921s
+- [audio_005932] @5932.0s: audio peak at 5932s
+- [audio_005945] @5945.0s: audio peak at 5945s
+- [audio_005947] @5947.0s: audio peak at 5947s
+- [audio_005948] @5948.0s: audio peak at 5948s
+- [audio_005949] @5949.0s: audio peak at 5949s
+- [audio_005984] @5984.0s: audio peak at 5984s
+- [audio_005985] @5985.0s: audio peak at 5985s
+- [audio_006037] @6037.0s: audio peak at 6037s
+- [audio_006068] @6068.0s: audio peak at 6068s
+- [audio_006069] @6069.0s: audio peak at 6069s
+- [audio_006074] @6074.0s: audio peak at 6074s
+- [audio_006083] @6083.0s: audio peak at 6083s
+- [audio_006099] @6099.0s: audio peak at 6099s
+- [audio_006102] @6102.0s: audio peak at 6102s
+- [audio_006258] @6258.0s: audio peak at 6258s
+- [audio_006259] @6259.0s: audio peak at 6259s
+- [audio_006260] @6260.0s: audio peak at 6260s
+- [audio_006261] @6261.0s: audio peak at 6261s
+- [audio_006262] @6262.0s: audio peak at 6262s
+- [audio_006263] @6263.0s: audio peak at 6263s
+- [audio_006578] @6578.0s: audio peak at 6578s
+- [audio_006579] @6579.0s: audio peak at 6579s
+- [audio_006580] @6580.0s: audio peak at 6580s
+- [audio_006581] @6581.0s: audio peak at 6581s
+- [audio_006582] @6582.0s: audio peak at 6582s
+- [audio_006583] @6583.0s: audio peak at 6583s
+- [audio_006584] @6584.0s: audio peak at 6584s
+- [audio_006585] @6585.0s: audio peak at 6585s
+- [audio_006586] @6586.0s: audio peak at 6586s
+- [audio_006587] @6587.0s: audio peak at 6587s
+- [audio_006588] @6588.0s: audio peak at 6588s
+- [audio_006589] @6589.0s: audio peak at 6589s
+- [audio_006590] @6590.0s: audio peak at 6590s
+- [audio_006591] @6591.0s: audio peak at 6591s
+- [audio_006592] @6592.0s: audio peak at 6592s
+- [audio_006593] @6593.0s: audio peak at 6593s
+- [audio_006750] @6750.0s: audio peak at 6750s
+- [audio_006751] @6751.0s: audio peak at 6751s
+- [audio_006752] @6752.0s: audio peak at 6752s
+- [audio_006753] @6753.0s: audio peak at 6753s
+- [audio_006754] @6754.0s: audio peak at 6754s
+- [audio_006755] @6755.0s: audio peak at 6755s
+- [audio_006756] @6756.0s: audio peak at 6756s
+- [audio_006757] @6757.0s: audio peak at 6757s
+- [audio_006758] @6758.0s: audio peak at 6758s
+- [audio_006759] @6759.0s: audio peak at 6759s
+- [audio_006760] @6760.0s: audio peak at 6760s
+- [audio_006761] @6761.0s: audio peak at 6761s
+- [audio_006762] @6762.0s: audio peak at 6762s
+- [audio_006763] @6763.0s: audio peak at 6763s
+- [audio_006764] @6764.0s: audio peak at 6764s
+- [audio_006879] @6879.0s: audio peak at 6879s
+- [audio_006925] @6925.0s: audio peak at 6925s
+- [audio_006951] @6951.0s: audio peak at 6951s
+- [audio_006956] @6956.0s: audio peak at 6956s
+- [audio_006957] @6957.0s: audio peak at 6957s
+- [audio_006958] @6958.0s: audio peak at 6958s
+- [audio_006959] @6959.0s: audio peak at 6959s
+- [audio_006979] @6979.0s: audio peak at 6979s
+- [audio_007011] @7011.0s: audio peak at 7011s
+- [audio_007020] @7020.0s: audio peak at 7020s
+- [audio_007085] @7085.0s: audio peak at 7085s
+- [audio_007096] @7096.0s: audio peak at 7096s
+- [audio_007127] @7127.0s: audio peak at 7127s
+- [audio_007171] @7171.0s: audio peak at 7171s
+- [audio_007172] @7172.0s: audio peak at 7172s
+- [audio_007173] @7173.0s: audio peak at 7173s
+- [audio_007174] @7174.0s: audio peak at 7174s
+- [audio_007175] @7175.0s: audio peak at 7175s
+- [audio_007177] @7177.0s: audio peak at 7177s
+- [audio_007178] @7178.0s: audio peak at 7178s
+- [audio_007179] @7179.0s: audio peak at 7179s
+- [audio_007180] @7180.0s: audio peak at 7180s
+- [audio_007218] @7218.0s: audio peak at 7218s
+- [audio_007258] @7258.0s: audio peak at 7258s
+- [audio_007280] @7280.0s: audio peak at 7280s
+- [audio_007284] @7284.0s: audio peak at 7284s
+- [audio_007304] @7304.0s: audio peak at 7304s
+
+## Edge Summary
+
+- SAME_ENTITY: 4882
+- CO_OCCURS_WITH: 3330
+- DESCRIBES: 2697
+- PRECEDES: 1459
+- OVERLAPS: 993
+- CONTAINS: 862
+- PERFORMS: 658
+- SIMILAR_TO: 408
+- SPOKEN_BY: 262
+- LABELS: 171
+- ACCOMPANIES: 132
+- TAKES_PLACE_IN: 128
+- MENTIONS: 103
+- IN_FRONT_OF: 41
+- BEHIND: 26
+- EMOTION_SHIFT: 19
+- NEAR: 15
+- ABOVE: 14
+- CONTAINS_SPATIAL: 13
+- BELOW: 6
+- LEFT_OF: 5
+- RIGHT_OF: 1
+
+## Inferred Causal Edges
+
+- act_00139 --[ENABLES]--> act_00142 (conf=0.7)
+- act_00143 --[MOTIVATES]--> speech_00171 (conf=0.6)
+- act_00021 --[ENABLES]--> act_00022 (conf=0.95)
+- act_00026 --[MOTIVATES]--> speech_00035 (conf=0.9)
+- speech_00043 --[CAUSES]--> act_00030 (conf=0.95)
+
+## Questions
+
+Answer each using ONLY the VKG evidence above. Provide answer letter (A/B/C/D), the specific node IDs that support it, and brief reasoning.
+
+1. What year appears in the opening caption of the video?
+   (A) 1636  (B) 1366  (C) 1363  (D) 1633
+   Time ref: 00:15-00:19
+
+2. How is the weather like in the opening?
+   (A) Cloudy  (B) Snowy  (C) Sunny  (D) Rainy
+   Time ref: 00:00-01:16
+
+3. After the man with the gun threatens the cook, what does the protagonist do?
+   (A) Pushes the table aside and stands up, confronting the man. After a series of quarrels, she kills the man and leaves the restaurant. The chef follows her
+   (B) Pushes the table aside and stands up, confronting the man. After a series of quarrels, she injuries the man and leaves the restaurant. The chef follows her
+   (C) Pushes the table aside and stands up, taking out her gun and pointing at the man. After a series of quarrels, she kills the man and leaves the restaurant. The chef follows her
+   (D) Pushes the table aside and stands up, taking out her gun and pointing at the man. After a series of quarrels, she kills the man and leaves the restaurant
+   Time ref: 04:19-08:41
+
+4. What does the protagonist do when the man with the gun keeps approaching her?
+   (A) Cuts off the hand of the man with the gun with her sword
+   (B) Cuts off two fingers of the man with the gun with her sword
+   (C) Impales the man with the gun with her sword
+   (D) Breaks the windows with her sword and flees
+   Time ref: 06:04-06:17
+
+5. How many sticks does the protagonist put in the incense burner?
+   (A) 3  (B) 2  (C) 5  (D) 1
+   Time ref: 10:43-10:50
+
+6. Why are the mother and child, who line in front of the protagonist, unable to enter the city?
+   (A) They do not bribe the guard
+   (B) They are foreigners
+   (C) They bring illegal weapons
+   (D) They do not have a pass
+   Time ref: 19:35-20:20
+
+7. How many people are carrying the sedan chair for the woman?
+   (A) 4  (B) 8  (C) 6  (D) 2
+   Time ref: 24:06-24:40
+
+8. What happens when the woman wearing a red kimono kneels?
+   (A) A child rides on her back
+   (B) A man kneels beside her
+   (C) A man takes out his sword
+   (D) A child hits her head with noodles
+   Time ref: 26:10-26:16
+
+9. How many times does the protagonist knock on the green door?
+   (A) 1  (B) 5  (C) 2  (D) 4
+   Time ref: 31:05-31:45
+
+10. What does the protagonist see through the window after she is taken to the utility room?
+    (A) A group of monks sitting cross-legged in the snow
+    (B) A group of citizens chatting together
+    (C) A group of warriors practicing swords
+    (D) A group of samurais eating
+    Time ref: 33:57-34:04
+
+11. Why does the protagonist tie iron to her limbs?
+    (A) Because she wants to strength her body
+    (B) Because irons are decorations
+    (C) Because she has superpower and iron surpress it
+    (D) Because tying iron is a culture tradition
+    Time ref: 40:55-41:01
+
+12. What does the protagonist wipe her face with when she is knocked to the ground during a solo fight?
+    (A) With snow on the ground
+    (B) With her sleeves
+    (C) With her hands
+    (D) With a handkerchief in her pocket
+    Time ref: 50:00-50:10
+
+13. Why does the protagonist aim her sword at the cook?
+    (A) Because he is a spy
+    (B) Because he wants to steal the sword
+    (C) Because he wants to challenge the protagonist
+    (D) Because he finds out that the protagonist is a woman
+    Time ref: 57:43-57:50
+
+14. What is the protagonist primary objection at the spring?
+    (A) Sleep  (B) Drink some water  (C) Wash clothes  (D) Take a bath
+    Time ref: 54:57-55:02
+
+15. What else does the protagonist do in the shower besides taking a shower?
+    (A) Eat some food  (B) Stitches her wound  (C) Drink spring water  (D) Relax
+    Time ref: 56:07-56:14
+
+16. When the protagonist moves the table at the restaurant, what happens to the things on the table?
+    (A) One of the chopsticks on the bowl falls to the table
+    (B) One of the chopsticks on the bowl falls to the floor
+    (C) The seasoning bottle falls
+    (D) The bowl falls to the floor
+    Time ref: 04:35-04:42
+
+17. What part of the cook is different from other people?
+    (A) Leg  (B) Foot  (C) Eye  (D) Hand
+    Time ref: 03:00-03:03
+
+18. What does the protagonist cut off from the man who she fights in the snow in the end?
+    (A) Leg  (B) Cloth  (C) Eye  (D) Hair
+    Time ref: 52:08-53:55
